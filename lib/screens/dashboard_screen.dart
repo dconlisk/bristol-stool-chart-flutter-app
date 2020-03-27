@@ -5,6 +5,7 @@ import '../screens/add_screen.dart';
 import '../screens/graph_screen.dart';
 
 class DashboardScreen extends StatelessWidget {
+  static const routeName = '/';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -12,6 +13,7 @@ class DashboardScreen extends StatelessWidget {
         appBar: AppBar(
           title: Text('Dashboard'),
           textTheme: Theme.of(context).textTheme,
+          iconTheme: Theme.of(context).accentIconTheme,
         ),
         drawer: MainDrawer(),
         body: Column(
@@ -43,7 +45,7 @@ class DashboardScreen extends StatelessWidget {
             Container(
               height: 1,
               width: double.infinity,
-              color: Colors.blue,
+              color: Theme.of(context).iconTheme.color,
             ),
             Expanded(
               child: FlatButton(

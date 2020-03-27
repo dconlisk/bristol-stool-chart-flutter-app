@@ -1,20 +1,59 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
+
+import '../widgets/drawer_link.dart';
+import '../screens/dashboard_screen.dart';
+import '../screens/add_screen.dart';
+import '../screens/graph_screen.dart';
+import '../screens/settings_screen.dart';
+import '../screens/about_screen.dart';
 
 class MainDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Colors.lightBlueAccent,
+        color: Colors.blueGrey[900],
         padding: EdgeInsets.all(10),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Image(
-              image: AssetImage('assets/images/drawer_logo.png'),
-              width: 200,
-            )
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 20,
+                bottom: 20,
+              ),
+              child: Image(
+                image: AssetImage('assets/images/drawer_logo.png'),
+                width: 200,
+                fit: BoxFit.cover,
+              ),
+            ),
+            DrawerLink(
+              key: Key('dashboard'),
+              text: 'Dashboard',
+              icon: Icons.dashboard,
+              route: DashboardScreen.routeName,
+            ),
+            DrawerLink(
+                key: Key('add-a-stool'),
+                text: 'Add a stool',
+                icon: Icons.add_circle,
+                route: AddScreen.routeName),
+            DrawerLink(
+                key: Key('view-graph'),
+                text: 'View your graph',
+                icon: Icons.assessment,
+                route: GraphScreen.routeName),
+            DrawerLink(
+                key: Key('settings'),
+                text: 'Settings',
+                icon: Icons.settings,
+                route: SettingsScreen.routeName),
+            DrawerLink(
+                key: Key('about'),
+                text: 'About',
+                icon: Icons.info,
+                route: AboutScreen.routeName),
           ],
         ),
       ),
