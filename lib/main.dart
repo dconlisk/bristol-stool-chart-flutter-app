@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:syncfusion_flutter_core/core.dart';
 
 import './providers/event_provider.dart';
 import './screens/dashboard_screen.dart';
@@ -8,14 +9,17 @@ import './screens/graph_screen.dart';
 import './screens/settings_screen.dart';
 import './screens/about_screen.dart';
 
-void main() => runApp(MyApp());
+void main() {
+  SyncfusionLicense.registerLicense("NT8mJyc2IWhia31ifWN9YGVoYmF8YGJ8ampqanNiYmlmamlmanMDHmg3MiU6NxMkNjF+NDIhNzY9fTA8fSY4");
+  runApp(MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: EventProvider(),
-          child: MaterialApp(
+      child: MaterialApp(
         title: 'Bristol Stool Chart',
         theme: ThemeData(
           primarySwatch: Colors.lightGreenAccent[300],
