@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 
 import '../models/event.dart';
@@ -15,8 +13,10 @@ class EventProvider with ChangeNotifier {
   Future<void> addEvent(Event event) async {
     _events.add(event);
     notifyListeners();
+    print(event.dateTime.toString());
+    print(event.dateTime.toIso8601String());
     await DbHelper.insert('events', {
-      'id': event.dateTime.toString(),
+      'id': event.id,
       'stoolType': event.type,
       'dateTime': event.dateTime.toIso8601String(),
     });
@@ -28,7 +28,7 @@ class EventProvider with ChangeNotifier {
         .map(
           (item) => Event(
             id: item['id'],
-            type: item['type'],
+            type: item['stoolType'],
             dateTime: DateTime.parse(item['dateTime']),
           ),
         )

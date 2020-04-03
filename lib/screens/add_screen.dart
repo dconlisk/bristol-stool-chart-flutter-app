@@ -13,7 +13,10 @@ class AddScreen extends StatefulWidget {
 
 class _AddScreenState extends State<AddScreen> {
   var _selectedType = 3;
-  var _selectedDate = DateTime.now();
+
+  // Treat all datetimes as local in the app, so that daylight savings doesn't affect the graph
+  var _selectedDate =
+      DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
   var _selectedTime =
       TimeOfDay(hour: DateTime.now().hour, minute: DateTime.now().minute);
 
@@ -44,7 +47,7 @@ class _AddScreenState extends State<AddScreen> {
 
   Future<void> _save() async {
     var event = Event(
-        id: '${_selectedDate.toString()}${_selectedTime.toString()}',
+        id: DateTime.now().toString(),
         type: _selectedType,
         dateTime: _selectedDate.add(Duration(
           hours: _selectedTime.hour,
