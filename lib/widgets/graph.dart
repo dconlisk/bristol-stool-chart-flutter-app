@@ -30,7 +30,7 @@ class _GraphState extends State<Graph> {
         tooltipBehavior: TooltipBehavior(enable: true),
         series: <ChartSeries>[
           FastLineSeries<Event, DateTime>(
-            color: Colors.red,
+            color: Theme.of(context).primaryColor,
             dataSource: widget.events,
             xValueMapper: (Event event, int index) => event.dateTime,
             yValueMapper: (Event event, int index) => event.type,
