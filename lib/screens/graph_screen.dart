@@ -12,6 +12,8 @@ class GraphScreen extends StatefulWidget {
 }
 
 class _GraphScreenState extends State<GraphScreen> {
+  Future<void> _share() async {}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,13 +28,26 @@ class _GraphScreenState extends State<GraphScreen> {
                 ? Center(
                     child: CircularProgressIndicator(),
                   )
-                : Consumer<EventProvider>(
-                    child: Center(
-                      child: Text(
-                          'You don\'t have any stools recorded, start adding some!'),
-                    ),
-                    builder: (ctx, eventProvider, ch) =>
-                        eventProvider.events.length <= 0 ? ch : Graph(eventProvider.events),
+                : Column(
+                    children: <Widget>[
+                      Expanded(
+                        child: Consumer<EventProvider>(
+                          child: Center(
+                            child: Text(
+                                'You don\'t have any stools recorded, start adding some!'),
+                          ),
+                          builder: (ctx, eventProvider, ch) =>
+                              eventProvider.events.length <= 0
+                                  ? ch
+                                  : Graph(eventProvider.events),
+                        ),
+                      ),
+                      FlatButton(
+                        child: Text('SHARE'),
+                        onPressed: _share,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                    ],
                   ),
       ),
     );

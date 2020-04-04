@@ -23,6 +23,6 @@ class DbHelper {
 
   static Future<List<Map<String, dynamic>>> getData(String table) async {
     final db = await DbHelper.database();
-    return db.query(table);
+    return db.query(table, orderBy: 'dateTime');
   }
 }
