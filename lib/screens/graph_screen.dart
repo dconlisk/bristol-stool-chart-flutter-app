@@ -3,7 +3,9 @@ import 'package:provider/provider.dart';
 
 import '../providers/event_provider.dart';
 import '../widgets/graph.dart';
+import '../widgets/main_drawer.dart';
 import '../screens/graph_information_screen.dart';
+import '../screens/add_screen.dart';
 
 class GraphScreen extends StatefulWidget {
   static const routeName = '/graph';
@@ -23,42 +25,68 @@ class _GraphScreenState extends State<GraphScreen> {
       appBar: AppBar(
         title: Text('Your Graph'),
         actions: <Widget>[
-          IconButton(icon: Icon(Icons.info), onPressed: () {
-            Navigator.of(context).pushNamed(GraphInformationScreen.routeName);
-          },),
+          IconButton(
+            icon: Icon(Icons.info),
+            onPressed: () {
+              Navigator.of(context).pushNamed(GraphInformationScreen.routeName);
+            },
+          ),
         ],
       ),
+      drawer: MainDrawer(),
       body: FutureBuilder(
         future: Provider.of<EventProvider>(context, listen: false)
             .fetchAndSetEvents(),
-        builder: (ctx, snapshot) =>
-            snapshot.connectionState == ConnectionState.waiting
-                ? Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : Column(
-                    children: <Widget>[
-                      Expanded(
-                        child: Consumer<EventProvider>(
-                          child: Center(
-                            child: Text(
-                                'You don\'t have any stools recorded, start adding some!'),
+        builder: (ctx, snapshot) => snapshot.connectionState ==
+                ConnectionState.waiting
+            ? Center(
+                child: CircularProgressIndicator(),
+              )
+            : Column(
+                children: <Widget>[
+                  Expanded(
+                    child: Consumer<EventProvider>(
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            children: <Widget>[
+                              Center(
+                                child: Column(
+                                  children: <Widget>[
+                                    Text(
+                                        'You don\'t have any stools recorded yet, start adding some!'),
+                                    FlatButton(
+                                      child: Text('ADD STOOL'),
+                                      onPressed: () =>
+                                          Navigator.pushNamedAndRemoveUntil(
+                                        context,
+                                        AddScreen.routeName,
+                                        (_) => false,
+                                      ),
+                                      color: Theme.of(context).primaryColor,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
                           ),
-                          builder: (ctx, eventProvider, ch) =>
-                              eventProvider.events.length <= 0
-                                  ? ch
-                                  : Graph(eventProvider.events),
                         ),
-                      ),
-                      FlatButton(
-                        child: Text('SHARE'),
-                        onPressed: () => {
-                          
-                        },
-                        color: Theme.of(context).primaryColor,
-                      ),
-                    ],
-                  ),
+                        builder: (ctx, eventProvider, ch) =>
+                            eventProvider.events.length <= 0
+                                ? ch
+                                : Column(
+                                    children: <Widget>[
+                                      Graph(eventProvider.events),
+                                      FlatButton(
+                                        child: Text('SHARE'),
+                                        onPressed: () => {},
+                                        color: Theme.of(context).primaryColor,
+                                      ),
+                                    ],
+                                  )),
+                  )
+                ],
+              ),
       ),
     );
   }

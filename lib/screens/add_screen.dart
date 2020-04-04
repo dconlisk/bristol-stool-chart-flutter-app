@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 
 import '../models/event.dart';
 import '../providers/event_provider.dart';
+import '../widgets/main_drawer.dart';
 
 class AddScreen extends StatefulWidget {
   static const routeName = '/add';
@@ -80,9 +81,8 @@ class _AddScreenState extends State<AddScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text('Add Stool'),
-      ),
+      appBar: AppBar(title: Text('Add Stool')),
+      drawer: MainDrawer(),
       body: Column(
         children: <Widget>[
           Container(

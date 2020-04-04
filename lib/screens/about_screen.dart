@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/main_drawer.dart';
+
 class AboutScreen extends StatelessWidget {
   static const routeName = '/about';
 
@@ -7,6 +9,7 @@ class AboutScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('About')),
+      drawer: MainDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListView(

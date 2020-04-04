@@ -35,4 +35,8 @@ class EventProvider with ChangeNotifier {
         .toList();
     notifyListeners();
   }
+
+  Future<void> deleteAll() async {
+    await DbHelper.deleteAll('events');
+  }
 }

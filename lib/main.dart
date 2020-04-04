@@ -11,7 +11,8 @@ import './screens/about_screen.dart';
 import './screens/graph_information_screen.dart';
 
 void main() {
-  SyncfusionLicense.registerLicense("NT8mJyc2IWhia31ifWN9YGVoYmF8YGJ8ampqanNiYmlmamlmanMDHmg3MiU6NxMkNjF+NDIhNzY9fTA8fSY4");
+  SyncfusionLicense.registerLicense(
+      "NT8mJyc2IWhia31ifWN9YGVoYmF8YGJ8ampqanNiYmlmamlmanMDHmg3MiU6NxMkNjF+NDIhNzY9fTA8fSY4");
   runApp(MyApp());
 }
 
@@ -23,6 +24,16 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Bristol Stool Chart',
         theme: ThemeData(
+          appBarTheme: AppBarTheme(
+            iconTheme: Theme.of(context).accentIconTheme,
+            textTheme: TextTheme(
+              title: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+            elevation: 10,
+          ),
           primarySwatch: Colors.lightGreenAccent[300],
           primaryColor: Colors.lightBlueAccent,
           iconTheme: IconThemeData(

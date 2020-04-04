@@ -12,8 +12,6 @@ class DashboardScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Dashboard'),
-          textTheme: Theme.of(context).textTheme,
-          iconTheme: Theme.of(context).accentIconTheme,
         ),
         drawer: MainDrawer(),
         body: Column(

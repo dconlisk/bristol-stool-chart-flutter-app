@@ -31,7 +31,7 @@ class _GraphState extends State<Graph> {
               horizontalTextAlignment: TextAnchor.middle,
               start: 1,
               end: 2,
-              color: Colors.orange,
+              color: Colors.red,
               opacity: 0.2,
               text: 'Not so good',
               textStyle: ChartTextStyle(
@@ -41,7 +41,7 @@ class _GraphState extends State<Graph> {
             PlotBand(
               start: 2,
               end: 3,
-              color: Colors.amber,
+              color: Colors.orange,
               opacity: 0.2,
               text: 'Not bad',
               textStyle: ChartTextStyle(
@@ -61,7 +61,7 @@ class _GraphState extends State<Graph> {
             PlotBand(
               start: 5,
               end: 6,
-              color: Colors.amber,
+              color: Colors.orange,
               opacity: 0.2,
               text: 'Not bad',
               textStyle: ChartTextStyle(
@@ -71,7 +71,7 @@ class _GraphState extends State<Graph> {
             PlotBand(
               start: 6,
               end: 7,
-              color: Colors.orange,
+              color: Colors.red,
               opacity: 0.2,
               text: 'Not so good',
               textStyle: ChartTextStyle(

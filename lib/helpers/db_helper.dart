@@ -25,4 +25,9 @@ class DbHelper {
     final db = await DbHelper.database();
     return db.query(table, orderBy: 'dateTime');
   }
+
+  static Future<void> deleteAll(String table) async {
+    final db = await DbHelper.database();
+    db.delete(table);
+  }
 }

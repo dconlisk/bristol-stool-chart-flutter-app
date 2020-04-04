@@ -38,12 +38,7 @@ class DrawerLink extends StatelessWidget {
         ],
       ),
       onTap: () {
-        Navigator.of(context).popUntil(
-          ModalRoute.withName(DashboardScreen.routeName),
-        );
-        if (route != DashboardScreen.routeName) {
-          Navigator.of(context).pushNamed(route);
-        }
+        Navigator.pushNamedAndRemoveUntil(context, route, (_) => false);
       },
     );
   }
