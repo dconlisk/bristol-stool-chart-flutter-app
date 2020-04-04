@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import '../providers/event_provider.dart';
 import '../widgets/graph.dart';
+import '../screens/graph_information_screen.dart';
 
 class GraphScreen extends StatefulWidget {
   static const routeName = '/graph';
@@ -12,13 +13,20 @@ class GraphScreen extends StatefulWidget {
 }
 
 class _GraphScreenState extends State<GraphScreen> {
-  Future<void> _share() async {}
+  // Future<void> _share(dynamic chart) async {
+  //   print(chart);
+  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Your Graph'),
+        actions: <Widget>[
+          IconButton(icon: Icon(Icons.info), onPressed: () {
+            Navigator.of(context).pushNamed(GraphInformationScreen.routeName);
+          },),
+        ],
       ),
       body: FutureBuilder(
         future: Provider.of<EventProvider>(context, listen: false)
@@ -44,7 +52,9 @@ class _GraphScreenState extends State<GraphScreen> {
                       ),
                       FlatButton(
                         child: Text('SHARE'),
-                        onPressed: _share,
+                        onPressed: () => {
+                          
+                        },
                         color: Theme.of(context).primaryColor,
                       ),
                     ],

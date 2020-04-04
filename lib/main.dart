@@ -8,6 +8,7 @@ import './screens/add_screen.dart';
 import './screens/graph_screen.dart';
 import './screens/settings_screen.dart';
 import './screens/about_screen.dart';
+import './screens/graph_information_screen.dart';
 
 void main() {
   SyncfusionLicense.registerLicense("NT8mJyc2IWhia31ifWN9YGVoYmF8YGJ8ampqanNiYmlmamlmanMDHmg3MiU6NxMkNjF+NDIhNzY9fTA8fSY4");
@@ -42,6 +43,19 @@ class MyApp extends StatelessWidget {
               color: Colors.white,
               fontSize: 20,
             ),
+            display2: TextStyle(
+              color: Colors.black,
+              fontSize: 24,
+            ),
+            display3: TextStyle(
+              color: Theme.of(context).primaryColor,
+              fontSize: 16,
+              decoration: TextDecoration.underline,
+            ),
+            body1: TextStyle(
+              color: Colors.black,
+              fontSize: 16,
+            ),
           ),
           accentTextTheme: TextTheme(
             title: TextStyle(
@@ -55,6 +69,7 @@ class MyApp extends StatelessWidget {
           AddScreen.routeName: (ctx) => AddScreen(),
           SettingsScreen.routeName: (ctx) => SettingsScreen(),
           AboutScreen.routeName: (ctx) => AboutScreen(),
+          GraphInformationScreen.routeName: (ctx) => GraphInformationScreen(),
         },
       ),
     );
