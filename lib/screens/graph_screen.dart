@@ -19,6 +19,11 @@ class _GraphScreenState extends State<GraphScreen> {
   //   print(chart);
   // }
 
+  Future<void> _csv() async {
+    var csv = await Provider.of<EventProvider>(context, listen: false).getDataAsCsv();
+    print(csv);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +84,7 @@ class _GraphScreenState extends State<GraphScreen> {
                                       Graph(eventProvider.events),
                                       FlatButton(
                                         child: Text('SHARE'),
-                                        onPressed: () => {},
+                                        onPressed: _csv,
                                         color: Theme.of(context).primaryColor,
                                       ),
                                     ],

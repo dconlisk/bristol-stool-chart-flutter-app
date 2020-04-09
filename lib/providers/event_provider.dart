@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../models/event.dart';
 import '../helpers/db_helper.dart';
@@ -34,6 +35,21 @@ class EventProvider with ChangeNotifier {
         )
         .toList();
     notifyListeners();
+  }
+
+  Future<String> getDataAsCsv() async {
+    var dataList = await DbHelper.getData('events');
+    var events = dataList
+        .map(
+          (item) => Event(
+            id: item['id'],
+            type: item['stoolType'],
+            dateTime: DateTime.parse(item['dateTime']),
+          ),
+        )
+        .toList();
+    var rows = events.map((e) => '${DateFormat('dd/MM/yyyy H:mm:ss').format(e.dateTime)},${e.type}');
+    return rows.fold('', (prev, element) => '$prev\r\n$element');
   }
 
   Future<void> deleteAll() async {
