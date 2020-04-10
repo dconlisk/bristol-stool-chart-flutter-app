@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mailer/flutter_mailer.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
+import 'dart:io';
+import 'package:intl/intl.dart';
 
 import '../providers/event_provider.dart';
 import '../widgets/graph.dart';
@@ -20,8 +24,26 @@ class _GraphScreenState extends State<GraphScreen> {
   // }
 
   Future<void> _csv() async {
-    var csv = await Provider.of<EventProvider>(context, listen: false).getDataAsCsv();
-    print(csv);
+    final csvData = await Provider.of<EventProvider>(context, listen: false).getDataAsCsv();
+    final directory = await getTemporaryDirectory();
+    var attachmentFilename = 'BristolStoolChartData_${DateFormat('yyyyMMddHHmm').format(DateTime.now())}.csv';
+    final csvFile = File('${directory.path}/$attachmentFilename');
+    print(csvFile.path);
+    await csvFile.writeAsString(csvData);
+    
+    // TODO: Error handling, in case user doesn't have mail client enabled/installed
+    // send email attachment
+    final MailOptions mailOptions = MailOptions(
+      //body: 'a long body for the email <br> with a subset of HTML',
+      //subject: 'the Email Subject',
+      //recipients: ['example@example.com'],
+      isHTML: true,
+      //bccRecipients: ['other@example.com'],
+      //ccRecipients: ['third@example.com'],
+      attachments: [ csvFile.path, ],
+    );
+
+    await FlutterMailer.send(mailOptions);
   }
 
   @override
