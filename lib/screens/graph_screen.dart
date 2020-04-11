@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mailer/flutter_mailer.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:provider/provider.dart';
-import 'dart:io';
-import 'package:intl/intl.dart';
 
 import '../providers/event_provider.dart';
 import '../widgets/graph.dart';
 import '../widgets/main_drawer.dart';
 import '../screens/graph_information_screen.dart';
 import '../screens/add_screen.dart';
+import '../helpers/mail_helper.dart';
+import '../helpers/file_helper.dart';
 
 class GraphScreen extends StatefulWidget {
   static const routeName = '/graph';
@@ -23,27 +21,10 @@ class _GraphScreenState extends State<GraphScreen> {
   //   print(chart);
   // }
 
-  Future<void> _csv() async {
+  Future<void> _csv(BuildContext context) async {
     final csvData = await Provider.of<EventProvider>(context, listen: false).getDataAsCsv();
-    final directory = await getTemporaryDirectory();
-    var attachmentFilename = 'BristolStoolChartData_${DateFormat('yyyyMMddHHmm').format(DateTime.now())}.csv';
-    final csvFile = File('${directory.path}/$attachmentFilename');
-    print(csvFile.path);
-    await csvFile.writeAsString(csvData);
-    
-    // TODO: Error handling, in case user doesn't have mail client enabled/installed
-    // send email attachment
-    final MailOptions mailOptions = MailOptions(
-      //body: 'a long body for the email <br> with a subset of HTML',
-      //subject: 'the Email Subject',
-      //recipients: ['example@example.com'],
-      isHTML: true,
-      //bccRecipients: ['other@example.com'],
-      //ccRecipients: ['third@example.com'],
-      attachments: [ csvFile.path, ],
-    );
-
-    await FlutterMailer.send(mailOptions);
+    var filePath  = await FileHelper.writeCsvToFile(context, csvData);
+    await MailHelper.sendMailWithAttachments([filePath]);
   }
 
   @override
@@ -106,7 +87,7 @@ class _GraphScreenState extends State<GraphScreen> {
                                       Graph(eventProvider.events),
                                       FlatButton(
                                         child: Text('SHARE'),
-                                        onPressed: _csv,
+                                        onPressed: () => _csv(context),
                                         color: Theme.of(context).primaryColor,
                                       ),
                                     ],
