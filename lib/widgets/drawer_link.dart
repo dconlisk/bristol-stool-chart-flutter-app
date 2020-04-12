@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../screens/dashboard_screen.dart';
-
 class DrawerLink extends StatelessWidget {
   final String text;
   final IconData icon;
