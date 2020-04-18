@@ -1,4 +1,4 @@
-package uk.co.webgarden.BristolStoolChart
+package uk.co.webgarden.bristol_stool_chart
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
