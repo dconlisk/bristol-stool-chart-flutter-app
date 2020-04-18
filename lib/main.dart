@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
             ),
             textTheme: TextTheme(
               title: TextStyle(
-                color: Colors.white,
+                color: Colors.black,
               ),
               display1: TextStyle(
                 color: Colors.white,
