@@ -31,8 +31,26 @@ class SettingsScreen extends StatelessWidget {
                 onPressed: () async {
                   var provider = EventProvider();
                   await provider.deleteAll();
-                  await Navigator.pushNamedAndRemoveUntil(
-                      context, DashboardScreen.routeName, (_) => false);
+                  Navigator.of(context).pop();
+                  showDialog(
+                      context: context,
+                      builder: (ctx) {
+                        return AlertDialog(
+                            title: Text('Data deleted'),
+                            content: Text(
+                                'All of your data has been removed permanently.'),
+                            actions: <Widget>[
+                              FlatButton(
+                                child: Text('OK'),
+                                onPressed: () async {
+                                  await Navigator.pushNamedAndRemoveUntil(
+                                      context,
+                                      DashboardScreen.routeName,
+                                      (_) => false);
+                                },
+                              ),
+                            ]);
+                      });
                 },
               )
             ],
