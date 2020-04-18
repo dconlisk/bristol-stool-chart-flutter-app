@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:intl/intl.dart';
+import 'package:feature_discovery/feature_discovery.dart';
 
 import '../models/event.dart';
 import '../providers/event_provider.dart';
@@ -14,6 +16,22 @@ class AddScreen extends StatefulWidget {
 
 class _AddScreenState extends State<AddScreen> {
   var _selectedType = 3;
+
+  @override
+  void initState() {
+    SchedulerBinding.instance.addPostFrameCallback((Duration duration) {
+      FeatureDiscovery.discoverFeatures(
+        context,
+        const <String>{
+          // Feature ids for every feature that you want to showcase in order.
+          'choose_item_id',
+          'choose_datetime_id',
+          'save_choice_id',
+        },
+      );
+    });
+    super.initState();
+  }
 
   // Treat all datetimes as local in the app, so that daylight savings doesn't affect the graph
   var _selectedDate =
@@ -88,59 +106,97 @@ class _AddScreenState extends State<AddScreen> {
           Container(
             width: double.infinity,
             height: 300,
-            child: CarouselSlider(
-              initialPage: 3,
-              enableInfiniteScroll: false,
-              items: <Widget>[
-                Image.asset('assets/images/stooltype1.jpg'),
-                Image.asset('assets/images/stooltype2.jpg'),
-                Image.asset('assets/images/stooltype3.jpg'),
-                Image.asset('assets/images/stooltype4.jpg'),
-                Image.asset('assets/images/stooltype5.jpg'),
-                Image.asset('assets/images/stooltype6.jpg'),
-                Image.asset('assets/images/stooltype7.jpg'),
-              ],
-              onPageChanged: (index) {
-                _selectedType = index + 1;
-              },
+            child: DescribedFeatureOverlay(
+              featureId:
+                  'choose_item_id',
+              tapTarget: const Icon(
+                Icons.swap_horiz,
+              ),
+              title: Text('Choose type'),
+              description: Text(
+                  'First, swipe left or right to choose the most appropriate type'),
+              backgroundColor: Theme.of(context).primaryColor,
+              targetColor: Colors.white,
+              textColor: Colors.white,
+              child: CarouselSlider(
+                initialPage: 3,
+                enableInfiniteScroll: false,
+                items: <Widget>[
+                  Image.asset('assets/images/stooltype1.jpg'),
+                  Image.asset('assets/images/stooltype2.jpg'),
+                  Image.asset('assets/images/stooltype3.jpg'),
+                  Image.asset('assets/images/stooltype4.jpg'),
+                  Image.asset('assets/images/stooltype5.jpg'),
+                  Image.asset('assets/images/stooltype6.jpg'),
+                  Image.asset('assets/images/stooltype7.jpg'),
+                ],
+                onPageChanged: (index) {
+                  _selectedType = index + 1;
+                },
+              ),
             ),
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              GestureDetector(
-                child: Text(
-                  DateFormat('dd MMMM yyyy').format(_selectedDate),
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
+          DescribedFeatureOverlay(
+            featureId:
+                'choose_datetime_id',
+            tapTarget: const Icon(
+              Icons.calendar_today,
+            ),
+            title: Text('Choose date and time'),
+            description:
+                Text('Tap on the date or time if you want to change them.'),
+            backgroundColor: Theme.of(context).primaryColor,
+            targetColor: Colors.white,
+            textColor: Colors.white,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                GestureDetector(
+                  child: Text(
+                    DateFormat('dd MMMM yyyy').format(_selectedDate),
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                    ),
                   ),
+                  onTap: () => _selectDate(context),
                 ),
-                onTap: () => _selectDate(context),
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                ),
-                child: Text(' at '),
-              ),
-              GestureDetector(
-                child: Text(
-                  _selectedTime.format(context),
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
                   ),
+                  child: Text(' at '),
                 ),
-                onTap: () => _selectTime(context),
-              ),
-            ],
+                GestureDetector(
+                  child: Text(
+                    _selectedTime.format(context),
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                  onTap: () => _selectTime(context),
+                ),
+              ],
+            ),
           ),
           SizedBox(
             height: 20,
           ),
-          FlatButton(
-            child: Text('SAVE'),
-            onPressed: _save,
-            color: Theme.of(context).primaryColor,
+          DescribedFeatureOverlay(
+            featureId:
+                'save_choice_id',
+            tapTarget: const Icon(
+              Icons.save,
+            ),
+            title: Text('Save your choice'),
+            description: Text('Finally, tap the save button to save the item and update your graph.'),
+            backgroundColor: Theme.of(context).primaryColor,
+            targetColor: Colors.white,
+            textColor: Colors.white,
+            child: FlatButton(
+              child: Text('SAVE'),
+              onPressed: _save,
+              color: Theme.of(context).primaryColor,
+            ),
           ),
         ],
       ),
