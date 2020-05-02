@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 import '../models/event.dart';
@@ -18,22 +19,32 @@ class _GraphState extends State<Graph> {
         onTooltipRender: (args) => {args.header = "BSC"},
         primaryXAxis: DateTimeAxis(
           rangePadding: ChartRangePadding.none,
-          title: AxisTitle(text: 'Date'),
+          majorTickLines: MajorTickLines(color: Colors.white,),
+          minorGridLines: MinorGridLines(color: Colors.white,),
+          axisLine: AxisLine(
+            color: Colors.white,
+          ),
+          desiredIntervals: 5,
+          dateFormat: DateFormat('MMM dd'),
+          intervalType: DateTimeIntervalType.days,
         ),
         primaryYAxis: NumericAxis(
           minimum: 1,
           maximum: 7,
           interval: 1,
+          majorTickLines: MajorTickLines(color: Colors.white,),
+          axisLine: AxisLine(
+            color: Colors.white,
+          ),
           rangePadding: ChartRangePadding.none,
-          title: AxisTitle(text: 'Bristol Stool Chart value'),
           plotBands: [
             PlotBand(
-              horizontalTextAlignment: TextAnchor.middle,
               start: 1,
               end: 2,
-              color: Colors.red,
+              color: Colors.white,
               opacity: 0.2,
-              text: 'Not so good',
+              text: '😖',
+              horizontalTextAlignment: TextAnchor.end,
               textStyle: ChartTextStyle(
                 color: Colors.black,
               ),
@@ -41,9 +52,10 @@ class _GraphState extends State<Graph> {
             PlotBand(
               start: 2,
               end: 3,
-              color: Colors.orange,
+              color: Colors.white,
               opacity: 0.2,
-              text: 'Not bad',
+              text: '😔',
+              horizontalTextAlignment: TextAnchor.end,
               textStyle: ChartTextStyle(
                 color: Colors.black,
               ),
@@ -51,9 +63,10 @@ class _GraphState extends State<Graph> {
             PlotBand(
               start: 3,
               end: 5,
-              color: Colors.green,
+              color: Colors.white,
               opacity: 0.2,
-              text: 'Good',
+              text: '😊',
+              horizontalTextAlignment: TextAnchor.end,
               textStyle: ChartTextStyle(
                 color: Colors.black,
               ),
@@ -61,9 +74,10 @@ class _GraphState extends State<Graph> {
             PlotBand(
               start: 5,
               end: 6,
-              color: Colors.orange,
+              color: Colors.white,
               opacity: 0.2,
-              text: 'Not bad',
+              text: '😔',
+              horizontalTextAlignment: TextAnchor.end,
               textStyle: ChartTextStyle(
                 color: Colors.black,
               ),
@@ -71,9 +85,10 @@ class _GraphState extends State<Graph> {
             PlotBand(
               start: 6,
               end: 7,
-              color: Colors.red,
+              color: Colors.white,
               opacity: 0.2,
-              text: 'Not so good',
+              text: '😖',
+              horizontalTextAlignment: TextAnchor.end,
               textStyle: ChartTextStyle(
                 color: Colors.black,
               ),
@@ -85,17 +100,23 @@ class _GraphState extends State<Graph> {
           enablePinching: true,
           zoomMode: ZoomMode.x,
         ),
-        title: ChartTitle(text: 'Stool Quality'),
+        title: ChartTitle(
+          text: 'STOOL QUALITY',
+          alignment: ChartAlignment.near,
+          textStyle: ChartTextStyle(
+            fontSize: 16,
+          ),
+        ),
         tooltipBehavior: TooltipBehavior(enable: true),
         series: <ChartSeries>[
           FastLineSeries<Event, DateTime>(
-            color: Theme.of(context).primaryColor,
+            color: Colors.black,
             dataSource: widget.events,
             xValueMapper: (Event event, int index) => event.dateTime,
             yValueMapper: (Event event, int index) => event.type,
             markerSettings: MarkerSettings(
               isVisible: true,
-              borderColor: Colors.blue,
+              borderColor: Colors.black,
               borderWidth: 2,
               color: Colors.white,
               height: 10,

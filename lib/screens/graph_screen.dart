@@ -51,57 +51,71 @@ class _GraphScreenState extends State<GraphScreen> {
                 ? Center(
                     child: CircularProgressIndicator(),
                   )
-                : Column(
-                    children: <Widget>[
-                      Expanded(
-                        child: Consumer<EventProvider>(
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Column(
-                              children: <Widget>[
-                                Center(
-                                  child: Column(
-                                    children: <Widget>[
-                                      Text(
-                                          'To begin, tap the button below to add a stool'),
-                                    ],
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          builder: (ctx, eventProvider, ch) =>
-                              eventProvider.events.length <= 0
-                                  ? ch
-                                  : Column(
+                : Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                      children: <Widget>[
+                        Expanded(
+                          child: Consumer<EventProvider>(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                children: <Widget>[
+                                  Center(
+                                    child: Column(
                                       children: <Widget>[
-                                        Graph(eventProvider.events),
-                                        FlatButton(
-                                          child: Text('SHARE'),
-                                          onPressed: () => _csv(context),
-                                          color: Theme.of(context).primaryColor,
-                                        )
+                                        Text(
+                                            'To begin, tap the button below to add a stool'),
                                       ],
                                     ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            builder: (ctx, eventProvider, ch) =>
+                                eventProvider.events.length <= 0
+                                    ? ch
+                                    : Column(
+                                        children: <Widget>[
+                                          Graph(eventProvider.events),
+                                          Container(
+                                            alignment: Alignment.topLeft,
+                                            padding: const EdgeInsets.all(8.0),
+                                            child: FlatButton(
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(18.0),
+                                              ),
+                                              child: Text('SHARE'),
+                                              onPressed: () => _csv(context),
+                                              color: Theme.of(context).primaryColor,
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                          ),
                         ),
-                      ),
-                      Container(
-                        padding: EdgeInsets.all(30),
-                        alignment: Alignment.bottomRight,
-                        child: FloatingActionButton(
-                          materialTapTargetSize: MaterialTapTargetSize.padded,
-                          child: Icon(Icons.add),
-                          onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => new AddScreen(),
-                              fullscreenDialog: true,
+                        Container(
+                          padding: EdgeInsets.all(30),
+                          alignment: Alignment.bottomRight,
+                          child: FloatingActionButton(
+                            materialTapTargetSize: MaterialTapTargetSize.padded,
+                            child: Icon(
+                              Icons.add,
+                              size: 28,
+                            ),
+                            onPressed: () => Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => new AddScreen(),
+                                fullscreenDialog: true,
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                ),
       ),
     );
   }
