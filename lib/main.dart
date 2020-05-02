@@ -5,9 +5,9 @@ import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_core/core.dart';
 
 import './providers/event_provider.dart';
-import './screens/intro_screen.dart';
 import './screens/add_screen.dart';
 import './screens/graph_screen.dart';
+import './screens/intro_screen.dart';
 import './screens/settings_screen.dart';
 import './screens/about_screen.dart';
 import './screens/graph_information_screen.dart';

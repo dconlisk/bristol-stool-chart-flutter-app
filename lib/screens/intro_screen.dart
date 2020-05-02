@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import './graph_screen.dart';
 
 class IntroScreen extends StatefulWidget {
-  // IntroScreen({Key key}) : super(key: key);
-
   @override
   _IntroScreenState createState() => _IntroScreenState();
 }
@@ -15,11 +14,11 @@ class IntroScreen extends StatefulWidget {
 class _IntroScreenState extends State<IntroScreen> {
   List<Slide> slides = new List();
 
-  Function goToTab;
-
   @override
   void initState() {
     super.initState();
+
+    checkIntroSeen();
 
     slides.add(
       new Slide(
@@ -68,13 +67,31 @@ class _IntroScreenState extends State<IntroScreen> {
     );
   }
 
+  Future<void> checkIntroSeen() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    bool _seen = (prefs.getBool('intro_seen') ?? false);
+
+    if (_seen) {
+      Navigator.of(context).pushReplacement(
+          new MaterialPageRoute(builder: (context) => new GraphScreen()));
+    }
+  }
+
+  Future<void> goToGraph() async {
+    // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('intro_seen', true);
+    Navigator.of(context).pushNamed(GraphScreen.routeName);
+  }
+
   @override
   Widget build(BuildContext context) {
     return new IntroSlider(
       // List slides
       slides: this.slides,
       backgroundColorAllSlides: Colors.white,
-      onDonePress: () => Navigator.of(context).pushNamed(GraphScreen.routeName),
+      onDonePress: goToGraph,
+      onSkipPress: goToGraph,
     );
   }
 }
