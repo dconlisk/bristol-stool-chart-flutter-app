@@ -46,56 +46,62 @@ class _GraphScreenState extends State<GraphScreen> {
       body: FutureBuilder(
         future: Provider.of<EventProvider>(context, listen: false)
             .fetchAndSetEvents(),
-        builder: (ctx, snapshot) => snapshot.connectionState ==
-                ConnectionState.waiting
-            ? Center(
-                child: CircularProgressIndicator(),
-              )
-            : Column(
-                children: <Widget>[
-                  Expanded(
-                    child: Consumer<EventProvider>(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: <Widget>[
-                              Center(
-                                child: Column(
-                                  children: <Widget>[
-                                    Text(
-                                        'You don\'t have any stools recorded yet, start adding some!'),
-                                    FlatButton(
-                                      child: Text('ADD STOOL'),
-                                      onPressed: () =>
-                                          Navigator.pushNamedAndRemoveUntil(
-                                        context,
-                                        AddScreen.routeName,
-                                        (_) => false,
-                                      ),
-                                      color: Theme.of(context).primaryColor,
-                                    ),
-                                  ],
+        builder: (ctx, snapshot) =>
+            snapshot.connectionState == ConnectionState.waiting
+                ? Center(
+                    child: CircularProgressIndicator(),
+                  )
+                : Column(
+                    children: <Widget>[
+                      Expanded(
+                        child: Consumer<EventProvider>(
+                          child: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              children: <Widget>[
+                                Center(
+                                  child: Column(
+                                    children: <Widget>[
+                                      Text(
+                                          'To begin, tap the button below to add a stool'),
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
+                          ),
+                          builder: (ctx, eventProvider, ch) =>
+                              eventProvider.events.length <= 0
+                                  ? ch
+                                  : Column(
+                                      children: <Widget>[
+                                        Graph(eventProvider.events),
+                                        FlatButton(
+                                          child: Text('SHARE'),
+                                          onPressed: () => _csv(context),
+                                          color: Theme.of(context).primaryColor,
+                                        )
+                                      ],
+                                    ),
+                        ),
+                      ),
+                      Container(
+                        padding: EdgeInsets.all(30),
+                        alignment: Alignment.bottomRight,
+                        child: FloatingActionButton(
+                          materialTapTargetSize: MaterialTapTargetSize.padded,
+                          child: Icon(Icons.add),
+                          onPressed: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => new AddScreen(),
+                              fullscreenDialog: true,
+                            ),
                           ),
                         ),
-                        builder: (ctx, eventProvider, ch) =>
-                            eventProvider.events.length <= 0
-                                ? ch
-                                : Column(
-                                    children: <Widget>[
-                                      Graph(eventProvider.events),
-                                      FlatButton(
-                                        child: Text('SHARE'),
-                                        onPressed: () => _csv(context),
-                                        color: Theme.of(context).primaryColor,
-                                      ),
-                                    ],
-                                  )),
-                  )
-                ],
-              ),
+                      ),
+                    ],
+                  ),
       ),
     );
   }
