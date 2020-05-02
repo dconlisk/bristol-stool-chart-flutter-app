@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../widgets/main_drawer.dart';
 import '../screens/add_screen.dart';
@@ -63,9 +64,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       ),
                       Text(
                         'View your graph',
-                        style: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 20),
+                        style: GoogleFonts.roboto(
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 20,
+                        ),
+                        // style: TextStyle(
+                        //     color: Theme.of(context).primaryColor,
+                        //     fontSize: 20),
                       ),
                     ]),
                 onPressed: () {

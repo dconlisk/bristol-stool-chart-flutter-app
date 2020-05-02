@@ -1,9 +1,11 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:syncfusion_flutter_core/core.dart';
 
 import './providers/event_provider.dart';
-import './screens/dashboard_screen.dart';
+import './screens/intro_screen.dart';
 import './screens/add_screen.dart';
 import './screens/graph_screen.dart';
 import './screens/settings_screen.dart';
@@ -11,8 +13,17 @@ import './screens/about_screen.dart';
 import './screens/graph_information_screen.dart';
 
 void main() {
+
+  // Add license for Google fonts
+  LicenseRegistry.addLicense(() async* {
+    final license = await rootBundle.loadString('google_fonts/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+  });
+  
+  // Register license for Syncfusion chart control
   SyncfusionLicense.registerLicense(
       "NT8mJyc2IWhia31ifWN9YGVoYmF8YGJ8ampqanNiYmlmamlmanMDHmg3MiU6NxMkNjF+NDIhNzY9fTA8fSY4");
+
   runApp(MyApp());
 }
 
@@ -74,7 +85,7 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home: DashboardScreen(),
+        home: IntroScreen(),
         routes: {
           GraphScreen.routeName: (ctx) => GraphScreen(),
           AddScreen.routeName: (ctx) => AddScreen(),
