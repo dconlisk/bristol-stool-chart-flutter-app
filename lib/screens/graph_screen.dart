@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';
-import 'package:feature_discovery/feature_discovery.dart';
 
 import '../providers/event_provider.dart';
 import '../widgets/graph.dart';
@@ -22,20 +20,6 @@ class _GraphScreenState extends State<GraphScreen> {
   // Future<void> _share(dynamic chart) async {
   //   print(chart);
   // }
-  @override
-  void initState() {
-    SchedulerBinding.instance.addPostFrameCallback((Duration duration) {
-      FeatureDiscovery.discoverFeatures(
-        context,
-        const <String>{
-          // Feature ids for every feature that you want to showcase in order.
-          'graph_information_id',
-          'share_graph_button_id',
-        },
-      );
-    });
-    super.initState();
-  }
 
   Future<void> _csv(BuildContext context) async {
     final csvData =
@@ -50,25 +34,11 @@ class _GraphScreenState extends State<GraphScreen> {
       appBar: AppBar(
         title: Text('Your Graph'),
         actions: <Widget>[
-          DescribedFeatureOverlay(
-            featureId:
-                'graph_information_id',
-            tapTarget: const Icon(
-              Icons.info,
-            ),
-            title: Text('Find out more'),
-            description: Text(
-                'Tap the information icon to see more information about the graph.'),
-            backgroundColor: Theme.of(context).primaryColor,
-            targetColor: Colors.white,
-            textColor: Colors.white,
-            child: IconButton(
-              icon: Icon(Icons.info),
-              onPressed: () {
-                Navigator.of(context)
-                    .pushNamed(GraphInformationScreen.routeName);
-              },
-            ),
+          IconButton(
+            icon: Icon(Icons.info),
+            onPressed: () {
+              Navigator.of(context).pushNamed(GraphInformationScreen.routeName);
+            },
           ),
         ],
       ),
@@ -116,24 +86,10 @@ class _GraphScreenState extends State<GraphScreen> {
                                 : Column(
                                     children: <Widget>[
                                       Graph(eventProvider.events),
-                                      DescribedFeatureOverlay(
-                                        featureId:
-                                            'share_graph_button_id',
-                                        tapTarget: const Icon(
-                                          Icons.question_answer,
-                                        ),
-                                        title: Text('Share data'),
-                                        description: Text(
-                                            'Tap the share button to share your data via email.'),
-                                        backgroundColor:
-                                            Theme.of(context).primaryColor,
-                                        targetColor: Colors.white,
-                                        textColor: Colors.white,
-                                        child: FlatButton(
-                                          child: Text('SHARE'),
-                                          onPressed: () => _csv(context),
-                                          color: Theme.of(context).primaryColor,
-                                        ),
+                                      FlatButton(
+                                        child: Text('SHARE'),
+                                        onPressed: () => _csv(context),
+                                        color: Theme.of(context).primaryColor,
                                       ),
                                     ],
                                   )),
