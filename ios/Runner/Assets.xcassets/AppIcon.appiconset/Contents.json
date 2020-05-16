@@ -1,11 +1,13 @@
 {
   "images" : [
     {
+      "filename" : "Icon-Small-42.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "20x20"
     },
     {
+      "filename" : "Icon-61.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
@@ -65,11 +67,13 @@
       "size" : "60x60"
     },
     {
+      "filename" : "Icon-21.png",
       "idiom" : "ipad",
       "scale" : "1x",
       "size" : "20x20"
     },
     {
+      "filename" : "Icon-Small-41.png",
       "idiom" : "ipad",
       "scale" : "2x",
       "size" : "20x20"
@@ -141,6 +145,7 @@
       "size" : "83.5x83.5"
     },
     {
+      "filename" : "iTunesArtwork@2x.png",
       "idiom" : "ios-marketing",
       "scale" : "1x",
       "size" : "1024x1024"
@@ -267,13 +272,6 @@
       "idiom" : "mac",
       "scale" : "2x",
       "size" : "512x512"
-    },
-    {
-      "idiom" : "watch",
-      "role" : "longLook",
-      "scale" : "2x",
-      "size" : "44x44",
-      "subtype" : "42mm"
     }
   ],
   "info" : {
