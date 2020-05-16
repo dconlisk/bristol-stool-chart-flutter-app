@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
             iconTheme: Theme.of(context).accentIconTheme,
             textTheme: TextTheme(
-              title: TextStyle(
+              headline6: TextStyle(
                 color: Colors.white,
                 fontSize: 20,
               ),
@@ -58,29 +58,29 @@ class MyApp extends StatelessWidget {
             size: 25,
           ),
           textTheme: TextTheme(
-            title: TextStyle(
+            headline6: TextStyle(
               color: Colors.black,
             ),
-            display1: TextStyle(
+            headline4: TextStyle(
               color: Colors.white,
               fontSize: 20,
             ),
-            display2: TextStyle(
+            headline3: TextStyle(
               color: Colors.black,
               fontSize: 24,
             ),
-            display3: TextStyle(
+            headline2: TextStyle(
               color: Theme.of(context).primaryColor,
               fontSize: 16,
               decoration: TextDecoration.underline,
             ),
-            body1: TextStyle(
+            bodyText2: TextStyle(
               color: Colors.black,
               fontSize: 16,
             ),
           ),
           accentTextTheme: TextTheme(
-            title: TextStyle(
+            headline6: TextStyle(
               color: Colors.white,
             ),
           ),
