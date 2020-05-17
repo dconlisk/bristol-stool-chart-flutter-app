@@ -30,7 +30,7 @@ class MainDrawer extends StatelessWidget {
               ),
               DrawerLink(
                   key: Key('view-graph'),
-                  text: 'View your graph',
+                  text: 'Graph',
                   icon: Icons.assessment,
                   route: GraphScreen.routeName),
               DrawerLink(
