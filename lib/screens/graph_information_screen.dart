@@ -22,11 +22,11 @@ class GraphInformationScreen extends StatelessWidget {
         child: ListView(children: <Widget>[
           RichText(
             text: TextSpan(
-              style: Theme.of(context).textTheme.body1,
+              style: Theme.of(context).textTheme.bodyText2,
               children: <TextSpan>[
                 TextSpan(
                   text: 'What the graph tells you',
-                  style: Theme.of(context).textTheme.display2,
+                  style: Theme.of(context).textTheme.headline3,
                 ),
                 TextSpan(
                   text:
@@ -38,7 +38,7 @@ class GraphInformationScreen extends StatelessWidget {
                 ),
                 TextSpan(
                   text: 'Type 1',
-                  style: Theme.of(context).textTheme.display3,
+                  style: Theme.of(context).textTheme.headline2,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () =>
                         _openUrl('https://bristolstoolchart.net/type-one'),
@@ -46,7 +46,7 @@ class GraphInformationScreen extends StatelessWidget {
                 TextSpan(text: '\r\n\r\n'),
                 TextSpan(
                   text: 'Type 2',
-                  style: Theme.of(context).textTheme.display3,
+                  style: Theme.of(context).textTheme.headline2,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () =>
                         _openUrl('https://bristolstoolchart.net/type-two'),
@@ -54,7 +54,7 @@ class GraphInformationScreen extends StatelessWidget {
                 TextSpan(text: '\r\n\r\n'),
                 TextSpan(
                   text: 'Type 3',
-                  style: Theme.of(context).textTheme.display3,
+                  style: Theme.of(context).textTheme.headline2,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () =>
                         _openUrl('https://bristolstoolchart.net/type-three'),
@@ -62,7 +62,7 @@ class GraphInformationScreen extends StatelessWidget {
                 TextSpan(text: '\r\n\r\n'),
                 TextSpan(
                   text: 'Type 4',
-                  style: Theme.of(context).textTheme.display3,
+                  style: Theme.of(context).textTheme.headline2,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () =>
                         _openUrl('https://bristolstoolchart.net/type-four'),
@@ -70,7 +70,7 @@ class GraphInformationScreen extends StatelessWidget {
                 TextSpan(text: '\r\n\r\n'),
                 TextSpan(
                   text: 'Type 5',
-                  style: Theme.of(context).textTheme.display3,
+                  style: Theme.of(context).textTheme.headline2,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () =>
                         _openUrl('https://bristolstoolchart.net/type-five'),
@@ -78,7 +78,7 @@ class GraphInformationScreen extends StatelessWidget {
                 TextSpan(text: '\r\n\r\n'),
                 TextSpan(
                   text: 'Type 6',
-                  style: Theme.of(context).textTheme.display3,
+                  style: Theme.of(context).textTheme.headline2,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () =>
                         _openUrl('https://bristolstoolchart.net/type-six'),
@@ -86,7 +86,7 @@ class GraphInformationScreen extends StatelessWidget {
                 TextSpan(text: '\r\n\r\n'),
                 TextSpan(
                   text: 'Type 7',
-                  style: Theme.of(context).textTheme.display3,
+                  style: Theme.of(context).textTheme.headline2,
                   recognizer: TapGestureRecognizer()
                     ..onTap = () =>
                         _openUrl('https://bristolstoolchart.net/type-seven'),
@@ -94,7 +94,7 @@ class GraphInformationScreen extends StatelessWidget {
                 TextSpan(text: '\r\n\r\n'),
                 TextSpan(
                   text: 'Zooming the graph',
-                  style: Theme.of(context).textTheme.display2,
+                  style: Theme.of(context).textTheme.headline2,
                 ),
                 TextSpan(
                   text:
@@ -104,7 +104,7 @@ class GraphInformationScreen extends StatelessWidget {
                 ),
                 TextSpan(
                   text: 'Sharing the graph',
-                  style: Theme.of(context).textTheme.display2,
+                  style: Theme.of(context).textTheme.headline2,
                 ),
                 TextSpan(
                   text:

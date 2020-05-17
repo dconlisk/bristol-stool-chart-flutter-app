@@ -16,11 +16,11 @@ class AboutScreen extends StatelessWidget {
           children: <Widget>[
             RichText(
               text: TextSpan(
-                style: Theme.of(context).textTheme.body1,
+                style: Theme.of(context).textTheme.bodyText2,
                 children: <TextSpan>[
                   TextSpan(
                     text: 'What is the Bristol Stool Chart?',
-                    style: Theme.of(context).textTheme.display2,
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   TextSpan(
                     text:
@@ -30,7 +30,7 @@ class AboutScreen extends StatelessWidget {
                   ),
                   TextSpan(
                     text: 'How this app works',
-                    style: Theme.of(context).textTheme.display2,
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   TextSpan(
                     text:
@@ -44,7 +44,7 @@ class AboutScreen extends StatelessWidget {
                   ),
                   TextSpan(
                     text: 'Thank you',
-                    style: Theme.of(context).textTheme.display2,
+                    style: Theme.of(context).textTheme.headline3,
                   ),
                   TextSpan(
                     text:
