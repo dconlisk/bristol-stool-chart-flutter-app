@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../widgets/drawer_link.dart';
-import '../screens/dashboard_screen.dart';
-import '../screens/add_screen.dart';
 import '../screens/graph_screen.dart';
 import '../screens/settings_screen.dart';
 import '../screens/about_screen.dart';

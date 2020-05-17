@@ -4,7 +4,6 @@ import 'package:intl/intl.dart';
 
 import '../models/event.dart';
 import '../providers/event_provider.dart';
-import '../widgets/main_drawer.dart';
 
 class AddScreen extends StatefulWidget {
   static const routeName = '/add';
