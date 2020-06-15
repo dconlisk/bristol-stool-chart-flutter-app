@@ -100,54 +100,56 @@ class _SettingsScreenState extends State<SettingsScreen> {
       drawer: MainDrawer(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.only(bottom: 24),
-              child: Column(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Text(
-                        'Enable blood check?',
-                        style: Theme.of(context).textTheme.headline3,
-                      ),
-                      Switch(
-                        value: _showBlood,
-                        onChanged: _enableBlood,
-                      ),
-                    ],
-                  ),
-                  Text(
-                    'You can record whenever you have blood in your stool by enabling this feature. This will add a "blood in stool?" checkbox to the add screen. Any stools that have blood in them will '
-                    'be displayed in red on the graph.',
-                    style: Theme.of(context).textTheme.bodyText2,
-                  ),
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.only(bottom: 24),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          'Enable blood check?',
+                          style: Theme.of(context).textTheme.headline3,
+                        ),
+                        Switch(
+                          value: _showBlood,
+                          onChanged: _enableBlood,
+                        ),
+                      ],
+                    ),
+                    Text(
+                      'You can record whenever you have blood in your stool by enabling this feature. This will add a "blood in stool?" checkbox to the add screen. Any stools that have blood in them will '
+                      'be displayed in red on the graph.',
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            RichText(
-              text: TextSpan(
-                style: Theme.of(context).textTheme.bodyText2,
-                children: <TextSpan>[
-                  TextSpan(
-                    text: 'Remove all data',
-                    style: Theme.of(context).textTheme.headline3,
-                  ),
-                  TextSpan(
-                    text:
-                        '\r\n\r\nYou can remove all data from the app and start again with a clean sheet. Simply tap the Delete Data button, below.\r\n\r\n',
-                  ),
-                ],
+              RichText(
+                text: TextSpan(
+                  style: Theme.of(context).textTheme.bodyText2,
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: 'Remove all data',
+                      style: Theme.of(context).textTheme.headline3,
+                    ),
+                    TextSpan(
+                      text:
+                          '\r\n\r\nYou can remove all data from the app and start again with a clean sheet. Simply tap the Delete Data button, below.\r\n\r\n',
+                    ),
+                  ],
+                ),
               ),
-            ),
-            FlatButton(
-              child: Text('DELETE DATA'),
-              color: Colors.red,
-              textColor: Colors.white,
-              onPressed: () => _delete(context),
-            ),
-          ],
+              FlatButton(
+                child: Text('DELETE DATA'),
+                color: Colors.red,
+                textColor: Colors.white,
+                onPressed: () => _delete(context),
+              ),
+            ],
+          ),
         ),
       ),
     );
