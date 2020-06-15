@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:intl/intl.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../models/event.dart';
 import '../providers/event_provider.dart';
@@ -13,12 +14,34 @@ class AddScreen extends StatefulWidget {
 
 class _AddScreenState extends State<AddScreen> {
   var _selectedType = 3;
+  var _bloodInStool = false;
+  bool _showBlood = false;
+
+  @override
+  void initState() {
+    super.initState();
+    getAndSetShowBlood();
+  }
 
   // Treat all datetimes as local in the app, so that daylight savings doesn't affect the graph
   var _selectedDate =
       DateTime(DateTime.now().year, DateTime.now().month, DateTime.now().day);
   var _selectedTime =
       TimeOfDay(hour: DateTime.now().hour, minute: DateTime.now().minute);
+
+  Future<Null> getAndSetShowBlood() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _showBlood = prefs.getBool("show_blood") ?? false;
+    });
+  }
+
+  void changedBloodInStool(bool value) {
+    setState(() {
+      _bloodInStool = value;
+    });
+  }
 
   Future<void> _selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
@@ -47,16 +70,20 @@ class _AddScreenState extends State<AddScreen> {
 
   Future<void> _save() async {
     var event = Event(
-        id: DateTime.now().toString(),
-        type: _selectedType,
-        dateTime: _selectedDate.add(Duration(
+      id: DateTime.now().toString(),
+      type: _selectedType,
+      dateTime: _selectedDate.add(
+        Duration(
           hours: _selectedTime.hour,
           minutes: _selectedTime.minute,
-        )));
+        ),
+      ),
+      bloodInStool: _bloodInStool,
+    );
 
-    var provider = EventProvider();
+    var _provider = EventProvider();
 
-    await provider.addEvent(event);
+    await _provider.addEvent(event);
 
     showDialog(
         context: context,
@@ -107,6 +134,24 @@ class _AddScreenState extends State<AddScreen> {
               },
             ),
           ),
+          if (_showBlood)
+            Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('Blood in stool?'),
+                    Checkbox(
+                      value: _bloodInStool,
+                      onChanged: changedBloodInStool,
+                    )
+                  ],
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+              ],
+            ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[

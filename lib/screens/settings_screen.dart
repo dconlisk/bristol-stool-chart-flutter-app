@@ -18,10 +18,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   void initState() {
     super.initState();
-    getSharedPrefs();
+    getAndSetShowBlood();
   }
 
-  Future<Null> getSharedPrefs() async {
+  Future<Null> getAndSetShowBlood() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
 
     setState(() {

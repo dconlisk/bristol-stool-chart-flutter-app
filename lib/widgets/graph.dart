@@ -22,13 +22,13 @@ class _GraphState extends State<Graph> {
   @override
   Widget build(BuildContext context) {
     // fours is a fake list of events that I'm using to get a green line across the ideal value in the graph.
-    // need to work out a sensible value for the last event so that the smileys have space next to the real line graph.
     var fours = new List<Event>();
     fours.add(new Event(
       dateTime: widget.events[0].dateTime,
       type: 4,
     ));
 
+    // need to work out a sensible value for the last event so that the smileys have space next to the real line graph.
     var totalTimeInData = widget
             .events[widget.events.length - 1].dateTime.millisecondsSinceEpoch -
         widget.events[0].dateTime.millisecondsSinceEpoch;

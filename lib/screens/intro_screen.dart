@@ -12,7 +12,7 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
-  List<Slide> slides = new List();
+  List<Slide> _slides = new List();
 
   @override
   void initState() {
@@ -20,7 +20,7 @@ class _IntroScreenState extends State<IntroScreen> {
 
     checkIntroSeen();
 
-    slides.add(
+    _slides.add(
       new Slide(
         pathImage: 'assets/images/healthy_patient.png',
         title: "Welcome",
@@ -35,7 +35,7 @@ class _IntroScreenState extends State<IntroScreen> {
         ),
       ),
     );
-    slides.add(
+    _slides.add(
       new Slide(
         pathImage: 'assets/images/healthy_patient.png',
         title: "Welcome",
@@ -50,7 +50,7 @@ class _IntroScreenState extends State<IntroScreen> {
         ),
       ),
     );
-    slides.add(
+    _slides.add(
       new Slide(
         pathImage: 'assets/images/healthy_patient.png',
         title: "Welcome",
@@ -88,7 +88,7 @@ class _IntroScreenState extends State<IntroScreen> {
   Widget build(BuildContext context) {
     return new IntroSlider(
       // List slides
-      slides: this.slides,
+      slides: this._slides,
       backgroundColorAllSlides: Colors.white,
       onDonePress: goToGraph,
       onSkipPress: goToGraph,
