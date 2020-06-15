@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import './dashboard_screen.dart';
 import '../widgets/main_drawer.dart';
@@ -12,7 +13,29 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  Future<void> _enableBlood(BuildContext context) async {}
+  bool _showBlood = false;
+
+  @override
+  void initState() {
+    super.initState();
+    getSharedPrefs();
+  }
+
+  Future<Null> getSharedPrefs() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    setState(() {
+      _showBlood = prefs.getBool("show_blood") ?? false;
+    });
+  }
+
+  Future<void> _enableBlood(bool value) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('show_blood', value);
+    setState(() {
+      _showBlood = value;
+    });
+  }
 
   Future<void> _delete(BuildContext context) async {
     var provider = EventProvider();
@@ -79,29 +102,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: <Widget>[
-            RichText(
-              text: TextSpan(
-                style: Theme.of(context).textTheme.bodyText2,
-                children: <TextSpan>[
-                  TextSpan(
-                    text: 'Enable blood check',
-                    style: Theme.of(context).textTheme.headline3,
-                  ),
-                  TextSpan(
-                    text:
-                        '\r\n\r\nYou can record whenever you have blood in your stool by checking the box below. This will add a "blood in stool?" checkbox to the add screen. Any stools that have blood in them will '
-                        'be rendered in red on the graph.\r\n\r\n',
-                  ),
-                ],
-              ),
-            ),
             Padding(
               padding: const EdgeInsets.only(bottom: 24),
-              child: FlatButton(
-                child: Text('Enable Blood In Stool Checkbox'),
-                color: Theme.of(context).primaryColor,
-                textColor: Colors.white,
-                onPressed: () => _enableBlood(context),
+              child: Column(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Text(
+                        'Enable blood check?',
+                        style: Theme.of(context).textTheme.headline3,
+                      ),
+                      Switch(
+                        value: _showBlood,
+                        onChanged: _enableBlood,
+                      ),
+                    ],
+                  ),
+                  Text(
+                    'You can record whenever you have blood in your stool by enabling this feature. This will add a "blood in stool?" checkbox to the add screen. Any stools that have blood in them will '
+                    'be displayed in red on the graph.',
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                ],
               ),
             ),
             RichText(
