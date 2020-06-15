@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:uk.co.webgarden.BristolStoolChart/screens/graph_screen.dart';
 
 import '../models/event.dart';
 import '../providers/event_provider.dart';
@@ -95,7 +96,7 @@ class _AddScreenState extends State<AddScreen> {
               FlatButton(
                 child: Text('OK'),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  Navigator.pushNamedAndRemoveUntil(context, GraphScreen.routeName, (_) => false);
                 },
               )
             ],

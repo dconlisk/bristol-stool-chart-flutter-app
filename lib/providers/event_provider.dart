@@ -14,12 +14,11 @@ class EventProvider with ChangeNotifier {
   Future<void> addEvent(Event event) async {
     _events.add(event);
     notifyListeners();
-    print(event.dateTime.toString());
-    print(event.dateTime.toIso8601String());
     await DbHelper.insert('events', {
       'id': event.id,
       'stoolType': event.type,
       'dateTime': event.dateTime.toIso8601String(),
+      'bloodInStool': event.bloodInStool,
     });
   }
 
@@ -31,6 +30,7 @@ class EventProvider with ChangeNotifier {
             id: item['id'],
             type: item['stoolType'],
             dateTime: DateTime.parse(item['dateTime']),
+            bloodInStool: item['bloodInStool'] > 0,
           ),
         )
         .toList();

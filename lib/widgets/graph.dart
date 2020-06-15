@@ -36,8 +36,8 @@ class _GraphState extends State<Graph> {
 
     fours.add(
       new Event(
-        dateTime:
-            widget.events[widget.events.length - 1].dateTime.add(Duration(milliseconds: durationToAdd)),
+        dateTime: widget.events[widget.events.length - 1].dateTime
+            .add(Duration(milliseconds: durationToAdd)),
         type: 4,
       ),
     );
@@ -157,7 +157,19 @@ class _GraphState extends State<Graph> {
             height: 10,
             width: 10,
           ),
-          dataLabelSettings: DataLabelSettings(isVisible: false),
+          dataLabelSettings: DataLabelSettings(
+            isVisible: true,
+            alignment: ChartAlignment.center,
+            textStyle: ChartTextStyle(
+              color: Colors.red,
+            ),
+          ),
+          dataLabelMapper: (datum, index) {
+            if (datum.bloodInStool != null && datum.bloodInStool) {
+              return '*';
+            }
+            return ' ';
+          },
         ),
         FastLineSeries<Event, DateTime>(
           color: Colors.green,
