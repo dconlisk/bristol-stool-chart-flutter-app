@@ -78,6 +78,9 @@ class MyApp extends StatelessWidget {
               color: Colors.black,
               fontSize: 16,
             ),
+            button: TextStyle(
+              color: Colors.white,
+            ),
           ),
           accentTextTheme: TextTheme(
             headline6: TextStyle(

@@ -143,6 +143,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
               FlatButton(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(18.0),
+                ),
                 child: Text('DELETE DATA'),
                 color: Colors.red,
                 textColor: Colors.white,

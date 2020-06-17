@@ -14,7 +14,7 @@ class AddScreen extends StatefulWidget {
 }
 
 class _AddScreenState extends State<AddScreen> {
-  var _selectedType = 3;
+  var _selectedType = 4;
   var _bloodInStool = false;
   bool _showBlood = false;
 
@@ -31,7 +31,7 @@ class _AddScreenState extends State<AddScreen> {
       TimeOfDay(hour: DateTime.now().hour, minute: DateTime.now().minute);
 
   Future<Null> getAndSetShowBlood() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
+    final prefs = await SharedPreferences.getInstance();
 
     setState(() {
       _showBlood = prefs.getBool("show_blood") ?? false;
@@ -96,7 +96,8 @@ class _AddScreenState extends State<AddScreen> {
               FlatButton(
                 child: Text('OK'),
                 onPressed: () {
-                  Navigator.pushNamedAndRemoveUntil(context, GraphScreen.routeName, (_) => false);
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, GraphScreen.routeName, (_) => false);
                 },
               )
             ],
@@ -186,7 +187,13 @@ class _AddScreenState extends State<AddScreen> {
             height: 20,
           ),
           FlatButton(
-            child: Text('SAVE'),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(18.0),
+            ),
+            child: Text(
+              'SAVE',
+              style: Theme.of(context).textTheme.button,
+            ),
             onPressed: _save,
             color: Theme.of(context).primaryColor,
           ),

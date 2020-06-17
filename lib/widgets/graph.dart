@@ -32,7 +32,7 @@ class _GraphState extends State<Graph> {
     var totalTimeInData = widget
             .events[widget.events.length - 1].dateTime.millisecondsSinceEpoch -
         widget.events[0].dateTime.millisecondsSinceEpoch;
-    var durationToAdd = totalTimeInData ~/ 12;
+    var durationToAdd = widget.events.length == 1 ? 1000 : totalTimeInData ~/ 12;
 
     fours.add(
       new Event(
@@ -44,6 +44,7 @@ class _GraphState extends State<Graph> {
 
     return SfCartesianChart(
       onTooltipRender: (args) => {args.header = "BSC"},
+      backgroundColor: Colors.white,
       margin: EdgeInsets.all(16),
       zoomPanBehavior: ZoomPanBehavior(
         enablePanning: true,
