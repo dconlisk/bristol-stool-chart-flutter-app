@@ -88,9 +88,9 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-        home: IntroScreen(),
+        home: GraphScreen(),
         routes: {
-          GraphScreen.routeName: (ctx) => GraphScreen(),
+          IntroScreen.routeName: (ctx) => IntroScreen(),
           AddScreen.routeName: (ctx) => AddScreen(),
           SettingsScreen.routeName: (ctx) => SettingsScreen(),
           AboutScreen.routeName: (ctx) => AboutScreen(),

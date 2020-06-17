@@ -12,6 +12,7 @@ import '../widgets/graph.dart';
 import '../widgets/main_drawer.dart';
 import '../screens/graph_information_screen.dart';
 import '../screens/add_screen.dart';
+import '../screens/intro_screen.dart';
 import '../helpers/mail_helper.dart';
 import '../helpers/file_helper.dart';
 
@@ -35,6 +36,7 @@ class _GraphScreenState extends State<GraphScreen> {
           await image.toByteData(format: ui.ImageByteFormat.png);
       return byteData.buffer.asUint8List();
     } catch (e) {
+      // todo: notify user of error
       print(e);
     }
   }
@@ -52,7 +54,11 @@ class _GraphScreenState extends State<GraphScreen> {
             : '${DateFormat('dd/MM/yyyy H:mm:ss').format(e.dateTime)},${e.type}')
         .toList();
 
-    rows.insert(0, includeBloodInfo ? 'Date and time,BSC Type,Blood in stool?' : 'Date and time,BSC Type');
+    rows.insert(
+        0,
+        includeBloodInfo
+            ? 'Date and time,BSC Type,Blood in stool?'
+            : 'Date and time,BSC Type');
 
     return rows.fold('', (prev, element) => '$prev\r\n$element').trim();
   }
@@ -66,6 +72,19 @@ class _GraphScreenState extends State<GraphScreen> {
     final csvFilePath = await FileHelper.writeStringToFile(context, csvData);
 
     await MailHelper.sendMailWithAttachments([graphImagePath, csvFilePath]);
+  }
+
+  Future<void> _initialise() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var userHasSeenIntro = (prefs.getBool('intro_seen') ?? false);
+
+    if (!userHasSeenIntro) {
+      Navigator.of(context).pushReplacement(
+          new MaterialPageRoute(builder: (context) => new IntroScreen()));
+    }
+
+    await Provider.of<EventProvider>(context, listen: false)
+        .fetchAndSetEvents();
   }
 
   @override
@@ -85,8 +104,7 @@ class _GraphScreenState extends State<GraphScreen> {
       ),
       drawer: MainDrawer(),
       body: FutureBuilder(
-        future: Provider.of<EventProvider>(context, listen: false)
-            .fetchAndSetEvents(),
+        future: _initialise(),
         builder: (ctx, snapshot) => snapshot.connectionState ==
                 ConnectionState.waiting
             ? Center(

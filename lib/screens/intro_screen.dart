@@ -7,6 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import './graph_screen.dart';
 
 class IntroScreen extends StatefulWidget {
+  static const routeName = '/intro';
+
   @override
   _IntroScreenState createState() => _IntroScreenState();
 }
@@ -18,8 +20,6 @@ class _IntroScreenState extends State<IntroScreen> {
   void initState() {
     super.initState();
 
-    checkIntroSeen();
-
     _slides.add(
       new Slide(
         pathImage: 'assets/images/healthy_patient.png',
@@ -66,22 +66,13 @@ class _IntroScreenState extends State<IntroScreen> {
       ),
     );
   }
-
-  Future<void> checkIntroSeen() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool _seen = (prefs.getBool('intro_seen') ?? false);
-
-    if (_seen) {
-      Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (context) => new GraphScreen()));
-    }
-  }
-
-  Future<void> goToGraph() async {
+  
+  Future<void> savePreferencesAndGoToGraph() async {
     // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool('intro_seen', true);
-    Navigator.of(context).pushNamed(GraphScreen.routeName);
+    Navigator.of(context).pushReplacement(
+          new MaterialPageRoute(builder: (context) => new GraphScreen()));
   }
 
   @override
@@ -90,8 +81,8 @@ class _IntroScreenState extends State<IntroScreen> {
       // List slides
       slides: this._slides,
       backgroundColorAllSlides: Colors.white,
-      onDonePress: goToGraph,
-      onSkipPress: goToGraph,
+      onDonePress: savePreferencesAndGoToGraph,
+      onSkipPress: savePreferencesAndGoToGraph,
     );
   }
 }
