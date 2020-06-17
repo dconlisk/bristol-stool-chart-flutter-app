@@ -8,7 +8,7 @@ class DbHelper {
     return sql.openDatabase(path.join(dbPath, 'events.db'),
         onCreate: (newlyCreatedDb, version) {
       return newlyCreatedDb.execute(
-          'CREATE TABLE events(id TEXT PRIMARY KEY, stoolType INTEGER, dateTime TEXT, bloodInStool BOOL)');
+          'CREATE TABLE events(id TEXT PRIMARY KEY, stoolType INTEGER, dateTime TEXT, bloodInStool INTEGER)');
     }, version: 1);
   }
 

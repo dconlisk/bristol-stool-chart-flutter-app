@@ -17,7 +17,7 @@ class EventProvider with ChangeNotifier {
       'id': event.id,
       'stoolType': event.type,
       'dateTime': event.dateTime.toIso8601String(),
-      'bloodInStool': event.bloodInStool,
+      'bloodInStool': event.bloodInStool ? 1 : 0,
     });
   }
 

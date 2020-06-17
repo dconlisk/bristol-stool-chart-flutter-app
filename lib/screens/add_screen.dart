@@ -143,7 +143,7 @@ class _AddScreenState extends State<AddScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text('Blood in stool?'),
-                    Checkbox(
+                    Switch(
                       value: _bloodInStool,
                       onChanged: changedBloodInStool,
                     )

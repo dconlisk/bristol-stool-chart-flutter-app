@@ -94,6 +94,7 @@ class MyApp extends StatelessWidget {
           AddScreen.routeName: (ctx) => AddScreen(),
           SettingsScreen.routeName: (ctx) => SettingsScreen(),
           AboutScreen.routeName: (ctx) => AboutScreen(),
+          GraphScreen.routeName: (ctx) => GraphScreen(),
           GraphInformationScreen.routeName: (ctx) => GraphInformationScreen(),
         },
       ),

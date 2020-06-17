@@ -39,6 +39,7 @@ class _GraphScreenState extends State<GraphScreen> {
       // todo: notify user of error
       print(e);
     }
+    return null;
   }
 
   Future<String> _getDataAsCsv() async {

@@ -22,13 +22,14 @@ class _IntroScreenState extends State<IntroScreen> {
 
     _slides.add(
       new Slide(
+        backgroundColor: Colors.white,
         pathImage: 'assets/images/healthy_patient.png',
         title: "Welcome",
         styleTitle: GoogleFonts.playfairDisplay(
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
-        description: "Track your movements and be super healthy",
+        description: "This app is a simple tool to allow you to track your bowel movements and to share that data with your health professional.",
         styleDescription: GoogleFonts.roboto(
           color: Color(0x61000000),
           fontSize: 18,
@@ -37,13 +38,15 @@ class _IntroScreenState extends State<IntroScreen> {
     );
     _slides.add(
       new Slide(
+        backgroundColor: Colors.white,
         pathImage: 'assets/images/healthy_patient.png',
-        title: "Welcome",
+        title: "How it works",
         styleTitle: GoogleFonts.playfairDisplay(
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
-        description: "Track your movements and be super healthy",
+        description: "Use the add button on the graph to add a stool. Swipe left or right until you find the right image. Set the time if you need to change it. "
+        "You can also use the Settings section to enable the blood in stool tracking feature if that is of use to you. Tap the save button to save and return to the graph.",
         styleDescription: GoogleFonts.roboto(
           color: Color(0x61000000),
           fontSize: 18,
@@ -52,13 +55,14 @@ class _IntroScreenState extends State<IntroScreen> {
     );
     _slides.add(
       new Slide(
+        backgroundColor: Colors.white,
         pathImage: 'assets/images/healthy_patient.png',
-        title: "Welcome",
+        title: "Share your data",
         styleTitle: GoogleFonts.playfairDisplay(
           fontSize: 24,
           fontWeight: FontWeight.bold,
         ),
-        description: "Track your movements and be super healthy",
+        description: "To share your data, tap the share button under the graph. This will allow you to send your graph and data to your chosen contact via your chosen app.",
         styleDescription: GoogleFonts.roboto(
           color: Color(0x61000000),
           fontSize: 18,
@@ -66,7 +70,7 @@ class _IntroScreenState extends State<IntroScreen> {
       ),
     );
   }
-  
+
   Future<void> savePreferencesAndGoToGraph() async {
     // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
     SharedPreferences prefs = await SharedPreferences.getInstance();
@@ -78,9 +82,11 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return new IntroSlider(
-      // List slides
       slides: this._slides,
-      backgroundColorAllSlides: Colors.white,
+      borderRadiusDoneBtn: 12,
+      borderRadiusSkipBtn: 12,
+      colorSkipBtn: Theme.of(context).primaryColor,
+      colorDoneBtn: Theme.of(context).primaryColor,
       onDonePress: savePreferencesAndGoToGraph,
       onSkipPress: savePreferencesAndGoToGraph,
     );
