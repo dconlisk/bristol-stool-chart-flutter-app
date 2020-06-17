@@ -94,7 +94,7 @@ class GraphInformationScreen extends StatelessWidget {
                 TextSpan(text: '\r\n\r\n'),
                 TextSpan(
                   text: 'Zooming the graph',
-                  style: Theme.of(context).textTheme.headline2,
+                  style: Theme.of(context).textTheme.headline3,
                 ),
                 TextSpan(
                   text:
@@ -103,15 +103,16 @@ class GraphInformationScreen extends StatelessWidget {
                       '\r\n\r\nIf you are planning on sharing the graph image, you can zoom and scroll until what you see on the screen is exactly what you would like to share.\r\n\r\n',
                 ),
                 TextSpan(
-                  text: 'Sharing the graph',
-                  style: Theme.of(context).textTheme.headline2,
+                  text: 'Sharing your data',
+                  style: Theme.of(context).textTheme.headline3,
                 ),
                 TextSpan(
                   text:
-                      '\r\n\r\nYou can share the graph by tapping the Share button below the graph. Remember that you can zoom and scroll the graph to make sure it is displaying the information that you would like to share. '
-                      '\r\n\r\nWhen you click the Share button, there are 3 options to choose from. Tap "Share image" to share the visible part of the graph as an image. Tap "Share data only" to share your graph data as a comma separated '
-                      'values (csv) spreadsheet. Tap "Share both image and data" to share both the image and the spreadsheet. '
-                      '\r\n\r\nThe share function uses other apps on your device to share the files. You will be presented with a list of apps based on what apps are installed on your device.\r\n\r\n',
+                      '\r\n\r\nYou can share your data by tapping the Share button below the graph. Remember that you can zoom and scroll the graph to make sure it is displaying the information that you would like to share. '
+                      //'\r\n\r\nWhen you click the Share button, there are 3 options to choose from. Tap "Share image" to share the visible part of the graph as an image. Tap "Share data only" to share your graph data as a comma separated '
+                      //'values (csv) spreadsheet. Tap "Share both image and data" to share both the image and the spreadsheet. '
+                      '\r\n\r\nThe share function uses other apps on your device to share the files (a picture of the graph and a spreadsheet of the data). You will be presented with a list of apps based on what apps are installed on your device.\r\n'
+                      '\r\n\r\nNOTE: if you do not have a compatible app installed to share the data (e.g. the Google Mail app or similar) an error message will be displayed.\r\n\r\n',
                 ),
               ],
             ),

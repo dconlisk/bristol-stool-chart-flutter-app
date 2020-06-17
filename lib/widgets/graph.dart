@@ -32,7 +32,7 @@ class _GraphState extends State<Graph> {
     var totalTimeInData = widget
             .events[widget.events.length - 1].dateTime.millisecondsSinceEpoch -
         widget.events[0].dateTime.millisecondsSinceEpoch;
-    var durationToAdd = totalTimeInData <= 30000 ? 1000 : totalTimeInData ~/ 12;
+    var durationToAdd = totalTimeInData == 0 ? 1000 : totalTimeInData ~/ 12;
 
     fours.add(
       new Event(

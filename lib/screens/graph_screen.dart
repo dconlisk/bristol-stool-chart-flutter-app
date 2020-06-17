@@ -1,6 +1,8 @@
+import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:intl/intl.dart';
@@ -72,7 +74,27 @@ class _GraphScreenState extends State<GraphScreen> {
     final csvData = await _getDataAsCsv();
     final csvFilePath = await FileHelper.writeStringToFile(context, csvData);
 
-    await MailHelper.sendMailWithAttachments([graphImagePath, csvFilePath]);
+    var result =
+        await MailHelper.sendMailWithAttachments([graphImagePath, csvFilePath]);
+
+    if (!result) {
+      return showDialog(
+        context: context,
+        builder: (_) => AlertDialog(
+          title: Text('Sharing failed'),
+          content: Text(
+              'There was a problem sharing your data. This may be because you do not have a default mail client installed on your device.'),
+          actions: <Widget>[
+            FlatButton(
+              child: Text('OK'),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        ),
+      );
+    }
   }
 
   Future<void> _initialise() async {
@@ -111,87 +133,88 @@ class _GraphScreenState extends State<GraphScreen> {
             ? Center(
                 child: CircularProgressIndicator(),
               )
-            : Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: <Widget>[
-                    Expanded(
-                      child: Consumer<EventProvider>(
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Column(
-                            children: <Widget>[
-                              Center(
-                                child: Column(
+            : Column(
+                children: <Widget>[
+                  Expanded(
+                    child: Consumer<EventProvider>(
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                            top: 60, left: 30.0, right: 30.0),
+                        child: Column(
+                          children: <Widget>[
+                            Center(
+                              child: Column(
+                                children: <Widget>[
+                                  Text(
+                                    'To begin, tap the button below to add a stool',
+                                    style:
+                                        Theme.of(context).textTheme.headline5,
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      builder: (ctx, eventProvider, ch) =>
+                          eventProvider.events.length <= 0
+                              ? ch
+                              : Column(
                                   children: <Widget>[
-                                    Text(
-                                        'To begin, tap the button below to add a stool'),
+                                    RepaintBoundary(
+                                      key: _globalKey,
+                                      child: Graph(eventProvider.events),
+                                    ),
+                                    Visibility(
+                                      visible:
+                                          _orientation == Orientation.portrait,
+                                      child: Container(
+                                        alignment: Alignment.topLeft,
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: FlatButton(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(18.0),
+                                          ),
+                                          child: Text(
+                                            'SHARE',
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .button,
+                                          ),
+                                          onPressed: () => _share(context),
+                                          color: Theme.of(context).primaryColor,
+                                        ),
+                                      ),
+                                    )
                                   ],
                                 ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        builder: (ctx, eventProvider, ch) =>
-                            eventProvider.events.length <= 0
-                                ? ch
-                                : Column(
-                                    children: <Widget>[
-                                      RepaintBoundary(
-                                        key: _globalKey,
-                                        child: Graph(eventProvider.events),
-                                      ),
-                                      Visibility(
-                                        visible: _orientation ==
-                                            Orientation.portrait,
-                                        child: Container(
-                                          alignment: Alignment.topLeft,
-                                          padding: const EdgeInsets.all(8.0),
-                                          child: FlatButton(
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(18.0),
-                                            ),
-                                            child: Text(
-                                              'SHARE',
-                                              style: Theme.of(context)
-                                                  .textTheme
-                                                  .button,
-                                            ),
-                                            onPressed: () => _share(context),
-                                            color:
-                                                Theme.of(context).primaryColor,
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                      ),
                     ),
-                    Visibility(
-                      visible: _orientation == Orientation.portrait,
-                      child: Container(
-                        padding: EdgeInsets.all(30),
-                        alignment: Alignment.bottomRight,
-                        child: FloatingActionButton(
-                          materialTapTargetSize: MaterialTapTargetSize.padded,
-                          child: Icon(
-                            Icons.add,
-                            size: 28,
-                          ),
-                          backgroundColor: Theme.of(context).primaryColor,
-                          onPressed: () => Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => new AddScreen(),
-                              fullscreenDialog: true,
-                            ),
+                  ),
+                  Visibility(
+                    visible: _orientation == Orientation.portrait,
+                    child: Container(
+                      padding: EdgeInsets.all(30),
+                      alignment: Alignment.bottomRight,
+                      child: FloatingActionButton(
+                        materialTapTargetSize: MaterialTapTargetSize.padded,
+                        child: Icon(
+                          Icons.add,
+                          size: 28,
+                        ),
+                        backgroundColor: Theme.of(context).primaryColor,
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => new AddScreen(),
+                            fullscreenDialog: true,
                           ),
                         ),
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
       ),
     );

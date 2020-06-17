@@ -13,13 +13,12 @@ import './screens/about_screen.dart';
 import './screens/graph_information_screen.dart';
 
 void main() {
-
   // Add license for Google fonts
   LicenseRegistry.addLicense(() async* {
     final license = await rootBundle.loadString('google_fonts/OFL.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], license);
   });
-  
+
   // Register license for Syncfusion chart control
   SyncfusionLicense.registerLicense(
       "NT8mJyc2IWhia31ifWN9YGVoYmF8YGJ8ampqanNiYmlmamlmanMDHmg3MiU6NxMkNjF+NDIhNzY9fTA8fSY4");
@@ -30,6 +29,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    //final _greyText = Color.fromRGBO(0, 0, 0, 0.38);
     return ChangeNotifierProvider.value(
       value: EventProvider(),
       child: MaterialApp(
@@ -59,20 +59,25 @@ class MyApp extends StatelessWidget {
           ),
           textTheme: TextTheme(
             headline6: TextStyle(
-              color: Colors.black,
-            ),
-            headline4: TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-            ),
-            headline3: TextStyle(
-              color: Colors.black,
-              fontSize: 24,
+              color: Color.fromRGBO(0, 0, 0, 0.38),
             ),
             headline2: TextStyle(
               color: Theme.of(context).primaryColor,
               fontSize: 16,
               decoration: TextDecoration.underline,
+            ),
+            headline3: TextStyle(
+              color: Colors.black,
+              fontSize: 24,
+            ),
+            headline4: TextStyle(
+              color: Colors.white,
+              fontSize: 20,
+            ),
+            headline5: TextStyle(
+              color: Color.fromRGBO(0, 0, 0, 0.38),
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
             ),
             bodyText2: TextStyle(
               color: Colors.black,
