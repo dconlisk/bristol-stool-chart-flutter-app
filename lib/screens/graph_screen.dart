@@ -63,7 +63,8 @@ class _GraphScreenState extends State<GraphScreen> {
             ? 'Date and time,BSC Type,Blood in stool?'
             : 'Date and time,BSC Type');
 
-    return rows.fold('', (prev, element) => '$prev\r\n$element').trim();
+    final lineSeparator = Platform.isAndroid ? '\r\n' : '\n';
+    return rows.fold('', (prev, element) => '$prev$lineSeparator$element').trim();
   }
 
   // Create an email with the graph image and the csv data attached.
@@ -83,7 +84,7 @@ class _GraphScreenState extends State<GraphScreen> {
         builder: (_) => AlertDialog(
           title: Text('Sharing failed'),
           content: Text(
-              'There was a problem sharing your data. This may be because you do not have a default mail client installed on your device.'),
+              'There was a problem sharing your data.\r\n\r\nPlease check that there is a mail client set up on this device.'),
           actions: <Widget>[
             FlatButton(
               child: Text('OK'),
