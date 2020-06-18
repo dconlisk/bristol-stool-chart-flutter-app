@@ -58,9 +58,6 @@ class MyApp extends StatelessWidget {
             size: 25,
           ),
           textTheme: TextTheme(
-            headline6: TextStyle(
-              color: Color.fromRGBO(0, 0, 0, 0.38),
-            ),
             headline2: TextStyle(
               color: Theme.of(context).primaryColor,
               fontSize: 16,
@@ -78,6 +75,12 @@ class MyApp extends StatelessWidget {
               color: Color.fromRGBO(0, 0, 0, 0.38),
               fontSize: 20,
               fontWeight: FontWeight.bold,
+            ),
+            headline6: TextStyle(
+              color: Color.fromRGBO(0, 0, 0, 0.38),
+            ),
+            bodyText1: TextStyle(
+              color: Theme.of(context).primaryColor,
             ),
             bodyText2: TextStyle(
               color: Colors.black,

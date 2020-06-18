@@ -84,8 +84,8 @@ class _IntroScreenState extends State<IntroScreen> {
     return new IntroSlider(
       slides: this._slides,
       borderRadiusDoneBtn: 12,
-      borderRadiusSkipBtn: 12,
-      colorSkipBtn: Theme.of(context).primaryColor,
+      colorSkipBtn: Colors.white,
+      styleNameSkipBtn: Theme.of(context).textTheme.bodyText1,
       colorDoneBtn: Theme.of(context).primaryColor,
       onDonePress: savePreferencesAndGoToGraph,
       onSkipPress: savePreferencesAndGoToGraph,
