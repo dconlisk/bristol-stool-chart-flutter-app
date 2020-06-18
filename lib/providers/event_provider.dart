@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:developer' as developer;
 
 import '../models/event.dart';
 import '../helpers/db_helper.dart';
@@ -23,6 +24,9 @@ class EventProvider with ChangeNotifier {
 
   Future<void> fetchAndSetEvents() async {
     _events = await _getAllEvents();
+    _events.forEach((element) {
+      developer.log(element.dateTime.toIso8601String());
+    });
     notifyListeners();
   }
 

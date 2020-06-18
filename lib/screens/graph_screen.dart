@@ -17,6 +17,7 @@ import '../screens/add_screen.dart';
 import '../screens/intro_screen.dart';
 import '../helpers/mail_helper.dart';
 import '../helpers/file_helper.dart';
+import '../helpers/db_helper.dart';
 
 class GraphScreen extends StatefulWidget {
   static const routeName = '/graph';
@@ -103,8 +104,9 @@ class _GraphScreenState extends State<GraphScreen> {
     var userHasSeenIntro = (prefs.getBool('intro_seen') ?? false);
 
     if (!userHasSeenIntro) {
-      Navigator.of(context).pushReplacement(
-          new MaterialPageRoute(builder: (context) => new IntroScreen()));
+      await DbHelper.importDataFromOlderAppVersionIfAny();
+      //Navigator.of(context).pushReplacement(
+      //    new MaterialPageRoute(builder: (context) => new IntroScreen()));
     }
 
     await Provider.of<EventProvider>(context, listen: false)
