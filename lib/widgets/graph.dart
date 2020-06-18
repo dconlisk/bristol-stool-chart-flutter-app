@@ -34,6 +34,11 @@ class _GraphState extends State<Graph> {
         widget.events[0].dateTime.millisecondsSinceEpoch;
     var durationToAdd = totalTimeInData == 0 ? 1000 : totalTimeInData ~/ 12;
 
+    // use a different label style for the graph depending on the data in it
+    final threeDays = 3 * 24 * 60 * 60 * 1000;
+    final graphIntervalType = totalTimeInData > threeDays ? DateTimeIntervalType.days : DateTimeIntervalType.hours;
+    final graphDateFormat = totalTimeInData > threeDays? DateFormat('MMM\ndd') : DateFormat('HH:mm');
+
     fours.add(
       new Event(
         dateTime: widget.events[widget.events.length - 1].dateTime
@@ -74,9 +79,9 @@ class _GraphState extends State<Graph> {
         axisLine: AxisLine(
           width: 0,
         ),
-        desiredIntervals: 5,
-        dateFormat: DateFormat('MMM\ndd'),
-        intervalType: DateTimeIntervalType.days,
+        //desiredIntervals: 5,
+        dateFormat: graphDateFormat,
+        intervalType: graphIntervalType,
       ),
       primaryYAxis: NumericAxis(
         minimum: 1,
