@@ -168,10 +168,14 @@ class _AddScreenState extends State<AddScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     GestureDetector(
-                      child: Text(
-                        DateFormat('dd MMMM yyyy').format(_selectedDate),
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
+                      child: Container(
+                        padding: const EdgeInsets.all(12.0),
+                        color: Colors.white,
+                        child: Text(
+                          DateFormat('dd MMMM yyyy').format(_selectedDate),
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                          ),
                         ),
                       ),
                       onTap: () => _selectDate(context),
@@ -183,10 +187,14 @@ class _AddScreenState extends State<AddScreen> {
                       child: Text(' at '),
                     ),
                     GestureDetector(
-                      child: Text(
-                        _selectedTime.format(context),
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
+                      child: Container(
+                        padding: const EdgeInsets.all(12.0),
+                        color: Colors.white,
+                        child: Text(
+                          _selectedTime.format(context),
+                          style: TextStyle(
+                            decoration: TextDecoration.underline,
+                          ),
                         ),
                       ),
                       onTap: () => _selectTime(context),
