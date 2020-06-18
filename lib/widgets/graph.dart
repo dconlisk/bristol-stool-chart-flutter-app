@@ -79,7 +79,6 @@ class _GraphState extends State<Graph> {
         axisLine: AxisLine(
           width: 0,
         ),
-        //desiredIntervals: 5,
         dateFormat: graphDateFormat,
         intervalType: graphIntervalType,
       ),
