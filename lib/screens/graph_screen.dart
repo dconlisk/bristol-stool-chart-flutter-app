@@ -112,8 +112,8 @@ class _GraphScreenState extends State<GraphScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final _orientation = MediaQuery.of(context).orientation;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text('Your Graph'),
         actions: <Widget>[
@@ -133,13 +133,16 @@ class _GraphScreenState extends State<GraphScreen> {
             ? Center(
                 child: CircularProgressIndicator(),
               )
-            : Column(
-                children: <Widget>[
-                  Expanded(
-                    child: Consumer<EventProvider>(
+            : SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    Consumer<EventProvider>(
                       child: Padding(
                         padding: const EdgeInsets.only(
-                            top: 60, left: 30.0, right: 30.0),
+                          top: 60,
+                          left: 30.0,
+                          right: 30.0,
+                        ),
                         child: Column(
                           children: <Widget>[
                             Center(
@@ -157,44 +160,35 @@ class _GraphScreenState extends State<GraphScreen> {
                           ],
                         ),
                       ),
-                      builder: (ctx, eventProvider, ch) =>
-                          eventProvider.events.length <= 0
-                              ? ch
-                              : Column(
-                                  children: <Widget>[
-                                    RepaintBoundary(
-                                      key: _globalKey,
-                                      child: Graph(eventProvider.events),
-                                    ),
-                                    Visibility(
-                                      visible:
-                                          _orientation == Orientation.portrait,
-                                      child: Container(
-                                        alignment: Alignment.topLeft,
-                                        padding: const EdgeInsets.all(8.0),
-                                        child: FlatButton(
-                                          shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(18.0),
-                                          ),
-                                          child: Text(
-                                            'SHARE',
-                                            style: Theme.of(context)
-                                                .textTheme
-                                                .button,
-                                          ),
-                                          onPressed: () => _share(context),
-                                          color: Theme.of(context).primaryColor,
-                                        ),
-                                      ),
-                                    )
-                                  ],
+                      builder: (ctx, eventProvider, ch) => eventProvider
+                                  .events.length <=
+                              0
+                          ? ch
+                          : Column(
+                              children: <Widget>[
+                                RepaintBoundary(
+                                  key: _globalKey,
+                                  child: Graph(eventProvider.events),
                                 ),
+                                Container(
+                                  alignment: Alignment.topLeft,
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: FlatButton(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(18.0),
+                                    ),
+                                    child: Text(
+                                      'SHARE',
+                                      style: Theme.of(context).textTheme.button,
+                                    ),
+                                    onPressed: () => _share(context),
+                                    color: Theme.of(context).primaryColor,
+                                  ),
+                                ),
+                              ],
+                            ),
                     ),
-                  ),
-                  Visibility(
-                    visible: _orientation == Orientation.portrait,
-                    child: Container(
+                    Container(
                       padding: EdgeInsets.all(30),
                       alignment: Alignment.bottomRight,
                       child: FloatingActionButton(
@@ -213,8 +207,8 @@ class _GraphScreenState extends State<GraphScreen> {
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
       ),
     );
