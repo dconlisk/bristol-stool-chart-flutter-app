@@ -36,8 +36,12 @@ class _GraphState extends State<Graph> {
 
     // use a different label style for the graph depending on the data in it
     final threeDays = 3 * 24 * 60 * 60 * 1000;
-    final graphIntervalType = totalTimeInData > threeDays ? DateTimeIntervalType.days : DateTimeIntervalType.hours;
-    final graphDateFormat = totalTimeInData > threeDays? DateFormat('MMM\ndd') : DateFormat('HH:mm');
+    final graphIntervalType = totalTimeInData > threeDays
+        ? DateTimeIntervalType.days
+        : DateTimeIntervalType.hours;
+    final graphDateFormat = totalTimeInData > threeDays
+        ? DateFormat('MMM\ndd')
+        : DateFormat('HH:mm');
 
     fours.add(
       new Event(
@@ -150,6 +154,15 @@ class _GraphState extends State<Graph> {
       ),
       series: <ChartSeries>[
         FastLineSeries<Event, DateTime>(
+          color: Colors.green,
+          dataSource: fours,
+          xValueMapper: (Event event, int index) => event.dateTime,
+          yValueMapper: (Event event, int index) => event.type,
+          markerSettings: MarkerSettings(
+            isVisible: false,
+          ),
+        ),
+        FastLineSeries<Event, DateTime>(
           color: Colors.black,
           dataSource: widget.events,
           xValueMapper: (Event event, int index) => event.dateTime,
@@ -175,15 +188,6 @@ class _GraphState extends State<Graph> {
             }
             return ' ';
           },
-        ),
-        FastLineSeries<Event, DateTime>(
-          color: Colors.green,
-          dataSource: fours,
-          xValueMapper: (Event event, int index) => event.dateTime,
-          yValueMapper: (Event event, int index) => event.type,
-          markerSettings: MarkerSettings(
-            isVisible: false,
-          ),
         ),
       ],
     );

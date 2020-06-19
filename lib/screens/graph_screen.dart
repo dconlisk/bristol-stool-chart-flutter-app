@@ -105,8 +105,8 @@ class _GraphScreenState extends State<GraphScreen> {
 
     if (!userHasSeenIntro) {
       await DbHelper.importDataFromOlderAppVersionIfAny();
-      //Navigator.of(context).pushReplacement(
-      //    new MaterialPageRoute(builder: (context) => new IntroScreen()));
+      Navigator.of(context).pushReplacement(
+          new MaterialPageRoute(builder: (context) => new IntroScreen()));
     }
 
     await Provider.of<EventProvider>(context, listen: false)

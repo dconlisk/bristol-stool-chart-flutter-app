@@ -1,4 +1,6 @@
 import 'dart:developer' as developer;
+import 'dart:io';
+import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart' as sql;
 import 'package:path/path.dart' as path;
 import 'package:sqflite/sqlite_api.dart';
@@ -14,7 +16,14 @@ class DbHelper {
   }
 
   static Future<void> importDataFromOlderAppVersionIfAny() async {
-    var oldDbPath = '/data/data/uk.co.webgarden.BristolStoolChart/stools';
+    String oldDbPath;
+
+    if (Platform.isAndroid) {
+      oldDbPath = '/data/data/uk.co.webgarden.BristolStoolChart/stools';
+    } else {
+      final appleDocDir = await getApplicationDocumentsDirectory();
+      oldDbPath = '/${appleDocDir.path}/stools.db';
+    }
 
     if (await sql.databaseExists(oldDbPath)) {
       developer.log('The database exists at $oldDbPath');
@@ -27,24 +36,36 @@ class DbHelper {
         data.forEach((oldStool) => {importEvent(oldStool)});
 
         // Now delete the old db for good
-        //await sql.deleteDatabase(oldDbPath);
+        await sql.deleteDatabase(oldDbPath);
       }
     } else {
-      developer.log('No pre-existing database found at $oldDbPath');
+      developer.log('\nNo pre-existing database found at $oldDbPath');
     }
   }
 
   static void importEvent(Map<String, dynamic> oldStool) {
-    // Convert from Android sqlite timestamp
-    var dateInDb =
-        DateTime.fromMicrosecondsSinceEpoch(oldStool['ChosenDate'] ~/ 10);
-    var eventDate = DateTime(dateInDb.year - 1969, dateInDb.month,
-        dateInDb.day, dateInDb.hour, dateInDb.minute, dateInDb.second);
+    String dateString;
+
+    if (Platform.isAndroid) {
+      // Convert from Android sqlite timestamp
+      var dateInDb = DateTime.fromMicrosecondsSinceEpoch(
+          oldStool['ChosenDate'] ~/ 10,
+          isUtc: true);
+      var eventDate = DateTime(dateInDb.year - 1969, dateInDb.month,
+          dateInDb.day, dateInDb.hour, dateInDb.minute, dateInDb.second);
+      dateString = eventDate.toUtc().toIso8601String();
+    } else {
+      // iOS sensibly stores dates as strings
+      var dateInDb = DateTime.parse(oldStool['ChosenDate']);
+      var dateUtc = DateTime.utc(dateInDb.year, dateInDb.month, dateInDb.day,
+          dateInDb.hour, dateInDb.minute, dateInDb.second);
+      dateString = dateUtc.toIso8601String();
+    }
 
     DbHelper.insert('events', {
       'id': DateTime.now().toString(),
       'stoolType': oldStool['BssValue'],
-      'dateTime': eventDate.toUtc().toIso8601String(),
+      'dateTime': dateString,
       'bloodInStool': 0,
     });
   }

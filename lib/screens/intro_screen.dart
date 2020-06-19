@@ -73,8 +73,8 @@ class _IntroScreenState extends State<IntroScreen> {
 
   Future<void> savePreferencesAndGoToGraph() async {
     // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
-    //SharedPreferences prefs = await SharedPreferences.getInstance();
-    //await prefs.setBool('intro_seen', true);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('intro_seen', true);
     Navigator.of(context).pushReplacement(
           new MaterialPageRoute(builder: (context) => new GraphScreen()));
   }
