@@ -39,15 +39,16 @@ class DbHelper {
   }
 
   static void importEvent(Map<String, dynamic> oldStool) {
-    developer.log('\nSTOOL:$oldStool');
-    developer.log('\nBSS Value:${oldStool['BssValue']}');
-    developer.log('\nChosen Date:${oldStool['ChosenDate']}');
-    developer.log('\nChosen Date as string:${DateTime.fromMillisecondsSinceEpoch(oldStool['ChosenDate']~/1000000000 + 978307200)}\n');
+    // Convert from Android sqlite timestamp
+    var dateInDb =
+        DateTime.fromMicrosecondsSinceEpoch(oldStool['ChosenDate'] ~/ 10);
+    var currentDate = DateTime.utc(dateInDb.year - 1969, dateInDb.month,
+        dateInDb.day, dateInDb.hour, dateInDb.minute, dateInDb.second);
+
     DbHelper.insert('events', {
       'id': DateTime.now().toString(),
       'stoolType': oldStool['BssValue'],
-      'dateTime': DateTime.fromMillisecondsSinceEpoch(oldStool['ChosenDate'])
-          .toIso8601String(),
+      'dateTime': currentDate.toLocal().toIso8601String(),
       'bloodInStool': 0,
     });
   }
