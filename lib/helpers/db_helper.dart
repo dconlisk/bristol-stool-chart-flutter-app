@@ -13,10 +13,7 @@ class DbHelper {
     }, version: 1);
   }
 
-  static Future<bool> importDataFromOlderAppVersionIfAny() async {
-    //final databasesPath = await sql.getDatabasesPath();
-    //developer.log('The standard databases path is $databasesPath');
-    //var oldDbPath = path.join(databasesPath, 'stools');
+  static Future<void> importDataFromOlderAppVersionIfAny() async {
     var oldDbPath = '/data/data/uk.co.webgarden.BristolStoolChart/stools';
 
     if (await sql.databaseExists(oldDbPath)) {
@@ -35,20 +32,19 @@ class DbHelper {
     } else {
       developer.log('No pre-existing database found at $oldDbPath');
     }
-    return false;
   }
 
   static void importEvent(Map<String, dynamic> oldStool) {
     // Convert from Android sqlite timestamp
     var dateInDb =
         DateTime.fromMicrosecondsSinceEpoch(oldStool['ChosenDate'] ~/ 10);
-    var currentDate = DateTime.utc(dateInDb.year - 1969, dateInDb.month,
+    var eventDate = DateTime(dateInDb.year - 1969, dateInDb.month,
         dateInDb.day, dateInDb.hour, dateInDb.minute, dateInDb.second);
 
     DbHelper.insert('events', {
       'id': DateTime.now().toString(),
       'stoolType': oldStool['BssValue'],
-      'dateTime': currentDate.toLocal().toIso8601String(),
+      'dateTime': eventDate.toUtc().toIso8601String(),
       'bloodInStool': 0,
     });
   }

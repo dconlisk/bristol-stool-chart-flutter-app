@@ -12,12 +12,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../providers/event_provider.dart';
 import '../widgets/graph.dart';
 import '../widgets/main_drawer.dart';
-import '../screens/graph_information_screen.dart';
-import '../screens/add_screen.dart';
-import '../screens/intro_screen.dart';
 import '../helpers/mail_helper.dart';
 import '../helpers/file_helper.dart';
 import '../helpers/db_helper.dart';
+import 'add_screen.dart';
+import 'intro_screen.dart';
+import 'graph_information_screen.dart';
 
 class GraphScreen extends StatefulWidget {
   static const routeName = '/graph';

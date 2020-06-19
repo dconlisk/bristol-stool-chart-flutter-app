@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:developer' as developer;
 
 import '../models/event.dart';
 import '../helpers/db_helper.dart';
@@ -17,16 +16,13 @@ class EventProvider with ChangeNotifier {
     await DbHelper.insert('events', {
       'id': event.id,
       'stoolType': event.type,
-      'dateTime': event.dateTime.toIso8601String(),
+      'dateTime': event.dateTime.toUtc().toIso8601String(),
       'bloodInStool': event.bloodInStool ? 1 : 0,
     });
   }
 
   Future<void> fetchAndSetEvents() async {
     _events = await _getAllEvents();
-    _events.forEach((element) {
-      developer.log(element.dateTime.toIso8601String());
-    });
     notifyListeners();
   }
 
@@ -37,7 +33,7 @@ class EventProvider with ChangeNotifier {
           (item) => Event(
             id: item['id'],
             type: item['stoolType'],
-            dateTime: DateTime.parse(item['dateTime']),
+            dateTime: DateTime.parse(item['dateTime']).toLocal(),
             bloodInStool: item['bloodInStool'] > 0,
           ),
         )
