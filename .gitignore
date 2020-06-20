@@ -116,3 +116,15 @@ app.*.symbols
 android/BristolStoolChart.keystore.old
 
 android/BristolStoolChart.keystore
+
+*.aab
+
+android/bsc_upload_certificate.pem
+
+android/bsc-upload-keystore
+
+android/BSCPrivateKey
+
+android/pepk.jar
+
+android/private_key.pepk

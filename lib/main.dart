@@ -32,10 +32,10 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    //final _greyText = Color.fromRGBO(0, 0, 0, 0.38);
     return ChangeNotifierProvider.value(
       value: EventProvider(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Bristol Stool Chart',
         theme: ThemeData(
           appBarTheme: AppBarTheme(

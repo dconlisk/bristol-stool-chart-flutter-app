@@ -56,11 +56,10 @@ class DbHelper {
     if (Platform.isAndroid) {
       // Convert from Android sqlite timestamp
       var dateInDb = DateTime.fromMicrosecondsSinceEpoch(
-          oldStool['ChosenDate'] ~/ 10,
-          isUtc: true);
-      var eventDate = DateTime(dateInDb.year - 1969, dateInDb.month,
+          oldStool['ChosenDate'] ~/ 10);
+      var eventDate = DateTime.utc(dateInDb.year - 1969, dateInDb.month,
           dateInDb.day, dateInDb.hour, dateInDb.minute, dateInDb.second);
-      dateString = eventDate.toUtc().toIso8601String();
+      dateString = eventDate.toIso8601String();
     } else {
       // iOS sensibly stores dates as strings
       var dateInDb = DateTime.parse(oldStool['ChosenDate']);
