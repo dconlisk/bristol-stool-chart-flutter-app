@@ -61,8 +61,8 @@ class _GraphScreenState extends State<GraphScreen> {
     rows.insert(
         0,
         includeBloodInfo
-            ? 'Date and time,BSC Type,Blood in stool?'
-            : 'Date and time,BSC Type');
+            ? 'Date and time,Bristol Stool Chart Type,Blood in stool?'
+            : 'Date and time,Bristol Stool Chart Type');
 
     final lineSeparator = Platform.isAndroid ? '\r\n' : '\n';
     return rows.fold('', (prev, element) => '$prev$lineSeparator$element').trim();

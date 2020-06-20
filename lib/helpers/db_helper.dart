@@ -15,31 +15,38 @@ class DbHelper {
     }, version: 1);
   }
 
-  static Future<void> importDataFromOlderAppVersionIfAny() async {
-    String oldDbPath;
+  static Future<bool> importDataFromOlderAppVersionIfAny() async {
+    try {
+      String oldDbPath;
 
-    if (Platform.isAndroid) {
-      oldDbPath = '/data/data/uk.co.webgarden.BristolStoolChart/stools';
-    } else {
-      final appleDocDir = await getApplicationDocumentsDirectory();
-      oldDbPath = '/${appleDocDir.path}/stools.db';
-    }
-
-    if (await sql.databaseExists(oldDbPath)) {
-      developer.log('The database exists at $oldDbPath');
-      // Okay we have data from the old app. Read it and insert into our new db.
-      var oldDatabase = await sql.openDatabase(oldDbPath);
-
-      if (oldDatabase.isOpen) {
-        developer.log('The database is open');
-        var data = await oldDatabase.query('Stools');
-        data.forEach((oldStool) => {importEvent(oldStool)});
-
-        // Now delete the old db for good
-        await sql.deleteDatabase(oldDbPath);
+      if (Platform.isAndroid) {
+        oldDbPath = '/data/data/uk.co.webgarden.BristolStoolChart/stools';
+      } else {
+        final appleDocDir = await getApplicationDocumentsDirectory();
+        oldDbPath = '/${appleDocDir.path}/stools.db';
       }
-    } else {
-      developer.log('\nNo pre-existing database found at $oldDbPath');
+
+      if (await sql.databaseExists(oldDbPath)) {
+        developer.log('The database exists at $oldDbPath');
+        // Okay we have data from the old app. Read it and insert into our new db.
+        var oldDatabase = await sql.openDatabase(oldDbPath);
+
+        if (oldDatabase.isOpen) {
+          developer.log('The database is open');
+          var data = await oldDatabase.query('Stools');
+          data.forEach((oldStool) => {importEvent(oldStool)});
+
+          // Now delete the old db for good
+          await sql.deleteDatabase(oldDbPath);
+        }
+      } else {
+        developer.log('\nNo pre-existing database found at $oldDbPath');
+      }
+      return true;
+    }
+    catch (e) {
+      // Just fail silently if we are unable to import the existing data
+      return false;
     }
   }
 
