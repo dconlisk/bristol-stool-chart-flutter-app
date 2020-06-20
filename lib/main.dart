@@ -13,10 +13,13 @@ import './screens/about_screen.dart';
 import './screens/graph_information_screen.dart';
 
 void main() {
-  // Add license for Google fonts
+  // Add licenses for Google fonts
   LicenseRegistry.addLicense(() async* {
-    final license = await rootBundle.loadString('google_fonts/OFL.txt');
-    yield LicenseEntryWithLineBreaks(['google_fonts'], license);
+    final playfairLicense = await rootBundle.loadString('google_fonts/OFL.txt');
+    yield LicenseEntryWithLineBreaks(['google_fonts'], playfairLicense);
+
+    final robotoLicense = await rootBundle.loadString('google_fonts/LICENSE.txt');
+    yield LicenseEntryWithLineBreaks(['google_fonts'], robotoLicense);
   });
 
   // Register license for Syncfusion chart control
