@@ -5,7 +5,7 @@ This app is used by medical professionals with their patients to track their sto
 
 I created this app as a way to practice using flutter while also keeping the app current and up-to-date. It uses a bunch of flutter packages, as well as FontAwesome and the Syncfusion SfChart control.
 
-[The Bristol Stool Chart website] <https://bristolstoolchart.net>
+[The Bristol Stool Chart website]: <https://bristolstoolchart.net>
 
 # License
 
