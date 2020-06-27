@@ -1,0 +1,1 @@
+To create blog posts, just drop files in here with name dd-mm-yyyy-whatever.md
