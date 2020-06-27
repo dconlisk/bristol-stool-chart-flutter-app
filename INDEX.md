@@ -1,6 +1,9 @@
+---
+# Feel free to add content and custom Front Matter to this file.
+# To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
-
-
+layout: home
+---
 ## Track your stool quality over time with the Bristol Stool Chart mobile app
 
 What does your poop tell you about your health? Tracking your stool quality and sharing this information with your health professional can give some insight into the effects of illness, medication or other lifestyle factors on your intestinal health. Our new mobile app allows you to easily track your poops so you can see what's going on.
