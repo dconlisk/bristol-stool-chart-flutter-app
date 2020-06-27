@@ -19,7 +19,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Easily chart your stools against the Bristol Stool Scale. 
   Log and share your progess with your healthcare professional. 
   Monitor your bowel health now.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/bristol-stool-chart-flutter-app" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
