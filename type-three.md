@@ -19,7 +19,4 @@ This is not medical advice. Please read our [disclaimer](/disclaimer "Disclaimer
 
 #### Related Links
 
-  
-[MSN Health - What your bowel movements are telling you about your health](http://health.msn.com/health-topics/digestive-health/articlepage.aspx?cp-documentid=100182622)
-
 [Lifehacker - What Does the Shape and Color of My Poop Mean?](http://lifehacker.com/what-does-the-shape-and-color-of-my-poop-mean-1535648433 "What Does the Shape and Color of My Poop Mean?")

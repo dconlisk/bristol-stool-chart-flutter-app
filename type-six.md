@@ -19,6 +19,4 @@ This is not medical advice. Please read our [disclaimer](/disclaimer "Disclaimer
 
 #### Related Links
 
-[National Digestive Diseases Information Clearinghouse - Diarrhea](http://digestive.niddk.nih.gov/ddiseases/pubs/diarrhea/)  
-  
-[MSN Health - What your bowel movements are telling you about your health](http://health.msn.com/health-topics/digestive-health/articlepage.aspx?cp-documentid=100182622)
+[Diarrhea - Wikipedia](https://en.wikipedia.org/wiki/Diarrhea "Diarrhoea on Wikipedia")

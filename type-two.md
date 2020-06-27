@@ -24,5 +24,4 @@ This is not medical advice. Please read our [disclaimer](/disclaimer "Disclaimer
 [NHS - Constipation](http://www.nhs.uk/Conditions/Constipation/Pages/Introduction.aspx)  
   
 [Irish Health - Constipation risk for children who avoid eating vegetables](http://www.irishhealth.com/article.html?id=18356)  
-  
-[National Digestive Diseases Information Clearinghouse - Constipation](http://digestive.niddk.nih.gov/ddiseases/pubs/constipation/)
+

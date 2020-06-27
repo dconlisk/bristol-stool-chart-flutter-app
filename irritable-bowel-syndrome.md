@@ -15,8 +15,4 @@ The Bristol Stool Scale iPhone app may help sufferers from irritable bowel syndr
 
 [Irritable Bowel Syndrome on Wikipedia](http://en.wikipedia.org/wiki/Irritable_bowel_syndrome "Irritable Bowel Syndrome on Wikipedia")
 
-[National Digestive Diseases Information Clearinghouse](http://digestive.niddk.nih.gov/ddiseases/pubs/ibs/ "National Digestive Diseases Information Clearinghouse")
-
-[www.patient.co.uk](http://www.patient.co.uk/health/Irritable-Bowel-Syndrome.htm "Irritable bowel syndrome on www.patient.co.uk")
-
-For more information about IBS, take a look at some of the following links from [http://irritable-bowel-syndrome-and-symptoms.com/](http://irritable-bowel-syndrome-and-symptoms.com/ "irritable-bowel-syndrome-and-symptoms.com")
+[Irritable bowel syndrome on www.patient.co.uk](http://www.patient.co.uk/health/Irritable-Bowel-Syndrome.htm "Irritable bowel syndrome on www.patient.co.uk")

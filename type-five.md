@@ -20,5 +20,3 @@ This is not medical advice. Please read our [disclaimer](/disclaimer "Disclaimer
 #### Related Links
 
 [Have you examined your stools lately?](http://mistyhorizon2003.hubpages.com/hub/Have-you-examined-your-stools-poo-lately)  
-  
-[MSN Health - What your bowel movements are telling you about your health](http://health.msn.com/health-topics/digestive-health/articlepage.aspx?cp-documentid=100182622)

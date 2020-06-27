@@ -18,7 +18,9 @@ What does your poop tell you about your health? Tracking your stool quality and 
 -   Easily share your data with your health professional
 -   Makes it easy to discuss your bowel movements with your doctor
 -   Provides information regarding the different types of stool
--   Brings the famous Bristol Stool Chart to your fingertips!
+-   100% free and open source
+-   Completely anonymous, we do not collect any of your data, and no login required
+-   **New!** You can now enable tracking of blood in stools in the Settings section of the app
 
 ## Testimonials
 
