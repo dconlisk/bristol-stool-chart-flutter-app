@@ -10,7 +10,7 @@ What does your poop tell you about your health? Tracking your stool quality and 
 
 **The app is now available for both iOS and Android phone and tablet devices.**
 
-## Features
+## Features 
 
 -   Simple to use and easy to understand
 -   Allows you to quickly and easily track your bowel movements
