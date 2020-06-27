@@ -42,33 +42,33 @@ Simply swipe through the stool types until you find the closest match. Check tha
 
 The app creates a graph of your stool quality over time, with an explanation of what it means. You can share the graph via email from within the app.
 
-Your data is always private. [Read our privacy policy](https://bristolstoolchart.net/privacy "Privacy").
+Your data is always private. [Read our privacy policy](/privacy "Privacy").
 
 ## Friendly Support
 
-Please visit the [Bristol Stool Chart support section](https://bristolstoolchart.net/support "Bristol Stool Scale Support") for any issues with your app. We are also happy to hear any feedback or ideas you may have for improving it.
+Please visit the [Bristol Stool Chart support section](/support "Bristol Stool Scale Support") for any issues with your app. We are also happy to hear any feedback or ideas you may have for improving it.
 
 ## Irritable Bowel Syndrome (IBS)
 
 The Bristol Stool Chart app can be very helpful for sufferers of Irritable Bowel Syndrome, or IBS. It can help to track the effects of a number of different lifestyle factors on your stool quality, and this information can easily be shared with your health professional from within the app.
 
-[Find out more](https://bristolstoolchart.net/irritable-bowel-syndrome "Irritable Bowel Syndrome").
+[Find out more](/irritable-bowel-syndrome "Irritable Bowel Syndrome").
 
 #### Stool Types
 
 Use the links below to find out more about the seven different stool or poop types used by the Bristol Stool Chart:
 
-[Type 1](https://bristolstoolchart.net/type-one "Bristol Stool Scale Type 1")  
+[Type 1](/type-one "Bristol Stool Scale Type 1")  
   
-[Type 2](https://bristolstoolchart.net/type-two "Bristol Stool Scale Type 2")  
+[Type 2](/type-two "Bristol Stool Scale Type 2")  
   
-[Type 3](https://bristolstoolchart.net/type-three "Bristol Stool Scale Type 3")  
+[Type 3](/type-three "Bristol Stool Scale Type 3")  
   
-[Type 4](https://bristolstoolchart.net/type-four "Bristol Stool Scale Type 4")  
+[Type 4](/type-four "Bristol Stool Scale Type 4")  
   
-[Type 5](https://bristolstoolchart.net/type-five "Bristol Stool Scale Type 5")  
+[Type 5](/type-five "Bristol Stool Scale Type 5")  
   
-[Type 6](https://bristolstoolchart.net/type-six "Bristol Stool Scale Type 6")  
+[Type 6](/type-six "Bristol Stool Scale Type 6")  
   
-[Type 7](https://bristolstoolchart.net/type-seven "Bristol Stool Scale Type 7")
+[Type 7](/type-seven "Bristol Stool Scale Type 7")
 
