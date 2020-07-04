@@ -5,6 +5,8 @@
 layout: default
 ---
 
+<img id="stool-image" src="/assets/web-stool-type7.png" alt="BSC Type Seven"/>
+
 #### Overview
 
 Type 7 on the poop chart represents diarrhoea. Your bowel is not absorbing water from the faecal material, hence it comes out as liquid. This could be due to the speed at which the poop is moving through your body. Diarrhoea can be a sign of bacterial or viral infection. It can be symptomatic of a number of conditions such as food intolerances, irritable bowel syndrome (IBS) or inflamation of the bowel (Crohn's disease).

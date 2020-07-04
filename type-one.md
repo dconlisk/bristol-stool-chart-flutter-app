@@ -5,7 +5,7 @@
 layout: default
 ---
 
-<img src="/assets/web-stool-type1.png" alt="BSC Type One" height="400" width="400"/>
+<img id="stool-image" src="/assets/web-stool-type1.png" alt="BSC Type One"/>
 
 #### Overview
 

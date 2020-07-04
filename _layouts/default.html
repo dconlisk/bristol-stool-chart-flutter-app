@@ -38,7 +38,7 @@
       <header>
         <span class="ribbon-outer">
           <span class="ribbon-inner">
-            <h1>{{ site.title | default: site.github.repository_name }}</h1>
+            <h1><a href="/" id="header-link">{{ site.title | default: site.github.repository_name }}</a></h1>
             <h2>{{ site.description | default: site.github.project_tagline }}</h2>
           </span>
           <span class="left-tail"></span>
@@ -65,6 +65,13 @@
 
       <section id="main_content">
         {{ content }}
+        <hr/>
+        <a href='https://play.google.com/store/apps/details?id=uk.co.webgarden.BristolStoolChart&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'>
+            <img alt='Get it on Google Play' src='https://play.google.com/intl/en_gb/badges/static/images/badges/en_badge_web_generic.png'/>
+        </a>
+        <a href='https://itunes.apple.com/gb/app/bristol-stool-chart/id1085553424' target="_blank">
+            <img id="app-store" alt='Download on the App Store' src='/assets/Download_on_the_App_Store_Badge.svg'/>
+        </a>
       </section>
 
       <footer>
