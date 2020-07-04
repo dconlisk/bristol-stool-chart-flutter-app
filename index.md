@@ -23,12 +23,12 @@ What does your poop tell you about your health? Tracking your stool quality and 
 
 -   Simple to use and easy to understand
 -   Allows you to quickly and easily track your bowel movements
--   Easily share your data with your health professional
+-   Enables simple sharing of your data with your health professional
 -   Makes it easy to discuss your bowel movements with your doctor
 -   Provides information regarding the different types of stool
 -   100% free and open source
 -   Completely anonymous, no login required, and does not collect any of your data
--   **New!** You can now enable tracking of blood in stools in the Settings section of the app
+-   **New!** Now allows tracking of blood in stools (when you enable this feature in the Settings section of the app)
 
 ## Testimonials
 
