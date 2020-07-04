@@ -12,11 +12,11 @@ What does your poop tell you about your health? Tracking your stool quality and 
 **The app is now available for both iOS and Android phone and tablet devices.**
 
 <a href='https://play.google.com/store/apps/details?id=uk.co.webgarden.BristolStoolChart' target="_blank">
-    <img id="play-store" alt='Get it on Google Play' src='https://play.google.com/intl/en_gb/badges/static/images/badges/en_badge_web_generic.png'/>
+    <img id="play-store" alt='Get it on Google Play' src='assets/play-store-badge.png'/>
 </a>
 
 <a href='https://itunes.apple.com/gb/app/bristol-stool-chart/id1085553424' target="_blank">
-    <img id="app-store" alt='Download on the App Store' src='assets/Download_on_the_App_Store_Badge.svg'/>
+    <img id="app-store" alt='Download on the App Store' src='assets/app-store-badge.png'/>
 </a>
 
 ## Features 
