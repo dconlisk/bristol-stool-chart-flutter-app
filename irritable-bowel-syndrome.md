@@ -9,7 +9,7 @@ layout: default
 
 [According to the BBC](http://www.bbc.co.uk/health/physical_health/conditions/ibs1.shtml "Irritable bowel syndrome on the BBC"), "Irritable bowel syndrome (IBS) is the most common gut condition and affects about one in ten people at some time."
 
-The Bristol Stool Scale iPhone app may help sufferers from irritable bowel syndrome (IBS) to identify factors in their life that contribute to their IBS symptoms. Keeping track of your stool quality over a period of time could help to identify lifestyle factors (such as diet) which have an affect on your symptoms.
+The Bristol Stool Chart mobile app may help sufferers from irritable bowel syndrome (IBS) to identify factors in their life that contribute to their IBS symptoms. Keeping track of your stool quality over a period of time could help to identify lifestyle factors (such as diet) which have an affect on your symptoms.
 
 #### Related Links
 
