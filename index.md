@@ -16,7 +16,7 @@ What does your poop tell you about your health? Tracking your stool quality and 
 </a>
 
 <a href='https://itunes.apple.com/gb/app/bristol-stool-chart/id1085553424' target="_blank">
-    <img id="app-store" alt='Download on the App Store' src='/assets/Download_on_the_App_Store_Badge.svg'/>
+    <img id="app-store" alt='Download on the App Store' src='assets/Download_on_the_App_Store_Badge.svg'/>
 </a>
 
 ## Features 
