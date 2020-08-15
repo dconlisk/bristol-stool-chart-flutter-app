@@ -13,7 +13,7 @@ class Graph extends StatefulWidget {
 }
 
 class _GraphState extends State<Graph> {
-  final smileyTextStyle = ChartTextStyle(
+  final smileyTextStyle = TextStyle(
     fontFamily: 'FontAwesome5Free',
     color: Colors.black,
     fontSize: 16,
@@ -64,7 +64,7 @@ class _GraphState extends State<Graph> {
       title: ChartTitle(
         text: 'STOOL QUALITY',
         alignment: ChartAlignment.near,
-        textStyle: ChartTextStyle(
+        textStyle: TextStyle(
           fontSize: 16,
         ),
       ),
@@ -178,7 +178,7 @@ class _GraphState extends State<Graph> {
           dataLabelSettings: DataLabelSettings(
             isVisible: true,
             alignment: ChartAlignment.center,
-            textStyle: ChartTextStyle(
+            textStyle: TextStyle(
               color: Colors.red,
             ),
           ),
