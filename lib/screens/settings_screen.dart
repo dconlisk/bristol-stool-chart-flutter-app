@@ -38,10 +38,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Future<void> _delete(BuildContext context) async {
-    var provider = EventProvider();
-
-    await provider.deleteAll();
-
     showDialog(
         context: context,
         builder: (ctx) {
