@@ -122,9 +122,10 @@ class _AddScreenState extends State<AddScreen> {
             Container(
                 width: double.infinity,
                 child: CarouselSlider(
-                  height: deviceData.size.height / 3,
-                  initialPage: 3,
-                  enableInfiniteScroll: false,
+                  options: CarouselOptions(height: deviceData.size.height / 3, initialPage: 3, enableInfiniteScroll: false,
+                  onPageChanged: (index, reason) {
+                    _selectedType = index + 1;
+                  },),
                   items: <Widget>[
                     Image.asset('assets/images/stooltype1.jpg'),
                     Image.asset('assets/images/stooltype2.jpg'),
@@ -134,9 +135,7 @@ class _AddScreenState extends State<AddScreen> {
                     Image.asset('assets/images/stooltype6.jpg'),
                     Image.asset('assets/images/stooltype7.jpg'),
                   ],
-                  onPageChanged: (index) {
-                    _selectedType = index + 1;
-                  },
+                  
                 ),
               ),
             Column(
