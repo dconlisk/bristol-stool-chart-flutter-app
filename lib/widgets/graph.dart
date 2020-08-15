@@ -35,13 +35,12 @@ class _GraphState extends State<Graph> {
     var durationToAdd = totalTimeInData == 0 ? 1000 : totalTimeInData ~/ 12;
 
     // use a different label style for the graph depending on the data in it
-    final threeDays = 3 * 24 * 60 * 60 * 1000;
-    final graphIntervalType = totalTimeInData > threeDays
-        ? DateTimeIntervalType.days
-        : DateTimeIntervalType.hours;
-    final graphDateFormat = totalTimeInData > threeDays
-        ? DateFormat('MMM\ndd')
-        : DateFormat('HH:mm');
+    final twoDays = 2 * 24 * 60 * 60 * 1000;
+    final graphIntervalType = widget.events.length >= 2
+        ? DateTimeIntervalType.auto
+        : DateTimeIntervalType.minutes;
+    final graphDateFormat =
+        totalTimeInData > twoDays ? DateFormat('MMM\ndd') : DateFormat('HH:mm');
 
     fours.add(
       new Event(
