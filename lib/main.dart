@@ -24,7 +24,7 @@ void main() {
 
   // Register license for Syncfusion chart control
   SyncfusionLicense.registerLicense(
-      "NT8mJyc2IWhia31ifWN9YGVoYmF8YGJ8ampqanNiYmlmamlmanMDHmg3MiU6NxMkNjF+NDIhNzY9fTA8fSY4");
+      "NT8mJyc2IWhia31hfWN9Z2doYmF8YGJ8ampqanNiYmlmamlmanMDHmg3MiU6NxMkNjF+NDIhNzY9fTA8fSY4");
 
   runApp(MyApp());
 }
