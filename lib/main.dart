@@ -1,4 +1,5 @@
 import 'package:bristol_stool_chart/presentation/about_page.dart';
+import 'package:bristol_stool_chart/presentation/intro_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {

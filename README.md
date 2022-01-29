@@ -10,6 +10,8 @@ I created this app as a way to practice using flutter while also keeping the app
 
 * auto_route : this is maybe overkill for such a simple app as this, but it's the solution I use in my enterprise projects. It uses code generation to simplify the route setup in your app, and also allows 
 the passing of strongly typed arguments as well as deep-linking.
+* google_fonts : my designer friends tell me I should use nice fonts, so here I go.
+
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
 

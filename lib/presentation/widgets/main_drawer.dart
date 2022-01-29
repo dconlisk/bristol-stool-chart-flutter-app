@@ -1,4 +1,4 @@
-import 'package:bristol_stool_chart/presentation/app_styles.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'drawer_link.dart';
@@ -10,7 +10,8 @@ class MainDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: AppColors.blueGrey, //Colors.blueGrey[900],
+        color: AppColors
+            .blueGrey, //Colors.blueGrey[900], // TODO: IS this close enough?
         padding: const EdgeInsets.all(10),
         child: Padding(
           padding: const EdgeInsets.only(
@@ -33,7 +34,7 @@ class MainDrawer extends StatelessWidget {
               // DrawerLink(
               //   text: 'Graph',
               //   icon: Icons.assessment,
-              //   route: GraphScreen.routeName,
+              //   route: IntroRoute(),
               // ),
               // DrawerLink(
               //   text: 'Settings',
