@@ -3,7 +3,13 @@ This is the fourth iteration of the Bristol Stool Chart mobile app (from iOS nat
 
 This app is used by medical professionals with their patients to track their stool quality over time. Users can track their stools and then share the data with their chosen health professional in the form of an easy-to-read graph as well as a csv of the raw data. The app does not track user data and is totally anonymous - no login required.
 
-I created this app as a way to practice using flutter while also keeping the app current and up-to-date. It uses a number of flutter packages - more detail on this to come, I plan on listing each package and detailing the reasons why I've included it in the project as well as the Syncfusion SfChart control.
+I created this app as a way to practice using flutter while also keeping the app current and up-to-date. 
+
+
+## Flutter packages used
+
+* auto_route : this is maybe overkill for such a simple app as this, but it's the solution I use in my enterprise projects. It uses code generation to simplify the route setup in your app, and also allows 
+the passing of strongly typed arguments as well as deep-linking.
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
 

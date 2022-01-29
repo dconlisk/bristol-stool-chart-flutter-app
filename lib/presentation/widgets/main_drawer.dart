@@ -1,0 +1,54 @@
+import 'package:bristol_stool_chart/presentation/app_styles.dart';
+import 'package:flutter/material.dart';
+
+import 'drawer_link.dart';
+
+class MainDrawer extends StatelessWidget {
+  const MainDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Container(
+        color: AppColors.blueGrey, //Colors.blueGrey[900],
+        padding: const EdgeInsets.all(10),
+        child: Padding(
+          padding: const EdgeInsets.only(
+            left: 16,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Padding(
+                padding: EdgeInsets.only(
+                  top: 80,
+                  bottom: 80,
+                ),
+                child: Image(
+                  image: AssetImage('assets/images/drawer_logo.png'),
+                  width: 200,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              // DrawerLink(
+              //   text: 'Graph',
+              //   icon: Icons.assessment,
+              //   route: GraphScreen.routeName,
+              // ),
+              // DrawerLink(
+              //   text: 'Settings',
+              //   icon: Icons.settings,
+              //   route: SettingsScreen.routeName,
+              // ),
+              // DrawerLink(
+              //   text: 'About',
+              //   icon: Icons.info,
+              //   route: AboutScreen.routeName,
+              // ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
