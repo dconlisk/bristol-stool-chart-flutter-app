@@ -1,16 +1,24 @@
-# bristol_stool_chart
+# The Bristol Stool Chart mobile app written in Flutter
+This is the fourth iteration of the Bristol Stool Chart mobile app (from iOS native, to Xamarin Forms, then to a basic Flutter solution, and now to a more advanced Flutter application). It's a total rewrite with a new Material design and using Google Flutter and Dart. It's a single codebase that runs on both iOS and Android phones and tablets.
 
-A new Flutter project.
+This app is used by medical professionals with their patients to track their stool quality over time. Users can track their stools and then share the data with their chosen health professional in the form of an easy-to-read graph as well as a csv of the raw data. The app does not track user data and is totally anonymous - no login required.
 
-## Getting Started
+I created this app as a way to practice using flutter while also keeping the app current and up-to-date. It uses a number of flutter packages - more detail on this to come, I plan on listing each package and detailing the reasons why I've included it in the project as well as the Syncfusion SfChart control.
 
-This project is a starting point for a Flutter application.
+[The Bristol Stool Chart website](https://bristolstoolchart.net)
 
-A few resources to get you started if this is your first Flutter project:
+# License
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+```
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
