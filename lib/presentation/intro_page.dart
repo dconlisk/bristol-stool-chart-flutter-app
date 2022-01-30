@@ -1,7 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 
 class IntroPage extends StatefulWidget {
   const IntroPage({Key? key}) : super(key: key);
@@ -88,6 +91,13 @@ class _IntroPageState extends State<IntroPage> {
     );
   }
 
+  Future<void> _savePreferencesAndGoToGraph() async {
+    // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('intro_seen', true);
+    AutoRouter.of(context).push(const GraphRoute());
+  }
+
   @override
   Widget build(BuildContext context) {
     return IntroSlider(
@@ -95,6 +105,8 @@ class _IntroPageState extends State<IntroPage> {
       renderNextBtn: _renderNextBtn(),
       renderDoneBtn: _renderDoneBtn(),
       renderSkipBtn: _renderSkipBtn(),
+      onDonePress: () async => await _savePreferencesAndGoToGraph(),
+      onSkipPress: () async => await _savePreferencesAndGoToGraph(),
       colorActiveDot: Colors.blue,
     );
   }
