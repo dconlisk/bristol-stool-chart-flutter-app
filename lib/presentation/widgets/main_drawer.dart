@@ -1,7 +1,7 @@
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
+import 'package:bristol_stool_chart/presentation/widgets/drawer_link.dart';
 import 'package:flutter/material.dart';
-
-import 'drawer_link.dart';
+import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({Key? key}) : super(key: key);
@@ -31,11 +31,11 @@ class MainDrawer extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              // DrawerLink(
-              //   text: 'Graph',
-              //   icon: Icons.assessment,
-              //   route: IntroRoute(),
-              // ),
+              DrawerLink(
+                text: 'Graph',
+                icon: Icons.assessment,
+                route: IntroRoute(),
+              ),
               // DrawerLink(
               //   text: 'Settings',
               //   icon: Icons.settings,

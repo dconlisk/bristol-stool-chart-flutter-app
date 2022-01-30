@@ -5,8 +5,8 @@ import 'package:bristol_stool_chart/presentation/intro_page.dart';
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: [
-    AutoRoute<dynamic>(page: AboutPage),
-    AutoRoute<dynamic>(page: IntroPage, initial: true),
+    AutoRoute<dynamic>(page: AboutPage, initial: true),
+    AutoRoute<dynamic>(page: IntroPage),
   ],
 )
 class $AppRouter {}

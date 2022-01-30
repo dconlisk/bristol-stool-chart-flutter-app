@@ -37,7 +37,7 @@ This graph can be shared with your health professional if you are concerned abou
               ),
               const Heading(text: 'Thank you'),
               Text(
-                'Thank you for downloading this app. Hopefully you will find it a useful aid in monitoring your intestinal health.',
+                'Thank you for downloading this app. Hopefully you will find it useful in monitoring your intestinal health.',
                 style: AppTextStyles.paragraph,
               ),
             ],

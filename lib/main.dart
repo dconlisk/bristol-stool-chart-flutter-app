@@ -1,22 +1,24 @@
-import 'package:bristol_stool_chart/presentation/about_page.dart';
-import 'package:bristol_stool_chart/presentation/intro_page.dart';
 import 'package:flutter/material.dart';
+import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class App extends StatelessWidget {
+  final _appRouter = AppRouter();
+
+  App({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const AboutPage(),
     );
   }
 }

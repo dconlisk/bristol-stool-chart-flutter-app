@@ -5,12 +5,18 @@ This app is used by medical professionals with their patients to track their sto
 
 I created this app as a way to practice using flutter while also keeping the app current and up-to-date. 
 
-
 ## Flutter packages used
 
 * auto_route : this is maybe overkill for such a simple app as this, but it's the solution I use in my enterprise projects. It uses code generation to simplify the route setup in your app, and also allows 
 the passing of strongly typed arguments as well as deep-linking.
 * google_fonts : my designer friends tell me I should use nice fonts, so here I go.
+
+## Technical notes
+
+I use [fvm](https://fvm.app) to manage the flutter SDK versions installed on my machine. It allows you to set a global version of flutter for your projects to use, while also allowing you to specify local versions to use for each 
+project. Note that this project contains a .fvm directory which contains the fvm_config.json file which specifies which version of flutter this project uses.
+I have also created a Makefile which allows me to use shortcuts like "make generated" in my Terminal, which will run the command "@fvm flutter packages pub run build_runner build --delete-conflicting-outputs" - it's just quicker
+and easier to remember.
 
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
