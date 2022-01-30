@@ -10,11 +10,14 @@ environment:
 
 dependencies:
   auto_route: ^3.2.2
+  dartz: ^0.10.1
   flutter:
     sdk: flutter
   freezed: ^1.1.1
   google_fonts: ^2.2.0
+  hooks_riverpod: ^1.0.3
   intro_slider: ^3.0.3
+  sembast: ^3.1.2
   shared_preferences: ^2.0.12
 
 dev_dependencies:

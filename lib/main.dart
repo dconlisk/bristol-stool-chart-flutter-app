@@ -1,7 +1,8 @@
+import 'package:bristol_stool_chart/presentation/app_widget.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 import 'package:flutter/services.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 void main() {
   // Add licenses for Google fonts
@@ -13,23 +14,10 @@ void main() {
         await rootBundle.loadString('google_fonts/LICENSE.txt');
     yield LicenseEntryWithLineBreaks(['google_fonts'], robotoLicense);
   });
-  runApp(App());
-}
 
-class App extends StatelessWidget {
-  final _appRouter = AppRouter();
-
-  App({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerDelegate: _appRouter.delegate(),
-      routeInformationParser: _appRouter.defaultRouteParser(),
-      title: 'Bristol Stool Chart',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-    );
-  }
+  runApp(
+    ProviderScope(
+      child: AppWidget(),
+    ),
+  );
 }

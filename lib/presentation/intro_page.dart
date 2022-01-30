@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bristol_stool_chart/infrastructure/keys.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intro_slider/intro_slider.dart';
@@ -94,7 +95,7 @@ class _IntroPageState extends State<IntroPage> {
   Future<void> _savePreferencesAndGoToGraph() async {
     // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('intro_seen', true);
+    await prefs.setBool(sharedPreferencesHasSeenIntroKey, true);
     AutoRouter.of(context).push(const GraphRoute());
   }
 
