@@ -10,8 +10,7 @@ class MainDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: AppColors
-            .blueGrey, //Colors.blueGrey[900], // TODO: IS this close enough?
+        color: AppColors.blueGrey,
         padding: const EdgeInsets.all(10),
         child: Padding(
           padding: const EdgeInsets.only(
@@ -34,18 +33,18 @@ class MainDrawer extends StatelessWidget {
               DrawerLink(
                 text: 'Graph',
                 icon: Icons.assessment,
-                route: IntroRoute(),
+                route: GraphRoute(),
               ),
-              // DrawerLink(
-              //   text: 'Settings',
-              //   icon: Icons.settings,
-              //   route: SettingsScreen.routeName,
-              // ),
-              // DrawerLink(
-              //   text: 'About',
-              //   icon: Icons.info,
-              //   route: AboutScreen.routeName,
-              // ),
+              DrawerLink(
+                text: 'Settings',
+                icon: Icons.settings,
+                route: SettingsRoute(),
+              ),
+              DrawerLink(
+                text: 'About',
+                icon: Icons.info,
+                route: AboutRoute(),
+              ),
             ],
           ),
         ),

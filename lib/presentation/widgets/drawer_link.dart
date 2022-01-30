@@ -1,4 +1,7 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class DrawerLink extends StatelessWidget {
@@ -26,19 +29,18 @@ class DrawerLink extends StatelessWidget {
             ),
             child: Icon(
               icon,
-              color: Theme.of(context).accentIconTheme.color,
-              size: Theme.of(context).accentIconTheme.size,
+              color: AppColors.white,
+              size: AppSizes.drawerIconSize,
             ),
           ),
           Text(
             text,
-            style: Theme.of(context).textTheme.headline4,
+            style: AppTextStyles.drawerLink,
           )
         ],
       ),
       onTap: () {
-        //Navigator.pushNamedAndRemoveUntil(context, route, (_) => false);
-        AutoRouter.of(context).push(route);
+        AutoRouter.of(context).popAndPush(route);
       },
     );
   }

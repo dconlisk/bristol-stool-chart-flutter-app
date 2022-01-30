@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/presentation/about_page.dart';
 import 'package:bristol_stool_chart/presentation/graph_page.dart';
 import 'package:bristol_stool_chart/presentation/intro_page.dart';
+import 'package:bristol_stool_chart/presentation/settings_page.dart';
 
 @MaterialAutoRouter(
   replaceInRouteName: 'Page,Route',
@@ -9,6 +10,7 @@ import 'package:bristol_stool_chart/presentation/intro_page.dart';
     AutoRoute<dynamic>(page: AboutPage, initial: true),
     AutoRoute<dynamic>(page: IntroPage),
     AutoRoute<dynamic>(page: GraphPage),
+    AutoRoute<dynamic>(page: SettingsPage),
   ],
 )
 class $AppRouter {}
