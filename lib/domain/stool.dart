@@ -10,6 +10,6 @@ class Stool with _$Stool {
     required String id,
     required int type,
     required DateTime dateTime,
-    required bool bloodInStool,
+    required bool hasBlood,
   }) = _Stool;
 }

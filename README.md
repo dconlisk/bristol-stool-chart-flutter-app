@@ -7,8 +7,7 @@ I created this app as a way to practice using flutter while also keeping the app
 
 ## Flutter packages used
 
-* [auto_route](https://pub.dev/packages/auto_route) : this is maybe overkill for such a simple app as this, but it's the solution I use in my enterprise projects. It uses code generation to simplify the route setup in your app, and also allows 
-the passing of strongly typed arguments as well as deep-linking. You declare your routes in app_router.dart (or similar), run your code generation as usual, and then your navigation code goes from something like this:
+* [auto_route](https://pub.dev/packages/auto_route) : this is maybe overkill for such a simple app as this, but it's the solution I use in my enterprise projects. It uses code generation to simplify the route setup in your app, and also allows the passing of strongly typed arguments as well as deep-linking. You declare your routes in app_router.dart (or similar), run your code generation as usual, and then your navigation code goes from something like this:
   
   `Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (context) => new GraphScreen()));` 
   
@@ -24,6 +23,7 @@ errors if you omit a state or include an impossible state.
 * [google_fonts](https://pub.dev/packages/google_fonts) : my designer friends tell me I should use nice fonts, so here I go.
 * [shared_preferences](https://pub.dev/packages/shared_preferences) : you could argue that I could have stored all the data for the app in my sembast database, but I've used this as it's a simple solution for storing simple data in 
 NSUserDefaaults on iOS and macOS, SharedPreferences on Android, etc. Dead simple to use, I've used it to remember that the user has seen or skipped the onboarding introduction slideshow in the app.
+* [intro_slider](https://pub.dev/packages/intro_slider) : I'm using this to display the onboarding slideshow that the user sees when they first open the app.
 
 ## Technical notes
 

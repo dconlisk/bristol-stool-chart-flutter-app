@@ -1,3 +1,4 @@
+import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'stool_dto.freezed.dart';
@@ -10,9 +11,18 @@ class StoolDto with _$StoolDto {
     required String id,
     required int type,
     required DateTime dateTime,
-    required bool bloodInStool,
+    required bool hasBlood,
   }) = _StoolDto;
 
   factory StoolDto.fromJson(Map<String, dynamic> json) =>
       _$StoolDtoFromJson(json);
+
+  Stool toDomain() {
+    return Stool(
+      id: id,
+      type: type,
+      dateTime: dateTime,
+      hasBlood: hasBlood,
+    );
+  }
 }

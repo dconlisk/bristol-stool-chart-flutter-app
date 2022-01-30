@@ -10,7 +10,7 @@ _$_StoolDto _$$_StoolDtoFromJson(Map<String, dynamic> json) => _$_StoolDto(
       id: json['id'] as String,
       type: json['type'] as int,
       dateTime: DateTime.parse(json['dateTime'] as String),
-      bloodInStool: json['bloodInStool'] as bool,
+      hasBlood: json['hasBlood'] as bool,
     );
 
 Map<String, dynamic> _$$_StoolDtoToJson(_$_StoolDto instance) =>
@@ -18,5 +18,5 @@ Map<String, dynamic> _$$_StoolDtoToJson(_$_StoolDto instance) =>
       'id': instance.id,
       'type': instance.type,
       'dateTime': instance.dateTime.toIso8601String(),
-      'bloodInStool': instance.bloodInStool,
+      'hasBlood': instance.hasBlood,
     };
