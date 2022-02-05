@@ -17,6 +17,7 @@ class IntroNotifier extends StateNotifier<IntroState> {
   IntroNotifier() : super(const IntroState.initial());
 
   Future<void> checkAndUpdateIntroStatus() async {
+    // TODO: move to the database and make testable
     SharedPreferences prefs = await SharedPreferences.getInstance();
     final hasSeenIntro = prefs.getBool(sharedPreferencesHasSeenIntroKey);
 

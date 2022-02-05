@@ -14,6 +14,15 @@ class StoolDto with _$StoolDto {
     required bool hasBlood,
   }) = _StoolDto;
 
+  factory StoolDto.fromDomain(Stool stool) {
+    return StoolDto(
+      id: stool.id,
+      type: stool.type,
+      dateTime: stool.dateTime,
+      hasBlood: stool.hasBlood,
+    );
+  }
+
   factory StoolDto.fromJson(Map<String, dynamic> json) =>
       _$StoolDtoFromJson(json);
 
