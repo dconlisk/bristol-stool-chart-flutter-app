@@ -19,12 +19,8 @@ class _$StoolTearOff {
   const _$StoolTearOff();
 
   _Stool call(
-      {required String id,
-      required int type,
-      required DateTime dateTime,
-      required bool hasBlood}) {
+      {required int type, required DateTime dateTime, required bool hasBlood}) {
     return _Stool(
-      id: id,
       type: type,
       dateTime: dateTime,
       hasBlood: hasBlood,
@@ -37,7 +33,6 @@ const $Stool = _$StoolTearOff();
 
 /// @nodoc
 mixin _$Stool {
-  String get id => throw _privateConstructorUsedError;
   int get type => throw _privateConstructorUsedError;
   DateTime get dateTime => throw _privateConstructorUsedError;
   bool get hasBlood => throw _privateConstructorUsedError;
@@ -50,7 +45,7 @@ mixin _$Stool {
 abstract class $StoolCopyWith<$Res> {
   factory $StoolCopyWith(Stool value, $Res Function(Stool) then) =
       _$StoolCopyWithImpl<$Res>;
-  $Res call({String id, int type, DateTime dateTime, bool hasBlood});
+  $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
@@ -63,16 +58,11 @@ class _$StoolCopyWithImpl<$Res> implements $StoolCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? type = freezed,
     Object? dateTime = freezed,
     Object? hasBlood = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -94,7 +84,7 @@ abstract class _$StoolCopyWith<$Res> implements $StoolCopyWith<$Res> {
   factory _$StoolCopyWith(_Stool value, $Res Function(_Stool) then) =
       __$StoolCopyWithImpl<$Res>;
   @override
-  $Res call({String id, int type, DateTime dateTime, bool hasBlood});
+  $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
@@ -108,16 +98,11 @@ class __$StoolCopyWithImpl<$Res> extends _$StoolCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? type = freezed,
     Object? dateTime = freezed,
     Object? hasBlood = freezed,
   }) {
     return _then(_Stool(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -138,14 +123,9 @@ class __$StoolCopyWithImpl<$Res> extends _$StoolCopyWithImpl<$Res>
 
 class _$_Stool extends _Stool {
   const _$_Stool(
-      {required this.id,
-      required this.type,
-      required this.dateTime,
-      required this.hasBlood})
+      {required this.type, required this.dateTime, required this.hasBlood})
       : super._();
 
-  @override
-  final String id;
   @override
   final int type;
   @override
@@ -155,7 +135,7 @@ class _$_Stool extends _Stool {
 
   @override
   String toString() {
-    return 'Stool(id: $id, type: $type, dateTime: $dateTime, hasBlood: $hasBlood)';
+    return 'Stool(type: $type, dateTime: $dateTime, hasBlood: $hasBlood)';
   }
 
   @override
@@ -163,7 +143,6 @@ class _$_Stool extends _Stool {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Stool &&
-            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.dateTime, dateTime) &&
             const DeepCollectionEquality().equals(other.hasBlood, hasBlood));
@@ -172,7 +151,6 @@ class _$_Stool extends _Stool {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(dateTime),
       const DeepCollectionEquality().hash(hasBlood));
@@ -185,14 +163,11 @@ class _$_Stool extends _Stool {
 
 abstract class _Stool extends Stool {
   const factory _Stool(
-      {required String id,
-      required int type,
+      {required int type,
       required DateTime dateTime,
       required bool hasBlood}) = _$_Stool;
   const _Stool._() : super._();
 
-  @override
-  String get id;
   @override
   int get type;
   @override

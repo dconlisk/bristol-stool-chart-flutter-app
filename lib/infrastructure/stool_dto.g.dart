@@ -7,7 +7,6 @@ part of 'stool_dto.dart';
 // **************************************************************************
 
 _$_StoolDto _$$_StoolDtoFromJson(Map<String, dynamic> json) => _$_StoolDto(
-      id: json['id'] as String,
       type: json['type'] as int,
       dateTime: DateTime.parse(json['dateTime'] as String),
       hasBlood: json['hasBlood'] as bool,
@@ -15,7 +14,6 @@ _$_StoolDto _$$_StoolDtoFromJson(Map<String, dynamic> json) => _$_StoolDto(
 
 Map<String, dynamic> _$$_StoolDtoToJson(_$_StoolDto instance) =>
     <String, dynamic>{
-      'id': instance.id,
       'type': instance.type,
       'dateTime': instance.dateTime.toIso8601String(),
       'hasBlood': instance.hasBlood,

@@ -1,5 +1,7 @@
+import 'package:bristol_stool_chart/presentation/styles/app_formats.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -49,15 +51,18 @@ class _AddPageState extends ConsumerState<AddPage> {
                         Image.asset('assets/images/stooltype7.jpg'),
                       ],
                       options: CarouselOptions(
+                        initialPage: 3,
                         onPageChanged: (index, reason) {
-                          // TODO: Store in state: _selectedType = index + 1;
+                          ref
+                              .read(addStoolNotifierProvider.notifier)
+                              .setType(index + 1);
                         },
                       ),
                     ),
                     if (!state.showBloodOption)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
+                        children: [
                           const Text('Was there blood in the stool?'),
                           Switch(
                               value: state.stool.hasBlood,
@@ -68,6 +73,27 @@ class _AddPageState extends ConsumerState<AddPage> {
                               }),
                         ],
                       ),
+                    Padding(
+                      padding: const EdgeInsets.all(60),
+                      child: DateTimePicker(
+                        firstDate: DateTime.now().toLocal().subtract(
+                              const Duration(days: 30),
+                            ),
+                        lastDate: DateTime.now().toLocal(),
+                        initialDate: DateTime.now().toLocal(),
+                        initialValue: 'Now (or click to select a date)',
+                        dateMask: AppFormats.dateAndTime,
+                        type: DateTimePickerType.dateTime,
+                        onChanged: (value) {},
+                        decoration: const InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               );

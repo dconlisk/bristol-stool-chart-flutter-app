@@ -7,9 +7,14 @@ class Stool with _$Stool {
   const Stool._();
 
   const factory Stool({
-    required String id,
     required int type,
     required DateTime dateTime,
     required bool hasBlood,
   }) = _Stool;
+
+  factory Stool.empty() => Stool(
+        type: 4,
+        dateTime: DateTime.now(),
+        hasBlood: false,
+      );
 }

@@ -19,7 +19,6 @@ class _GraphState extends State<Graph> {
     // fours is a fake list of events that I'm using to get a green line across the ideal value in the graph.
     var fours = <Stool>[];
     fours.add(Stool(
-      id: '1',
       dateTime: widget.stools[0].dateTime,
       type: 4,
       hasBlood: false,
@@ -41,7 +40,6 @@ class _GraphState extends State<Graph> {
 
     fours.add(
       Stool(
-        id: '1',
         dateTime: widget.stools[widget.stools.length - 1].dateTime
             .add(Duration(milliseconds: durationToAdd)),
         type: 4,

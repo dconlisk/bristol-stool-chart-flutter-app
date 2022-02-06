@@ -23,12 +23,8 @@ class _$StoolDtoTearOff {
   const _$StoolDtoTearOff();
 
   _StoolDto call(
-      {required String id,
-      required int type,
-      required DateTime dateTime,
-      required bool hasBlood}) {
+      {required int type, required DateTime dateTime, required bool hasBlood}) {
     return _StoolDto(
-      id: id,
       type: type,
       dateTime: dateTime,
       hasBlood: hasBlood,
@@ -45,7 +41,6 @@ const $StoolDto = _$StoolDtoTearOff();
 
 /// @nodoc
 mixin _$StoolDto {
-  String get id => throw _privateConstructorUsedError;
   int get type => throw _privateConstructorUsedError;
   DateTime get dateTime => throw _privateConstructorUsedError;
   bool get hasBlood => throw _privateConstructorUsedError;
@@ -60,7 +55,7 @@ mixin _$StoolDto {
 abstract class $StoolDtoCopyWith<$Res> {
   factory $StoolDtoCopyWith(StoolDto value, $Res Function(StoolDto) then) =
       _$StoolDtoCopyWithImpl<$Res>;
-  $Res call({String id, int type, DateTime dateTime, bool hasBlood});
+  $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
@@ -73,16 +68,11 @@ class _$StoolDtoCopyWithImpl<$Res> implements $StoolDtoCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? type = freezed,
     Object? dateTime = freezed,
     Object? hasBlood = freezed,
   }) {
     return _then(_value.copyWith(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -104,7 +94,7 @@ abstract class _$StoolDtoCopyWith<$Res> implements $StoolDtoCopyWith<$Res> {
   factory _$StoolDtoCopyWith(_StoolDto value, $Res Function(_StoolDto) then) =
       __$StoolDtoCopyWithImpl<$Res>;
   @override
-  $Res call({String id, int type, DateTime dateTime, bool hasBlood});
+  $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
@@ -118,16 +108,11 @@ class __$StoolDtoCopyWithImpl<$Res> extends _$StoolDtoCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? id = freezed,
     Object? type = freezed,
     Object? dateTime = freezed,
     Object? hasBlood = freezed,
   }) {
     return _then(_StoolDto(
-      id: id == freezed
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       type: type == freezed
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -148,17 +133,12 @@ class __$StoolDtoCopyWithImpl<$Res> extends _$StoolDtoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_StoolDto extends _StoolDto {
   const _$_StoolDto(
-      {required this.id,
-      required this.type,
-      required this.dateTime,
-      required this.hasBlood})
+      {required this.type, required this.dateTime, required this.hasBlood})
       : super._();
 
   factory _$_StoolDto.fromJson(Map<String, dynamic> json) =>
       _$$_StoolDtoFromJson(json);
 
-  @override
-  final String id;
   @override
   final int type;
   @override
@@ -168,7 +148,7 @@ class _$_StoolDto extends _StoolDto {
 
   @override
   String toString() {
-    return 'StoolDto(id: $id, type: $type, dateTime: $dateTime, hasBlood: $hasBlood)';
+    return 'StoolDto(type: $type, dateTime: $dateTime, hasBlood: $hasBlood)';
   }
 
   @override
@@ -176,7 +156,6 @@ class _$_StoolDto extends _StoolDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _StoolDto &&
-            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.type, type) &&
             const DeepCollectionEquality().equals(other.dateTime, dateTime) &&
             const DeepCollectionEquality().equals(other.hasBlood, hasBlood));
@@ -185,7 +164,6 @@ class _$_StoolDto extends _StoolDto {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(type),
       const DeepCollectionEquality().hash(dateTime),
       const DeepCollectionEquality().hash(hasBlood));
@@ -203,16 +181,13 @@ class _$_StoolDto extends _StoolDto {
 
 abstract class _StoolDto extends StoolDto {
   const factory _StoolDto(
-      {required String id,
-      required int type,
+      {required int type,
       required DateTime dateTime,
       required bool hasBlood}) = _$_StoolDto;
   const _StoolDto._() : super._();
 
   factory _StoolDto.fromJson(Map<String, dynamic> json) = _$_StoolDto.fromJson;
 
-  @override
-  String get id;
   @override
   int get type;
   @override

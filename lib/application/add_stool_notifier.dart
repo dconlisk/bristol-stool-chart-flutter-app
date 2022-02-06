@@ -8,7 +8,10 @@ part 'add_stool_notifier.freezed.dart';
 @freezed
 class AddStoolState with _$AddStoolState {
   const AddStoolState._();
-  const factory AddStoolState.initial() = _Initial;
+  const factory AddStoolState.initial(
+    Stool stool,
+    bool showBloodOption,
+  ) = _Initial;
   const factory AddStoolState.initialised(
     Stool stool,
     bool showBloodOption,
@@ -16,20 +19,26 @@ class AddStoolState with _$AddStoolState {
 }
 
 class AddStoolNotifier extends StateNotifier<AddStoolState> {
-  final _newStool = Stool(
-    id: '1',
-    dateTime: DateTime.now(),
-    hasBlood: false,
-    type: 4,
-  );
+  late Stool _newStool;
 
   bool _showBloodOption = false;
 
-  AddStoolNotifier() : super(const AddStoolState.initial());
+  AddStoolNotifier()
+      : super(
+          AddStoolState.initial(
+            Stool.empty(),
+            false,
+          ),
+        );
 
   Future<void> initialise() async {
     final prefs = await SharedPreferences.getInstance();
     _showBloodOption = prefs.getBool('show_blood') ?? false;
+    _newStool = Stool(
+      dateTime: DateTime.now(),
+      hasBlood: false,
+      type: 4,
+    );
     state = AddStoolState.initialised(
       _newStool,
       _showBloodOption,
@@ -37,9 +46,15 @@ class AddStoolNotifier extends StateNotifier<AddStoolState> {
   }
 
   Future<void> setBlood(bool hasBlood) async {
-    state = const AddStoolState.initial();
     state = AddStoolState.initialised(
-      _newStool.copyWith(hasBlood: hasBlood),
+      state.stool.copyWith(hasBlood: hasBlood),
+      _showBloodOption,
+    );
+  }
+
+  Future<void> setType(int type) async {
+    state = AddStoolState.initialised(
+      state.stool.copyWith(type: type),
       _showBloodOption,
     );
   }

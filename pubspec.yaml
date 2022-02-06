@@ -12,6 +12,7 @@ dependencies:
   auto_route: ^3.2.2
   carousel_slider: ^4.0.0
   dartz: ^0.10.1
+  date_time_picker: ^2.1.0
   flutter:
     sdk: flutter
   freezed: ^1.1.1
