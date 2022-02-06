@@ -1,4 +1,3 @@
-import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:bristol_stool_chart/infrastructure/sembast_database.dart';
 import 'package:bristol_stool_chart/infrastructure/stool_dto.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_service.dart';

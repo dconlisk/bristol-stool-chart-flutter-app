@@ -19,7 +19,9 @@ class SplashPage extends StatelessWidget {
               fit: BoxFit.cover,
             ),
             SizedBox(height: 16),
-            LinearProgressIndicator(),
+            Center(
+              child: CircularProgressIndicator(),
+            )
           ],
         ),
       ),

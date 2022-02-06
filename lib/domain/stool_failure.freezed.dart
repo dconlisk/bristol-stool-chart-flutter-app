@@ -18,7 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$StoolFailureTearOff {
   const _$StoolFailureTearOff();
 
-  _StoolFailure call() {
+  _StoolFailure local() {
     return const _StoolFailure();
   }
 }
@@ -27,7 +27,40 @@ class _$StoolFailureTearOff {
 const $StoolFailure = _$StoolFailureTearOff();
 
 /// @nodoc
-mixin _$StoolFailure {}
+mixin _$StoolFailure {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() local,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? local,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? local,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StoolFailure value) local,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_StoolFailure value)? local,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StoolFailure value)? local,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
 
 /// @nodoc
 abstract class $StoolFailureCopyWith<$Res> {
@@ -70,7 +103,7 @@ class _$_StoolFailure extends _StoolFailure {
 
   @override
   String toString() {
-    return 'StoolFailure()';
+    return 'StoolFailure.local()';
   }
 
   @override
@@ -81,6 +114,62 @@ class _$_StoolFailure extends _StoolFailure {
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() local,
+  }) {
+    return local();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? local,
+  }) {
+    return local?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? local,
+    required TResult orElse(),
+  }) {
+    if (local != null) {
+      return local();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_StoolFailure value) local,
+  }) {
+    return local(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_StoolFailure value)? local,
+  }) {
+    return local?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_StoolFailure value)? local,
+    required TResult orElse(),
+  }) {
+    if (local != null) {
+      return local(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class _StoolFailure extends StoolFailure {

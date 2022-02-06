@@ -32,6 +32,17 @@ project. Note that this project contains a .fvm directory which contains the fvm
 I have also created a Makefile which allows me to use shortcuts like `make generated` in my Terminal, which will run the command `@fvm flutter packages pub run build_runner build --delete-conflicting-outputs` - it's just quicker
 and easier to remember.
 
+## Upgrade notes
+
+- linting is your friend
+- no longer any need for the new keyword
+- added the const keyword
+- moved business logic from private methods in the widgets into riverpod state notifiers (better separation of concerns)
+- perhaps slight overkill with the architecture for such a simple app, but a good illustration of best practice (e.g. widget -> repo -> service -> db)
+- added some error handling (!)
+- removed FutureBuilders 
+- removed unnecessary StatefulWidgets
+
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
 

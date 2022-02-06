@@ -18,4 +18,10 @@ class AppTextStyles {
     fontSize: AppSizes.drawerFontSize,
     color: AppColors.white,
   );
+
+  static const smileyTextStyle = TextStyle(
+    fontFamily: 'FontAwesome5Free',
+    color: Colors.black,
+    fontSize: 16,
+  );
 }
