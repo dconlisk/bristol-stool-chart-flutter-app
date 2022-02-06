@@ -1,8 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/presentation/widgets/graph.dart';
 import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 
 class GraphPage extends ConsumerStatefulWidget {
   const GraphPage({Key? key}) : super(key: key);
@@ -28,7 +30,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
           IconButton(
             icon: const Icon(Icons.info),
             onPressed: () {
-              //Navigator.of(context).pushNamed(GraphInformationScreen.routeName);
+              AutoRouter.of(context).push(const GraphInfoRoute());
             },
           ),
         ],
@@ -44,12 +46,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             size: 28,
           ),
           onPressed: () {
-            //  => Navigator.push(
-            // context,
-            // MaterialPageRoute(
-            //   builder: (context) => new AddScreen(),
-            //   fullscreenDialog: true,
-            // ),
+            AutoRouter.of(context).push(const AddRoute());
           },
         ),
       ),

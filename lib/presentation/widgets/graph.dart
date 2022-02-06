@@ -181,7 +181,7 @@ class _GraphState extends State<Graph> {
             ),
           ),
           dataLabelMapper: (stool, index) {
-            if (stool.hasBlood != null && stool.hasBlood!) {
+            if (stool.hasBlood) {
               return '*';
             }
             return ' ';
