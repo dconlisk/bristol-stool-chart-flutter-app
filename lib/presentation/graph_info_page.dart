@@ -9,16 +9,8 @@ class GraphInfoPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           automaticallyImplyLeading: false,
-          actions: [
-            GestureDetector(
-              onTap: () {
-                AutoRouter.of(context).pop(TransitionsBuilders.slideBottom);
-              },
-              child: const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Icon(Icons.close),
-              ),
-            ),
+          actions: const [
+            CloseButton(),
           ],
           title: const Text('About the graph')),
       body: const Center(

@@ -15,8 +15,8 @@ import 'package:flutter/material.dart' as _i9;
 
 import '../about_page.dart' as _i1;
 import '../add_page.dart' as _i2;
-import '../graph_info_page.dart' as _i3;
-import '../graph_page.dart' as _i4;
+import '../graph_info_page.dart' as _i4;
+import '../graph_page.dart' as _i3;
 import '../intro_page.dart' as _i5;
 import '../settings_page.dart' as _i6;
 import '../splash_page.dart' as _i7;
@@ -32,16 +32,24 @@ class AppRouter extends _i8.RootStackRouter {
           routeData: routeData, child: const _i1.AboutPage());
     },
     AddRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.AddPage());
-    },
-    GraphInfoRoute.name: (routeData) {
-      return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.GraphInfoPage());
+      return _i8.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i2.AddPage(),
+          transitionsBuilder: _i8.TransitionsBuilders.slideBottom,
+          opaque: true,
+          barrierDismissible: false);
     },
     GraphRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.GraphPage());
+          routeData: routeData, child: const _i3.GraphPage());
+    },
+    GraphInfoRoute.name: (routeData) {
+      return _i8.CustomPage<dynamic>(
+          routeData: routeData,
+          child: const _i4.GraphInfoPage(),
+          transitionsBuilder: _i8.TransitionsBuilders.slideBottom,
+          opaque: true,
+          barrierDismissible: false);
     },
     IntroRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
@@ -61,8 +69,8 @@ class AppRouter extends _i8.RootStackRouter {
   List<_i8.RouteConfig> get routes => [
         _i8.RouteConfig(AboutRoute.name, path: '/about-page'),
         _i8.RouteConfig(AddRoute.name, path: '/add-page'),
-        _i8.RouteConfig(GraphInfoRoute.name, path: '/graph-info-page'),
         _i8.RouteConfig(GraphRoute.name, path: '/graph-page'),
+        _i8.RouteConfig(GraphInfoRoute.name, path: '/graph-info-page'),
         _i8.RouteConfig(IntroRoute.name, path: '/intro-page'),
         _i8.RouteConfig(SettingsRoute.name, path: '/settings-page'),
         _i8.RouteConfig(SplashRoute.name, path: '/')
@@ -86,19 +94,19 @@ class AddRoute extends _i8.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i3.GraphInfoPage]
-class GraphInfoRoute extends _i8.PageRouteInfo<void> {
-  const GraphInfoRoute() : super(GraphInfoRoute.name, path: '/graph-info-page');
-
-  static const String name = 'GraphInfoRoute';
-}
-
-/// generated route for
-/// [_i4.GraphPage]
+/// [_i3.GraphPage]
 class GraphRoute extends _i8.PageRouteInfo<void> {
   const GraphRoute() : super(GraphRoute.name, path: '/graph-page');
 
   static const String name = 'GraphRoute';
+}
+
+/// generated route for
+/// [_i4.GraphInfoPage]
+class GraphInfoRoute extends _i8.PageRouteInfo<void> {
+  const GraphInfoRoute() : super(GraphInfoRoute.name, path: '/graph-info-page');
+
+  static const String name = 'GraphInfoRoute';
 }
 
 /// generated route for

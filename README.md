@@ -43,6 +43,11 @@ and easier to remember.
 - removed FutureBuilders 
 - removed unnecessary StatefulWidgets
 
+## TODO: WISHLIST
+
+- review fonts
+- add unit tests
+
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
 

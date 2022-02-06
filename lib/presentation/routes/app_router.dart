@@ -11,9 +11,15 @@ import 'package:bristol_stool_chart/presentation/splash_page.dart';
   replaceInRouteName: 'Page,Route',
   routes: [
     AutoRoute<dynamic>(page: AboutPage),
-    AutoRoute<dynamic>(page: AddPage),
-    AutoRoute<dynamic>(page: GraphInfoPage),
+    CustomRoute<dynamic>(
+      page: AddPage,
+      transitionsBuilder: TransitionsBuilders.slideBottom,
+    ),
     AutoRoute<dynamic>(page: GraphPage),
+    CustomRoute<dynamic>(
+      page: GraphInfoPage,
+      transitionsBuilder: TransitionsBuilders.slideBottom,
+    ),
     AutoRoute<dynamic>(page: IntroPage),
     AutoRoute<dynamic>(page: SettingsPage),
     AutoRoute<dynamic>(page: SplashPage, initial: true),

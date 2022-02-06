@@ -30,7 +30,9 @@ class _GraphPageState extends ConsumerState<GraphPage> {
           IconButton(
             icon: const Icon(Icons.info),
             onPressed: () {
-              AutoRouter.of(context).push(const GraphInfoRoute());
+              AutoRouter.of(context).push(
+                const GraphInfoRoute(),
+              );
             },
           ),
         ],
