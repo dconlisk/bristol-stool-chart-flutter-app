@@ -16,7 +16,8 @@ class IntroState with _$IntroState {
 class IntroNotifier extends StateNotifier<IntroState> {
   IntroNotifier() : super(const IntroState.initial());
 
-  Future<void> checkAndUpdateIntroStatus() async {
+  // Check the user's shared preferences to see if they have viewed the intro yet or not
+  Future<void> initialise() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     final hasSeenIntro =
         prefs.getBool(sharedPreferencesHasSeenIntroKey) ?? false;

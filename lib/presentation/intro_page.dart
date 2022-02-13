@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/infrastructure/keys.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intro_slider/intro_slider.dart';
@@ -38,9 +39,7 @@ class _IntroPageState extends State<IntroPage> {
     return Container(
       // color: Colors.blue,
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(
-          Radius.circular(8.0),
-        ),
+        borderRadius: AppPadding.borderRadius,
         color: Colors.blue,
       ),
       child: Padding(
@@ -53,6 +52,7 @@ class _IntroPageState extends State<IntroPage> {
     );
   }
 
+  // TODO: Implement an intro page state notifier to handle the setting up of slides, and the saving of shared preferences
   @override
   void initState() {
     super.initState();

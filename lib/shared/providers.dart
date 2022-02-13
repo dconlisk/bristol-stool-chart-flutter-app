@@ -1,6 +1,7 @@
 import 'package:bristol_stool_chart/application/add_stool_notifier.dart';
 import 'package:bristol_stool_chart/application/graph_notifier.dart';
 import 'package:bristol_stool_chart/application/intro_notifier.dart';
+import 'package:bristol_stool_chart/application/settings_notifier.dart';
 import 'package:bristol_stool_chart/infrastructure/sembast_database.dart';
 import 'package:bristol_stool_chart/infrastructure/stool_repository.dart';
 import 'package:bristol_stool_chart/infrastructure/stool_service.dart';
@@ -19,8 +20,19 @@ final introNotifierProvider = StateNotifierProvider<IntroNotifier, IntroState>(
 );
 
 final graphNotifierProvider = StateNotifierProvider<GraphNotifier, GraphState>(
-    (ref) => GraphNotifier(ref.watch(stoolRepositoryProvider)));
+  (ref) => GraphNotifier(
+    ref.watch(stoolRepositoryProvider),
+  ),
+);
 
 final addStoolNotifierProvider =
     StateNotifierProvider<AddStoolNotifier, AddStoolState>(
-        (ref) => AddStoolNotifier(ref.watch(stoolRepositoryProvider)));
+  (ref) => AddStoolNotifier(
+    ref.watch(stoolRepositoryProvider),
+  ),
+);
+
+final settingsNotifierProvider =
+    StateNotifierProvider<SettingsNotifier, SettingsState>(
+  (ref) => SettingsNotifier(ref.watch(stoolRepositoryProvider)),
+);

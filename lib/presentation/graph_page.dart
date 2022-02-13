@@ -17,7 +17,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
   @override
   void initState() {
     super.initState();
-    ref.read(graphNotifierProvider.notifier).initialise();
+    ref.read(graphNotifierProvider.notifier).watchStools();
   }
 
   @override
@@ -37,6 +37,39 @@ class _GraphPageState extends ConsumerState<GraphPage> {
           ),
         ],
       ),
+      drawer: const MainDrawer(),
+      body: Consumer(
+        builder: (context, ref, child) {
+          final graphState = ref.watch(graphNotifierProvider);
+          return graphState.map(
+            initial: (_) => const Center(
+              child: CircularProgressIndicator(),
+            ),
+            initialised: (state) {
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    if (state.stools.isEmpty)
+                      Padding(
+                        padding: const EdgeInsets.all(32.0),
+                        child: Text(
+                          'To begin, tap the button below to add a stool',
+                          style: Theme.of(context).textTheme.headline5,
+                          textAlign: TextAlign.center,
+                        ),
+                      )
+                    else
+                      Graph(stools: state.stools),
+                  ],
+                ),
+              );
+            },
+            failure: (_) => const ListTile(
+              title: Text('Very unexpected error'),
+            ),
+          );
+        },
+      ),
       bottomSheet: Container(
         height: 150,
         alignment: Alignment.centerRight,
@@ -48,41 +81,10 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             size: 28,
           ),
           onPressed: () {
-            AutoRouter.of(context).push(const AddRoute());
+            context.router.push(const AddRoute());
           },
         ),
       ),
-      drawer: const MainDrawer(),
-      body: Consumer(builder: (context, ref, child) {
-        final graphState = ref.watch(graphNotifierProvider);
-        return graphState.map(
-          initial: (_) => const Center(
-            child: CircularProgressIndicator(),
-          ),
-          initialised: (state) {
-            return SingleChildScrollView(
-              child: Column(
-                children: [
-                  if (state.stools.isEmpty)
-                    Padding(
-                      padding: const EdgeInsets.all(32.0),
-                      child: Text(
-                        'To begin, tap the button below to add a stool',
-                        style: Theme.of(context).textTheme.headline5,
-                        textAlign: TextAlign.center,
-                      ),
-                    )
-                  else
-                    Graph(stools: state.stools),
-                ],
-              ),
-            );
-          },
-          failure: (_) => const ListTile(
-            title: Text('Very unexpected error'),
-          ),
-        );
-      }),
     );
   }
 }

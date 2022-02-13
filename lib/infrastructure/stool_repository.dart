@@ -34,9 +34,16 @@ class StoolRepository implements IStoolRepository {
   Future<Either<StoolFailure, List<Stool>>> getAllStools() async {
     try {
       final results = await _stoolService.getAllStools();
+      results.sort((a, b) => a.dateTime.compareTo(b.dateTime));
       return right(results.map((e) => e.toDomain()).toList());
     } catch (e) {
       return left(const StoolFailure.local());
     }
+  }
+
+  @override
+  Stream<List<Stool>> watchStools() {
+    final stream = _stoolService.watchStools();
+    return stream.map((event) => event.map((e) => e.toDomain()).toList());
   }
 }

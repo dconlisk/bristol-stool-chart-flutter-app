@@ -29,4 +29,13 @@ class StoolLocalService implements IStoolService {
     final snapshots = await _store.find(_sembastDatabase.instance);
     return snapshots.map((e) => StoolDto.fromJson(e.value)).toList();
   }
+
+  @override
+  Stream<List<StoolDto>> watchStools() {
+    return _store.query().onSnapshots(_sembastDatabase.instance).map((stools) {
+      final results = stools.map((e) => StoolDto.fromJson(e.value)).toList();
+      results.sort((a, b) => a.dateTime.compareTo(b.dateTime));
+      return results;
+    });
+  }
 }

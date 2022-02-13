@@ -1,5 +1,5 @@
 import 'package:bristol_stool_chart/domain/stool.dart';
-import 'package:bristol_stool_chart/infrastructure/stool_repository.dart';
+import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -14,7 +14,7 @@ class GraphState with _$GraphState {
 }
 
 class GraphNotifier extends StateNotifier<GraphState> {
-  final StoolRepository _stoolRepository;
+  final IStoolRepository _stoolRepository;
 
   GraphNotifier(this._stoolRepository) : super(const GraphState.initial());
 
@@ -26,5 +26,14 @@ class GraphNotifier extends StateNotifier<GraphState> {
       (failure) => const GraphState.failure(),
       (stools) => GraphState.initialised(stools),
     );
+  }
+
+  // Listen to a stream of data from the database and emit state every time there's a change in the DB
+  void watchStools() {
+    _stoolRepository.watchStools().listen((data) {
+      state = GraphState.initialised(data);
+    }, onError: (Object error) {
+      state = const GraphState.failure();
+    });
   }
 }

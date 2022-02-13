@@ -7,7 +7,7 @@ import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 
 final initializationProvider = FutureProvider((ref) async {
   await ref.read(sembastProvider).init();
-  await ref.read(introNotifierProvider.notifier).checkAndUpdateIntroStatus();
+  await ref.read(introNotifierProvider.notifier).initialise();
   return unit;
 });
 

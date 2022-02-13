@@ -11,4 +11,7 @@ abstract class IStoolRepository {
 
   // Get all stools
   Future<Either<StoolFailure, List<Stool>>> getAllStools();
+
+  // Get a stream of data from the service that contains all stools
+  Stream<List<Stool>> watchStools();
 }
