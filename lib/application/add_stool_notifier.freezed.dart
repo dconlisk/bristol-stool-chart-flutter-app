@@ -31,6 +31,20 @@ class _$AddStoolStateTearOff {
       showBloodOption,
     );
   }
+
+  _ErrorState error(Stool stool, bool showBloodOption) {
+    return _ErrorState(
+      stool,
+      showBloodOption,
+    );
+  }
+
+  _SuccessState success(Stool stool, bool showBloodOption) {
+    return _SuccessState(
+      stool,
+      showBloodOption,
+    );
+  }
 }
 
 /// @nodoc
@@ -45,18 +59,24 @@ mixin _$AddStoolState {
   TResult when<TResult extends Object?>({
     required TResult Function(Stool stool, bool showBloodOption) initial,
     required TResult Function(Stool stool, bool showBloodOption) initialised,
+    required TResult Function(Stool stool, bool showBloodOption) error,
+    required TResult Function(Stool stool, bool showBloodOption) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Stool stool, bool showBloodOption)? initial,
     TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Stool stool, bool showBloodOption)? initial,
     TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -64,18 +84,24 @@ mixin _$AddStoolState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Initialised value) initialised,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_SuccessState value) success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -208,6 +234,8 @@ class _$_Initial extends _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function(Stool stool, bool showBloodOption) initial,
     required TResult Function(Stool stool, bool showBloodOption) initialised,
+    required TResult Function(Stool stool, bool showBloodOption) error,
+    required TResult Function(Stool stool, bool showBloodOption) success,
   }) {
     return initial(stool, showBloodOption);
   }
@@ -217,6 +245,8 @@ class _$_Initial extends _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Stool stool, bool showBloodOption)? initial,
     TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
   }) {
     return initial?.call(stool, showBloodOption);
   }
@@ -226,6 +256,8 @@ class _$_Initial extends _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Stool stool, bool showBloodOption)? initial,
     TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -239,6 +271,8 @@ class _$_Initial extends _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Initialised value) initialised,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_SuccessState value) success,
   }) {
     return initial(this);
   }
@@ -248,6 +282,8 @@ class _$_Initial extends _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
   }) {
     return initial?.call(this);
   }
@@ -257,6 +293,8 @@ class _$_Initial extends _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -362,6 +400,8 @@ class _$_Initialised extends _Initialised {
   TResult when<TResult extends Object?>({
     required TResult Function(Stool stool, bool showBloodOption) initial,
     required TResult Function(Stool stool, bool showBloodOption) initialised,
+    required TResult Function(Stool stool, bool showBloodOption) error,
+    required TResult Function(Stool stool, bool showBloodOption) success,
   }) {
     return initialised(stool, showBloodOption);
   }
@@ -371,6 +411,8 @@ class _$_Initialised extends _Initialised {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(Stool stool, bool showBloodOption)? initial,
     TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
   }) {
     return initialised?.call(stool, showBloodOption);
   }
@@ -380,6 +422,8 @@ class _$_Initialised extends _Initialised {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(Stool stool, bool showBloodOption)? initial,
     TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
     required TResult orElse(),
   }) {
     if (initialised != null) {
@@ -393,6 +437,8 @@ class _$_Initialised extends _Initialised {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Initialised value) initialised,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_SuccessState value) success,
   }) {
     return initialised(this);
   }
@@ -402,6 +448,8 @@ class _$_Initialised extends _Initialised {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
   }) {
     return initialised?.call(this);
   }
@@ -411,6 +459,8 @@ class _$_Initialised extends _Initialised {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
     required TResult orElse(),
   }) {
     if (initialised != null) {
@@ -432,5 +482,339 @@ abstract class _Initialised extends AddStoolState {
   @override
   @JsonKey(ignore: true)
   _$InitialisedCopyWith<_Initialised> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ErrorStateCopyWith<$Res>
+    implements $AddStoolStateCopyWith<$Res> {
+  factory _$ErrorStateCopyWith(
+          _ErrorState value, $Res Function(_ErrorState) then) =
+      __$ErrorStateCopyWithImpl<$Res>;
+  @override
+  $Res call({Stool stool, bool showBloodOption});
+
+  @override
+  $StoolCopyWith<$Res> get stool;
+}
+
+/// @nodoc
+class __$ErrorStateCopyWithImpl<$Res> extends _$AddStoolStateCopyWithImpl<$Res>
+    implements _$ErrorStateCopyWith<$Res> {
+  __$ErrorStateCopyWithImpl(
+      _ErrorState _value, $Res Function(_ErrorState) _then)
+      : super(_value, (v) => _then(v as _ErrorState));
+
+  @override
+  _ErrorState get _value => super._value as _ErrorState;
+
+  @override
+  $Res call({
+    Object? stool = freezed,
+    Object? showBloodOption = freezed,
+  }) {
+    return _then(_ErrorState(
+      stool == freezed
+          ? _value.stool
+          : stool // ignore: cast_nullable_to_non_nullable
+              as Stool,
+      showBloodOption == freezed
+          ? _value.showBloodOption
+          : showBloodOption // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_ErrorState extends _ErrorState {
+  const _$_ErrorState(this.stool, this.showBloodOption) : super._();
+
+  @override
+  final Stool stool;
+  @override
+  final bool showBloodOption;
+
+  @override
+  String toString() {
+    return 'AddStoolState.error(stool: $stool, showBloodOption: $showBloodOption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _ErrorState &&
+            const DeepCollectionEquality().equals(other.stool, stool) &&
+            const DeepCollectionEquality()
+                .equals(other.showBloodOption, showBloodOption));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(stool),
+      const DeepCollectionEquality().hash(showBloodOption));
+
+  @JsonKey(ignore: true)
+  @override
+  _$ErrorStateCopyWith<_ErrorState> get copyWith =>
+      __$ErrorStateCopyWithImpl<_ErrorState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Stool stool, bool showBloodOption) initial,
+    required TResult Function(Stool stool, bool showBloodOption) initialised,
+    required TResult Function(Stool stool, bool showBloodOption) error,
+    required TResult Function(Stool stool, bool showBloodOption) success,
+  }) {
+    return error(stool, showBloodOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Stool stool, bool showBloodOption)? initial,
+    TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
+  }) {
+    return error?.call(stool, showBloodOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Stool stool, bool showBloodOption)? initial,
+    TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(stool, showBloodOption);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Initialised value) initialised,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_SuccessState value) success,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ErrorState extends AddStoolState {
+  const factory _ErrorState(Stool stool, bool showBloodOption) = _$_ErrorState;
+  const _ErrorState._() : super._();
+
+  @override
+  Stool get stool;
+  @override
+  bool get showBloodOption;
+  @override
+  @JsonKey(ignore: true)
+  _$ErrorStateCopyWith<_ErrorState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SuccessStateCopyWith<$Res>
+    implements $AddStoolStateCopyWith<$Res> {
+  factory _$SuccessStateCopyWith(
+          _SuccessState value, $Res Function(_SuccessState) then) =
+      __$SuccessStateCopyWithImpl<$Res>;
+  @override
+  $Res call({Stool stool, bool showBloodOption});
+
+  @override
+  $StoolCopyWith<$Res> get stool;
+}
+
+/// @nodoc
+class __$SuccessStateCopyWithImpl<$Res>
+    extends _$AddStoolStateCopyWithImpl<$Res>
+    implements _$SuccessStateCopyWith<$Res> {
+  __$SuccessStateCopyWithImpl(
+      _SuccessState _value, $Res Function(_SuccessState) _then)
+      : super(_value, (v) => _then(v as _SuccessState));
+
+  @override
+  _SuccessState get _value => super._value as _SuccessState;
+
+  @override
+  $Res call({
+    Object? stool = freezed,
+    Object? showBloodOption = freezed,
+  }) {
+    return _then(_SuccessState(
+      stool == freezed
+          ? _value.stool
+          : stool // ignore: cast_nullable_to_non_nullable
+              as Stool,
+      showBloodOption == freezed
+          ? _value.showBloodOption
+          : showBloodOption // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SuccessState extends _SuccessState {
+  const _$_SuccessState(this.stool, this.showBloodOption) : super._();
+
+  @override
+  final Stool stool;
+  @override
+  final bool showBloodOption;
+
+  @override
+  String toString() {
+    return 'AddStoolState.success(stool: $stool, showBloodOption: $showBloodOption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SuccessState &&
+            const DeepCollectionEquality().equals(other.stool, stool) &&
+            const DeepCollectionEquality()
+                .equals(other.showBloodOption, showBloodOption));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(stool),
+      const DeepCollectionEquality().hash(showBloodOption));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SuccessStateCopyWith<_SuccessState> get copyWith =>
+      __$SuccessStateCopyWithImpl<_SuccessState>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(Stool stool, bool showBloodOption) initial,
+    required TResult Function(Stool stool, bool showBloodOption) initialised,
+    required TResult Function(Stool stool, bool showBloodOption) error,
+    required TResult Function(Stool stool, bool showBloodOption) success,
+  }) {
+    return success(stool, showBloodOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(Stool stool, bool showBloodOption)? initial,
+    TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
+  }) {
+    return success?.call(stool, showBloodOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(Stool stool, bool showBloodOption)? initial,
+    TResult Function(Stool stool, bool showBloodOption)? initialised,
+    TResult Function(Stool stool, bool showBloodOption)? error,
+    TResult Function(Stool stool, bool showBloodOption)? success,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(stool, showBloodOption);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Initialised value) initialised,
+    required TResult Function(_ErrorState value) error,
+    required TResult Function(_SuccessState value) success,
+  }) {
+    return success(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
+  }) {
+    return success?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initialised value)? initialised,
+    TResult Function(_ErrorState value)? error,
+    TResult Function(_SuccessState value)? success,
+    required TResult orElse(),
+  }) {
+    if (success != null) {
+      return success(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SuccessState extends AddStoolState {
+  const factory _SuccessState(Stool stool, bool showBloodOption) =
+      _$_SuccessState;
+  const _SuccessState._() : super._();
+
+  @override
+  Stool get stool;
+  @override
+  bool get showBloodOption;
+  @override
+  @JsonKey(ignore: true)
+  _$SuccessStateCopyWith<_SuccessState> get copyWith =>
       throw _privateConstructorUsedError;
 }

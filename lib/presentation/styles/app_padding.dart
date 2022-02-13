@@ -1,6 +1,6 @@
-import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class AppPadding {
-  static const regular = EdgeInsets.all(AppSizes.regular);
+  static const regular = EdgeInsets.all(8.0);
+  static const borderRadius = BorderRadius.all(Radius.circular(8.0));
 }

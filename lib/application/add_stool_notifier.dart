@@ -1,4 +1,5 @@
 import 'package:bristol_stool_chart/domain/stool.dart';
+import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -16,14 +17,23 @@ class AddStoolState with _$AddStoolState {
     Stool stool,
     bool showBloodOption,
   ) = _Initialised;
+  const factory AddStoolState.error(
+    Stool stool,
+    bool showBloodOption,
+  ) = _ErrorState;
+  const factory AddStoolState.success(
+    Stool stool,
+    bool showBloodOption,
+  ) = _SuccessState;
 }
 
 class AddStoolNotifier extends StateNotifier<AddStoolState> {
   late Stool _newStool;
+  final IStoolRepository _stoolRepository;
 
   bool _showBloodOption = false;
 
-  AddStoolNotifier()
+  AddStoolNotifier(this._stoolRepository)
       : super(
           AddStoolState.initial(
             Stool.empty(),
@@ -57,5 +67,28 @@ class AddStoolNotifier extends StateNotifier<AddStoolState> {
       state.stool.copyWith(type: type),
       _showBloodOption,
     );
+  }
+
+  Future<void> setDate(String date) async {
+    state = AddStoolState.initialised(
+      state.stool.copyWith(dateTime: DateTime.tryParse(date) ?? DateTime.now()),
+      _showBloodOption,
+    );
+  }
+
+  Future<void> saveState() async {
+    final result = await _stoolRepository.addStool(state.stool);
+
+    if (result.isLeft()) {
+      state = AddStoolState.error(
+        state.stool,
+        _showBloodOption,
+      );
+    } else {
+      state = AddStoolState.success(
+        state.stool,
+        _showBloodOption,
+      );
+    }
   }
 }

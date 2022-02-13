@@ -37,6 +37,7 @@ and easier to remember.
 - linting is your friend
 - no longer any need for the new keyword
 - added the const keyword
+- null safety
 - moved business logic from private methods in the widgets into riverpod state notifiers (better separation of concerns)
 - perhaps slight overkill with the architecture for such a simple app, but a good illustration of best practice (e.g. widget -> repo -> service -> db)
 - added some error handling (!)
@@ -47,6 +48,7 @@ and easier to remember.
 
 - review fonts
 - add unit tests
+- performance review https://itnext.io/flutter-performance-tips-4580b2491da8
 
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)

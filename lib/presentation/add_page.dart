@@ -1,4 +1,7 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:bristol_stool_chart/application/add_stool_notifier.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_formats.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:date_time_picker/date_time_picker.dart';
@@ -31,8 +34,40 @@ class _AddPageState extends ConsumerState<AddPage> {
       ),
       body: Consumer(
         builder: (context, ref, child) {
+          ref.listen<AddStoolState>(addStoolNotifierProvider, (_, state) {
+            state.whenOrNull(
+              error: (stool, showBloodOption) async {
+                await showDialog<AlertDialog>(
+                  context: context,
+                  builder: (_) => AlertDialog(
+                    title: const Text('An error occurred'),
+                    content: const Text(
+                        'Your stool was not saved successfully. Please try again later.'),
+                    actions: <Widget>[
+                      ElevatedButton(
+                        child: const Text('OK'),
+                        onPressed: () {
+                          context.router.popUntilRoot();
+                        },
+                      )
+                    ],
+                  ),
+                );
+              },
+              success: (stool, showBloodOption) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text('Stool added successfully!'),
+                  ),
+                );
+                context.router.pop();
+              },
+            );
+          });
+
           final addStoolState = ref.watch(addStoolNotifierProvider);
-          return addStoolState.map(
+          return addStoolState.maybeMap(
+            orElse: () => const SizedBox.shrink(),
             initial: (_) => const Center(
               child: CircularProgressIndicator(),
             ),
@@ -65,12 +100,13 @@ class _AddPageState extends ConsumerState<AddPage> {
                         children: [
                           const Text('Was there blood in the stool?'),
                           Switch(
-                              value: state.stool.hasBlood,
-                              onChanged: (hasBlood) {
-                                ref
-                                    .read(addStoolNotifierProvider.notifier)
-                                    .setBlood(hasBlood);
-                              }),
+                            value: state.stool.hasBlood,
+                            onChanged: (hasBlood) {
+                              ref
+                                  .read(addStoolNotifierProvider.notifier)
+                                  .setBlood(hasBlood);
+                            },
+                          ),
                         ],
                       ),
                     Padding(
@@ -84,15 +120,28 @@ class _AddPageState extends ConsumerState<AddPage> {
                         initialValue: 'Now (or click to select a date)',
                         dateMask: AppFormats.dateAndTime,
                         type: DateTimePickerType.dateTime,
-                        onChanged: (value) {},
+                        onChanged: (value) {
+                          ref
+                              .read(addStoolNotifierProvider.notifier)
+                              .setDate(value);
+                        },
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8.0),
-                            ),
+                            borderRadius: AppPadding.borderRadius,
                           ),
                         ),
                       ),
+                    ),
+                    ElevatedButton(
+                      child: Text(
+                        'SAVE',
+                        style: Theme.of(context).textTheme.button,
+                      ),
+                      onPressed: () async {
+                        await ref
+                            .read(addStoolNotifierProvider.notifier)
+                            .saveState();
+                      },
                     ),
                   ],
                 ),

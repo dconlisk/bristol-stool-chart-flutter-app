@@ -23,4 +23,4 @@ final graphNotifierProvider = StateNotifierProvider<GraphNotifier, GraphState>(
 
 final addStoolNotifierProvider =
     StateNotifierProvider<AddStoolNotifier, AddStoolState>(
-        (ref) => AddStoolNotifier());
+        (ref) => AddStoolNotifier(ref.watch(stoolRepositoryProvider)));
