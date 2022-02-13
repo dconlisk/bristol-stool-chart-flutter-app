@@ -87,24 +87,29 @@ class _AddPageState extends ConsumerState<AddPage> {
                       ],
                       options: CarouselOptions(
                         initialPage: 3,
-                        onPageChanged: (index, reason) {
-                          ref
+                        onPageChanged: (index, reason) async {
+                          await ref
                               .read(addStoolNotifierProvider.notifier)
-                              .setType(index + 1);
+                              .updateStool(
+                                state.stool.copyWith(
+                                  type: index + 1,
+                                ),
+                              );
                         },
                       ),
                     ),
-                    if (!state.showBloodOption)
+                    if (state.showBloodOption)
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const Text('Was there blood in the stool?'),
                           Switch(
                             value: state.stool.hasBlood,
-                            onChanged: (hasBlood) {
-                              ref
+                            onChanged: (hasBlood) async {
+                              await ref
                                   .read(addStoolNotifierProvider.notifier)
-                                  .setBlood(hasBlood);
+                                  .updateStool(
+                                      state.stool.copyWith(hasBlood: hasBlood));
                             },
                           ),
                         ],
@@ -120,10 +125,15 @@ class _AddPageState extends ConsumerState<AddPage> {
                         initialValue: 'Now (or click to select a date)',
                         dateMask: AppFormats.dateAndTime,
                         type: DateTimePickerType.dateTime,
-                        onChanged: (value) {
-                          ref
+                        onChanged: (date) async {
+                          await ref
                               .read(addStoolNotifierProvider.notifier)
-                              .setDate(value);
+                              .updateStool(
+                                state.stool.copyWith(
+                                  dateTime:
+                                      DateTime.tryParse(date) ?? DateTime.now(),
+                                ),
+                              );
                         },
                         decoration: const InputDecoration(
                           border: OutlineInputBorder(
@@ -133,14 +143,11 @@ class _AddPageState extends ConsumerState<AddPage> {
                       ),
                     ),
                     ElevatedButton(
-                      child: Text(
-                        'SAVE',
-                        style: Theme.of(context).textTheme.button,
-                      ),
+                      child: const Text('SAVE'),
                       onPressed: () async {
                         await ref
                             .read(addStoolNotifierProvider.notifier)
-                            .saveState();
+                            .saveStool();
                       },
                     ),
                   ],

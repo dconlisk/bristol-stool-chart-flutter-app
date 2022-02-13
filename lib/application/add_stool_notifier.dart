@@ -1,3 +1,4 @@
+import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -28,7 +29,6 @@ class AddStoolState with _$AddStoolState {
 }
 
 class AddStoolNotifier extends StateNotifier<AddStoolState> {
-  late Stool _newStool;
   final IStoolRepository _stoolRepository;
 
   bool _showBloodOption = false;
@@ -43,40 +43,26 @@ class AddStoolNotifier extends StateNotifier<AddStoolState> {
 
   Future<void> initialise() async {
     final prefs = await SharedPreferences.getInstance();
-    _showBloodOption = prefs.getBool('show_blood') ?? false;
-    _newStool = Stool(
+    _showBloodOption = prefs.getBool(bloodSettingKey) ?? false;
+    final newStool = Stool(
       dateTime: DateTime.now(),
       hasBlood: false,
       type: 4,
     );
     state = AddStoolState.initialised(
-      _newStool,
+      newStool,
       _showBloodOption,
     );
   }
 
-  Future<void> setBlood(bool hasBlood) async {
+  Future<void> updateStool(Stool stool) async {
     state = AddStoolState.initialised(
-      state.stool.copyWith(hasBlood: hasBlood),
+      stool,
       _showBloodOption,
     );
   }
 
-  Future<void> setType(int type) async {
-    state = AddStoolState.initialised(
-      state.stool.copyWith(type: type),
-      _showBloodOption,
-    );
-  }
-
-  Future<void> setDate(String date) async {
-    state = AddStoolState.initialised(
-      state.stool.copyWith(dateTime: DateTime.tryParse(date) ?? DateTime.now()),
-      _showBloodOption,
-    );
-  }
-
-  Future<void> saveState() async {
+  Future<void> saveStool() async {
     final result = await _stoolRepository.addStool(state.stool);
 
     if (result.isLeft()) {
