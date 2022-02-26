@@ -27,7 +27,7 @@ class GraphInfoPage extends StatelessWidget {
               ),
               AppPadding.sizedBoxVertical16,
               Text(
-                'In general, it is best if your stool quality stays mostly within the green area of the graph. If it tends towards the red areas, '
+                'In general, it is best if your stool quality stays close to the green line on the graph. If it tends towards the edges, '
                 'i.e. towards type 1 or towards type 7, then you may be experiencing issues with your digestive system. It is recommended that you '
                 'consult your health professional if you are consistently recording events in the red areas of the graph.',
               ),
