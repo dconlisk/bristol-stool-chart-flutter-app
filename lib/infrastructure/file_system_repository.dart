@@ -17,7 +17,6 @@ class FileSystemRepository implements IFileSystemRepository {
       var attachmentFilename =
           'BristolStoolChartGraph_${DateFormat('yyyyMMddHHmm').format(DateTime.now())}.png';
       final imageFile = File('${directory.path}/$attachmentFilename');
-      print(imageFile.path);
       await imageFile.writeAsBytes(data);
       return Right(imageFile.path);
     } catch (e) {
@@ -33,7 +32,6 @@ class FileSystemRepository implements IFileSystemRepository {
       var attachmentFilename =
           'BristolStoolChartData_${DateFormat('yyyyMMddHHmm').format(DateTime.now())}.csv';
       final csvFile = File('${directory.path}/$attachmentFilename');
-      print(csvFile.path);
       await csvFile.writeAsString(data);
       return Right(csvFile.path);
     } catch (e) {

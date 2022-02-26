@@ -29,17 +29,21 @@ class _GraphPageState extends ConsumerState<GraphPage> {
     ref.listen<GraphState>(graphNotifierProvider, (_, state) {
       state.maybeMap(
         shareFailure: (_) async => await showDialog<AlertDialog>(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                title: const Text('An error occurred'),
-                content: const Text(
-                    'There was a problem sharing your data. Please make sure that you have an email client installed on your device.'),
-                actions: [
-                  TextButton(onPressed: () {}, child: const Text('Continue'))
-                ],
-              );
-            }),
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text('An error occurred'),
+            content: const Text(
+                'There was a problem sharing your data. Please make sure that you have an email client installed on your device.'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  context.router.pop();
+                },
+                child: const Text('Continue'),
+              )
+            ],
+          ),
+        ),
         orElse: () {},
       );
     });

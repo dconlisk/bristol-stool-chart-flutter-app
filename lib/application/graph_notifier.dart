@@ -80,12 +80,13 @@ class GraphNotifier extends StateNotifier<GraphState> {
         return;
       }
 
-      final result =
-          await _shareAttachments(paths: [csvFilePath, graphImagePath]);
+      await Share.shareFiles(
+        [graphImagePath, csvFilePath],
+        subject: 'Share your graph and data',
+      );
 
-      state = result
-          ? GraphState.initialised(stools)
-          : const GraphState.shareFailure();
+      state = const GraphState.shareSuccess();
+      state = GraphState.initialised(stools);
     } catch (e) {
       state = const GraphState.shareFailure();
     }
@@ -98,15 +99,6 @@ class GraphNotifier extends StateNotifier<GraphState> {
     }, onError: (Object error) {
       state = const GraphState.loadFailure();
     });
-  }
-
-  Future<bool> _shareAttachments({required List<String> paths}) async {
-    try {
-      Share.shareFiles(paths);
-      return true;
-    } catch (e) {
-      return false;
-    }
   }
 
   // https://medium.com/flutter-community/export-your-widget-to-image-with-flutter-dc7ecfa6bafb

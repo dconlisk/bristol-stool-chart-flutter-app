@@ -33,3 +33,6 @@ dependency_validator:
 
 analyze:
 	@fvm flutter analyze
+
+icons: 
+	@fvm flutter pub run flutter_launcher_icons:main

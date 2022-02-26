@@ -24,7 +24,7 @@ I created this app as a way to practice using flutter while also keeping the app
 * [intl](https://pub.dev/packages/intl) : Used for formatting dates.
 * [share_plus](https://pub.dev/packages/share_plus) : A Flutter Community plugin for sharing content via the device's share dialog. This allows BSC users to share the data and images via Whatsapp and text message, as well as via email, depending on what apps are installed on the device.
 * [path_provider](https://pub.dev/packages/path_provider) : I'm using this to get a location on the filesystem to store the csv and image files before sharing.
-
+* [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) : Automatically generate the launcher icon from a given png for all platforms.
 ## Technical notes
 
 I use [fvm](https://fvm.app) to manage the flutter SDK versions installed on my machine. It allows you to set a global version of flutter for your projects to use, while also allowing you to specify local versions to use for each project. Note that this project contains a .fvm directory which contains the fvm_config.json file which specifies which version of flutter this project uses.
