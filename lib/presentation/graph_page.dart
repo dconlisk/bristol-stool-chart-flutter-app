@@ -1,4 +1,6 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bristol_stool_chart/application/graph_notifier.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/widgets/graph.dart';
 import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
@@ -14,6 +16,8 @@ class GraphPage extends ConsumerStatefulWidget {
 }
 
 class _GraphPageState extends ConsumerState<GraphPage> {
+  final _graphKey = GlobalKey();
+
   @override
   void initState() {
     super.initState();
@@ -22,6 +26,24 @@ class _GraphPageState extends ConsumerState<GraphPage> {
 
   @override
   Widget build(context) {
+    ref.listen<GraphState>(graphNotifierProvider, (_, state) {
+      state.maybeMap(
+        shareFailure: (_) async => await showDialog<AlertDialog>(
+            context: context,
+            builder: (context) {
+              return AlertDialog(
+                title: const Text('An error occurred'),
+                content: const Text(
+                    'There was a problem sharing your data. Please make sure that you have an email client installed on your device.'),
+                actions: [
+                  TextButton(onPressed: () {}, child: const Text('Continue'))
+                ],
+              );
+            }),
+        orElse: () {},
+      );
+    });
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -41,32 +63,56 @@ class _GraphPageState extends ConsumerState<GraphPage> {
       body: Consumer(
         builder: (context, ref, child) {
           final graphState = ref.watch(graphNotifierProvider);
-          return graphState.map(
+          return graphState.maybeMap(
             initial: (_) => const Center(
               child: CircularProgressIndicator(),
             ),
             initialised: (state) {
-              return SingleChildScrollView(
-                child: Column(
-                  children: [
-                    if (state.stools.isEmpty)
-                      Padding(
-                        padding: const EdgeInsets.all(32.0),
-                        child: Text(
-                          'To begin, tap the button below to add a stool',
-                          style: Theme.of(context).textTheme.headline5,
-                          textAlign: TextAlign.center,
+              return (state.stools.isEmpty)
+                  ? Padding(
+                      padding: const EdgeInsets.all(32.0),
+                      child: Text(
+                        'To begin, tap the button below to add a stool',
+                        style: Theme.of(context).textTheme.headline5,
+                        textAlign: TextAlign.center,
+                      ),
+                    )
+                  : Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AppPadding.sizedBoxVertical32,
+                        Expanded(
+                          child: RepaintBoundary(
+                              key: _graphKey,
+                              child: Graph(stools: state.stools)),
+                          flex: 3,
                         ),
-                      )
-                    else
-                      Graph(stools: state.stools),
-                  ],
-                ),
-              );
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          child: ElevatedButton(
+                            onPressed: () async {
+                              await ref
+                                  .read(graphNotifierProvider.notifier)
+                                  .share(context, _graphKey);
+                            },
+                            child: const Text('Share'),
+                          ),
+                        ),
+                        Expanded(
+                          child: Container(
+                            height: 36,
+                          ),
+                          flex: 1,
+                        ),
+                      ],
+                    );
             },
-            failure: (_) => const ListTile(
-              title: Text('Very unexpected error'),
+            loadFailure: (_) => const ListTile(
+              title: Text(
+                'Very unexpected error. Please try restarting the app.',
+              ),
             ),
+            orElse: () => const SizedBox.shrink(),
           );
         },
       ),

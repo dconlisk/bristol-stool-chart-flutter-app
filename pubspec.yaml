@@ -18,9 +18,12 @@ dependencies:
   freezed: ^1.1.1
   google_fonts: ^2.2.0
   hooks_riverpod: ^1.0.3
+  intl: ^0.17.0
   intro_slider: ^3.0.3
+  path_provider: ^2.0.9
   sembast: ^3.1.2
   shared_preferences: ^2.0.12
+  share_plus: ^3.1.0
   syncfusion_flutter_charts: ^19.4.48+1
   url_launcher: ^6.0.20
 

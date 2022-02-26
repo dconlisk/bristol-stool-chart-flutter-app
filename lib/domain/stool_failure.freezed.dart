@@ -18,8 +18,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$StoolFailureTearOff {
   const _$StoolFailureTearOff();
 
-  _StoolFailure local() {
-    return const _StoolFailure();
+  _DatabaseFailure database() {
+    return const _DatabaseFailure();
+  }
+
+  _FileSystemFailure file_system() {
+    return const _FileSystemFailure();
   }
 }
 
@@ -30,33 +34,39 @@ const $StoolFailure = _$StoolFailureTearOff();
 mixin _$StoolFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() local,
+    required TResult Function() database,
+    required TResult Function() file_system,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? local,
+    TResult Function()? database,
+    TResult Function()? file_system,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? local,
+    TResult Function()? database,
+    TResult Function()? file_system,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoolFailure value) local,
+    required TResult Function(_DatabaseFailure value) database,
+    required TResult Function(_FileSystemFailure value) file_system,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_StoolFailure value)? local,
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? file_system,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoolFailure value)? local,
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? file_system,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -79,37 +89,38 @@ class _$StoolFailureCopyWithImpl<$Res> implements $StoolFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$StoolFailureCopyWith<$Res> {
-  factory _$StoolFailureCopyWith(
-          _StoolFailure value, $Res Function(_StoolFailure) then) =
-      __$StoolFailureCopyWithImpl<$Res>;
+abstract class _$DatabaseFailureCopyWith<$Res> {
+  factory _$DatabaseFailureCopyWith(
+          _DatabaseFailure value, $Res Function(_DatabaseFailure) then) =
+      __$DatabaseFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$StoolFailureCopyWithImpl<$Res> extends _$StoolFailureCopyWithImpl<$Res>
-    implements _$StoolFailureCopyWith<$Res> {
-  __$StoolFailureCopyWithImpl(
-      _StoolFailure _value, $Res Function(_StoolFailure) _then)
-      : super(_value, (v) => _then(v as _StoolFailure));
+class __$DatabaseFailureCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res>
+    implements _$DatabaseFailureCopyWith<$Res> {
+  __$DatabaseFailureCopyWithImpl(
+      _DatabaseFailure _value, $Res Function(_DatabaseFailure) _then)
+      : super(_value, (v) => _then(v as _DatabaseFailure));
 
   @override
-  _StoolFailure get _value => super._value as _StoolFailure;
+  _DatabaseFailure get _value => super._value as _DatabaseFailure;
 }
 
 /// @nodoc
 
-class _$_StoolFailure extends _StoolFailure {
-  const _$_StoolFailure() : super._();
+class _$_DatabaseFailure extends _DatabaseFailure {
+  const _$_DatabaseFailure() : super._();
 
   @override
   String toString() {
-    return 'StoolFailure.local()';
+    return 'StoolFailure.database()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _StoolFailure);
+        (other.runtimeType == runtimeType && other is _DatabaseFailure);
   }
 
   @override
@@ -118,27 +129,30 @@ class _$_StoolFailure extends _StoolFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() local,
+    required TResult Function() database,
+    required TResult Function() file_system,
   }) {
-    return local();
+    return database();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? local,
+    TResult Function()? database,
+    TResult Function()? file_system,
   }) {
-    return local?.call();
+    return database?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? local,
+    TResult Function()? database,
+    TResult Function()? file_system,
     required TResult orElse(),
   }) {
-    if (local != null) {
-      return local();
+    if (database != null) {
+      return database();
     }
     return orElse();
   }
@@ -146,33 +160,142 @@ class _$_StoolFailure extends _StoolFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_StoolFailure value) local,
+    required TResult Function(_DatabaseFailure value) database,
+    required TResult Function(_FileSystemFailure value) file_system,
   }) {
-    return local(this);
+    return database(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_StoolFailure value)? local,
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? file_system,
   }) {
-    return local?.call(this);
+    return database?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_StoolFailure value)? local,
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? file_system,
     required TResult orElse(),
   }) {
-    if (local != null) {
-      return local(this);
+    if (database != null) {
+      return database(this);
     }
     return orElse();
   }
 }
 
-abstract class _StoolFailure extends StoolFailure {
-  const factory _StoolFailure() = _$_StoolFailure;
-  const _StoolFailure._() : super._();
+abstract class _DatabaseFailure extends StoolFailure {
+  const factory _DatabaseFailure() = _$_DatabaseFailure;
+  const _DatabaseFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$FileSystemFailureCopyWith<$Res> {
+  factory _$FileSystemFailureCopyWith(
+          _FileSystemFailure value, $Res Function(_FileSystemFailure) then) =
+      __$FileSystemFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$FileSystemFailureCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res>
+    implements _$FileSystemFailureCopyWith<$Res> {
+  __$FileSystemFailureCopyWithImpl(
+      _FileSystemFailure _value, $Res Function(_FileSystemFailure) _then)
+      : super(_value, (v) => _then(v as _FileSystemFailure));
+
+  @override
+  _FileSystemFailure get _value => super._value as _FileSystemFailure;
+}
+
+/// @nodoc
+
+class _$_FileSystemFailure extends _FileSystemFailure {
+  const _$_FileSystemFailure() : super._();
+
+  @override
+  String toString() {
+    return 'StoolFailure.file_system()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _FileSystemFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() database,
+    required TResult Function() file_system,
+  }) {
+    return file_system();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function()? file_system,
+  }) {
+    return file_system?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function()? file_system,
+    required TResult orElse(),
+  }) {
+    if (file_system != null) {
+      return file_system();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DatabaseFailure value) database,
+    required TResult Function(_FileSystemFailure value) file_system,
+  }) {
+    return file_system(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? file_system,
+  }) {
+    return file_system?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? file_system,
+    required TResult orElse(),
+  }) {
+    if (file_system != null) {
+      return file_system(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _FileSystemFailure extends StoolFailure {
+  const factory _FileSystemFailure() = _$_FileSystemFailure;
+  const _FileSystemFailure._() : super._();
 }

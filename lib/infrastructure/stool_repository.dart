@@ -16,7 +16,7 @@ class StoolRepository implements IStoolRepository {
       await _stoolService.addStool(StoolDto.fromDomain(stool));
       return right(unit);
     } catch (e) {
-      return left(const StoolFailure.local());
+      return left(const StoolFailure.database());
     }
   }
 
@@ -26,7 +26,7 @@ class StoolRepository implements IStoolRepository {
       await _stoolService.deleteAllStools();
       return right(unit);
     } catch (e) {
-      return left(const StoolFailure.local());
+      return left(const StoolFailure.database());
     }
   }
 
@@ -37,7 +37,7 @@ class StoolRepository implements IStoolRepository {
       results.sort((a, b) => a.dateTime.compareTo(b.dateTime));
       return right(results.map((e) => e.toDomain()).toList());
     } catch (e) {
-      return left(const StoolFailure.local());
+      return left(const StoolFailure.database());
     }
   }
 

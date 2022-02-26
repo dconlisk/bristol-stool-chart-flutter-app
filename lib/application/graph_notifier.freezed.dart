@@ -28,8 +28,16 @@ class _$GraphStateTearOff {
     );
   }
 
-  _Failure failure() {
-    return const _Failure();
+  _LoadFailure loadFailure() {
+    return const _LoadFailure();
+  }
+
+  _ShareFailure shareFailure() {
+    return const _ShareFailure();
+  }
+
+  _ShareSuccess shareSuccess() {
+    return const _ShareSuccess();
   }
 }
 
@@ -42,21 +50,27 @@ mixin _$GraphState {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() failure,
+    required TResult Function() loadFailure,
+    required TResult Function() shareFailure,
+    required TResult Function() shareSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? failure,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? failure,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -64,21 +78,27 @@ mixin _$GraphState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Initialised value) initialised,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_ShareFailure value) shareFailure,
+    required TResult Function(_ShareSuccess value) shareSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -140,7 +160,9 @@ class _$_Initial extends _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() failure,
+    required TResult Function() loadFailure,
+    required TResult Function() shareFailure,
+    required TResult Function() shareSuccess,
   }) {
     return initial();
   }
@@ -150,7 +172,9 @@ class _$_Initial extends _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? failure,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
   }) {
     return initial?.call();
   }
@@ -160,7 +184,9 @@ class _$_Initial extends _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? failure,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -174,7 +200,9 @@ class _$_Initial extends _Initial {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Initialised value) initialised,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_ShareFailure value) shareFailure,
+    required TResult Function(_ShareSuccess value) shareSuccess,
   }) {
     return initial(this);
   }
@@ -184,7 +212,9 @@ class _$_Initial extends _Initial {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
   }) {
     return initial?.call(this);
   }
@@ -194,7 +224,9 @@ class _$_Initial extends _Initial {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -275,7 +307,9 @@ class _$_Initialised extends _Initialised {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() failure,
+    required TResult Function() loadFailure,
+    required TResult Function() shareFailure,
+    required TResult Function() shareSuccess,
   }) {
     return initialised(stools);
   }
@@ -285,7 +319,9 @@ class _$_Initialised extends _Initialised {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? failure,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
   }) {
     return initialised?.call(stools);
   }
@@ -295,7 +331,9 @@ class _$_Initialised extends _Initialised {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? failure,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
     required TResult orElse(),
   }) {
     if (initialised != null) {
@@ -309,7 +347,9 @@ class _$_Initialised extends _Initialised {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Initialised value) initialised,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_ShareFailure value) shareFailure,
+    required TResult Function(_ShareSuccess value) shareSuccess,
   }) {
     return initialised(this);
   }
@@ -319,7 +359,9 @@ class _$_Initialised extends _Initialised {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
   }) {
     return initialised?.call(this);
   }
@@ -329,7 +371,9 @@ class _$_Initialised extends _Initialised {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
     required TResult orElse(),
   }) {
     if (initialised != null) {
@@ -350,35 +394,37 @@ abstract class _Initialised extends GraphState {
 }
 
 /// @nodoc
-abstract class _$FailureCopyWith<$Res> {
-  factory _$FailureCopyWith(_Failure value, $Res Function(_Failure) then) =
-      __$FailureCopyWithImpl<$Res>;
+abstract class _$LoadFailureCopyWith<$Res> {
+  factory _$LoadFailureCopyWith(
+          _LoadFailure value, $Res Function(_LoadFailure) then) =
+      __$LoadFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FailureCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
-    implements _$FailureCopyWith<$Res> {
-  __$FailureCopyWithImpl(_Failure _value, $Res Function(_Failure) _then)
-      : super(_value, (v) => _then(v as _Failure));
+class __$LoadFailureCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
+    implements _$LoadFailureCopyWith<$Res> {
+  __$LoadFailureCopyWithImpl(
+      _LoadFailure _value, $Res Function(_LoadFailure) _then)
+      : super(_value, (v) => _then(v as _LoadFailure));
 
   @override
-  _Failure get _value => super._value as _Failure;
+  _LoadFailure get _value => super._value as _LoadFailure;
 }
 
 /// @nodoc
 
-class _$_Failure extends _Failure {
-  const _$_Failure() : super._();
+class _$_LoadFailure extends _LoadFailure {
+  const _$_LoadFailure() : super._();
 
   @override
   String toString() {
-    return 'GraphState.failure()';
+    return 'GraphState.loadFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Failure);
+        (other.runtimeType == runtimeType && other is _LoadFailure);
   }
 
   @override
@@ -389,9 +435,11 @@ class _$_Failure extends _Failure {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() failure,
+    required TResult Function() loadFailure,
+    required TResult Function() shareFailure,
+    required TResult Function() shareSuccess,
   }) {
-    return failure();
+    return loadFailure();
   }
 
   @override
@@ -399,9 +447,11 @@ class _$_Failure extends _Failure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? failure,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
   }) {
-    return failure?.call();
+    return loadFailure?.call();
   }
 
   @override
@@ -409,11 +459,13 @@ class _$_Failure extends _Failure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? failure,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
     required TResult orElse(),
   }) {
-    if (failure != null) {
-      return failure();
+    if (loadFailure != null) {
+      return loadFailure();
     }
     return orElse();
   }
@@ -423,9 +475,11 @@ class _$_Failure extends _Failure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
     required TResult Function(_Initialised value) initialised,
-    required TResult Function(_Failure value) failure,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_ShareFailure value) shareFailure,
+    required TResult Function(_ShareSuccess value) shareSuccess,
   }) {
-    return failure(this);
+    return loadFailure(this);
   }
 
   @override
@@ -433,9 +487,11 @@ class _$_Failure extends _Failure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
   }) {
-    return failure?.call(this);
+    return loadFailure?.call(this);
   }
 
   @override
@@ -443,17 +499,265 @@ class _$_Failure extends _Failure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
     TResult Function(_Initialised value)? initialised,
-    TResult Function(_Failure value)? failure,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
     required TResult orElse(),
   }) {
-    if (failure != null) {
-      return failure(this);
+    if (loadFailure != null) {
+      return loadFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class _Failure extends GraphState {
-  const factory _Failure() = _$_Failure;
-  const _Failure._() : super._();
+abstract class _LoadFailure extends GraphState {
+  const factory _LoadFailure() = _$_LoadFailure;
+  const _LoadFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$ShareFailureCopyWith<$Res> {
+  factory _$ShareFailureCopyWith(
+          _ShareFailure value, $Res Function(_ShareFailure) then) =
+      __$ShareFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ShareFailureCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
+    implements _$ShareFailureCopyWith<$Res> {
+  __$ShareFailureCopyWithImpl(
+      _ShareFailure _value, $Res Function(_ShareFailure) _then)
+      : super(_value, (v) => _then(v as _ShareFailure));
+
+  @override
+  _ShareFailure get _value => super._value as _ShareFailure;
+}
+
+/// @nodoc
+
+class _$_ShareFailure extends _ShareFailure {
+  const _$_ShareFailure() : super._();
+
+  @override
+  String toString() {
+    return 'GraphState.shareFailure()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShareFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Stool> stools) initialised,
+    required TResult Function() loadFailure,
+    required TResult Function() shareFailure,
+    required TResult Function() shareSuccess,
+  }) {
+    return shareFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Stool> stools)? initialised,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
+  }) {
+    return shareFailure?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Stool> stools)? initialised,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
+    required TResult orElse(),
+  }) {
+    if (shareFailure != null) {
+      return shareFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Initialised value) initialised,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_ShareFailure value) shareFailure,
+    required TResult Function(_ShareSuccess value) shareSuccess,
+  }) {
+    return shareFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initialised value)? initialised,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
+  }) {
+    return shareFailure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initialised value)? initialised,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
+    required TResult orElse(),
+  }) {
+    if (shareFailure != null) {
+      return shareFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ShareFailure extends GraphState {
+  const factory _ShareFailure() = _$_ShareFailure;
+  const _ShareFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$ShareSuccessCopyWith<$Res> {
+  factory _$ShareSuccessCopyWith(
+          _ShareSuccess value, $Res Function(_ShareSuccess) then) =
+      __$ShareSuccessCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ShareSuccessCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
+    implements _$ShareSuccessCopyWith<$Res> {
+  __$ShareSuccessCopyWithImpl(
+      _ShareSuccess _value, $Res Function(_ShareSuccess) _then)
+      : super(_value, (v) => _then(v as _ShareSuccess));
+
+  @override
+  _ShareSuccess get _value => super._value as _ShareSuccess;
+}
+
+/// @nodoc
+
+class _$_ShareSuccess extends _ShareSuccess {
+  const _$_ShareSuccess() : super._();
+
+  @override
+  String toString() {
+    return 'GraphState.shareSuccess()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ShareSuccess);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Stool> stools) initialised,
+    required TResult Function() loadFailure,
+    required TResult Function() shareFailure,
+    required TResult Function() shareSuccess,
+  }) {
+    return shareSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Stool> stools)? initialised,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
+  }) {
+    return shareSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Stool> stools)? initialised,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
+    required TResult orElse(),
+  }) {
+    if (shareSuccess != null) {
+      return shareSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Initialised value) initialised,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_ShareFailure value) shareFailure,
+    required TResult Function(_ShareSuccess value) shareSuccess,
+  }) {
+    return shareSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initialised value)? initialised,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
+  }) {
+    return shareSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Initialised value)? initialised,
+    TResult Function(_LoadFailure value)? loadFailure,
+    TResult Function(_ShareFailure value)? shareFailure,
+    TResult Function(_ShareSuccess value)? shareSuccess,
+    required TResult orElse(),
+  }) {
+    if (shareSuccess != null) {
+      return shareSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ShareSuccess extends GraphState {
+  const factory _ShareSuccess() = _$_ShareSuccess;
+  const _ShareSuccess._() : super._();
 }

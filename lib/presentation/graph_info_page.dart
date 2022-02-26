@@ -67,6 +67,7 @@ class GraphInfoPage extends StatelessWidget {
               AppPadding.sizedBoxVertical16,
               Text(
                   'NOTE: if you do not have a compatible app installed to share the data (e.g. the Google Mail app or similar) an error message will be displayed.'),
+              AppPadding.sizedBoxVertical16,
             ],
           ),
         ),
