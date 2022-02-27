@@ -9,7 +9,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 
 class IntroPage extends StatefulWidget {
-  const IntroPage({Key? key}) : super(key: key);
+  final bool showFailedImportRequired;
+  const IntroPage({
+    Key? key,
+    this.showFailedImportRequired = false,
+  }) : super(key: key);
 
   @override
   State<IntroPage> createState() => _IntroPageState();
@@ -37,7 +41,6 @@ class _IntroPageState extends State<IntroPage> {
     required String buttonText,
   }) {
     return Container(
-      // color: Colors.blue,
       decoration: const BoxDecoration(
         borderRadius: AppPadding.borderRadius,
         color: Colors.blue,
@@ -54,7 +57,7 @@ class _IntroPageState extends State<IntroPage> {
 
   // TODO: Implement an intro page state notifier to handle the setting up of slides, and the saving of shared preferences
   @override
-  void initState() {
+  void initState() async {
     super.initState();
     _slides.add(
       Slide(

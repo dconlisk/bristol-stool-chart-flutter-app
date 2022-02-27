@@ -52,8 +52,13 @@ class AppRouter extends _i8.RootStackRouter {
           barrierDismissible: false);
     },
     IntroRoute.name: (routeData) {
+      final args = routeData.argsAs<IntroRouteArgs>(
+          orElse: () => const IntroRouteArgs());
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i5.IntroPage());
+          routeData: routeData,
+          child: _i5.IntroPage(
+              key: args.key,
+              showFailedImportRequired: args.showFailedImportRequired));
     },
     SettingsRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
@@ -111,10 +116,27 @@ class GraphInfoRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.IntroPage]
-class IntroRoute extends _i8.PageRouteInfo<void> {
-  const IntroRoute() : super(IntroRoute.name, path: '/intro-page');
+class IntroRoute extends _i8.PageRouteInfo<IntroRouteArgs> {
+  IntroRoute({_i9.Key? key, bool showFailedImportRequired = false})
+      : super(IntroRoute.name,
+            path: '/intro-page',
+            args: IntroRouteArgs(
+                key: key, showFailedImportRequired: showFailedImportRequired));
 
   static const String name = 'IntroRoute';
+}
+
+class IntroRouteArgs {
+  const IntroRouteArgs({this.key, this.showFailedImportRequired = false});
+
+  final _i9.Key? key;
+
+  final bool showFailedImportRequired;
+
+  @override
+  String toString() {
+    return 'IntroRouteArgs{key: $key, showFailedImportRequired: $showFailedImportRequired}';
+  }
 }
 
 /// generated route for

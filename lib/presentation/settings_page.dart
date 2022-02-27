@@ -64,7 +64,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                         child: const Text('OK'),
                         onPressed: () {
                           context.router.pushAndPopUntil(
-                            const IntroRoute(),
+                            IntroRoute(),
                             predicate: (route) => false,
                           );
                         },
