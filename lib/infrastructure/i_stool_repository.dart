@@ -14,4 +14,7 @@ abstract class IStoolRepository {
 
   // Get a stream of data from the service that contains all stools
   Stream<List<Stool>> watchStools();
+
+  // Import data from previous version of the app if it exists
+  Future<void> importOldDatabase();
 }

@@ -46,4 +46,9 @@ class StoolRepository implements IStoolRepository {
     final stream = _stoolService.watchStools();
     return stream.map((event) => event.map((e) => e.toDomain()).toList());
   }
+
+  @override
+  Future<void> importOldDatabase() async {
+    await _stoolService.importOldDatabase();
+  }
 }

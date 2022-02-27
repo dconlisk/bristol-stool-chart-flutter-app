@@ -1,3 +1,4 @@
+import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
 import 'package:bristol_stool_chart/infrastructure/keys.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -14,7 +15,11 @@ class IntroState with _$IntroState {
 }
 
 class IntroNotifier extends StateNotifier<IntroState> {
-  IntroNotifier() : super(const IntroState.initial());
+  final IStoolRepository _stoolRepository;
+
+  IntroNotifier(
+    this._stoolRepository,
+  ) : super(const IntroState.initial());
 
   // Check the user's shared preferences to see if they have viewed the intro yet or not
   Future<void> initialise() async {
@@ -23,6 +28,7 @@ class IntroNotifier extends StateNotifier<IntroState> {
         prefs.getBool(sharedPreferencesHasSeenIntroKey) ?? false;
 
     // TODO: import data from older version of the app
+    await _stoolRepository.importOldDatabase();
 
     state = hasSeenIntro
         ? const IntroState.hasSeenIntro()

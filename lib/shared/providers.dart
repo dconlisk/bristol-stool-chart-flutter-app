@@ -19,7 +19,7 @@ final stoolRepositoryProvider =
     Provider((ref) => StoolRepository(ref.watch(stoolServiceProvider)));
 
 final introNotifierProvider = StateNotifierProvider<IntroNotifier, IntroState>(
-  (ref) => IntroNotifier(),
+  (ref) => IntroNotifier(ref.watch(stoolRepositoryProvider)),
 );
 
 final graphNotifierProvider = StateNotifierProvider<GraphNotifier, GraphState>(

@@ -12,4 +12,7 @@ abstract class IStoolService {
 
   // Get a stream of data from the database that contains all stools
   Stream<List<StoolDto>> watchStools();
+
+  // Import data from previous version of the app if it exists
+  Future<void> importOldDatabase();
 }
