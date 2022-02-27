@@ -83,6 +83,8 @@ class GraphNotifier extends StateNotifier<GraphState> {
       await Share.shareFiles(
         [graphImagePath, csvFilePath],
         subject: 'Share your graph and data',
+        sharePositionOrigin: Rect.fromCenter(
+            center: const Offset(100, 100), width: 200, height: 100),
       );
 
       state = const GraphState.shareSuccess();
