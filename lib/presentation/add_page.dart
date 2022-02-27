@@ -75,27 +75,29 @@ class _AddPageState extends ConsumerState<AddPage> {
               return Center(
                 child: Column(
                   children: [
-                    CarouselSlider(
-                      items: [
-                        Image.asset('assets/images/stooltype1.jpg'),
-                        Image.asset('assets/images/stooltype2.jpg'),
-                        Image.asset('assets/images/stooltype3.jpg'),
-                        Image.asset('assets/images/stooltype4.jpg'),
-                        Image.asset('assets/images/stooltype5.jpg'),
-                        Image.asset('assets/images/stooltype6.jpg'),
-                        Image.asset('assets/images/stooltype7.jpg'),
-                      ],
-                      options: CarouselOptions(
-                        initialPage: 3,
-                        onPageChanged: (index, reason) async {
-                          await ref
-                              .read(addStoolNotifierProvider.notifier)
-                              .updateStool(
-                                state.stool.copyWith(
-                                  type: index + 1,
-                                ),
-                              );
-                        },
+                    Expanded(
+                      child: CarouselSlider(
+                        items: [
+                          Image.asset('assets/images/stooltype1.jpg'),
+                          Image.asset('assets/images/stooltype2.jpg'),
+                          Image.asset('assets/images/stooltype3.jpg'),
+                          Image.asset('assets/images/stooltype4.jpg'),
+                          Image.asset('assets/images/stooltype5.jpg'),
+                          Image.asset('assets/images/stooltype6.jpg'),
+                          Image.asset('assets/images/stooltype7.jpg'),
+                        ],
+                        options: CarouselOptions(
+                          initialPage: 3,
+                          onPageChanged: (index, reason) async {
+                            await ref
+                                .read(addStoolNotifierProvider.notifier)
+                                .updateStool(
+                                  state.stool.copyWith(
+                                    type: index + 1,
+                                  ),
+                                );
+                          },
+                        ),
                       ),
                     ),
                     if (state.showBloodOption)
