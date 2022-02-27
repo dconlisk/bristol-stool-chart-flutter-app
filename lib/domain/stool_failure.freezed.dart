@@ -22,7 +22,7 @@ class _$StoolFailureTearOff {
     return const _DatabaseFailure();
   }
 
-  _FileSystemFailure file_system() {
+  _FileSystemFailure fileSystem() {
     return const _FileSystemFailure();
   }
 }
@@ -35,38 +35,38 @@ mixin _$StoolFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() database,
-    required TResult Function() file_system,
+    required TResult Function() fileSystem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? database,
-    TResult Function()? file_system,
+    TResult Function()? fileSystem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? database,
-    TResult Function()? file_system,
+    TResult Function()? fileSystem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_DatabaseFailure value) database,
-    required TResult Function(_FileSystemFailure value) file_system,
+    required TResult Function(_FileSystemFailure value) fileSystem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? file_system,
+    TResult Function(_FileSystemFailure value)? fileSystem,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? file_system,
+    TResult Function(_FileSystemFailure value)? fileSystem,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -130,7 +130,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() database,
-    required TResult Function() file_system,
+    required TResult Function() fileSystem,
   }) {
     return database();
   }
@@ -139,7 +139,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? database,
-    TResult Function()? file_system,
+    TResult Function()? fileSystem,
   }) {
     return database?.call();
   }
@@ -148,7 +148,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? database,
-    TResult Function()? file_system,
+    TResult Function()? fileSystem,
     required TResult orElse(),
   }) {
     if (database != null) {
@@ -161,7 +161,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_DatabaseFailure value) database,
-    required TResult Function(_FileSystemFailure value) file_system,
+    required TResult Function(_FileSystemFailure value) fileSystem,
   }) {
     return database(this);
   }
@@ -170,7 +170,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? file_system,
+    TResult Function(_FileSystemFailure value)? fileSystem,
   }) {
     return database?.call(this);
   }
@@ -179,7 +179,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? file_system,
+    TResult Function(_FileSystemFailure value)? fileSystem,
     required TResult orElse(),
   }) {
     if (database != null) {
@@ -220,7 +220,7 @@ class _$_FileSystemFailure extends _FileSystemFailure {
 
   @override
   String toString() {
-    return 'StoolFailure.file_system()';
+    return 'StoolFailure.fileSystem()';
   }
 
   @override
@@ -236,29 +236,29 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() database,
-    required TResult Function() file_system,
+    required TResult Function() fileSystem,
   }) {
-    return file_system();
+    return fileSystem();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? database,
-    TResult Function()? file_system,
+    TResult Function()? fileSystem,
   }) {
-    return file_system?.call();
+    return fileSystem?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? database,
-    TResult Function()? file_system,
+    TResult Function()? fileSystem,
     required TResult orElse(),
   }) {
-    if (file_system != null) {
-      return file_system();
+    if (fileSystem != null) {
+      return fileSystem();
     }
     return orElse();
   }
@@ -267,29 +267,29 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_DatabaseFailure value) database,
-    required TResult Function(_FileSystemFailure value) file_system,
+    required TResult Function(_FileSystemFailure value) fileSystem,
   }) {
-    return file_system(this);
+    return fileSystem(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? file_system,
+    TResult Function(_FileSystemFailure value)? fileSystem,
   }) {
-    return file_system?.call(this);
+    return fileSystem?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? file_system,
+    TResult Function(_FileSystemFailure value)? fileSystem,
     required TResult orElse(),
   }) {
-    if (file_system != null) {
-      return file_system(this);
+    if (fileSystem != null) {
+      return fileSystem(this);
     }
     return orElse();
   }

@@ -41,7 +41,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/fonts/
-    - assets/icon/
     - assets/images/
   fonts:
     - family: FontAwesome5Free
