@@ -16,5 +16,5 @@ abstract class IStoolRepository {
   Stream<List<Stool>> watchStools();
 
   // Import data from previous version of the app if it exists
-  Future<void> importOldDatabase();
+  Future<Either<StoolFailure, bool>> importOldDatabase();
 }

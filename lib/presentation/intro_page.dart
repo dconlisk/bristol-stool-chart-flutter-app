@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:bristol_stool_chart/infrastructure/keys.dart';
+import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';

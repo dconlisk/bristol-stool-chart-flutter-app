@@ -2,10 +2,10 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
 
-import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:bristol_stool_chart/infrastructure/i_file_system_repository.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
+import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -120,7 +120,8 @@ class GraphNotifier extends StateNotifier<GraphState> {
   Future<String?> _getCsvFrom({required List<Stool> stools}) async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final showBloodOption = prefs.getBool(bloodSettingKey) ?? false;
+      final showBloodOption =
+          prefs.getBool(sharedPreferencesBloodSettingKey) ?? false;
 
       var rows = stools
           .map((stool) => showBloodOption

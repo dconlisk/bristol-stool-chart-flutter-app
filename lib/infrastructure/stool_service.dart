@@ -41,28 +41,25 @@ class StoolLocalService implements IStoolService {
   }
 
   @override
-  Future<void> importOldDatabase() async {
-    try {
-      final oldDatabaseDirectory = await getDatabasesPath();
-      final oldDatabaseFilePath = '$oldDatabaseDirectory/events.db';
+  Future<bool> importOldDatabase() async {
+    final oldDatabaseDirectory = await getDatabasesPath();
+    final oldDatabaseFilePath = '$oldDatabaseDirectory/events.db';
 
-      final dbExists = await databaseExists(oldDatabaseFilePath);
+    final dbExists = await databaseExists(oldDatabaseFilePath);
 
-      if (dbExists) {
-        final oldDatabase = await openDatabase(oldDatabaseFilePath);
+    if (dbExists) {
+      final oldDatabase = await openDatabase(oldDatabaseFilePath);
 
-        if (oldDatabase.isOpen) {
-          final data = await oldDatabase.query('events');
-          await Future.wait(data.map((stool) => _importStool(stool)));
-        }
-
-        // Finally delete the old database file
-        await deleteDatabase(oldDatabaseFilePath);
+      if (oldDatabase.isOpen) {
+        final data = await oldDatabase.query('events');
+        await Future.wait(data.map((stool) => _importStool(stool)));
       }
-    } catch (e) {
-      final x = 1;
-      // Don't crash - just silently fail the import
+
+      // Finally delete the old database file
+      //await deleteDatabase(oldDatabaseFilePath);
     }
+
+    return dbExists;
   }
 
   // Import a data item from the old database as a stool into our new database

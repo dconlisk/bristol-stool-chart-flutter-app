@@ -26,7 +26,7 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
   Future<void> initialise() async {
     final prefs = await SharedPreferences.getInstance();
 
-    _showBloodOption = prefs.getBool(bloodSettingKey) ?? false;
+    _showBloodOption = prefs.getBool(sharedPreferencesBloodSettingKey) ?? false;
 
     state = SettingsState.initialised(_showBloodOption);
   }
@@ -34,7 +34,7 @@ class SettingsNotifier extends StateNotifier<SettingsState> {
   Future<void> setBloodOption(bool value) async {
     final prefs = await SharedPreferences.getInstance();
 
-    await prefs.setBool(bloodSettingKey, value);
+    await prefs.setBool(sharedPreferencesBloodSettingKey, value);
 
     _showBloodOption = value;
 

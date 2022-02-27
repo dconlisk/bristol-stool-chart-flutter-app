@@ -25,6 +25,10 @@ class _$StoolFailureTearOff {
   _FileSystemFailure fileSystem() {
     return const _FileSystemFailure();
   }
+
+  _ImportFailure import() {
+    return const _ImportFailure();
+  }
 }
 
 /// @nodoc
@@ -36,18 +40,21 @@ mixin _$StoolFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() database,
     required TResult Function() fileSystem,
+    required TResult Function() import,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? database,
     TResult Function()? fileSystem,
+    TResult Function()? import,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? database,
     TResult Function()? fileSystem,
+    TResult Function()? import,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -55,18 +62,21 @@ mixin _$StoolFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
+    required TResult Function(_ImportFailure value) import,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -131,6 +141,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() database,
     required TResult Function() fileSystem,
+    required TResult Function() import,
   }) {
     return database();
   }
@@ -140,6 +151,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? database,
     TResult Function()? fileSystem,
+    TResult Function()? import,
   }) {
     return database?.call();
   }
@@ -149,6 +161,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? database,
     TResult Function()? fileSystem,
+    TResult Function()? import,
     required TResult orElse(),
   }) {
     if (database != null) {
@@ -162,6 +175,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
+    required TResult Function(_ImportFailure value) import,
   }) {
     return database(this);
   }
@@ -171,6 +185,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
   }) {
     return database?.call(this);
   }
@@ -180,6 +195,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
     required TResult orElse(),
   }) {
     if (database != null) {
@@ -237,6 +253,7 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   TResult when<TResult extends Object?>({
     required TResult Function() database,
     required TResult Function() fileSystem,
+    required TResult Function() import,
   }) {
     return fileSystem();
   }
@@ -246,6 +263,7 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? database,
     TResult Function()? fileSystem,
+    TResult Function()? import,
   }) {
     return fileSystem?.call();
   }
@@ -255,6 +273,7 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? database,
     TResult Function()? fileSystem,
+    TResult Function()? import,
     required TResult orElse(),
   }) {
     if (fileSystem != null) {
@@ -268,6 +287,7 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
+    required TResult Function(_ImportFailure value) import,
   }) {
     return fileSystem(this);
   }
@@ -277,6 +297,7 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
   }) {
     return fileSystem?.call(this);
   }
@@ -286,6 +307,7 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
     required TResult orElse(),
   }) {
     if (fileSystem != null) {
@@ -298,4 +320,116 @@ class _$_FileSystemFailure extends _FileSystemFailure {
 abstract class _FileSystemFailure extends StoolFailure {
   const factory _FileSystemFailure() = _$_FileSystemFailure;
   const _FileSystemFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$ImportFailureCopyWith<$Res> {
+  factory _$ImportFailureCopyWith(
+          _ImportFailure value, $Res Function(_ImportFailure) then) =
+      __$ImportFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ImportFailureCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res>
+    implements _$ImportFailureCopyWith<$Res> {
+  __$ImportFailureCopyWithImpl(
+      _ImportFailure _value, $Res Function(_ImportFailure) _then)
+      : super(_value, (v) => _then(v as _ImportFailure));
+
+  @override
+  _ImportFailure get _value => super._value as _ImportFailure;
+}
+
+/// @nodoc
+
+class _$_ImportFailure extends _ImportFailure {
+  const _$_ImportFailure() : super._();
+
+  @override
+  String toString() {
+    return 'StoolFailure.import()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ImportFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() database,
+    required TResult Function() fileSystem,
+    required TResult Function() import,
+  }) {
+    return import();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function()? fileSystem,
+    TResult Function()? import,
+  }) {
+    return import?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function()? fileSystem,
+    TResult Function()? import,
+    required TResult orElse(),
+  }) {
+    if (import != null) {
+      return import();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DatabaseFailure value) database,
+    required TResult Function(_FileSystemFailure value) fileSystem,
+    required TResult Function(_ImportFailure value) import,
+  }) {
+    return import(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
+  }) {
+    return import?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
+    required TResult orElse(),
+  }) {
+    if (import != null) {
+      return import(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ImportFailure extends StoolFailure {
+  const factory _ImportFailure() = _$_ImportFailure;
+  const _ImportFailure._() : super._();
 }

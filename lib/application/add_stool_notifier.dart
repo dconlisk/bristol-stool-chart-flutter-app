@@ -1,6 +1,6 @@
-import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
+import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -43,7 +43,7 @@ class AddStoolNotifier extends StateNotifier<AddStoolState> {
 
   Future<void> initialise() async {
     final prefs = await SharedPreferences.getInstance();
-    _showBloodOption = prefs.getBool(bloodSettingKey) ?? false;
+    _showBloodOption = prefs.getBool(sharedPreferencesBloodSettingKey) ?? false;
     final newStool = Stool(
       dateTime: DateTime.now(),
       hasBlood: false,
