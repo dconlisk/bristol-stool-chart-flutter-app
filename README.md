@@ -43,7 +43,16 @@ I have also created a Makefile which allows me to use shortcuts like `make gener
 - removed unnecessary StatefulWidgets
 - replaced static helper classes with interfaces and implementations, which makes it testable (in theory! No actual tests to be seen just now tho ;))
 
-## TODO: WISHLIST
+## TODO: 
+
+- import data on Android
+- check Android icon when app switching
+- tablet layout (increased padding) and small phone layout (see rose iPhone)
+- iOS splash screen
+- swipe to end and stop
+- view raw data - separate share function for graph and data?
+
+- WISHLIST:
 
 - review fonts
 - add unit tests
