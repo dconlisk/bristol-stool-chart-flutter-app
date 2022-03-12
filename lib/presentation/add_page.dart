@@ -72,32 +72,32 @@ class _AddPageState extends ConsumerState<AddPage> {
               child: CircularProgressIndicator(),
             ),
             initialised: (state) {
-              return Center(
+              return SingleChildScrollView(
                 child: Column(
                   children: [
-                    Expanded(
-                      child: CarouselSlider(
-                        items: [
-                          Image.asset('assets/images/stooltype1.jpg'),
-                          Image.asset('assets/images/stooltype2.jpg'),
-                          Image.asset('assets/images/stooltype3.jpg'),
-                          Image.asset('assets/images/stooltype4.jpg'),
-                          Image.asset('assets/images/stooltype5.jpg'),
-                          Image.asset('assets/images/stooltype6.jpg'),
-                          Image.asset('assets/images/stooltype7.jpg'),
-                        ],
-                        options: CarouselOptions(
-                          initialPage: 3,
-                          onPageChanged: (index, reason) async {
-                            await ref
-                                .read(addStoolNotifierProvider.notifier)
-                                .updateStool(
-                                  state.stool.copyWith(
-                                    type: index + 1,
-                                  ),
-                                );
-                          },
-                        ),
+                    CarouselSlider(
+                      items: const [
+                        SliderImage(index: 1),
+                        SliderImage(index: 2),
+                        SliderImage(index: 3),
+                        SliderImage(index: 4),
+                        SliderImage(index: 5),
+                        SliderImage(index: 6),
+                        SliderImage(index: 7),
+                      ],
+                      options: CarouselOptions(
+                        height: MediaQuery.of(context).size.height / 2,
+                        initialPage: 3,
+                        enableInfiniteScroll: false,
+                        onPageChanged: (index, reason) async {
+                          await ref
+                              .read(addStoolNotifierProvider.notifier)
+                              .updateStool(
+                                state.stool.copyWith(
+                                  type: index + 1,
+                                ),
+                              );
+                        },
                       ),
                     ),
                     if (state.showBloodOption)
@@ -159,6 +159,19 @@ class _AddPageState extends ConsumerState<AddPage> {
           );
         },
       ),
+    );
+  }
+}
+
+class SliderImage extends StatelessWidget {
+  final int index;
+  const SliderImage({Key? key, required this.index}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Image.asset('assets/images/stooltype$index.jpg'),
+      padding: AppPadding.regular,
     );
   }
 }
