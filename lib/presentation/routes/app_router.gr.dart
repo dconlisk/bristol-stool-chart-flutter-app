@@ -55,10 +55,7 @@ class AppRouter extends _i8.RootStackRouter {
       final args = routeData.argsAs<IntroRouteArgs>(
           orElse: () => const IntroRouteArgs());
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData,
-          child: _i5.IntroPage(
-              key: args.key,
-              showFailedImportRequired: args.showFailedImportRequired));
+          routeData: routeData, child: _i5.IntroPage(key: args.key));
     },
     SettingsRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
@@ -117,25 +114,21 @@ class GraphInfoRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i5.IntroPage]
 class IntroRoute extends _i8.PageRouteInfo<IntroRouteArgs> {
-  IntroRoute({_i9.Key? key, bool showFailedImportRequired = false})
+  IntroRoute({_i9.Key? key})
       : super(IntroRoute.name,
-            path: '/intro-page',
-            args: IntroRouteArgs(
-                key: key, showFailedImportRequired: showFailedImportRequired));
+            path: '/intro-page', args: IntroRouteArgs(key: key));
 
   static const String name = 'IntroRoute';
 }
 
 class IntroRouteArgs {
-  const IntroRouteArgs({this.key, this.showFailedImportRequired = false});
+  const IntroRouteArgs({this.key});
 
   final _i9.Key? key;
 
-  final bool showFailedImportRequired;
-
   @override
   String toString() {
-    return 'IntroRouteArgs{key: $key, showFailedImportRequired: $showFailedImportRequired}';
+    return 'IntroRouteArgs{key: $key}';
   }
 }
 

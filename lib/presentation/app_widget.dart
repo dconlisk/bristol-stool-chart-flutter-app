@@ -1,3 +1,4 @@
+import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:dartz/dartz.dart';
 import 'package:bristol_stool_chart/application/intro_notifier.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
@@ -18,7 +19,6 @@ class AppWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // This seems sort of a hack to get introNotifier.checkAndUpdateIntroStatus() to run once only
     ref.listen(initializationProvider, (_, __) {});
 
     ref.listen<IntroState>(introNotifierProvider,
@@ -26,27 +26,8 @@ class AppWidget extends ConsumerWidget {
       currentState.map(
         initial: (_) {},
         importFailed: (_) async {
-          // TODO: How do we show this alert and where?
-          //       if (widget.showFailedImportRequired) {
-          //   await showDialog<AlertDialog>(
-          //     context: context,
-          //     builder: (_) => AlertDialog(
-          //       title: const Text('An error occurred'),
-          //       content: const Text(
-          //           'Unfortunately we could not import your data from the previous version of the app. We apologise for any inconvenience caused.'),
-          //       actions: <Widget>[
-          //         ElevatedButton(
-          //           child: const Text('OK'),
-          //           onPressed: () {
-          //             context.router.pop();
-          //           },
-          //         )
-          //       ],
-          //     ),
-          //   );
-          // }
           await _appRouter.pushAndPopUntil(
-            IntroRoute(showFailedImportRequired: true),
+            IntroRoute(),
             predicate: (route) => false,
           );
         },
@@ -70,7 +51,8 @@ class AppWidget extends ConsumerWidget {
       routeInformationParser: _appRouter.defaultRouteParser(),
       title: 'Bristol Stool Chart',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: AppColors.blue,
+        scaffoldBackgroundColor: AppColors.white,
       ),
     );
   }

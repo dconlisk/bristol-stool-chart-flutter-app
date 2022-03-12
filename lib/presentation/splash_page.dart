@@ -1,4 +1,5 @@
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatelessWidget {
@@ -9,7 +10,7 @@ class SplashPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.blueGrey,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 48),
+        padding: AppPadding.extraLargeHorizontal,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
@@ -18,7 +19,7 @@ class SplashPage extends StatelessWidget {
               width: 200,
               fit: BoxFit.cover,
             ),
-            SizedBox(height: 16),
+            AppPadding.sizedBoxVerticalRegular,
             Center(
               child: CircularProgressIndicator(),
             )
