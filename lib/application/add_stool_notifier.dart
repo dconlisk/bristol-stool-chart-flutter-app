@@ -65,16 +65,15 @@ class AddStoolNotifier extends StateNotifier<AddStoolState> {
   Future<void> saveStool() async {
     final result = await _stoolRepository.addStool(state.stool);
 
-    if (result.isLeft()) {
-      state = AddStoolState.error(
+    result.fold(
+      (l) => state = AddStoolState.error(
         state.stool,
         _showBloodOption,
-      );
-    } else {
-      state = AddStoolState.success(
+      ),
+      (r) => state = AddStoolState.success(
         state.stool,
         _showBloodOption,
-      );
-    }
+      ),
+    );
   }
 }

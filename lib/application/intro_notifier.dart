@@ -31,23 +31,21 @@ class IntroNotifier extends StateNotifier<IntroState> {
     // Import data from older version of the app, if it exists
     final result = await _stoolRepository.importOldDatabase();
 
-    if (result.isLeft()) {
+    result.fold((failure) {
       // Alert the user if there was a problem importing their old data, and show the intro (i.e. full app reset)
       state = const IntroState.importFailed();
-      state = const IntroState.hasNotSeenIntro();
-    } else {
-      result.fold((l) => null, (dataWasImported) {
-        if (dataWasImported) {
-          // If the user had data, then don't show the intro to them again
-          prefs.setBool(sharedPreferencesHasSeenIntroKey, true);
-          state = const IntroState.hasSeenIntro();
-        } else {
-          // If there was no data, then just act based on shared preferences
-          state = hasSeenIntro
-              ? const IntroState.hasSeenIntro()
-              : const IntroState.hasNotSeenIntro();
-        }
-      });
-    }
+      //state = const IntroState.hasNotSeenIntro();
+    }, (dataWasImported) {
+      if (dataWasImported) {
+        // If the user had data, then don't show the intro to them again
+        prefs.setBool(sharedPreferencesHasSeenIntroKey, true);
+        state = const IntroState.hasSeenIntro();
+      } else {
+        // If there was no data, then just act based on shared preferences
+        state = hasSeenIntro
+            ? const IntroState.hasSeenIntro()
+            : const IntroState.hasNotSeenIntro();
+      }
+    });
   }
 }
