@@ -46,19 +46,19 @@ I have also created a Makefile which allows me to use shortcuts like `make gener
 ## TODO: 
 
 - import data on Android
-- check Android icon when app switching
 - tablet layout (increased padding) and small phone layout (see rose iPhone)
 - iOS splash screen
 - view raw data - separate share function for graph and data?
 - review fonts
-- top bar colour and intro layout
 - blood indicator?
+- Add version number to drawer
 
 - WISHLIST:
 
-- review fonts
 - add unit tests
 - performance review https://itnext.io/flutter-performance-tips-4580b2491da8
+- add request for app store review after 10 stools recorded
+- add feature request after 15 stools recorded, email directly to me
 
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
