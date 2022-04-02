@@ -1,4 +1,6 @@
 import 'package:bristol_stool_chart/domain/stool.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -50,7 +52,7 @@ class _GraphState extends State<Graph> {
     return SfCartesianChart(
       onTooltipRender: (args) => {args.header = "BSC"},
       backgroundColor: Colors.white,
-      margin: const EdgeInsets.all(16),
+      margin: AppPadding.regular,
       zoomPanBehavior: ZoomPanBehavior(
         enablePanning: true,
         enablePinching: true,
@@ -61,10 +63,16 @@ class _GraphState extends State<Graph> {
         text: 'STOOL QUALITY',
         alignment: ChartAlignment.near,
         textStyle: const TextStyle(
-          fontSize: 16,
+          fontSize: AppSizes.regular,
         ),
       ),
       tooltipBehavior: TooltipBehavior(enable: false),
+      onMarkerRender: (markerArgs) {
+        if (markerArgs.pointIndex != null &&
+            widget.stools[markerArgs.pointIndex!].hasBlood) {
+          markerArgs.color = Colors.red;
+        }
+      },
       primaryXAxis: DateTimeAxis(
         rangePadding: ChartRangePadding.none,
         majorTickLines: const MajorTickLines(
@@ -171,19 +179,6 @@ class _GraphState extends State<Graph> {
             height: 10,
             width: 10,
           ),
-          dataLabelSettings: const DataLabelSettings(
-            isVisible: true,
-            alignment: ChartAlignment.center,
-            textStyle: TextStyle(
-              color: Colors.red,
-            ),
-          ),
-          dataLabelMapper: (stool, index) {
-            if (stool.hasBlood) {
-              return '*';
-            }
-            return ' ';
-          },
         ),
       ],
     );
