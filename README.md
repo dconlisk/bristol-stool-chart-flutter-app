@@ -1,9 +1,57 @@
 # The Bristol Stool Chart mobile app written in Flutter
-This is the third (turd?) iteration of the Bristol Stool Chart mobile app (from iOS native, to Xamarin Forms, and now to Flutter). It's a total rewrite with a new Material design and using Google Flutter and Dart. It's a single codebase that runs on both iOS and Android phones and tablets.
+This is the fourth iteration of the Bristol Stool Chart mobile app (from iOS native, to Xamarin Forms, then to a basic Flutter solution, and now to a more advanced Flutter application). It's a total rewrite with a new Material design and using Google Flutter and Dart. It's a single codebase that runs on both iOS and Android phones and tablets.
 
 This app is used by medical professionals with their patients to track their stool quality over time. Users can track their stools and then share the data with their chosen health professional in the form of an easy-to-read graph as well as a csv of the raw data. The app does not track user data and is totally anonymous - no login required.
 
-I created this app as a way to practice using flutter while also keeping the app current and up-to-date. It uses a bunch of flutter packages, as well as FontAwesome and the Syncfusion SfChart control.
+I created this app as a way to practice using flutter while also keeping the app current and up-to-date. 
+
+## Flutter packages used
+
+* [auto_route](https://pub.dev/packages/auto_route) : this is maybe overkill for such a simple app as this, but it's the solution I use in my enterprise projects. It uses code generation to simplify the route setup in your app, and also allows the passing of strongly typed arguments as well as deep-linking. You declare your routes in app_router.dart (or similar), run your code generation as usual, and then your navigation code goes from something like this:
+  
+  `Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (context) => new GraphScreen()));` 
+  
+  to something much nicer like this 
+  
+  `AutoRouter.of(context).push(const GraphRoute());` 
+
+* [freezed](https://pub.dev/packages/freezed) : I'm using freezed with my immutable objects to auto-generate useful functions like copyWith, automatic serialization/deserialization of objects (using json_serializable), and union types so that you get compile time errors if you omit a state or include an impossible state.
+* [json_serializable](https://pub.dev/packages/json_serializable) : the freezed package uses this to automatically generate serialization/deserialization methods for objects. I'm using this to convert my objects to/from JSON when storing to or retrieving from the database.
+* [google_fonts](https://pub.dev/packages/google_fonts) : my designer friends tell me I should use nice fonts, so here I go.
+* [shared_preferences](https://pub.dev/packages/shared_preferences) : you could argue that I could have stored all the data for the app in my sembast database, but I've used this as it's a simple solution for storing simple data in NSUserDefaaults on iOS and macOS, SharedPreferences on Android, etc. Dead simple to use, I've used it to remember that the user has seen or skipped the onboarding introduction slideshow in the app.
+* [intro_slider](https://pub.dev/packages/intro_slider) : I'm using this to display the onboarding slideshow that the user sees when they first open the app.
+* [intl](https://pub.dev/packages/intl) : Used for formatting dates.
+* [share_plus](https://pub.dev/packages/share_plus) : A Flutter Community plugin for sharing content via the device's share dialog. This allows my users to share the data and images via Whatsapp and text message, as well as via email, depending on what apps are installed on the device.
+* [path_provider](https://pub.dev/packages/path_provider) : I'm using this to get a location on the filesystem to store the csv and image files before sharing.
+* [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) : Automatically generate the launcher icon from a given png for all platforms.
+* [package_info_plus](https://pub.dev/packages/package_info_plus) : Allows me to display the app version number in the drawer. It's important to know the version of the app being used when trying to debug reported issues.
+
+## Technical notes
+
+I use [fvm](https://fvm.app) to manage the flutter SDK versions installed on my machine. It allows you to set a global version of flutter for your projects to use, while also allowing you to specify local versions to use for each project. Note that this project contains a .fvm directory which contains the fvm_config.json file which specifies which version of flutter this project uses.
+I have also created a Makefile which allows me to use shortcuts like `make generated` in my Terminal, which will run the command `@fvm flutter packages pub run build_runner build --delete-conflicting-outputs` - it's just quicker and easier to remember.
+
+## Upgrade notes
+
+- linting is your friend
+- no longer any need for the new keyword
+- added the const keyword
+- null safety
+- moved business logic from private methods in the widgets into riverpod state notifiers (better separation of concerns)
+- perhaps slight overkill with the architecture for such a simple app, but a good illustration of best practice (e.g. widget -> repo -> service -> db)
+- added some error handling (!)
+- removed FutureBuilders 
+- removed unnecessary StatefulWidgets
+- replaced static helper classes with interfaces and implementations, which makes it testable (in theory! No actual tests to be seen just now tho ;))
+
+## FEATURE WISHLIST:
+
+- add unit tests
+- performance review https://itnext.io/flutter-performance-tips-4580b2491da8
+- add request for app store review after 10 stools recorded
+- add feature request after 15 stools recorded, email directly to me
+- view raw data in the app - separate share function for graph and data?
+
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
 
