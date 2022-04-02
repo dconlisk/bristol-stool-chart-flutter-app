@@ -49,12 +49,11 @@ class StoolRepository implements IStoolRepository {
 
   @override
   Future<Either<StoolFailure, bool>> importOldDatabase() async {
-    return const Left(StoolFailure.import());
-    // try {
-    //   final result = await _stoolService.importOldDatabase();
-    //   return Right(result);
-    // } catch (e) {
-    //   return const Left(StoolFailure.import());
-    // }
+    try {
+      final result = await _stoolService.importOldDatabase();
+      return Right(result);
+    } catch (e) {
+      return const Left(StoolFailure.import());
+    }
   }
 }
