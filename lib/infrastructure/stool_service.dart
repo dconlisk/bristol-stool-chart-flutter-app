@@ -56,7 +56,7 @@ class StoolLocalService implements IStoolService {
       }
 
       // Finally delete the old database file
-      //await deleteDatabase(oldDatabaseFilePath);
+      await deleteDatabase(oldDatabaseFilePath);
     }
 
     return dbExists;
