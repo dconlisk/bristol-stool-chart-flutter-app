@@ -29,7 +29,7 @@ class GraphInfoPage extends StatelessWidget {
               Text(
                 'In general, it is best if your stool quality stays close to the green line on the graph. If it tends towards the edges, '
                 'i.e. towards type 1 or towards type 7, then you may be experiencing issues with your digestive system. It is recommended that you '
-                'consult your health professional if you are consistently recording events in the red areas of the graph.',
+                'consult your health professional if you are consistently recording events towards the top or bottom of the graph.',
               ),
               AppPadding.sizedBoxVerticalRegular,
               Text(
@@ -37,7 +37,7 @@ class GraphInfoPage extends StatelessWidget {
                   'types 5 and 6 tend to be associated with urgency and type 7 is diarrhea.'),
               AppPadding.sizedBoxVerticalRegular,
               Text(
-                  'For more information on each type of stool, please use the following links to the Bristol Stool Chart website:'),
+                  'For more information on each type of stool, please tap on the following links to the Bristol Stool Chart website:'),
               AppPadding.sizedBoxVerticalRegular,
               LinkToWebsite(type: 1),
               LinkToWebsite(type: 2),
@@ -62,7 +62,7 @@ class GraphInfoPage extends StatelessWidget {
               AppPadding.sizedBoxVerticalRegular,
               Text(
                 'You can share your data by tapping the Share button below the graph. Remember that you can zoom and scroll the graph to make sure it is displaying the information that you would like to share. '
-                'The share function uses other apps on your device to share the files (a picture of the graph and a spreadsheet of the data). You will be presented with a list of apps based on what apps are installed on your device.',
+                'The share function uses other apps on your device to share the files (a picture of the graph and a spreadsheet of the data). You will be presented with a list of apps based on the apps that are installed on your device.',
               ),
               AppPadding.sizedBoxVerticalRegular,
               Text(

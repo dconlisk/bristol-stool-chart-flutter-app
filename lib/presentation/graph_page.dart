@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/graph_notifier.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:bristol_stool_chart/presentation/widgets/graph.dart';
 import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
@@ -74,7 +75,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             initialised: (state) {
               return (state.stools.isEmpty)
                   ? Padding(
-                      padding: const EdgeInsets.all(32.0),
+                      padding: AppPadding.large,
                       child: Text(
                         'To begin, tap the button below to add a stool',
                         style: Theme.of(context).textTheme.headline5,
@@ -92,7 +93,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                           flex: 3,
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                          padding: AppPadding.regularHorizontal,
                           child: ElevatedButton(
                             onPressed: () async {
                               await ref
@@ -104,7 +105,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                         ),
                         Expanded(
                           child: Container(
-                            height: 36,
+                            height: AppSizes.large,
                           ),
                           flex: 1,
                         ),
@@ -121,14 +122,14 @@ class _GraphPageState extends ConsumerState<GraphPage> {
         },
       ),
       bottomSheet: Container(
-        height: 150,
+        height: 120,
         alignment: Alignment.centerRight,
-        padding: const EdgeInsets.all(32.0),
+        padding: AppPadding.large,
         child: FloatingActionButton(
           materialTapTargetSize: MaterialTapTargetSize.padded,
           child: const Icon(
             Icons.add,
-            size: 28,
+            size: AppSizes.large,
           ),
           onPressed: () {
             context.router.push(const AddRoute());

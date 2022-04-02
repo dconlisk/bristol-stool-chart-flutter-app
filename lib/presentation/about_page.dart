@@ -14,7 +14,7 @@ class AboutPage extends StatelessWidget {
       drawer: const MainDrawer(),
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          horizontal: AppSizes.regular,
+          horizontal: AppSizes.small,
         ),
         child: SingleChildScrollView(
           child: Column(

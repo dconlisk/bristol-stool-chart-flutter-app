@@ -6,16 +6,32 @@ import 'package:google_fonts/google_fonts.dart';
 class AppTextStyles {
   static final paragraph = GoogleFonts.roboto(
     color: AppColors.lightGrey,
-    fontSize: 18,
+    fontSize: AppSizes.paragraphFontSize,
   );
 
-  static final title = GoogleFonts.playfairDisplay(
-    fontSize: 24,
+  static final label = GoogleFonts.roboto(
+    color: AppColors.lightGrey,
+    fontSize: AppSizes.paragraphFontSize,
+    fontWeight: FontWeight.bold,
+  );
+
+  static final introTitle = GoogleFonts.playfairDisplay(
+    fontSize: AppSizes.titleFontSize,
+    fontWeight: FontWeight.bold,
+  );
+
+  static final title = GoogleFonts.roboto(
+    fontSize: AppSizes.titleFontSize,
     fontWeight: FontWeight.bold,
   );
 
   static const drawerLink = TextStyle(
-    fontSize: AppSizes.drawerFontSize,
+    fontSize: AppSizes.titleFontSize,
+    color: AppColors.white,
+  );
+
+  static const drawerText = TextStyle(
+    fontSize: AppSizes.paragraphFontSize,
     color: AppColors.white,
   );
 

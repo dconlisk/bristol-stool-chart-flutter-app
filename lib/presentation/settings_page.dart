@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/settings_notifier.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:bristol_stool_chart/presentation/widgets/heading.dart';
@@ -83,15 +85,25 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
             ),
             initialised: (initialisedState) => Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: AppSizes.regular,
+                horizontal: AppSizes.small,
               ),
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    const Heading(
+                      text: 'Blood check',
+                    ),
+                    Text(
+                      'You can record whenever you have blood in your stool by enabling this feature. This will add a "Was there blood in the stool?" checkbox to the add screen. Any stools that have blood in them will '
+                      'be displayed in red on the graph.',
+                      style: AppTextStyles.paragraph,
+                    ),
                     Row(
-                      children: <Widget>[
-                        const Heading(
-                          text: 'Enable blood check?',
+                      children: [
+                        Text(
+                          'Enable blood check feature?',
+                          style: AppTextStyles.label,
                         ),
                         Switch(
                           value: initialisedState.showBloodOption,
@@ -103,11 +115,6 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                         ),
                       ],
                     ),
-                    Text(
-                      'You can record whenever you have blood in your stool by enabling this feature. This will add a "blood in stool?" checkbox to the add screen. Any stools that have blood in them will '
-                      'be displayed in red on the graph.',
-                      style: AppTextStyles.paragraph,
-                    ),
                     const Heading(
                       text: 'Remove all data',
                     ),
@@ -115,6 +122,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                       'You can remove all data from the app and start again with a clean sheet. Simply tap the Delete Data button, below.',
                       style: AppTextStyles.paragraph,
                     ),
+                    AppPadding.sizedBoxVerticalSmall,
                     ElevatedButton(
                       child: const Text('DELETE DATA'),
                       onPressed: () async {
@@ -123,7 +131,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                           builder: (_) => AlertDialog(
                             title: const Text('Are you sure?'),
                             content: const Text(
-                                'All of your existing stool data will be permanently removed. Do you wish to continue?'),
+                                'All of your data will be permanently removed. Do you wish to continue?'),
                             actions: [
                               ElevatedButton(
                                 onPressed: () async {

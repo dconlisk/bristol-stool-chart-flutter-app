@@ -16,7 +16,7 @@ class IntroPage extends ConsumerWidget {
       backgroundColor: Colors.white,
       pathImage: 'assets/images/intro_healthy_patient.png',
       title: "Welcome",
-      styleTitle: AppTextStyles.title,
+      styleTitle: AppTextStyles.introTitle,
       description:
           "This app is a simple tool to allow you to track your bowel movements and to share that data with your health professional.",
       styleDescription: AppTextStyles.paragraph,
@@ -25,7 +25,7 @@ class IntroPage extends ConsumerWidget {
       backgroundColor: Colors.white,
       pathImage: 'assets/images/intro_use_app.png',
       title: "How it works",
-      styleTitle: AppTextStyles.title,
+      styleTitle: AppTextStyles.introTitle,
       description:
           "Use the add button on the graph to add a stool. Swipe left or right until you find the right image. Set the time if you need to change it. "
           "You can also use the Settings section to enable the blood in stool tracking feature if that is of use to you. Tap the save button to save and return to the graph.",
@@ -35,7 +35,7 @@ class IntroPage extends ConsumerWidget {
       backgroundColor: Colors.white,
       pathImage: 'assets/images/intro_share_data.png',
       title: "Share your data",
-      styleTitle: AppTextStyles.title,
+      styleTitle: AppTextStyles.introTitle,
       description:
           "To share your data, tap the share button under the graph. This will allow you to send your graph and data to your chosen contact via your chosen app.",
       styleDescription: AppTextStyles.paragraph,
