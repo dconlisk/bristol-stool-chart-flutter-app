@@ -1,10 +1,30 @@
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:bristol_stool_chart/presentation/widgets/drawer_link.dart';
 import 'package:flutter/material.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 
-class MainDrawer extends StatelessWidget {
+class MainDrawer extends StatefulWidget {
   const MainDrawer({Key? key}) : super(key: key);
+
+  @override
+  State<MainDrawer> createState() => _MainDrawerState();
+}
+
+class _MainDrawerState extends State<MainDrawer> {
+  String versionNumber = '';
+
+  @override
+  void initState() {
+    PackageInfo.fromPlatform().then((packageInfo) {
+      setState(() {
+        versionNumber = packageInfo.version;
+      });
+    });
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +38,8 @@ class MainDrawer extends StatelessWidget {
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Padding(
+            children: [
+              const Padding(
                 padding: EdgeInsets.only(
                   top: 80,
                   bottom: 80,
@@ -30,20 +50,32 @@ class MainDrawer extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              DrawerLink(
+              const DrawerLink(
                 text: 'Graph',
                 icon: Icons.assessment,
                 route: GraphRoute(),
               ),
-              DrawerLink(
+              const DrawerLink(
                 text: 'Settings',
                 icon: Icons.settings,
                 route: SettingsRoute(),
               ),
-              DrawerLink(
+              const DrawerLink(
                 text: 'About',
                 icon: Icons.info,
                 route: AboutRoute(),
+              ),
+              Expanded(
+                child: Align(
+                  alignment: FractionalOffset.bottomLeft,
+                  child: Padding(
+                    padding: AppPadding.regular,
+                    child: Text(
+                      'App version $versionNumber',
+                      style: AppTextStyles.drawerText,
+                    ),
+                  ),
+                ),
               ),
             ],
           ),
