@@ -11,20 +11,21 @@ I created this app as a way to practice using flutter while also keeping the app
   
   `Navigator.of(context).pushReplacement(new MaterialPageRoute(builder: (context) => new GraphScreen()));` 
   
-  to something like this 
+  to something much nicer like this 
   
   `AutoRouter.of(context).push(const GraphRoute());` 
-  
-  Much nicer I think you'll agree.
-* [freezed](https://pub.dev/packages/freezed) : I'm using freezed with my immutable objects to auto-generate useful functions like copyWith, automatic serialization/deserialization of objects (using json_serializable), union types so that you get compile time errors if you omit a state or include an impossible state.
+
+* [freezed](https://pub.dev/packages/freezed) : I'm using freezed with my immutable objects to auto-generate useful functions like copyWith, automatic serialization/deserialization of objects (using json_serializable), and union types so that you get compile time errors if you omit a state or include an impossible state.
 * [json_serializable](https://pub.dev/packages/json_serializable) : the freezed package uses this to automatically generate serialization/deserialization methods for objects. I'm using this to convert my objects to/from JSON when storing to or retrieving from the database.
 * [google_fonts](https://pub.dev/packages/google_fonts) : my designer friends tell me I should use nice fonts, so here I go.
 * [shared_preferences](https://pub.dev/packages/shared_preferences) : you could argue that I could have stored all the data for the app in my sembast database, but I've used this as it's a simple solution for storing simple data in NSUserDefaaults on iOS and macOS, SharedPreferences on Android, etc. Dead simple to use, I've used it to remember that the user has seen or skipped the onboarding introduction slideshow in the app.
 * [intro_slider](https://pub.dev/packages/intro_slider) : I'm using this to display the onboarding slideshow that the user sees when they first open the app.
 * [intl](https://pub.dev/packages/intl) : Used for formatting dates.
-* [share_plus](https://pub.dev/packages/share_plus) : A Flutter Community plugin for sharing content via the device's share dialog. This allows BSC users to share the data and images via Whatsapp and text message, as well as via email, depending on what apps are installed on the device.
+* [share_plus](https://pub.dev/packages/share_plus) : A Flutter Community plugin for sharing content via the device's share dialog. This allows my users to share the data and images via Whatsapp and text message, as well as via email, depending on what apps are installed on the device.
 * [path_provider](https://pub.dev/packages/path_provider) : I'm using this to get a location on the filesystem to store the csv and image files before sharing.
 * [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) : Automatically generate the launcher icon from a given png for all platforms.
+* [package_info_plus](https://pub.dev/packages/package_info_plus) : Allows me to display the app version number in the drawer. It's important to know the version of the app being used when trying to debug reported issues.
+
 ## Technical notes
 
 I use [fvm](https://fvm.app) to manage the flutter SDK versions installed on my machine. It allows you to set a global version of flutter for your projects to use, while also allowing you to specify local versions to use for each project. Note that this project contains a .fvm directory which contains the fvm_config.json file which specifies which version of flutter this project uses.
@@ -43,22 +44,13 @@ I have also created a Makefile which allows me to use shortcuts like `make gener
 - removed unnecessary StatefulWidgets
 - replaced static helper classes with interfaces and implementations, which makes it testable (in theory! No actual tests to be seen just now tho ;))
 
-## TODO: 
-
-- import data on Android
-- tablet layout (increased padding) and small phone layout (see rose iPhone)
-- iOS splash screen
-- view raw data - separate share function for graph and data?
-- review fonts
-- blood indicator?
-- Add version number to drawer
-
-- WISHLIST:
+## FEATURE WISHLIST:
 
 - add unit tests
 - performance review https://itnext.io/flutter-performance-tips-4580b2491da8
 - add request for app store review after 10 stools recorded
 - add feature request after 15 stools recorded, email directly to me
+- view raw data in the app - separate share function for graph and data?
 
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)

@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/graph_notifier.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:bristol_stool_chart/presentation/widgets/graph.dart';
@@ -125,6 +126,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
         height: 120,
         alignment: Alignment.centerRight,
         padding: AppPadding.large,
+        color: AppColors.white,
         child: FloatingActionButton(
           materialTapTargetSize: MaterialTapTargetSize.padded,
           child: const Icon(

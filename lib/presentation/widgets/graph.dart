@@ -34,7 +34,7 @@ class _GraphState extends State<Graph> {
 
     // use a different label style for the graph depending on the data in it
     const twoDays = 2 * 24 * 60 * 60 * 1000;
-    final graphIntervalType = widget.stools.length >= 2
+    final graphIntervalType = totalTimeInData > twoDays
         ? DateTimeIntervalType.auto
         : DateTimeIntervalType.minutes;
     final graphDateFormat =
