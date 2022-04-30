@@ -1,4 +1,5 @@
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:bristol_stool_chart/presentation/widgets/heading.dart';
 import 'package:bristol_stool_chart/presentation/widgets/link_to_website.dart';
 import 'package:flutter/material.dart';
@@ -15,60 +16,71 @@ class GraphInfoPage extends StatelessWidget {
             CloseButton(),
           ],
           title: const Text('About the graph')),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Heading(
-                text: 'What the graph tells you',
-              ),
-              AppPadding.sizedBoxVerticalRegular,
-              Text(
-                'In general, it is best if your stool quality stays close to the green line on the graph. If it tends towards the edges, '
-                'i.e. towards type 1 or towards type 7, then you may be experiencing issues with your digestive system. It is recommended that you '
-                'consult your health professional if you are consistently recording events towards the top or bottom of the graph.',
-              ),
-              AppPadding.sizedBoxVerticalRegular,
-              Text(
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Heading(
+                  text: 'What the graph tells you',
+                ),
+                AppPadding.sizedBoxVerticalRegular,
+                Text(
+                  'In general, it is best if your stool quality stays close to the green line on the graph. If it tends towards the edges, '
+                  'i.e. towards type 1 or towards type 7, then you may be experiencing issues with your digestive system. It is recommended that you '
+                  'consult your health professional if you are consistently recording events towards the top or bottom of the graph.',
+                  style: AppTextStyles.paragraph,
+                ),
+                AppPadding.sizedBoxVerticalRegular,
+                Text(
                   'Types 1 and 2 indicate constipation, types 3 and 4 are usually the most comfortable to pass, '
-                  'types 5 and 6 tend to be associated with urgency and type 7 is diarrhea.'),
-              AppPadding.sizedBoxVerticalRegular,
-              Text(
-                  'For more information on each type of stool, please tap on the following links to the Bristol Stool Chart website:'),
-              AppPadding.sizedBoxVerticalRegular,
-              LinkToWebsite(type: 1),
-              LinkToWebsite(type: 2),
-              LinkToWebsite(type: 3),
-              LinkToWebsite(type: 4),
-              LinkToWebsite(type: 5),
-              LinkToWebsite(type: 6),
-              LinkToWebsite(type: 7),
-              Heading(
-                text: 'Zooming the graph',
-              ),
-              AppPadding.sizedBoxVerticalRegular,
-              Text(
-                'You can zoom in on the graph in two ways: you can put two fingers on the graph and spread them, or you can double-tap the graph. Double-tapping again will unzoom the graph. '
-                'When the graph is zoomed in you can also scroll back and forth in the usual way (with a single finger swiping left or right on the graph). '
-                'If you are planning on sharing the graph image, you can zoom and scroll until what you see on the screen is exactly what you would like to share.',
-              ),
-              AppPadding.sizedBoxVerticalRegular,
-              Heading(
-                text: 'Sharing your data',
-              ),
-              AppPadding.sizedBoxVerticalRegular,
-              Text(
-                'You can share your data by tapping the Share button below the graph. Remember that you can zoom and scroll the graph to make sure it is displaying the information that you would like to share. '
-                'The share function uses other apps on your device to share the files (a picture of the graph and a spreadsheet of the data). You will be presented with a list of apps based on the apps that are installed on your device.',
-              ),
-              AppPadding.sizedBoxVerticalRegular,
-              Text(
-                  'NOTE: if you do not have a compatible app installed to share the data (e.g. the Google Mail app or similar) an error message will be displayed.'),
-              AppPadding.sizedBoxVerticalRegular,
-            ],
+                  'types 5 and 6 tend to be associated with urgency and type 7 is diarrhea.',
+                  style: AppTextStyles.paragraph,
+                ),
+                AppPadding.sizedBoxVerticalRegular,
+                Text(
+                  'For more information on each type of stool, please tap on the following links to the Bristol Stool Chart website:',
+                  style: AppTextStyles.paragraph,
+                ),
+                AppPadding.sizedBoxVerticalRegular,
+                const LinkToWebsite(type: 1),
+                const LinkToWebsite(type: 2),
+                const LinkToWebsite(type: 3),
+                const LinkToWebsite(type: 4),
+                const LinkToWebsite(type: 5),
+                const LinkToWebsite(type: 6),
+                const LinkToWebsite(type: 7),
+                const Heading(
+                  text: 'Zooming the graph',
+                ),
+                AppPadding.sizedBoxVerticalRegular,
+                Text(
+                  'You can zoom in on the graph in two ways: you can put two fingers on the graph and spread them, or you can double-tap the graph. Double-tapping again will unzoom the graph. '
+                  'When the graph is zoomed in you can also scroll back and forth in the usual way (with a single finger swiping left or right on the graph). '
+                  'If you are planning on sharing the graph image, you can zoom and scroll until what you see on the screen is exactly what you would like to share.',
+                  style: AppTextStyles.paragraph,
+                ),
+                AppPadding.sizedBoxVerticalRegular,
+                Heading(
+                  text: 'Sharing your data',
+                ),
+                AppPadding.sizedBoxVerticalRegular,
+                Text(
+                  'You can share your data by tapping the Share button below the graph. Remember that you can zoom and scroll the graph to make sure it is displaying the information that you would like to share. '
+                  'The share function uses other apps on your device to share the files (a picture of the graph and a spreadsheet of the data). You will be presented with a list of apps based on the apps that are installed on your device.',
+                  style: AppTextStyles.paragraph,
+                ),
+                AppPadding.sizedBoxVerticalRegular,
+                Text(
+                  'NOTE: if you do not have a compatible app installed to share the data (e.g. the Google Mail app or similar) an error message will be displayed.',
+                  style: AppTextStyles.paragraph,
+                ),
+                AppPadding.sizedBoxVerticalRegular,
+              ],
+            ),
           ),
         ),
       ),
