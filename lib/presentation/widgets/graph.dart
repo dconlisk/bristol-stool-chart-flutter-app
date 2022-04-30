@@ -33,9 +33,6 @@ class _GraphState extends State<Graph> {
 
     // use a different label style for the graph depending on the data in it
     const twoDays = 2 * 24 * 60 * 60 * 1000;
-    final graphIntervalType = totalTimeInData > twoDays
-        ? DateTimeIntervalType.auto
-        : DateTimeIntervalType.minutes;
     final graphDateFormat =
         totalTimeInData > twoDays ? DateFormat('MMM\ndd') : DateFormat('HH:mm');
 
@@ -88,7 +85,7 @@ class _GraphState extends State<Graph> {
             width: 0,
           ),
           dateFormat: graphDateFormat,
-          intervalType: graphIntervalType,
+          intervalType: DateTimeIntervalType.auto,
         ),
         primaryYAxis: NumericAxis(
           minimum: 1,
