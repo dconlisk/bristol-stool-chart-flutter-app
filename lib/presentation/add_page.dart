@@ -106,7 +106,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                         children: [
                           Text(
                             'Was there blood in the stool?',
-                            style: Theme.of(context).textTheme.bodyText1,
+                            style: Theme.of(context).textTheme.subtitle1,
                           ),
                           Switch(
                             value: state.stool.hasBlood,
