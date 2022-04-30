@@ -11,9 +11,12 @@ class LinkToWebsite extends StatelessWidget {
 
   Future<void> _openUrl(int type) async {
     final typeNames = ['one', 'two', 'three', 'four', 'five', 'six', 'seven'];
-    String url = 'https://bristolstoolchart.net/type-${typeNames[type - 1]}';
-    if (await canLaunch(url)) {
-      await launch(url);
+    var uri = Uri(
+      path: 'bristolstoolchart.net/type-${typeNames[type - 1]}',
+      scheme: 'https',
+    );
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri);
     }
   }
 

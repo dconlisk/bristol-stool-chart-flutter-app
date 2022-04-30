@@ -12,32 +12,11 @@ part of 'stool_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 StoolDto _$StoolDtoFromJson(Map<String, dynamic> json) {
   return _StoolDto.fromJson(json);
 }
-
-/// @nodoc
-class _$StoolDtoTearOff {
-  const _$StoolDtoTearOff();
-
-  _StoolDto call(
-      {required int type, required DateTime dateTime, required bool hasBlood}) {
-    return _StoolDto(
-      type: type,
-      dateTime: dateTime,
-      hasBlood: hasBlood,
-    );
-  }
-
-  StoolDto fromJson(Map<String, Object?> json) {
-    return StoolDto.fromJson(json);
-  }
-}
-
-/// @nodoc
-const $StoolDto = _$StoolDtoTearOff();
 
 /// @nodoc
 mixin _$StoolDto {
@@ -161,6 +140,7 @@ class _$_StoolDto extends _StoolDto {
             const DeepCollectionEquality().equals(other.hasBlood, hasBlood));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -181,19 +161,19 @@ class _$_StoolDto extends _StoolDto {
 
 abstract class _StoolDto extends StoolDto {
   const factory _StoolDto(
-      {required int type,
-      required DateTime dateTime,
-      required bool hasBlood}) = _$_StoolDto;
+      {required final int type,
+      required final DateTime dateTime,
+      required final bool hasBlood}) = _$_StoolDto;
   const _StoolDto._() : super._();
 
   factory _StoolDto.fromJson(Map<String, dynamic> json) = _$_StoolDto.fromJson;
 
   @override
-  int get type;
+  int get type => throw _privateConstructorUsedError;
   @override
-  DateTime get dateTime;
+  DateTime get dateTime => throw _privateConstructorUsedError;
   @override
-  bool get hasBlood;
+  bool get hasBlood => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StoolDtoCopyWith<_StoolDto> get copyWith =>

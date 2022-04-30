@@ -29,7 +29,7 @@ class AppWidget extends ConsumerWidget {
         initial: (_) {},
         importFailed: (_) async {
           await _appRouter.pushAndPopUntil(
-            IntroRoute(),
+            const IntroRoute(),
             predicate: (route) => false,
           );
         },
@@ -41,7 +41,7 @@ class AppWidget extends ConsumerWidget {
         },
         hasNotSeenIntro: (_) async {
           await _appRouter.pushAndPopUntil(
-            IntroRoute(),
+            const IntroRoute(),
             predicate: (route) => false,
           );
         },

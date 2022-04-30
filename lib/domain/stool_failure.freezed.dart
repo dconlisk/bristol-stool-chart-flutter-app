@@ -12,27 +12,7 @@ part of 'stool_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$StoolFailureTearOff {
-  const _$StoolFailureTearOff();
-
-  _DatabaseFailure database() {
-    return const _DatabaseFailure();
-  }
-
-  _FileSystemFailure fileSystem() {
-    return const _FileSystemFailure();
-  }
-
-  _ImportFailure import() {
-    return const _ImportFailure();
-  }
-}
-
-/// @nodoc
-const $StoolFailure = _$StoolFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$StoolFailure {

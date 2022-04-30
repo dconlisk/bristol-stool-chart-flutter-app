@@ -12,31 +12,7 @@ part of 'intro_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$IntroStateTearOff {
-  const _$IntroStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _HasSeenIntro hasSeenIntro() {
-    return const _HasSeenIntro();
-  }
-
-  _HasNotSeenIntro hasNotSeenIntro() {
-    return const _HasNotSeenIntro();
-  }
-
-  _ImportFailed importFailed() {
-    return const _ImportFailed();
-  }
-}
-
-/// @nodoc
-const $IntroState = _$IntroStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$IntroState {
