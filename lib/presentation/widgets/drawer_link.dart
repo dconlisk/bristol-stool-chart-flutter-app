@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
-import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 class DrawerLink extends StatelessWidget {
@@ -35,7 +34,7 @@ class DrawerLink extends StatelessWidget {
           ),
           Text(
             text,
-            style: AppTextStyles.drawerLink,
+            style: Theme.of(context).textTheme.headline3,
           )
         ],
       ),

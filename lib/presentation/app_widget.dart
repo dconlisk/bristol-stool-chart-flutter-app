@@ -1,8 +1,10 @@
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
+import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:dartz/dartz.dart';
 import 'package:bristol_stool_chart/application/intro_notifier.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 
@@ -53,6 +55,43 @@ class AppWidget extends ConsumerWidget {
       theme: ThemeData(
         primarySwatch: AppColors.blue,
         scaffoldBackgroundColor: AppColors.white,
+        textTheme: TextTheme(
+          headline1: GoogleFonts.roboto(
+            fontSize: AppSizes.titleFontSize,
+            fontWeight: FontWeight.bold,
+          ),
+          headline2: GoogleFonts.playfairDisplay(
+            fontSize: AppSizes.titleFontSize,
+            fontWeight: FontWeight.bold,
+          ),
+          headline3: const TextStyle(
+            fontSize: AppSizes.titleFontSize,
+            color: AppColors.white,
+          ),
+          headline4: const TextStyle(
+            color: AppColors.blue,
+            fontSize: AppSizes.paragraphFontSize,
+            decoration: TextDecoration.underline,
+          ),
+          bodyText1: GoogleFonts.roboto(
+            color: AppColors.lightGrey,
+            fontSize: AppSizes.paragraphFontSize,
+          ),
+          bodyText2: const TextStyle(
+            fontSize: AppSizes.paragraphFontSize,
+            color: AppColors.white,
+          ),
+          caption: const TextStyle(
+            fontFamily: 'FontAwesome5Free',
+            color: Colors.black,
+            fontSize: 16,
+          ),
+          subtitle1: GoogleFonts.roboto(
+            color: AppColors.lightGrey,
+            fontSize: AppSizes.paragraphFontSize,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
     );
   }

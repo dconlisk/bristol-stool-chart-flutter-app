@@ -1,7 +1,6 @@
 import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
-import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -34,9 +33,6 @@ class _GraphState extends State<Graph> {
 
     // use a different label style for the graph depending on the data in it
     const twoDays = 2 * 24 * 60 * 60 * 1000;
-    final graphIntervalType = totalTimeInData > twoDays
-        ? DateTimeIntervalType.auto
-        : DateTimeIntervalType.minutes;
     final graphDateFormat =
         totalTimeInData > twoDays ? DateFormat('MMM\ndd') : DateFormat('HH:mm');
 
@@ -49,138 +45,140 @@ class _GraphState extends State<Graph> {
       ),
     );
 
-    return SfCartesianChart(
-      onTooltipRender: (args) => {args.header = "BSC"},
-      backgroundColor: Colors.white,
-      margin: AppPadding.regular,
-      zoomPanBehavior: ZoomPanBehavior(
-        enablePanning: true,
-        enablePinching: true,
-        enableDoubleTapZooming: true,
-        zoomMode: ZoomMode.x,
-      ),
-      title: ChartTitle(
-        text: 'STOOL QUALITY',
-        alignment: ChartAlignment.near,
-        textStyle: const TextStyle(
-          fontSize: AppSizes.regular,
+    return SafeArea(
+      child: SfCartesianChart(
+        onTooltipRender: (args) => {args.header = "BSC"},
+        backgroundColor: Colors.white,
+        margin: AppPadding.regular,
+        zoomPanBehavior: ZoomPanBehavior(
+          enablePanning: true,
+          enablePinching: true,
+          enableDoubleTapZooming: true,
+          zoomMode: ZoomMode.x,
         ),
-      ),
-      tooltipBehavior: TooltipBehavior(enable: false),
-      onMarkerRender: (markerArgs) {
-        if (markerArgs.pointIndex != null &&
-            widget.stools[markerArgs.pointIndex!].hasBlood) {
-          markerArgs.color = Colors.red;
-        }
-      },
-      primaryXAxis: DateTimeAxis(
-        rangePadding: ChartRangePadding.none,
-        majorTickLines: const MajorTickLines(
-          color: Colors.white,
-        ),
-        minorGridLines: const MinorGridLines(
-          color: Colors.white,
-        ),
-        majorGridLines: const MajorGridLines(
-          width: 0,
-        ),
-        axisLine: const AxisLine(
-          width: 0,
-        ),
-        dateFormat: graphDateFormat,
-        intervalType: graphIntervalType,
-      ),
-      primaryYAxis: NumericAxis(
-        minimum: 1,
-        maximum: 7,
-        interval: 1,
-        majorTickLines: const MajorTickLines(
-          color: Colors.white,
-        ),
-        axisLine: const AxisLine(
-          color: Colors.white,
-        ),
-        rangePadding: ChartRangePadding.additional,
-        plotBands: [
-          PlotBand(
-            start: 1,
-            end: 2,
-            color: Colors.white,
-            opacity: 0.2,
-            text: '\u{f119}',
-            shouldRenderAboveSeries: true,
-            horizontalTextAlignment: TextAnchor.end,
-            verticalTextAlignment: TextAnchor.end,
-            textStyle: AppTextStyles.smileyTextStyle,
+        title: ChartTitle(
+          text: 'STOOL QUALITY',
+          alignment: ChartAlignment.near,
+          textStyle: const TextStyle(
+            fontSize: AppSizes.regular,
           ),
-          PlotBand(
-            start: 2,
-            end: 3,
+        ),
+        tooltipBehavior: TooltipBehavior(enable: false),
+        onMarkerRender: (markerArgs) {
+          if (markerArgs.pointIndex != null &&
+              widget.stools[markerArgs.pointIndex!].hasBlood) {
+            markerArgs.color = Colors.red;
+          }
+        },
+        primaryXAxis: DateTimeAxis(
+          rangePadding: ChartRangePadding.none,
+          majorTickLines: const MajorTickLines(
             color: Colors.white,
-            opacity: 0.2,
-            text: '\u{f11a}',
-            shouldRenderAboveSeries: true,
-            horizontalTextAlignment: TextAnchor.end,
-            verticalTextAlignment: TextAnchor.end,
-            textStyle: AppTextStyles.smileyTextStyle,
           ),
-          PlotBand(
-            start: 3,
-            end: 5,
+          minorGridLines: const MinorGridLines(
             color: Colors.white,
-            opacity: 0.2,
-            text: '\u{f118}',
-            horizontalTextAlignment: TextAnchor.end,
-            verticalTextAlignment: TextAnchor.middle,
-            textStyle: AppTextStyles.smileyTextStyle,
           ),
-          PlotBand(
-            start: 5,
-            end: 6,
-            color: Colors.white,
-            opacity: 0.2,
-            text: '\u{f11a}',
-            horizontalTextAlignment: TextAnchor.end,
-            verticalTextAlignment: TextAnchor.middle,
-            textStyle: AppTextStyles.smileyTextStyle,
+          majorGridLines: const MajorGridLines(
+            width: 0,
           ),
-          PlotBand(
-            start: 6,
-            end: 7,
+          axisLine: const AxisLine(
+            width: 0,
+          ),
+          dateFormat: graphDateFormat,
+          intervalType: DateTimeIntervalType.auto,
+        ),
+        primaryYAxis: NumericAxis(
+          minimum: 1,
+          maximum: 7,
+          interval: 1,
+          majorTickLines: const MajorTickLines(
             color: Colors.white,
-            opacity: 0.2,
-            text: '\u{f119}',
-            horizontalTextAlignment: TextAnchor.end,
-            verticalTextAlignment: TextAnchor.start,
-            textStyle: AppTextStyles.smileyTextStyle,
+          ),
+          axisLine: const AxisLine(
+            color: Colors.white,
+          ),
+          rangePadding: ChartRangePadding.additional,
+          plotBands: [
+            PlotBand(
+              start: 1,
+              end: 2,
+              color: Colors.white,
+              opacity: 0.2,
+              text: '\u{f119}',
+              shouldRenderAboveSeries: true,
+              horizontalTextAlignment: TextAnchor.end,
+              verticalTextAlignment: TextAnchor.end,
+              textStyle: Theme.of(context).textTheme.caption,
+            ),
+            PlotBand(
+              start: 2,
+              end: 3,
+              color: Colors.white,
+              opacity: 0.2,
+              text: '\u{f11a}',
+              shouldRenderAboveSeries: true,
+              horizontalTextAlignment: TextAnchor.end,
+              verticalTextAlignment: TextAnchor.end,
+              textStyle: Theme.of(context).textTheme.caption,
+            ),
+            PlotBand(
+              start: 3,
+              end: 5,
+              color: Colors.white,
+              opacity: 0.2,
+              text: '\u{f118}',
+              horizontalTextAlignment: TextAnchor.end,
+              verticalTextAlignment: TextAnchor.middle,
+              textStyle: Theme.of(context).textTheme.caption,
+            ),
+            PlotBand(
+              start: 5,
+              end: 6,
+              color: Colors.white,
+              opacity: 0.2,
+              text: '\u{f11a}',
+              horizontalTextAlignment: TextAnchor.end,
+              verticalTextAlignment: TextAnchor.middle,
+              textStyle: Theme.of(context).textTheme.caption,
+            ),
+            PlotBand(
+              start: 6,
+              end: 7,
+              color: Colors.white,
+              opacity: 0.2,
+              text: '\u{f119}',
+              horizontalTextAlignment: TextAnchor.end,
+              verticalTextAlignment: TextAnchor.start,
+              textStyle: Theme.of(context).textTheme.caption,
+            ),
+          ],
+        ),
+        series: <ChartSeries>[
+          FastLineSeries<Stool, DateTime>(
+            color: Colors.green,
+            dataSource: fours,
+            xValueMapper: (Stool event, int index) => event.dateTime,
+            yValueMapper: (Stool event, int index) => event.type,
+            markerSettings: const MarkerSettings(
+              isVisible: false,
+            ),
+          ),
+          FastLineSeries<Stool, DateTime>(
+            color: Colors.black,
+            dataSource: widget.stools,
+            xValueMapper: (Stool event, int index) => event.dateTime,
+            yValueMapper: (Stool event, int index) => event.type,
+            markerSettings: const MarkerSettings(
+              isVisible: true,
+              borderColor: Colors.black,
+              borderWidth: 2,
+              color: Colors.white,
+              height: 10,
+              width: 10,
+            ),
           ),
         ],
       ),
-      series: <ChartSeries>[
-        FastLineSeries<Stool, DateTime>(
-          color: Colors.green,
-          dataSource: fours,
-          xValueMapper: (Stool event, int index) => event.dateTime,
-          yValueMapper: (Stool event, int index) => event.type,
-          markerSettings: const MarkerSettings(
-            isVisible: false,
-          ),
-        ),
-        FastLineSeries<Stool, DateTime>(
-          color: Colors.black,
-          dataSource: widget.stools,
-          xValueMapper: (Stool event, int index) => event.dateTime,
-          yValueMapper: (Stool event, int index) => event.type,
-          markerSettings: const MarkerSettings(
-            isVisible: true,
-            borderColor: Colors.black,
-            borderWidth: 2,
-            color: Colors.white,
-            height: 10,
-            width: 10,
-          ),
-        ),
-      ],
     );
   }
 }

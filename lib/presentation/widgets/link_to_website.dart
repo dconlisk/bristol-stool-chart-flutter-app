@@ -22,7 +22,10 @@ class LinkToWebsite extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
-        child: Text('Type $type'),
+        child: Text(
+          'Type $type',
+          style: Theme.of(context).textTheme.headline4,
+        ),
         onTap: () => _openUrl(type),
       ),
     );

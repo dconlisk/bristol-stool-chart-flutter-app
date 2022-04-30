@@ -18,7 +18,7 @@ I created this app as a way to practice using flutter while also keeping the app
 * [freezed](https://pub.dev/packages/freezed) : I'm using freezed with my immutable objects to auto-generate useful functions like copyWith, automatic serialization/deserialization of objects (using json_serializable), and union types so that you get compile time errors if you omit a state or include an impossible state.
 * [json_serializable](https://pub.dev/packages/json_serializable) : the freezed package uses this to automatically generate serialization/deserialization methods for objects. I'm using this to convert my objects to/from JSON when storing to or retrieving from the database.
 * [google_fonts](https://pub.dev/packages/google_fonts) : my designer friends tell me I should use nice fonts, so here I go.
-* [shared_preferences](https://pub.dev/packages/shared_preferences) : you could argue that I could have stored all the data for the app in my sembast database, but I've used this as it's a simple solution for storing simple data in NSUserDefaaults on iOS and macOS, SharedPreferences on Android, etc. Dead simple to use, I've used it to remember that the user has seen or skipped the onboarding introduction slideshow in the app.
+* [shared_preferences](https://pub.dev/packages/shared_preferences) : you could argue that I could have stored all the data for the app in my sembast database, but I've used this as it's a simple solution for storing simple data in NSUserDefaults on iOS and macOS, and SharedPreferences on Android. Dead simple to use, I've used it to remember that the user has seen or skipped the onboarding introduction slideshow in the app.
 * [intro_slider](https://pub.dev/packages/intro_slider) : I'm using this to display the onboarding slideshow that the user sees when they first open the app.
 * [intl](https://pub.dev/packages/intl) : Used for formatting dates.
 * [share_plus](https://pub.dev/packages/share_plus) : A Flutter Community plugin for sharing content via the device's share dialog. This allows my users to share the data and images via Whatsapp and text message, as well as via email, depending on what apps are installed on the device.
@@ -44,16 +44,12 @@ I have also created a Makefile which allows me to use shortcuts like `make gener
 - removed unnecessary StatefulWidgets
 - replaced static helper classes with interfaces and implementations, which makes it testable (in theory! No actual tests to be seen just now tho ;))
 
-## FEATURE WISHLIST:
-
-- add unit tests
-- performance review https://itnext.io/flutter-performance-tips-4580b2491da8
-- add request for app store review after 10 stools recorded
-- add feature request after 15 stools recorded, email directly to me
-- view raw data in the app - separate share function for graph and data?
-
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
+
+## Website maintenance
+
+The website source code exists on the [gh-pages](https://github.com/dconlisk/bristol-stool-chart-flutter-app/tree/gh-pages) branch in the repository. Any edits to this branch will result in them being deployed to the live site.
 
 # License
 

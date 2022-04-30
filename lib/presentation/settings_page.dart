@@ -2,9 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/settings_notifier.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
-import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:bristol_stool_chart/presentation/widgets/heading.dart';
 import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
+import 'package:bristol_stool_chart/presentation/widgets/paragraph.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -86,73 +86,75 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
               padding: const EdgeInsets.symmetric(
                 horizontal: AppSizes.small,
               ),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Heading(
-                      text: 'Blood check',
-                    ),
-                    Text(
-                      'You can record whenever you have blood in your stool by enabling this feature. This will add a "Was there blood in the stool?" checkbox to the add screen. Any stools that have blood in them will '
-                      'be displayed in red on the graph.',
-                      style: AppTextStyles.paragraph,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          'Enable blood check feature?',
-                          style: AppTextStyles.label,
-                        ),
-                        Switch(
-                          value: initialisedState.showBloodOption,
-                          onChanged: (value) {
-                            ref
-                                .read(settingsNotifierProvider.notifier)
-                                .setBloodOption(value);
-                          },
-                        ),
-                      ],
-                    ),
-                    const Heading(
-                      text: 'Remove all data',
-                    ),
-                    Text(
-                      'You can remove all data from the app and start again with a clean sheet. Simply tap the Delete Data button, below.',
-                      style: AppTextStyles.paragraph,
-                    ),
-                    AppPadding.sizedBoxVerticalSmall,
-                    ElevatedButton(
-                      child: const Text('DELETE DATA'),
-                      onPressed: () async {
-                        await showDialog<AlertDialog>(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: const Text('Are you sure?'),
-                            content: const Text(
-                                'All of your data will be permanently removed. Do you wish to continue?'),
-                            actions: [
-                              ElevatedButton(
-                                onPressed: () async {
-                                  await context.router.pop();
-                                },
-                                child: const Text('CANCEL'),
-                              ),
-                              ElevatedButton(
-                                onPressed: () async {
-                                  await context.router.pop();
-                                  await ref
-                                      .read(settingsNotifierProvider.notifier)
-                                      .deleteAllData();
-                                },
-                                child: const Text('DELETE ALL DATA'),
-                              ),
-                            ],
+              child: SafeArea(
+                child: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Heading(
+                        text: 'Blood check',
+                      ),
+                      const Paragraph(
+                        text:
+                            'You can record whenever you have blood in your stool by enabling this feature. This will add a "Was there blood in the stool?" checkbox to the add screen. Any stools that have blood in them will '
+                            'be displayed in red on the graph.',
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Enable blood check feature?',
+                            style: Theme.of(context).textTheme.subtitle1,
                           ),
-                        );
-                      },
-                    ),
-                  ],
+                          Switch(
+                            value: initialisedState.showBloodOption,
+                            onChanged: (value) {
+                              ref
+                                  .read(settingsNotifierProvider.notifier)
+                                  .setBloodOption(value);
+                            },
+                          ),
+                        ],
+                      ),
+                      const Heading(
+                        text: 'Remove all data',
+                      ),
+                      const Paragraph(
+                        text:
+                            'You can remove all data from the app and start again with a clean sheet. Simply tap the Delete Data button, below.',
+                      ),
+                      AppPadding.sizedBoxVerticalSmall,
+                      ElevatedButton(
+                        child: const Text('DELETE DATA'),
+                        onPressed: () async {
+                          await showDialog<AlertDialog>(
+                            context: context,
+                            builder: (_) => AlertDialog(
+                              title: const Text('Are you sure?'),
+                              content: const Text(
+                                  'All of your data will be permanently removed. Do you wish to continue?'),
+                              actions: [
+                                ElevatedButton(
+                                  onPressed: () async {
+                                    await context.router.pop();
+                                  },
+                                  child: const Text('CANCEL'),
+                                ),
+                                ElevatedButton(
+                                  onPressed: () async {
+                                    await context.router.pop();
+                                    await ref
+                                        .read(settingsNotifierProvider.notifier)
+                                        .deleteAllData();
+                                  },
+                                  child: const Text('DELETE ALL DATA'),
+                                ),
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),

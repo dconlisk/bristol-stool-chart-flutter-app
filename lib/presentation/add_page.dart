@@ -104,7 +104,10 @@ class _AddPageState extends ConsumerState<AddPage> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Text('Was there blood in the stool?'),
+                          Text(
+                            'Was there blood in the stool?',
+                            style: Theme.of(context).textTheme.subtitle1,
+                          ),
                           Switch(
                             value: state.stool.hasBlood,
                             onChanged: (hasBlood) async {

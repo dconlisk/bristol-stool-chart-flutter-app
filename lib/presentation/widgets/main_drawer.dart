@@ -1,6 +1,5 @@
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
-import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:bristol_stool_chart/presentation/widgets/drawer_link.dart';
 import 'package:flutter/material.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
@@ -29,55 +28,57 @@ class _MainDrawerState extends State<MainDrawer> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-        color: AppColors.blueGrey,
-        padding: const EdgeInsets.all(10),
-        child: Padding(
-          padding: const EdgeInsets.only(
-            left: 16,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(
-                  top: 80,
-                  bottom: 80,
-                ),
-                child: Image(
-                  image: AssetImage('assets/images/drawer_logo.png'),
-                  width: 200,
-                  fit: BoxFit.cover,
-                ),
+      backgroundColor: AppColors.blueGrey,
+      child: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            padding: const EdgeInsets.all(10),
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 16,
               ),
-              const DrawerLink(
-                text: 'Graph',
-                icon: Icons.assessment,
-                route: GraphRoute(),
-              ),
-              const DrawerLink(
-                text: 'Settings',
-                icon: Icons.settings,
-                route: SettingsRoute(),
-              ),
-              const DrawerLink(
-                text: 'About',
-                icon: Icons.info,
-                route: AboutRoute(),
-              ),
-              Expanded(
-                child: Align(
-                  alignment: FractionalOffset.bottomLeft,
-                  child: Padding(
-                    padding: AppPadding.regular,
-                    child: Text(
-                      'App version $versionNumber',
-                      style: AppTextStyles.drawerText,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(
+                      top: 80,
+                      bottom: 80,
+                    ),
+                    child: Image(
+                      image: AssetImage('assets/images/drawer_logo.png'),
+                      width: 200,
+                      fit: BoxFit.cover,
                     ),
                   ),
-                ),
+                  const DrawerLink(
+                    text: 'Graph',
+                    icon: Icons.assessment,
+                    route: GraphRoute(),
+                  ),
+                  const DrawerLink(
+                    text: 'Settings',
+                    icon: Icons.settings,
+                    route: SettingsRoute(),
+                  ),
+                  const DrawerLink(
+                    text: 'About',
+                    icon: Icons.info,
+                    route: AboutRoute(),
+                  ),
+                  Align(
+                    alignment: FractionalOffset.bottomLeft,
+                    child: Padding(
+                      padding: AppPadding.regular,
+                      child: Text(
+                        'App version $versionNumber',
+                        style: Theme.of(context).textTheme.bodyText2,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),
