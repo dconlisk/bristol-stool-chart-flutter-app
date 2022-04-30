@@ -44,14 +44,6 @@ I have also created a Makefile which allows me to use shortcuts like `make gener
 - removed unnecessary StatefulWidgets
 - replaced static helper classes with interfaces and implementations, which makes it testable (in theory! No actual tests to be seen just now tho ;))
 
-## FEATURE WISHLIST:
-
-- add unit tests
-- performance review https://itnext.io/flutter-performance-tips-4580b2491da8
-- add request for app store review after 10 stools recorded
-- add feature request after 15 stools recorded, email directly to me
-- view raw data in the app - separate share function for graph and data?
-
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
 
