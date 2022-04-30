@@ -53,7 +53,6 @@ class AppWidget extends ConsumerWidget {
     return MaterialApp.router(
       routerDelegate: _appRouter.delegate(),
       routeInformationParser: _appRouter.defaultRouteParser(),
-      title: 'Bristol Stool Chart',
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -63,6 +62,7 @@ class AppWidget extends ConsumerWidget {
       supportedLocales: const [
         Locale('en', ''),
       ],
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
       theme: ThemeData(
         primarySwatch: AppColors.blue,
         scaffoldBackgroundColor: AppColors.white,

@@ -7,6 +7,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddPage extends ConsumerStatefulWidget {
   const AddPage({Key? key}) : super(key: key);
@@ -26,7 +27,9 @@ class _AddPageState extends ConsumerState<AddPage> {
   Widget build(context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Add Stool'),
+        title: Text(
+          AppLocalizations.of(context)!.addStoolPageTitle,
+        ),
         automaticallyImplyLeading: false,
         actions: const [
           CloseButton(),
@@ -40,12 +43,18 @@ class _AddPageState extends ConsumerState<AddPage> {
                 await showDialog<AlertDialog>(
                   context: context,
                   builder: (_) => AlertDialog(
-                    title: const Text('An error occurred'),
-                    content: const Text(
-                        'Your stool was not saved successfully. Please try again later.'),
+                    title: Text(
+                      AppLocalizations.of(context)!.errorOccurredTitle,
+                    ),
+                    content: Text(
+                      AppLocalizations.of(context)!
+                          .stoolNotSavedErrorOccurredMessage,
+                    ),
                     actions: <Widget>[
                       ElevatedButton(
-                        child: const Text('OK'),
+                        child: Text(
+                          AppLocalizations.of(context)!.continueButtonText,
+                        ),
                         onPressed: () {
                           context.router.popUntilRoot();
                         },
@@ -56,8 +65,10 @@ class _AddPageState extends ConsumerState<AddPage> {
               },
               success: (stool, showBloodOption) {
                 ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Stool added successfully!'),
+                  SnackBar(
+                    content: Text(
+                      AppLocalizations.of(context)!.stoolSavedSuccessMessage,
+                    ),
                   ),
                 );
                 context.router.pop();
@@ -105,7 +116,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Was there blood in the stool?',
+                            AppLocalizations.of(context)!.bloodCheckLabelText,
                             style: Theme.of(context).textTheme.subtitle1,
                           ),
                           Switch(
@@ -127,7 +138,8 @@ class _AddPageState extends ConsumerState<AddPage> {
                             ),
                         lastDate: DateTime.now().toLocal(),
                         initialDate: DateTime.now().toLocal(),
-                        initialValue: 'Now (or click to select a date)',
+                        initialValue: AppLocalizations.of(context)!
+                            .stoolPickerInitialDateValue,
                         dateMask: AppFormats.dateAndTime,
                         type: DateTimePickerType.dateTime,
                         onChanged: (date) async {

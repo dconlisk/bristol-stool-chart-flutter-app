@@ -1,15 +1,31 @@
 {
-    "errorOccurredMessage": "An error occurred",
-    "@errorOccurredMessage": {
-      "description": "Displayed when an error occurs in the app"
+    "appTitle": "Bristol Stool Chart",
+    "@appTitle": {
+      "description": "The title of the app"
     },
-     "fatalErrorOccurredMessage": "Very unexpected error. Please try restarting the app.",
+    "errorOccurredTitle": "An error occurred",
+    "@errorOccurredTitle": {
+      "description": "Title displayed when an error occurs in the app"
+    },
+    "fatalErrorOccurredMessage": "Very unexpected error. Please try restarting the app.",
     "@fatalErrorOccurredMessage": {
       "description": "Displayed when an error occurs loading data in the app"
+    },
+    "stoolNotSavedErrorOccurredMessage": "Your stool was not saved successfully. Please try again later.",
+    "@stoolNotSavedErrorOccurredMessage": {
+      "description": "Displayed when an error occurs saving a stool"
     },
     "shareErrorOccurredMessage": "There was a problem sharing your data. Please make sure that you have an email client installed on your device.",
     "@shareErrorOccurredMessage": {
       "description": "Displayed when an error occurs sharing data from the app"
+    },
+    "stoolSavedSuccessMessage": "Stool added successfully!",
+    "@stoolSavedSuccessMessage": {
+      "description": "Displayed when an stool is saved"
+    },
+    "continueButtonText": "Continue",
+    "@continueButtonText": {
+      "description": "The text for the continue button"
     },
     "continueButtonText": "Continue",
     "@continueButtonText": {
@@ -17,7 +33,51 @@
     },
     "graphPageTitle": "Your Graph",
     "@graphPageTitle": {
-      "description": "The text for the graph page"
+      "description": "The title for the graph page"
+    },
+    "aboutPageTitle": "About",
+    "@aboutPageTitle": {
+      "description": "The title for the about page"
+    },
+    "addStoolPageTitle": "About",
+    "@addStoolPageTitle": {
+      "description": "The title for the add stool page"
+    },
+    "aboutPageHeading1": "What is the Bristol Stool Chart?",
+    "@aboutPageHeading1": {
+      "description": "Headline 1 for the about page content"
+    },
+    "aboutPageHeading2": "How does the app work?",
+    "@aboutPageHeading2": {
+      "description": "Headline 2 for the about page content"
+    },
+    "aboutPageHeading3": "Thank you",
+    "@aboutPageHeading3": {
+      "description": "Headline 3 for the about page content"
+    },
+    "aboutPageHeading4": "Feature requests",
+    "@aboutPageHeading4": {
+      "description": "Headline 4 for the about page content"
+    },
+    "aboutPageParagraph1": "The Bristol Stool Chart is a medical aid designed to classify the form of human stools into seven categories.\nThis app turns the Bristol Stool Chart into a handy tool to track the quality of your bowel movements over time. \nThis can be useful if you are monitoring your general intestinal health or monitoring the effects of other factors on your digestive system, such as new medication, caffeine or alcohol.",
+    "@aboutPageParagraph1": {
+      "description": "Paragraph 1 for the about page content"
+    },
+    "aboutPageParagraph2": "Each time your bowels move you can record the time and stool quality using the app.\nThis information is saved to your device, and the app builds up a graph of your intestinal health over time.\nThis graph can be shared with your health professional if you are concerned about any aspect of your health. Simply tap the Share button below the graph.",
+    "@aboutPageParagraph2": {
+      "description": "Paragraph 2 for the about page content"
+    },
+    "aboutPageParagraph3": "Thank you for downloading this app. Hopefully you will find it useful in monitoring your intestinal health.",
+    "@aboutPageParagraph3": {
+      "description": "Paragraph 3 for the about page content"
+    },
+    "aboutPageParagraph4": "Is there something crucial missing from the app?\nSomething annoying about it?\nDo you have a great idea for an enhancement?\nOr any other feedback, good or bad?\n\nThen please let me know, I'd love to hear from you!\n\nYou can contact me directly at:\n\ndavid@web-garden.co.uk",
+    "@aboutPageParagraph4": {
+      "description": "Paragraph 4 for the about page content"
+    },
+    "aboutPageHeading1": "What is the Bristol Stool Chart?",
+    "@aboutPageHeading1": {
+      "description": "Headline 1 for the about page content"
     },
     "graphIntroText": "To begin, tap the button below to add a stool",
     "@graphIntroText": {
@@ -35,12 +95,20 @@
     "@settingsDrawerLinkText": {
       "description": "The text displayed on the settings drawer link"
     },
-    "aboutDrawerLinkText": "Graph",
+    "aboutDrawerLinkText": "About",
     "@aboutDrawerLinkText": {
       "description": "The text displayed on the about drawer link"
     },
     "appVersionLabelFormatString": "App version %s",
     "@appVersionLabelFormatString": {
       "description": "The text displayed with the app version in the drawer"
+    },
+    "bloodCheckLabelText": "Was there blood in the stool?",
+    "@bloodCheckLabelText": {
+      "description": "The text displayed next to the blood check toggle control"
+    },
+    "stoolPickerInitialDateValue": "Now (or click to select a date)",
+    "@stoolPickerInitialDateValue": {
+      "description": "The initial text displayed in the date picker"
     }
 }

@@ -34,7 +34,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
         shareFailure: (_) async => await showDialog<AlertDialog>(
           context: context,
           builder: (context) => AlertDialog(
-            title: Text(AppLocalizations.of(context)!.errorOccurredMessage),
+            title: Text(AppLocalizations.of(context)!.errorOccurredTitle),
             content: Text(
               AppLocalizations.of(context)!.shareErrorOccurredMessage,
             ),
@@ -43,7 +43,9 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                 onPressed: () {
                   context.router.pop();
                 },
-                child: Text(AppLocalizations.of(context)!.continueButtonText),
+                child: Text(
+                  AppLocalizations.of(context)!.continueButtonText,
+                ),
               )
             ],
           ),
