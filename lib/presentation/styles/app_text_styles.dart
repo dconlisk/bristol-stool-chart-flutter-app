@@ -30,6 +30,12 @@ class AppTextStyles {
     color: AppColors.white,
   );
 
+  static const externalLink = TextStyle(
+    color: AppColors.blue,
+    fontSize: AppSizes.paragraphFontSize,
+    decoration: TextDecoration.underline,
+  );
+
   static const drawerText = TextStyle(
     fontSize: AppSizes.paragraphFontSize,
     color: AppColors.white,
