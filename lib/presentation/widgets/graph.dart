@@ -1,7 +1,6 @@
 import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
-import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
@@ -112,7 +111,7 @@ class _GraphState extends State<Graph> {
               shouldRenderAboveSeries: true,
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.end,
-              textStyle: AppTextStyles.smileyTextStyle,
+              textStyle: Theme.of(context).textTheme.caption,
             ),
             PlotBand(
               start: 2,
@@ -123,7 +122,7 @@ class _GraphState extends State<Graph> {
               shouldRenderAboveSeries: true,
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.end,
-              textStyle: AppTextStyles.smileyTextStyle,
+              textStyle: Theme.of(context).textTheme.caption,
             ),
             PlotBand(
               start: 3,
@@ -133,7 +132,7 @@ class _GraphState extends State<Graph> {
               text: '\u{f118}',
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.middle,
-              textStyle: AppTextStyles.smileyTextStyle,
+              textStyle: Theme.of(context).textTheme.caption,
             ),
             PlotBand(
               start: 5,
@@ -143,7 +142,7 @@ class _GraphState extends State<Graph> {
               text: '\u{f11a}',
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.middle,
-              textStyle: AppTextStyles.smileyTextStyle,
+              textStyle: Theme.of(context).textTheme.caption,
             ),
             PlotBand(
               start: 6,
@@ -153,7 +152,7 @@ class _GraphState extends State<Graph> {
               text: '\u{f119}',
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.start,
-              textStyle: AppTextStyles.smileyTextStyle,
+              textStyle: Theme.of(context).textTheme.caption,
             ),
           ],
         ),

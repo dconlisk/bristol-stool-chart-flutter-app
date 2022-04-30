@@ -1,6 +1,5 @@
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
-import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:bristol_stool_chart/presentation/widgets/drawer_link.dart';
 import 'package:flutter/material.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
@@ -73,7 +72,7 @@ class _MainDrawerState extends State<MainDrawer> {
                       padding: AppPadding.regular,
                       child: Text(
                         'App version $versionNumber',
-                        style: AppTextStyles.drawerText,
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ),
                   ),

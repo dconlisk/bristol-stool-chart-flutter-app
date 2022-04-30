@@ -1,4 +1,3 @@
-import 'package:bristol_stool_chart/presentation/styles/app_text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -25,7 +24,7 @@ class LinkToWebsite extends StatelessWidget {
       child: GestureDetector(
         child: Text(
           'Type $type',
-          style: AppTextStyles.externalLink,
+          style: Theme.of(context).textTheme.headline4,
         ),
         onTap: () => _openUrl(type),
       ),
