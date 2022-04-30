@@ -1,0 +1,46 @@
+{
+    "errorOccurredMessage": "An error occurred",
+    "@errorOccurredMessage": {
+      "description": "Displayed when an error occurs in the app"
+    },
+     "fatalErrorOccurredMessage": "Very unexpected error. Please try restarting the app.",
+    "@fatalErrorOccurredMessage": {
+      "description": "Displayed when an error occurs loading data in the app"
+    },
+    "shareErrorOccurredMessage": "There was a problem sharing your data. Please make sure that you have an email client installed on your device.",
+    "@shareErrorOccurredMessage": {
+      "description": "Displayed when an error occurs sharing data from the app"
+    },
+    "continueButtonText": "Continue",
+    "@continueButtonText": {
+      "description": "The text for the continue button"
+    },
+    "graphPageTitle": "Your Graph",
+    "@graphPageTitle": {
+      "description": "The text for the graph page"
+    },
+    "graphIntroText": "To begin, tap the button below to add a stool",
+    "@graphIntroText": {
+      "description": "The text displayed on the graph page when there are no stools added yet"
+    },
+    "shareButtonText": "Share",
+    "@shareButtonText": {
+      "description": "The text displayed on the share button"
+    },
+    "graphDrawerLinkText": "Graph",
+    "@graphDrawerLinkText": {
+      "description": "The text displayed on the graph drawer link"
+    },
+    "settingsDrawerLinkText": "Settings",
+    "@settingsDrawerLinkText": {
+      "description": "The text displayed on the settings drawer link"
+    },
+    "aboutDrawerLinkText": "Graph",
+    "@aboutDrawerLinkText": {
+      "description": "The text displayed on the about drawer link"
+    },
+    "appVersionLabelFormatString": "App version %s",
+    "@appVersionLabelFormatString": {
+      "description": "The text displayed with the app version in the drawer"
+    }
+}

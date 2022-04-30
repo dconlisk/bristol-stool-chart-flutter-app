@@ -4,9 +4,11 @@ import 'package:dartz/dartz.dart';
 import 'package:bristol_stool_chart/application/intro_notifier.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final initializationProvider = FutureProvider((ref) async {
   await ref.read(sembastProvider).init();
@@ -52,6 +54,15 @@ class AppWidget extends ConsumerWidget {
       routerDelegate: _appRouter.delegate(),
       routeInformationParser: _appRouter.defaultRouteParser(),
       title: 'Bristol Stool Chart',
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en', ''),
+      ],
       theme: ThemeData(
         primarySwatch: AppColors.blue,
         scaffoldBackgroundColor: AppColors.white,

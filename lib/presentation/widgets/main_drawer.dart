@@ -4,6 +4,8 @@ import 'package:bristol_stool_chart/presentation/widgets/drawer_link.dart';
 import 'package:flutter/material.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:sprintf/sprintf.dart';
 
 class MainDrawer extends StatefulWidget {
   const MainDrawer({Key? key}) : super(key: key);
@@ -51,27 +53,31 @@ class _MainDrawerState extends State<MainDrawer> {
                       fit: BoxFit.cover,
                     ),
                   ),
-                  const DrawerLink(
-                    text: 'Graph',
+                  DrawerLink(
+                    text: AppLocalizations.of(context)!.graphDrawerLinkText,
                     icon: Icons.assessment,
-                    route: GraphRoute(),
+                    route: const GraphRoute(),
                   ),
-                  const DrawerLink(
-                    text: 'Settings',
+                  DrawerLink(
+                    text: AppLocalizations.of(context)!.settingsDrawerLinkText,
                     icon: Icons.settings,
-                    route: SettingsRoute(),
+                    route: const SettingsRoute(),
                   ),
-                  const DrawerLink(
-                    text: 'About',
+                  DrawerLink(
+                    text: AppLocalizations.of(context)!.aboutDrawerLinkText,
                     icon: Icons.info,
-                    route: AboutRoute(),
+                    route: const AboutRoute(),
                   ),
                   Align(
                     alignment: FractionalOffset.bottomLeft,
                     child: Padding(
                       padding: AppPadding.regular,
                       child: Text(
-                        'App version $versionNumber',
+                        sprintf(
+                          AppLocalizations.of(context)!
+                              .appVersionLabelFormatString,
+                          [versionNumber],
+                        ),
                         style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ),

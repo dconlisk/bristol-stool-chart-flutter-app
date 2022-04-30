@@ -9,6 +9,7 @@ import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class GraphPage extends ConsumerStatefulWidget {
   const GraphPage({Key? key}) : super(key: key);
@@ -33,15 +34,16 @@ class _GraphPageState extends ConsumerState<GraphPage> {
         shareFailure: (_) async => await showDialog<AlertDialog>(
           context: context,
           builder: (context) => AlertDialog(
-            title: const Text('An error occurred'),
-            content: const Text(
-                'There was a problem sharing your data. Please make sure that you have an email client installed on your device.'),
+            title: Text(AppLocalizations.of(context)!.errorOccurredMessage),
+            content: Text(
+              AppLocalizations.of(context)!.shareErrorOccurredMessage,
+            ),
             actions: [
               TextButton(
                 onPressed: () {
                   context.router.pop();
                 },
-                child: const Text('Continue'),
+                child: Text(AppLocalizations.of(context)!.continueButtonText),
               )
             ],
           ),
@@ -53,7 +55,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Your Graph'),
+        title: Text(AppLocalizations.of(context)!.graphPageTitle),
         actions: <Widget>[
           IconButton(
             icon: const Icon(Icons.info),
@@ -78,7 +80,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                   ? Padding(
                       padding: AppPadding.large,
                       child: Text(
-                        'To begin, tap the button below to add a stool',
+                        AppLocalizations.of(context)!.graphIntroText,
                         style: Theme.of(context).textTheme.headline5,
                         textAlign: TextAlign.center,
                       ),
@@ -101,7 +103,8 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                                   .read(graphNotifierProvider.notifier)
                                   .share(context, _graphKey);
                             },
-                            child: const Text('Share'),
+                            child: Text(
+                                AppLocalizations.of(context)!.shareButtonText),
                           ),
                         ),
                         Expanded(
@@ -113,9 +116,9 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                       ],
                     );
             },
-            loadFailure: (_) => const ListTile(
+            loadFailure: (_) => ListTile(
               title: Text(
-                'Very unexpected error. Please try restarting the app.',
+                AppLocalizations.of(context)!.fatalErrorOccurredMessage,
               ),
             ),
             orElse: () => const SizedBox.shrink(),
