@@ -37,6 +37,12 @@ class AboutPage extends StatelessWidget {
                   text:
                       'Thank you for downloading this app. Hopefully you will find it useful in monitoring your intestinal health.',
                 ),
+                Heading(text: 'Feature requests'),
+                Paragraph(
+                  text:
+                      'Is there something crucial missing from the app?\nSomething annoying about it?\nDo you have a great idea for an enhancement?\n\nOr any other feedback, good or bad?\n\nThen please let me know, I'
+                      '\'d love to hear from you!\n\nYou can contact me directly at:\n\ndavid@web-garden.co.uk',
+                ),
               ],
             ),
           ),
