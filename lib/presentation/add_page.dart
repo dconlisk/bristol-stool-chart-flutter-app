@@ -1,13 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/add_stool_notifier.dart';
-import 'package:bristol_stool_chart/presentation/styles/app_formats.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class AddPage extends ConsumerStatefulWidget {
   const AddPage({Key? key}) : super(key: key);
@@ -140,7 +139,8 @@ class _AddPageState extends ConsumerState<AddPage> {
                         initialDate: DateTime.now().toLocal(),
                         initialValue: AppLocalizations.of(context)!
                             .stoolPickerInitialDateValue,
-                        dateMask: AppFormats.dateAndTime,
+                        dateMask:
+                            AppLocalizations.of(context)!.dateTimePickerMask,
                         type: DateTimePickerType.dateTime,
                         onChanged: (date) async {
                           await ref
@@ -160,7 +160,9 @@ class _AddPageState extends ConsumerState<AddPage> {
                       ),
                     ),
                     ElevatedButton(
-                      child: const Text('SAVE'),
+                      child: Text(
+                        AppLocalizations.of(context)!.saveButtonText,
+                      ),
                       onPressed: () async {
                         await ref
                             .read(addStoolNotifierProvider.notifier)

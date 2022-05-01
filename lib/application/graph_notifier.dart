@@ -2,12 +2,13 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'dart:ui';
 
+import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:bristol_stool_chart/infrastructure/i_file_system_repository.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
-import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
@@ -58,7 +59,10 @@ class GraphNotifier extends StateNotifier<GraphState> {
 
       final imageData = await _getGraphAsBytes(graphKey: graphKey);
 
-      final csvData = await _getCsvFrom(stools: stools);
+      final csvData = await _getCsvFrom(
+        context: context,
+        stools: stools,
+      );
 
       if (imageData == null || csvData == null) {
         state = const GraphState.shareFailure();
@@ -82,7 +86,7 @@ class GraphNotifier extends StateNotifier<GraphState> {
 
       await Share.shareFiles(
         [graphImagePath, csvFilePath],
-        subject: 'Share your graph and data',
+        subject: AppLocalizations.of(context)!.shareDialogSubject,
         sharePositionOrigin: Rect.fromCenter(
             center: const Offset(100, 100), width: 200, height: 100),
       );
@@ -117,7 +121,10 @@ class GraphNotifier extends StateNotifier<GraphState> {
     }
   }
 
-  Future<String?> _getCsvFrom({required List<Stool> stools}) async {
+  Future<String?> _getCsvFrom({
+    required BuildContext context,
+    required List<Stool> stools,
+  }) async {
     try {
       final prefs = await SharedPreferences.getInstance();
       final showBloodOption =
@@ -125,15 +132,15 @@ class GraphNotifier extends StateNotifier<GraphState> {
 
       var rows = stools
           .map((stool) => showBloodOption
-              ? '${DateFormat('dd/MM/yyyy H:mm:ss').format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? 'Y' : 'N'}'
-              : '${DateFormat('dd/MM/yyyy H:mm:ss').format(stool.dateTime)},${stool.type}')
+              ? '${DateFormat(AppLocalizations.of(context)!.dataDateTimeHeader).format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? AppLocalizations.of(context)!.dataYesIndicator : AppLocalizations.of(context)!.dataNoIndicator}'
+              : '${DateFormat(AppLocalizations.of(context)!.dataDateTimeHeader).format(stool.dateTime)},${stool.type}')
           .toList();
 
       rows.insert(
           0,
           showBloodOption
-              ? 'Date and time,Bristol Stool Chart Type,Blood in stool?'
-              : 'Date and time,Bristol Stool Chart Type');
+              ? '${AppLocalizations.of(context)!.dataDateTimeHeader},${AppLocalizations.of(context)!.dataTypeHeader},${AppLocalizations.of(context)!.dataBloodHeader}'
+              : '${AppLocalizations.of(context)!.dataDateTimeHeader},${AppLocalizations.of(context)!.dataTypeHeader}');
 
       final lineSeparator = Platform.isAndroid ? '\r\n' : '\n';
       return rows

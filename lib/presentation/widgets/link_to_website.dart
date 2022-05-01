@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sprintf/sprintf.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LinkToWebsite extends StatelessWidget {
   final int type;
@@ -9,8 +11,19 @@ class LinkToWebsite extends StatelessWidget {
     required this.type,
   }) : super(key: key);
 
-  Future<void> _openUrl(int type) async {
-    final typeNames = ['one', 'two', 'three', 'four', 'five', 'six', 'seven'];
+  Future<void> _openUrl({
+    required BuildContext context,
+    required int type,
+  }) async {
+    final typeNames = [
+      AppLocalizations.of(context)!.type1Name,
+      AppLocalizations.of(context)!.type2Name,
+      AppLocalizations.of(context)!.type3Name,
+      AppLocalizations.of(context)!.type4Name,
+      AppLocalizations.of(context)!.type5Name,
+      AppLocalizations.of(context)!.type6Name,
+      AppLocalizations.of(context)!.type7Name,
+    ];
     var uri = Uri(
       path: 'bristolstoolchart.net/type-${typeNames[type - 1]}',
       scheme: 'https',
@@ -29,10 +42,10 @@ class LinkToWebsite extends StatelessWidget {
       padding: const EdgeInsets.all(8.0),
       child: GestureDetector(
         child: Text(
-          'Type $type',
+          sprintf(AppLocalizations.of(context)!.typeFormatString, [type]),
           style: Theme.of(context).textTheme.headline4,
         ),
-        onTap: () => _openUrl(type),
+        onTap: () => _openUrl(context: context, type: type),
       ),
     );
   }
