@@ -136,7 +136,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 AppLocalizations.of(context)!.areYouSureTitle,
                               ),
                               content: Text(
-                                AppLocalizations.of(context)!.areYouSureTitle,
+                                AppLocalizations.of(context)!
+                                    .areYouSureDeleteDataMessage,
                               ),
                               actions: [
                                 ElevatedButton(
