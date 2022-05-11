@@ -47,6 +47,7 @@ class AboutPage extends StatelessWidget {
                 Paragraph(
                   text: AppLocalizations.of(context)!.aboutPageParagraph4,
                 ),
+                const SizedBox(height: AppSizes.regular),
               ],
             ),
           ),
