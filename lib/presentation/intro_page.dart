@@ -71,7 +71,7 @@ class IntroPage extends ConsumerWidget {
     // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool(sharedPreferencesHasSeenIntroKey, true);
-    AutoRouter.of(context).push(const GraphRoute());
+    AutoRouter.of(context).replaceAll([const GraphRoute()]);
   }
 
   @override
