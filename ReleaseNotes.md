@@ -2,8 +2,8 @@
 
 ## Features
 
+* Updated to latest flutter and package versions
 * #5 Implement localisation in the app (English only for now)
-* #12 Added theming
 * #16 Make the contact button clickable
 
 ## Bug Fixes
