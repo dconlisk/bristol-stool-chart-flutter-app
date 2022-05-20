@@ -23,6 +23,10 @@
     "@shareErrorOccurredMessage": {
       "description": "Displayed when an error occurs sharing data from the app"
     },
+    "emailErrorOccurredMessage": "There was a problem sending an email. Please make sure that you have an email client installed on your device.",
+    "@emailErrorOccurredMessage": {
+      "description": "Displayed when an error occurs sending email from the app"
+    },
     "dataImportErrorOccurredMessage": "Unfortunately we could not import your data from the previous version of the app. We apologise for any inconvenience caused.",
     "@dataImportErrorOccurredMessage": {
       "description": "Displayed when an error occurs importing data from old versions of the app"
@@ -91,7 +95,7 @@
     "@aboutPageParagraph3": {
       "description": "Paragraph 3 for the about page content"
     },
-    "aboutPageParagraph4": "Is there something crucial missing from the app?\nSomething annoying about it?\nDo you have a great idea for an enhancement?\nOr any other feedback, good or bad?\n\nThen please let me know, I'd love to hear from you!\n\nYou can contact me directly at:\n\ndavid@web-garden.co.uk",
+    "aboutPageParagraph4": "Is there something crucial missing from the app?\nSomething annoying about it?\nDo you have a great idea for an enhancement?\nOr any other feedback, good or bad?\n\nThen please let me know, I'd love to hear from you!\n\nYou can contact me directly at david@web-garden.co.uk - or just click the button below.",
     "@aboutPageParagraph4": {
       "description": "Paragraph 4 for the about page content"
     },
@@ -322,5 +326,13 @@
     "typeFormatString": "Type %s",
     "@typeFormatString": {
       "description": "The format string for links to the website from the app, e.g. 'Type 7'"
+    },
+    "emailMeButtonLabel": "Send me an email!",
+    "@emailMeButtonLabel": {
+      "description": "The label for the email button on the about page"
+    },
+    "feedbackEmailSubjectLine": "Bristol Stool Chart app feedback",
+    "@feedbackEmailSubjectLine": {
+      "description": "The subject line for the feedback email"
     }
 }

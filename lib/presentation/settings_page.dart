@@ -42,8 +42,10 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                   builder: (_) => AlertDialog(
                     title:
                         Text(AppLocalizations.of(context)!.errorOccurredTitle),
-                    content: Text(AppLocalizations.of(context)!
-                        .dataNotRemovedErrorOccurredMessage),
+                    content: Text(
+                      AppLocalizations.of(context)!
+                          .dataNotRemovedErrorOccurredMessage,
+                    ),
                     actions: <Widget>[
                       ElevatedButton(
                         child: Text(
