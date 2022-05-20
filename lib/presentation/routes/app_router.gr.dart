@@ -52,10 +52,8 @@ class AppRouter extends _i8.RootStackRouter {
           barrierDismissible: false);
     },
     IntroRoute.name: (routeData) {
-      final args = routeData.argsAs<IntroRouteArgs>(
-          orElse: () => const IntroRouteArgs());
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i5.IntroPage(key: args.key));
+          routeData: routeData, child: const _i5.IntroPage());
     },
     SettingsRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
@@ -113,23 +111,10 @@ class GraphInfoRoute extends _i8.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.IntroPage]
-class IntroRoute extends _i8.PageRouteInfo<IntroRouteArgs> {
-  IntroRoute({_i9.Key? key})
-      : super(IntroRoute.name,
-            path: '/intro-page', args: IntroRouteArgs(key: key));
+class IntroRoute extends _i8.PageRouteInfo<void> {
+  const IntroRoute() : super(IntroRoute.name, path: '/intro-page');
 
   static const String name = 'IntroRoute';
-}
-
-class IntroRouteArgs {
-  const IntroRouteArgs({this.key});
-
-  final _i9.Key? key;
-
-  @override
-  String toString() {
-    return 'IntroRouteArgs{key: $key}';
-  }
 }
 
 /// generated route for

@@ -4,6 +4,7 @@ import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Graph extends StatefulWidget {
   final List<Stool> stools;
@@ -33,8 +34,11 @@ class _GraphState extends State<Graph> {
 
     // use a different label style for the graph depending on the data in it
     const twoDays = 2 * 24 * 60 * 60 * 1000;
-    final graphDateFormat =
-        totalTimeInData > twoDays ? DateFormat('MMM\ndd') : DateFormat('HH:mm');
+    final graphDateFormat = totalTimeInData > twoDays
+        ? DateFormat(
+            AppLocalizations.of(context)!.dateTimeFormatGraphMonthsDays)
+        : DateFormat(
+            AppLocalizations.of(context)!.dateTimeFormatGraphHoursMinutes);
 
     fours.add(
       Stool(
@@ -57,7 +61,7 @@ class _GraphState extends State<Graph> {
           zoomMode: ZoomMode.x,
         ),
         title: ChartTitle(
-          text: 'STOOL QUALITY',
+          text: AppLocalizations.of(context)!.graphLabel,
           alignment: ChartAlignment.near,
           textStyle: const TextStyle(
             fontSize: AppSizes.regular,

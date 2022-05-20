@@ -12,37 +12,7 @@ part of 'graph_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$GraphStateTearOff {
-  const _$GraphStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Initialised initialised(List<Stool> stools) {
-    return _Initialised(
-      stools,
-    );
-  }
-
-  _LoadFailure loadFailure() {
-    return const _LoadFailure();
-  }
-
-  _ShareFailure shareFailure() {
-    return const _ShareFailure();
-  }
-
-  _ShareSuccess shareSuccess() {
-    return const _ShareSuccess();
-  }
-}
-
-/// @nodoc
-const $GraphState = _$GraphStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$GraphState {
@@ -275,10 +245,16 @@ class __$InitialisedCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initialised extends _Initialised {
-  const _$_Initialised(this.stools) : super._();
+  const _$_Initialised(final List<Stool> stools)
+      : _stools = stools,
+        super._();
 
+  final List<Stool> _stools;
   @override
-  final List<Stool> stools;
+  List<Stool> get stools {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_stools);
+  }
 
   @override
   String toString() {
@@ -384,10 +360,10 @@ class _$_Initialised extends _Initialised {
 }
 
 abstract class _Initialised extends GraphState {
-  const factory _Initialised(List<Stool> stools) = _$_Initialised;
+  const factory _Initialised(final List<Stool> stools) = _$_Initialised;
   const _Initialised._() : super._();
 
-  List<Stool> get stools;
+  List<Stool> get stools => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$InitialisedCopyWith<_Initialised> get copyWith =>
       throw _privateConstructorUsedError;

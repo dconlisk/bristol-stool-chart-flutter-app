@@ -12,49 +12,12 @@ part of 'add_stool_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AddStoolStateTearOff {
-  const _$AddStoolStateTearOff();
-
-  _Initial initial(Stool stool, bool showBloodOption) {
-    return _Initial(
-      stool,
-      showBloodOption,
-    );
-  }
-
-  _Initialised initialised(Stool stool, bool showBloodOption) {
-    return _Initialised(
-      stool,
-      showBloodOption,
-    );
-  }
-
-  _ErrorState error(Stool stool, bool showBloodOption) {
-    return _ErrorState(
-      stool,
-      showBloodOption,
-    );
-  }
-
-  _SuccessState success(Stool stool, bool showBloodOption) {
-    return _SuccessState(
-      stool,
-      showBloodOption,
-    );
-  }
-}
-
-/// @nodoc
-const $AddStoolState = _$AddStoolStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AddStoolState {
   Stool get stool => throw _privateConstructorUsedError;
   bool get showBloodOption => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(Stool stool, bool showBloodOption) initial,
@@ -305,13 +268,14 @@ class _$_Initial extends _Initial {
 }
 
 abstract class _Initial extends AddStoolState {
-  const factory _Initial(Stool stool, bool showBloodOption) = _$_Initial;
+  const factory _Initial(final Stool stool, final bool showBloodOption) =
+      _$_Initial;
   const _Initial._() : super._();
 
   @override
-  Stool get stool;
+  Stool get stool => throw _privateConstructorUsedError;
   @override
-  bool get showBloodOption;
+  bool get showBloodOption => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$InitialCopyWith<_Initial> get copyWith =>
@@ -471,14 +435,14 @@ class _$_Initialised extends _Initialised {
 }
 
 abstract class _Initialised extends AddStoolState {
-  const factory _Initialised(Stool stool, bool showBloodOption) =
+  const factory _Initialised(final Stool stool, final bool showBloodOption) =
       _$_Initialised;
   const _Initialised._() : super._();
 
   @override
-  Stool get stool;
+  Stool get stool => throw _privateConstructorUsedError;
   @override
-  bool get showBloodOption;
+  bool get showBloodOption => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$InitialisedCopyWith<_Initialised> get copyWith =>
@@ -638,13 +602,14 @@ class _$_ErrorState extends _ErrorState {
 }
 
 abstract class _ErrorState extends AddStoolState {
-  const factory _ErrorState(Stool stool, bool showBloodOption) = _$_ErrorState;
+  const factory _ErrorState(final Stool stool, final bool showBloodOption) =
+      _$_ErrorState;
   const _ErrorState._() : super._();
 
   @override
-  Stool get stool;
+  Stool get stool => throw _privateConstructorUsedError;
   @override
-  bool get showBloodOption;
+  bool get showBloodOption => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$ErrorStateCopyWith<_ErrorState> get copyWith =>
@@ -805,14 +770,14 @@ class _$_SuccessState extends _SuccessState {
 }
 
 abstract class _SuccessState extends AddStoolState {
-  const factory _SuccessState(Stool stool, bool showBloodOption) =
+  const factory _SuccessState(final Stool stool, final bool showBloodOption) =
       _$_SuccessState;
   const _SuccessState._() : super._();
 
   @override
-  Stool get stool;
+  Stool get stool => throw _privateConstructorUsedError;
   @override
-  bool get showBloodOption;
+  bool get showBloodOption => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SuccessStateCopyWith<_SuccessState> get copyWith =>

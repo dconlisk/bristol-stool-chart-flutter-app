@@ -1,0 +1,338 @@
+{
+    "appTitle": "Bristol Stool Chart",
+    "@appTitle": {
+      "description": "The title of the app"
+    },
+    "errorOccurredTitle": "An error occurred",
+    "@errorOccurredTitle": {
+      "description": "Title displayed when an error occurs in the app"
+    },
+    "fatalErrorOccurredMessage": "Very unexpected error. Please try restarting the app.",
+    "@fatalErrorOccurredMessage": {
+      "description": "Displayed when an error occurs loading data in the app"
+    },
+    "stoolNotSavedErrorOccurredMessage": "Your stool was not saved successfully. Please try again later.",
+    "@stoolNotSavedErrorOccurredMessage": {
+      "description": "Displayed when an error occurs saving a stool"
+    },
+    "dataNotRemovedErrorOccurredMessage": "There was a problem removing your data. Please try again later.",
+    "@dataNotRemovedErrorOccurredMessage": {
+      "description": "Displayed when an error occurs removing user data"
+    },
+    "shareErrorOccurredMessage": "There was a problem sharing your data. Please make sure that you have an email client installed on your device.",
+    "@shareErrorOccurredMessage": {
+      "description": "Displayed when an error occurs sharing data from the app"
+    },
+    "emailErrorOccurredMessage": "There was a problem sending an email. Please make sure that you have an email client installed on your device.",
+    "@emailErrorOccurredMessage": {
+      "description": "Displayed when an error occurs sending email from the app"
+    },
+    "dataImportErrorOccurredMessage": "Unfortunately we could not import your data from the previous version of the app. We apologise for any inconvenience caused.",
+    "@dataImportErrorOccurredMessage": {
+      "description": "Displayed when an error occurs importing data from old versions of the app"
+    },
+    "stoolSavedSuccessMessage": "Stool added successfully!",
+    "@stoolSavedSuccessMessage": {
+      "description": "Displayed when an stool is saved"
+    },
+    "continueButtonText": "Continue",
+    "@continueButtonText": {
+      "description": "The text for the continue button"
+    },
+    "saveButtonText": "SAVE",
+    "@saveButtonText": {
+      "description": "The text for the save button"
+    },
+    "graphPageTitle": "Your Graph",
+    "@graphPageTitle": {
+      "description": "The title for the graph page"
+    },
+    "graphLabel": "STOOL QUALITY",
+    "@graphLabel": {
+      "description": "The label for the graph"
+    },
+    "aboutPageTitle": "About",
+    "@aboutPageTitle": {
+      "description": "The title for the about page"
+    },
+    "aboutGraphPageTitle": "About the Graph",
+    "@aboutGraphPageTitle": {
+      "description": "The title for the about graph page"
+    },
+    "settingsPageTitle": "Settings",
+    "@settingsPageTitle": {
+      "description": "The title for the settings page"
+    },
+    "addStoolPageTitle": "About",
+    "@addStoolPageTitle": {
+      "description": "The title for the add stool page"
+    },
+    "aboutPageHeading1": "What is the Bristol Stool Chart?",
+    "@aboutPageHeading1": {
+      "description": "Headline 1 for the about page content"
+    },
+    "aboutPageHeading2": "How does the app work?",
+    "@aboutPageHeading2": {
+      "description": "Headline 2 for the about page content"
+    },
+    "aboutPageHeading3": "Thank you",
+    "@aboutPageHeading3": {
+      "description": "Headline 3 for the about page content"
+    },
+    "aboutPageHeading4": "Feature requests",
+    "@aboutPageHeading4": {
+      "description": "Headline 4 for the about page content"
+    },
+    "aboutPageParagraph1": "The Bristol Stool Chart is a medical aid designed to classify the form of human stools into seven categories.\nThis app turns the Bristol Stool Chart into a handy tool to track the quality of your bowel movements over time. \nThis can be useful if you are monitoring your general intestinal health or monitoring the effects of other factors on your digestive system, such as new medication, caffeine or alcohol.",
+    "@aboutPageParagraph1": {
+      "description": "Paragraph 1 for the about page content"
+    },
+    "aboutPageParagraph2": "Each time your bowels move you can record the time and stool quality using the app.\nThis information is saved to your device, and the app builds up a graph of your intestinal health over time.\nThis graph can be shared with your health professional if you are concerned about any aspect of your health. Simply tap the Share button below the graph.",
+    "@aboutPageParagraph2": {
+      "description": "Paragraph 2 for the about page content"
+    },
+    "aboutPageParagraph3": "Thank you for downloading this app. Hopefully you will find it useful in monitoring your intestinal health.",
+    "@aboutPageParagraph3": {
+      "description": "Paragraph 3 for the about page content"
+    },
+    "aboutPageParagraph4": "Is there something crucial missing from the app?\nSomething annoying about it?\nDo you have a great idea for an enhancement?\nOr any other feedback, good or bad?\n\nThen please let me know, I'd love to hear from you!\n\nYou can contact me directly at david@web-garden.co.uk - or just click the button below.",
+    "@aboutPageParagraph4": {
+      "description": "Paragraph 4 for the about page content"
+    },
+    "aboutPageHeading1": "What is the Bristol Stool Chart?",
+    "@aboutPageHeading1": {
+      "description": "Headline 1 for the about page content"
+    },
+    "graphIntroText": "To begin, tap the button below to add a stool",
+    "@graphIntroText": {
+      "description": "The text displayed on the graph page when there are no stools added yet"
+    },
+    "shareButtonText": "SHARE",
+    "@shareButtonText": {
+      "description": "The text displayed on the share button"
+    },
+    "graphDrawerLinkText": "Graph",
+    "@graphDrawerLinkText": {
+      "description": "The text displayed on the graph drawer link"
+    },
+    "settingsDrawerLinkText": "Settings",
+    "@settingsDrawerLinkText": {
+      "description": "The text displayed on the settings drawer link"
+    },
+    "aboutDrawerLinkText": "About",
+    "@aboutDrawerLinkText": {
+      "description": "The text displayed on the about drawer link"
+    },
+    "appVersionLabelFormatString": "App version %s",
+    "@appVersionLabelFormatString": {
+      "description": "The text displayed with the app version in the drawer"
+    },
+    "bloodCheckLabelText": "Was there blood in the stool?",
+    "@bloodCheckLabelText": {
+      "description": "The text displayed next to the blood check toggle control"
+    },
+    "stoolPickerInitialDateValue": "Now (or click to select a date)",
+    "@stoolPickerInitialDateValue": {
+      "description": "The initial text displayed in the date picker"
+    },
+    "dataRemovedTitle": "Data Deleted",
+    "@dataRemovedTitle": {
+      "description": "The title displayed when the user's data was removed successfully"
+    },
+    "dataRemovedMessage": "Your data was removed from the device.",
+    "@dataRemovedMessage": {
+      "description": "The message displayed when the user's data was removed successfully"
+    },
+    "bloodCheckHeading": "Blood check",
+    "@bloodCheckHeading": {
+      "description": "The heading displayed on the settings page"
+    },
+    "bloodCheckParagraph": "You can record whenever you have blood in your stool by enabling this feature. This will add a 'Was there blood in the stool?' checkbox to the add screen. Any stools that have blood in them will be displayed in red on the graph.",
+    "@bloodCheckParagraph": {
+      "description": "The text displayed on the settings page"
+    },
+    "bloodCheckToggleLabel": "Enable blood check feature?",
+    "@bloodCheckToggleLabel": {
+      "description": "The text displayed on the settings page next to the toggle to enable blood checks in the app"
+    },
+    "removeDataHeading": "Remove all data",
+    "@removeDataHeading": {
+      "description": "The heading displayed on the settings page"
+    },
+    "removeDataParagraph": "You can remove all data from the app and start again with a clean sheet. Simply tap the Delete Data button, below.",
+    "@removeDataParagraph": {
+      "description": "The text displayed on the settings page"
+    },
+    "removeDataButtonText": "DELETE DATA",
+    "@removeDataButtonText": {
+      "description": "The text displayed on the remove data button"
+    },
+    "areYouSureTitle": "Are you sure?",
+    "@areYouSureTitle": {
+      "description": "The title displayed in the are you sure popup"
+    },
+    "areYouSureDeleteDataMessage": "All of your data will be permanently removed. Do you wish to continue?",
+    "@areYouSureDeleteDataMessage": {
+      "description": "The text displayed in the are you sure popup when deleting all user data"
+    },
+    "cancelButtonText": "CANCEL",
+    "@cancelButtonText": {
+      "description": "The text displayed on the cancel button"
+    },
+    "doneButtonText": "DONE",
+    "@doneButtonText": {
+      "description": "The text displayed on the done button"
+    },
+    "nextButtonText": "NEXT",
+    "@nextButtonText": {
+      "description": "The text displayed on the next button"
+    },
+    "skipButtonText": "SKIP",
+    "@skipButtonText": {
+      "description": "The text displayed on the skip button"
+    },
+    "deleteAllDataButtonText": "DELETE ALL DATA",
+    "@deleteAllDataButtonText": {
+      "description": "The text displayed on the confirm button in the are you sure popup when deleting all data in the app"
+    },
+    "introPageTitle1": "Welcome",
+    "@introPageTitle1": {
+      "description": "Title for slide 1 for the app intro slider"
+    },
+    "introPageDescription1": "This app is a simple tool to allow you to track your bowel movements and to share that data with your health professional.",
+    "@introPageDescription1": {
+      "description": "Description for slide 1 for the app intro slider"
+    },
+    "introPageTitle2": "How it works",
+    "@introPageTitle2": {
+      "description": "Title for slide 2 for the app intro slider"
+    },
+    "introPageDescription2": "Use the add button on the graph to add a stool. Swipe left or right until you find the right image. Set the time if you need to change it. You can also use the Settings section to enable the blood in stool tracking feature if that is of use to you. Tap the save button to save and return to the graph.",
+    "@introPageDescription2": {
+      "description": "Description for slide 2 for the app intro slider"
+    },
+    "introPageTitle3": "Share your data",
+    "@introPageTitle3": {
+      "description": "Title for slide 3 for the app intro slider"
+    },
+    "introPageDescription3": "To share your data, tap the share button under the graph. This will allow you to send your graph and data to your chosen contact via your chosen app.",
+    "@introPageDescription3": {
+      "description": "Description for slide 3 for the app intro slider"
+    },
+    "graphInfoPageHeading1": "What the graph tells you",
+    "@graphInfoPageHeading1": {
+      "description": "Graph info page heading 1"
+    },
+    "graphInfoPageParagraph1": "In general, it is best if your stool quality stays close to the green line on the graph. If it tends towards the edges, i.e. towards type 1 or towards type 7, then you may be experiencing issues with your digestive system. It is recommended that you consult your health professional if you are consistently recording events towards the top or bottom of the graph.",
+    "@graphInfoPageParagraph1": {
+      "description": "Graph info page paragraph 1"
+    },
+    "graphInfoPageParagraph2": "Types 1 and 2 indicate constipation, types 3 and 4 are usually the most comfortable to pass, types 5 and 6 tend to be associated with urgency and type 7 is diarrhea.",
+    "@graphInfoPageParagraph2": {
+      "description": "Graph info page paragraph 2"
+    },
+    "graphInfoPageParagraph3": "For more information on each type of stool, please tap on the following links to the Bristol Stool Chart website:",
+    "@graphInfoPageParagraph3": {
+      "description": "Graph info page paragraph 3"
+    },
+    "graphInfoPageHeading2": "Zooming the graph",
+    "@graphInfoPageHeading2": {
+      "description": "Graph info page heading 2"
+    },
+    "graphInfoPageParagraph4": "You can zoom in on the graph in two ways: you can put two fingers on the graph and spread them, or you can double-tap the graph. Double-tapping again will unzoom the graph. When the graph is zoomed in you can also scroll back and forth in the usual way (with a single finger swiping left or right on the graph). If you are planning on sharing the graph image, you can zoom and scroll until what you see on the screen is exactly what you would like to share.",
+    "@graphInfoPageParagraph4": {
+      "description": "Graph info page paragraph 4"
+    },
+    "graphInfoPageHeading3": "Sharing your data",
+    "@graphInfoPageHeading3": {
+      "description": "Graph info page heading 3"
+    },
+    "graphInfoPageParagraph5": "You can share your data by tapping the Share button below the graph. Remember that you can zoom and scroll the graph to make sure it is displaying the information that you would like to share. The share function uses other apps on your device to share the files (a picture of the graph and a spreadsheet of the data). You will be presented with a list of apps based on the apps that are installed on your device.",
+    "@graphInfoPageParagraph5": {
+      "description": "Graph info page paragraph 5"
+    },
+    "graphInfoPageParagraph6": "NOTE: if you do not have a compatible app installed to share the data (e.g. the Google Mail app or similar) an error message will be displayed.",
+    "@graphInfoPageParagraph6": {
+      "description": "Graph info page paragraph 6"
+    },
+    "shareDialogSubject": "Share your graph and data",
+    "@shareDialogSubject": {
+      "description": "The subject displayed in the operating system share dialog"
+    },
+    "dataYesIndicator": "Y",
+    "@dataYesIndicator": {
+      "description": "The character used in the data being shared to indicate yes or true"
+    },
+    "dataNoIndicator": "N",
+    "@dataNoIndicator": {
+      "description": "The character used in the data being shared to indicate no or false"
+    },
+    "dataDateTimeHeader": "Date and time",
+    "@dataDateTimeHeader": {
+      "description": "The header text for the datetime column in the data"
+    },
+    "dataTypeHeader": "Date and time",
+    "@dataTypeHeader": {
+      "description": "The header text for the type column in the data"
+    },
+    "dataBloodHeader": "Date and time",
+    "@dataBloodHeader": {
+      "description": "The header text for the blood indicator column in the data"
+    },
+    "dateTimeFormatFull": "dd/MM/yyyy H:mm:ss",
+    "@dateTimeFormatFull": {
+      "description": "The datetime format string accurate to the second"
+    },
+    "dateTimeFormatGraphMonthsDays": "MMM\ndd",
+    "@dateTimeFormatGraphMonthsDays": {
+      "description": "The datetime format string used to display months and days in the graph, e.g AUG 17 (with newline)"
+    },
+    "dateTimeFormatGraphHoursMinutes": "HH:mm",
+    "@dateTimeFormatGraphHoursMinutes": {
+      "description": "The datetime format string used to display hours and minutes in the graph, e.g 23:59"
+    },
+    "dateTimePickerMask": "dd MMM yyyy    HH:mm",
+    "@dateTimePickerMask": {
+      "description": "The mask used to format the dates displayed in the datetime picker when adding a stool"
+    },
+    "type1Name": "one",
+    "@type1Name": {
+      "description": "The name of type 1 used to generate links to the website"
+    },
+    "type2Name": "two",
+    "@type2Name": {
+      "description": "The name of type 2 used to generate links to the website"
+    },
+    "type3Name": "three",
+    "@type3Name": {
+      "description": "The name of type 3 used to generate links to the website"
+    },
+    "type4Name": "four",
+    "@type4Name": {
+      "description": "The name of type 4 used to generate links to the website"
+    },
+    "type5Name": "five",
+    "@type5Name": {
+      "description": "The name of type 5 used to generate links to the website"
+    },
+    "type6Name": "six",
+    "@type6Name": {
+      "description": "The name of type 6 used to generate links to the website"
+    },
+    "type7Name": "seven",
+    "@type7Name": {
+      "description": "The name of type 7 used to generate links to the website"
+    },
+    "typeFormatString": "Type %s",
+    "@typeFormatString": {
+      "description": "The format string for links to the website from the app, e.g. 'Type 7'"
+    },
+    "emailMeButtonLabel": "Send me an email!",
+    "@emailMeButtonLabel": {
+      "description": "The label for the email button on the about page"
+    },
+    "feedbackEmailSubjectLine": "Bristol Stool Chart app feedback",
+    "@feedbackEmailSubjectLine": {
+      "description": "The subject line for the feedback email"
+    }
+}

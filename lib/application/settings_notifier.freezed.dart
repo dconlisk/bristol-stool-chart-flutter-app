@@ -12,33 +12,7 @@ part of 'settings_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SettingsStateTearOff {
-  const _$SettingsStateTearOff();
-
-  _Initial initial() {
-    return const _Initial();
-  }
-
-  _Initialised initialised(bool showBloodOption) {
-    return _Initialised(
-      showBloodOption,
-    );
-  }
-
-  _Error error() {
-    return const _Error();
-  }
-
-  _Success success() {
-    return const _Success();
-  }
-}
-
-/// @nodoc
-const $SettingsState = _$SettingsStateTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SettingsState {
@@ -364,10 +338,10 @@ class _$_Initialised extends _Initialised {
 }
 
 abstract class _Initialised extends SettingsState {
-  const factory _Initialised(bool showBloodOption) = _$_Initialised;
+  const factory _Initialised(final bool showBloodOption) = _$_Initialised;
   const _Initialised._() : super._();
 
-  bool get showBloodOption;
+  bool get showBloodOption => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$InitialisedCopyWith<_Initialised> get copyWith =>
       throw _privateConstructorUsedError;

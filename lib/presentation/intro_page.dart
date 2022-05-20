@@ -1,13 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
+import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:intro_slider/slide_object.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 
 class IntroPage extends ConsumerWidget {
   List<Slide> _getSlides(BuildContext context) {
@@ -15,29 +16,25 @@ class IntroPage extends ConsumerWidget {
       Slide(
         backgroundColor: Colors.white,
         pathImage: 'assets/images/intro_healthy_patient.png',
-        title: "Welcome",
+        title: AppLocalizations.of(context)!.introPageTitle1,
         styleTitle: Theme.of(context).textTheme.headline2,
-        description:
-            "This app is a simple tool to allow you to track your bowel movements and to share that data with your health professional.",
+        description: AppLocalizations.of(context)!.introPageDescription1,
         styleDescription: Theme.of(context).textTheme.bodyText1,
       ),
       Slide(
         backgroundColor: Colors.white,
         pathImage: 'assets/images/intro_use_app.png',
-        title: "How it works",
+        title: AppLocalizations.of(context)!.introPageTitle2,
         styleTitle: Theme.of(context).textTheme.headline2,
-        description:
-            "Use the add button on the graph to add a stool. Swipe left or right until you find the right image. Set the time if you need to change it. "
-            "You can also use the Settings section to enable the blood in stool tracking feature if that is of use to you. Tap the save button to save and return to the graph.",
+        description: AppLocalizations.of(context)!.introPageDescription2,
         styleDescription: Theme.of(context).textTheme.bodyText1,
       ),
       Slide(
         backgroundColor: Colors.white,
         pathImage: 'assets/images/intro_share_data.png',
-        title: "Share your data",
+        title: AppLocalizations.of(context)!.introPageTitle3,
         styleTitle: Theme.of(context).textTheme.headline2,
-        description:
-            "To share your data, tap the share button under the graph. This will allow you to send your graph and data to your chosen contact via your chosen app.",
+        description: AppLocalizations.of(context)!.introPageDescription3,
         styleDescription: Theme.of(context).textTheme.bodyText1,
       ),
     ];
@@ -45,18 +42,10 @@ class IntroPage extends ConsumerWidget {
 
   const IntroPage({Key? key}) : super(key: key);
 
-  Widget _renderDoneBtn() {
-    return _renderButton(buttonText: 'DONE');
-  }
-
-  Widget _renderNextBtn() {
-    return _renderButton(buttonText: 'NEXT');
-  }
-
-  Widget _renderSkipBtn() {
-    return const Text(
-      'SKIP',
-      style: TextStyle(color: Colors.blue),
+  Widget _renderTextButton({required String buttonText}) {
+    return Text(
+      buttonText,
+      style: const TextStyle(color: Colors.blue),
     );
   }
 
@@ -82,13 +71,13 @@ class IntroPage extends ConsumerWidget {
     // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool(sharedPreferencesHasSeenIntroKey, true);
-    AutoRouter.of(context).push(const GraphRoute());
+    AutoRouter.of(context).replaceAll([const GraphRoute()]);
   }
 
   @override
   Widget build(context, ref) {
     // Use Future.delayed to delay the intro notifier check for errors until after the build cycle has completed
-    // Using Future.deplayed moves the code to the end of the queue for Dart's single-threaded event loop
+    // Using Future.delayed moves the code to the end of the queue for Dart's single-threaded event loop
     Future.delayed(Duration.zero, () {
       final state = ref.watch(introNotifierProvider);
 
@@ -97,12 +86,17 @@ class IntroPage extends ConsumerWidget {
           showDialog<AlertDialog>(
             context: context,
             builder: (_) => AlertDialog(
-              title: const Text('An error occurred'),
-              content: const Text(
-                  'Unfortunately we could not import your data from the previous version of the app. We apologise for any inconvenience caused.'),
+              title: Text(
+                AppLocalizations.of(context)!.errorOccurredTitle,
+              ),
+              content: Text(
+                AppLocalizations.of(context)!.dataImportErrorOccurredMessage,
+              ),
               actions: <Widget>[
                 ElevatedButton(
-                  child: const Text('OK'),
+                  child: Text(
+                    AppLocalizations.of(context)!.continueButtonText,
+                  ),
                   onPressed: () {
                     context.router.pop();
                   },
@@ -117,9 +111,12 @@ class IntroPage extends ConsumerWidget {
 
     return IntroSlider(
       slides: _getSlides(context),
-      renderNextBtn: _renderNextBtn(),
-      renderDoneBtn: _renderDoneBtn(),
-      renderSkipBtn: _renderSkipBtn(),
+      renderNextBtn: _renderButton(
+          buttonText: AppLocalizations.of(context)!.nextButtonText),
+      renderDoneBtn: _renderButton(
+          buttonText: AppLocalizations.of(context)!.doneButtonText),
+      renderSkipBtn: _renderTextButton(
+          buttonText: AppLocalizations.of(context)!.skipButtonText),
       onDonePress: () async => await _savePreferencesAndGoToGraph(context),
       onSkipPress: () async => await _savePreferencesAndGoToGraph(context),
       colorActiveDot: Colors.blue,

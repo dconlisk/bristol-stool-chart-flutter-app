@@ -12,24 +12,7 @@ part of 'stool.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$StoolTearOff {
-  const _$StoolTearOff();
-
-  _Stool call(
-      {required int type, required DateTime dateTime, required bool hasBlood}) {
-    return _Stool(
-      type: type,
-      dateTime: dateTime,
-      hasBlood: hasBlood,
-    );
-  }
-}
-
-/// @nodoc
-const $Stool = _$StoolTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$Stool {
@@ -163,17 +146,17 @@ class _$_Stool extends _Stool {
 
 abstract class _Stool extends Stool {
   const factory _Stool(
-      {required int type,
-      required DateTime dateTime,
-      required bool hasBlood}) = _$_Stool;
+      {required final int type,
+      required final DateTime dateTime,
+      required final bool hasBlood}) = _$_Stool;
   const _Stool._() : super._();
 
   @override
-  int get type;
+  int get type => throw _privateConstructorUsedError;
   @override
-  DateTime get dateTime;
+  DateTime get dateTime => throw _privateConstructorUsedError;
   @override
-  bool get hasBlood;
+  bool get hasBlood => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$StoolCopyWith<_Stool> get copyWith => throw _privateConstructorUsedError;
