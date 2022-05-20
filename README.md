@@ -5,7 +5,7 @@ This app is used by medical professionals with their patients to track their sto
 
 I created this app as a way to practice using flutter while also keeping the app current and up-to-date. 
 
-## Flutter packages used
+## Flutter packages used (a selection)
 
 * [auto_route](https://pub.dev/packages/auto_route) : this is maybe overkill for such a simple app as this, but it's the solution I use in my enterprise projects. It uses code generation to simplify the route setup in your app, and also allows the passing of strongly typed arguments as well as deep-linking. You declare your routes in app_router.dart (or similar), run your code generation as usual, and then your navigation code goes from something like this:
   
@@ -44,6 +44,29 @@ I have also created a Makefile which allows me to use shortcuts like `make gener
 - removed unnecessary StatefulWidgets
 - replaced static helper classes with interfaces and implementations, which makes it testable (in theory! No actual tests to be seen just now tho ;))
 
+## App Release Procedure
+
+### Deploying the Android app to the Google Play Store
+
+Ensure that the app uses a unique build number, e.g. 2.0.3+23  (23 must be unique in the Google Play store, if not then just bump it up one)
+Run `fvm flutter build appbundle` to generate an Android App Bundle.
+This can then be uploaded to the Google Play Store.
+
+To install the app on a device, go to the App Bundle explorer in the Google Play console, and click on the Downloads tab. Download the signed, universal APK and then run 
+`adb install /Users/david/Downloads/23.apk` (or whatever the apk file is called) to deploy the APK to the device. This should be signed and match the installed version of the app
+from the Google Play store.
+
+### Deploying the iOS app to the Apple App Store
+
+Create a release in App Store Connect and give it the same version numbers is is in the pubspec.yaml file (e.g. 2.0.3)
+Run `fvm flutter build ipa` to generate the ipa
+open build/ios/archive/MyApp.xcarchive in Xcode
+Click Validate app (choose automatically manage signing option)
+Click Distribute app
+
+[See full instructions here](https://flutter.dev/docs/deployment/ios)
+
+# The Bristol Stool Chart website
 
 [The Bristol Stool Chart website](https://bristolstoolchart.net)
 
