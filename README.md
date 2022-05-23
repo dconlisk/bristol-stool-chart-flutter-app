@@ -62,7 +62,8 @@ Create a release in App Store Connect and give it the same version numbers is is
 Run `fvm flutter build ipa` to generate the ipa
 open build/ios/archive/MyApp.xcarchive in Xcode
 Click Validate app (choose automatically manage signing option)
-Click Distribute app
+Click Distribute app (choose upload option)
+When done you can select the build in your new version in App Store Connect
 
 [See full instructions here](https://flutter.dev/docs/deployment/ios)
 
