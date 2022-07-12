@@ -131,16 +131,19 @@ class GraphNotifier extends StateNotifier<GraphState> {
           prefs.getBool(sharedPreferencesBloodSettingKey) ?? false;
 
       var rows = stools
-          .map((stool) => showBloodOption
-              ? '${DateFormat(AppLocalizations.of(context)!.dataDateTimeHeader).format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? AppLocalizations.of(context)!.dataYesIndicator : AppLocalizations.of(context)!.dataNoIndicator}'
-              : '${DateFormat(AppLocalizations.of(context)!.dataDateTimeHeader).format(stool.dateTime)},${stool.type}')
+          .map(
+            (stool) => showBloodOption
+                ? '${DateFormat(AppLocalizations.of(context)!.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? AppLocalizations.of(context)!.dataYesIndicator : AppLocalizations.of(context)!.dataNoIndicator}'
+                : '${DateFormat(AppLocalizations.of(context)!.dateTimeFormatFull).format(stool.dateTime)},${stool.type}',
+          )
           .toList();
 
       rows.insert(
-          0,
-          showBloodOption
-              ? '${AppLocalizations.of(context)!.dataDateTimeHeader},${AppLocalizations.of(context)!.dataTypeHeader},${AppLocalizations.of(context)!.dataBloodHeader}'
-              : '${AppLocalizations.of(context)!.dataDateTimeHeader},${AppLocalizations.of(context)!.dataTypeHeader}');
+        0,
+        showBloodOption
+            ? '${AppLocalizations.of(context)!.dataDateTimeHeader},${AppLocalizations.of(context)!.dataTypeHeader},${AppLocalizations.of(context)!.dataBloodHeader}'
+            : '${AppLocalizations.of(context)!.dataDateTimeHeader},${AppLocalizations.of(context)!.dataTypeHeader}',
+      );
 
       final lineSeparator = Platform.isAndroid ? '\r\n' : '\n';
       return rows
