@@ -271,11 +271,11 @@
     "@dataDateTimeHeader": {
       "description": "The header text for the datetime column in the data"
     },
-    "dataTypeHeader": "Date and time",
+    "dataTypeHeader": "BSC type",
     "@dataTypeHeader": {
       "description": "The header text for the type column in the data"
     },
-    "dataBloodHeader": "Date and time",
+    "dataBloodHeader": "Blood in stool?",
     "@dataBloodHeader": {
       "description": "The header text for the blood indicator column in the data"
     },
