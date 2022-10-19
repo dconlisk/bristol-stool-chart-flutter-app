@@ -63,7 +63,7 @@
     "@settingsPageTitle": {
       "description": "The title for the settings page"
     },
-    "addStoolPageTitle": "About",
+    "addStoolPageTitle": "Add Stool",
     "@addStoolPageTitle": {
       "description": "The title for the add stool page"
     },
