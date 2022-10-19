@@ -19,11 +19,13 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   freezed: ^2.2.0
+  freezed_annotation: ^2.2.0
   google_fonts: ^3.0.1
   hooks_riverpod: ^2.0.2
   intl: ^0.17.0
   intro_slider: ^4.2.0
   package_info_plus: ^3.0.0
+  path: ^1.8.1
   path_provider: ^2.0.11
   sembast: ^3.3.1
   shared_preferences: ^2.0.15
@@ -40,7 +42,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.1
-  freezed_annotation: ^2.2.0
   json_annotation: ^4.7.0
   json_serializable: ^6.5.3
 
