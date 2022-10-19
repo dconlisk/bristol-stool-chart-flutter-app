@@ -25,9 +25,9 @@ mixin _$StoolFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? database,
-    TResult Function()? fileSystem,
-    TResult Function()? import,
+    TResult? Function()? database,
+    TResult? Function()? fileSystem,
+    TResult? Function()? import,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,9 +47,9 @@ mixin _$StoolFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? fileSystem,
-    TResult Function(_ImportFailure value)? import,
+    TResult? Function(_DatabaseFailure value)? database,
+    TResult? Function(_FileSystemFailure value)? fileSystem,
+    TResult? Function(_ImportFailure value)? import,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,35 +66,34 @@ mixin _$StoolFailure {
 abstract class $StoolFailureCopyWith<$Res> {
   factory $StoolFailureCopyWith(
           StoolFailure value, $Res Function(StoolFailure) then) =
-      _$StoolFailureCopyWithImpl<$Res>;
+      _$StoolFailureCopyWithImpl<$Res, StoolFailure>;
 }
 
 /// @nodoc
-class _$StoolFailureCopyWithImpl<$Res> implements $StoolFailureCopyWith<$Res> {
+class _$StoolFailureCopyWithImpl<$Res, $Val extends StoolFailure>
+    implements $StoolFailureCopyWith<$Res> {
   _$StoolFailureCopyWithImpl(this._value, this._then);
 
-  final StoolFailure _value;
   // ignore: unused_field
-  final $Res Function(StoolFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$DatabaseFailureCopyWith<$Res> {
-  factory _$DatabaseFailureCopyWith(
-          _DatabaseFailure value, $Res Function(_DatabaseFailure) then) =
-      __$DatabaseFailureCopyWithImpl<$Res>;
+abstract class _$$_DatabaseFailureCopyWith<$Res> {
+  factory _$$_DatabaseFailureCopyWith(
+          _$_DatabaseFailure value, $Res Function(_$_DatabaseFailure) then) =
+      __$$_DatabaseFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$DatabaseFailureCopyWithImpl<$Res>
-    extends _$StoolFailureCopyWithImpl<$Res>
-    implements _$DatabaseFailureCopyWith<$Res> {
-  __$DatabaseFailureCopyWithImpl(
-      _DatabaseFailure _value, $Res Function(_DatabaseFailure) _then)
-      : super(_value, (v) => _then(v as _DatabaseFailure));
-
-  @override
-  _DatabaseFailure get _value => super._value as _DatabaseFailure;
+class __$$_DatabaseFailureCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res, _$_DatabaseFailure>
+    implements _$$_DatabaseFailureCopyWith<$Res> {
+  __$$_DatabaseFailureCopyWithImpl(
+      _$_DatabaseFailure _value, $Res Function(_$_DatabaseFailure) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -110,7 +109,7 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _DatabaseFailure);
+        (other.runtimeType == runtimeType && other is _$_DatabaseFailure);
   }
 
   @override
@@ -129,9 +128,9 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? database,
-    TResult Function()? fileSystem,
-    TResult Function()? import,
+    TResult? Function()? database,
+    TResult? Function()? fileSystem,
+    TResult? Function()? import,
   }) {
     return database?.call();
   }
@@ -163,9 +162,9 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? fileSystem,
-    TResult Function(_ImportFailure value)? import,
+    TResult? Function(_DatabaseFailure value)? database,
+    TResult? Function(_FileSystemFailure value)? fileSystem,
+    TResult? Function(_ImportFailure value)? import,
   }) {
     return database?.call(this);
   }
@@ -191,22 +190,19 @@ abstract class _DatabaseFailure extends StoolFailure {
 }
 
 /// @nodoc
-abstract class _$FileSystemFailureCopyWith<$Res> {
-  factory _$FileSystemFailureCopyWith(
-          _FileSystemFailure value, $Res Function(_FileSystemFailure) then) =
-      __$FileSystemFailureCopyWithImpl<$Res>;
+abstract class _$$_FileSystemFailureCopyWith<$Res> {
+  factory _$$_FileSystemFailureCopyWith(_$_FileSystemFailure value,
+          $Res Function(_$_FileSystemFailure) then) =
+      __$$_FileSystemFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$FileSystemFailureCopyWithImpl<$Res>
-    extends _$StoolFailureCopyWithImpl<$Res>
-    implements _$FileSystemFailureCopyWith<$Res> {
-  __$FileSystemFailureCopyWithImpl(
-      _FileSystemFailure _value, $Res Function(_FileSystemFailure) _then)
-      : super(_value, (v) => _then(v as _FileSystemFailure));
-
-  @override
-  _FileSystemFailure get _value => super._value as _FileSystemFailure;
+class __$$_FileSystemFailureCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res, _$_FileSystemFailure>
+    implements _$$_FileSystemFailureCopyWith<$Res> {
+  __$$_FileSystemFailureCopyWithImpl(
+      _$_FileSystemFailure _value, $Res Function(_$_FileSystemFailure) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -222,7 +218,7 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _FileSystemFailure);
+        (other.runtimeType == runtimeType && other is _$_FileSystemFailure);
   }
 
   @override
@@ -241,9 +237,9 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? database,
-    TResult Function()? fileSystem,
-    TResult Function()? import,
+    TResult? Function()? database,
+    TResult? Function()? fileSystem,
+    TResult? Function()? import,
   }) {
     return fileSystem?.call();
   }
@@ -275,9 +271,9 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? fileSystem,
-    TResult Function(_ImportFailure value)? import,
+    TResult? Function(_DatabaseFailure value)? database,
+    TResult? Function(_FileSystemFailure value)? fileSystem,
+    TResult? Function(_ImportFailure value)? import,
   }) {
     return fileSystem?.call(this);
   }
@@ -303,22 +299,19 @@ abstract class _FileSystemFailure extends StoolFailure {
 }
 
 /// @nodoc
-abstract class _$ImportFailureCopyWith<$Res> {
-  factory _$ImportFailureCopyWith(
-          _ImportFailure value, $Res Function(_ImportFailure) then) =
-      __$ImportFailureCopyWithImpl<$Res>;
+abstract class _$$_ImportFailureCopyWith<$Res> {
+  factory _$$_ImportFailureCopyWith(
+          _$_ImportFailure value, $Res Function(_$_ImportFailure) then) =
+      __$$_ImportFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ImportFailureCopyWithImpl<$Res>
-    extends _$StoolFailureCopyWithImpl<$Res>
-    implements _$ImportFailureCopyWith<$Res> {
-  __$ImportFailureCopyWithImpl(
-      _ImportFailure _value, $Res Function(_ImportFailure) _then)
-      : super(_value, (v) => _then(v as _ImportFailure));
-
-  @override
-  _ImportFailure get _value => super._value as _ImportFailure;
+class __$$_ImportFailureCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res, _$_ImportFailure>
+    implements _$$_ImportFailureCopyWith<$Res> {
+  __$$_ImportFailureCopyWithImpl(
+      _$_ImportFailure _value, $Res Function(_$_ImportFailure) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -334,7 +327,7 @@ class _$_ImportFailure extends _ImportFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ImportFailure);
+        (other.runtimeType == runtimeType && other is _$_ImportFailure);
   }
 
   @override
@@ -353,9 +346,9 @@ class _$_ImportFailure extends _ImportFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? database,
-    TResult Function()? fileSystem,
-    TResult Function()? import,
+    TResult? Function()? database,
+    TResult? Function()? fileSystem,
+    TResult? Function()? import,
   }) {
     return import?.call();
   }
@@ -387,9 +380,9 @@ class _$_ImportFailure extends _ImportFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_DatabaseFailure value)? database,
-    TResult Function(_FileSystemFailure value)? fileSystem,
-    TResult Function(_ImportFailure value)? import,
+    TResult? Function(_DatabaseFailure value)? database,
+    TResult? Function(_FileSystemFailure value)? fileSystem,
+    TResult? Function(_ImportFailure value)? import,
   }) {
     return import?.call(this);
   }

@@ -33,74 +33,80 @@ mixin _$StoolDto {
 /// @nodoc
 abstract class $StoolDtoCopyWith<$Res> {
   factory $StoolDtoCopyWith(StoolDto value, $Res Function(StoolDto) then) =
-      _$StoolDtoCopyWithImpl<$Res>;
+      _$StoolDtoCopyWithImpl<$Res, StoolDto>;
+  @useResult
   $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
-class _$StoolDtoCopyWithImpl<$Res> implements $StoolDtoCopyWith<$Res> {
+class _$StoolDtoCopyWithImpl<$Res, $Val extends StoolDto>
+    implements $StoolDtoCopyWith<$Res> {
   _$StoolDtoCopyWithImpl(this._value, this._then);
 
-  final StoolDto _value;
   // ignore: unused_field
-  final $Res Function(StoolDto) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? dateTime = freezed,
-    Object? hasBlood = freezed,
+    Object? type = null,
+    Object? dateTime = null,
+    Object? hasBlood = null,
   }) {
     return _then(_value.copyWith(
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as int,
-      dateTime: dateTime == freezed
+      dateTime: null == dateTime
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      hasBlood: hasBlood == freezed
+      hasBlood: null == hasBlood
           ? _value.hasBlood
           : hasBlood // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$StoolDtoCopyWith<$Res> implements $StoolDtoCopyWith<$Res> {
-  factory _$StoolDtoCopyWith(_StoolDto value, $Res Function(_StoolDto) then) =
-      __$StoolDtoCopyWithImpl<$Res>;
+abstract class _$$_StoolDtoCopyWith<$Res> implements $StoolDtoCopyWith<$Res> {
+  factory _$$_StoolDtoCopyWith(
+          _$_StoolDto value, $Res Function(_$_StoolDto) then) =
+      __$$_StoolDtoCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
-class __$StoolDtoCopyWithImpl<$Res> extends _$StoolDtoCopyWithImpl<$Res>
-    implements _$StoolDtoCopyWith<$Res> {
-  __$StoolDtoCopyWithImpl(_StoolDto _value, $Res Function(_StoolDto) _then)
-      : super(_value, (v) => _then(v as _StoolDto));
+class __$$_StoolDtoCopyWithImpl<$Res>
+    extends _$StoolDtoCopyWithImpl<$Res, _$_StoolDto>
+    implements _$$_StoolDtoCopyWith<$Res> {
+  __$$_StoolDtoCopyWithImpl(
+      _$_StoolDto _value, $Res Function(_$_StoolDto) _then)
+      : super(_value, _then);
 
-  @override
-  _StoolDto get _value => super._value as _StoolDto;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? dateTime = freezed,
-    Object? hasBlood = freezed,
+    Object? type = null,
+    Object? dateTime = null,
+    Object? hasBlood = null,
   }) {
-    return _then(_StoolDto(
-      type: type == freezed
+    return _then(_$_StoolDto(
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as int,
-      dateTime: dateTime == freezed
+      dateTime: null == dateTime
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      hasBlood: hasBlood == freezed
+      hasBlood: null == hasBlood
           ? _value.hasBlood
           : hasBlood // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -134,28 +140,29 @@ class _$_StoolDto extends _StoolDto {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _StoolDto &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.dateTime, dateTime) &&
-            const DeepCollectionEquality().equals(other.hasBlood, hasBlood));
+            other is _$_StoolDto &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.dateTime, dateTime) ||
+                other.dateTime == dateTime) &&
+            (identical(other.hasBlood, hasBlood) ||
+                other.hasBlood == hasBlood));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(dateTime),
-      const DeepCollectionEquality().hash(hasBlood));
+  int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood);
 
   @JsonKey(ignore: true)
   @override
-  _$StoolDtoCopyWith<_StoolDto> get copyWith =>
-      __$StoolDtoCopyWithImpl<_StoolDto>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_StoolDtoCopyWith<_$_StoolDto> get copyWith =>
+      __$$_StoolDtoCopyWithImpl<_$_StoolDto>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StoolDtoToJson(this);
+    return _$$_StoolDtoToJson(
+      this,
+    );
   }
 }
 
@@ -169,13 +176,13 @@ abstract class _StoolDto extends StoolDto {
   factory _StoolDto.fromJson(Map<String, dynamic> json) = _$_StoolDto.fromJson;
 
   @override
-  int get type => throw _privateConstructorUsedError;
+  int get type;
   @override
-  DateTime get dateTime => throw _privateConstructorUsedError;
+  DateTime get dateTime;
   @override
-  bool get hasBlood => throw _privateConstructorUsedError;
+  bool get hasBlood;
   @override
   @JsonKey(ignore: true)
-  _$StoolDtoCopyWith<_StoolDto> get copyWith =>
+  _$$_StoolDtoCopyWith<_$_StoolDto> get copyWith =>
       throw _privateConstructorUsedError;
 }

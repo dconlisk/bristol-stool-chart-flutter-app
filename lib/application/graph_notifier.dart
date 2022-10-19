@@ -6,6 +6,7 @@ import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:bristol_stool_chart/infrastructure/i_file_system_repository.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
+import 'package:cross_file/cross_file.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -84,11 +85,14 @@ class GraphNotifier extends StateNotifier<GraphState> {
         return;
       }
 
-      await Share.shareFiles(
-        [graphImagePath, csvFilePath],
+      await Share.shareXFiles(
+        [XFile(graphImagePath), XFile(csvFilePath)],
         subject: AppLocalizations.of(context)!.shareDialogSubject,
         sharePositionOrigin: Rect.fromCenter(
-            center: const Offset(100, 100), width: 200, height: 100),
+          center: const Offset(100, 100),
+          width: 200,
+          height: 100,
+        ),
       );
 
       state = const GraphState.shareSuccess();

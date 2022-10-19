@@ -26,10 +26,10 @@ mixin _$IntroState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? hasSeenIntro,
-    TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult? Function()? initial,
+    TResult? Function()? hasSeenIntro,
+    TResult? Function()? hasNotSeenIntro,
+    TResult? Function()? importFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$IntroState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_HasSeenIntro value)? hasSeenIntro,
-    TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_HasSeenIntro value)? hasSeenIntro,
+    TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
+    TResult? Function(_ImportFailed value)? importFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,32 +72,33 @@ mixin _$IntroState {
 abstract class $IntroStateCopyWith<$Res> {
   factory $IntroStateCopyWith(
           IntroState value, $Res Function(IntroState) then) =
-      _$IntroStateCopyWithImpl<$Res>;
+      _$IntroStateCopyWithImpl<$Res, IntroState>;
 }
 
 /// @nodoc
-class _$IntroStateCopyWithImpl<$Res> implements $IntroStateCopyWith<$Res> {
+class _$IntroStateCopyWithImpl<$Res, $Val extends IntroState>
+    implements $IntroStateCopyWith<$Res> {
   _$IntroStateCopyWithImpl(this._value, this._then);
 
-  final IntroState _value;
   // ignore: unused_field
-  final $Res Function(IntroState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$IntroStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$IntroStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -113,7 +114,7 @@ class _$_Initial extends _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -133,10 +134,10 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? hasSeenIntro,
-    TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult? Function()? initial,
+    TResult? Function()? hasSeenIntro,
+    TResult? Function()? hasNotSeenIntro,
+    TResult? Function()? importFailed,
   }) {
     return initial?.call();
   }
@@ -170,10 +171,10 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_HasSeenIntro value)? hasSeenIntro,
-    TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_HasSeenIntro value)? hasSeenIntro,
+    TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
+    TResult? Function(_ImportFailed value)? importFailed,
   }) {
     return initial?.call(this);
   }
@@ -200,21 +201,19 @@ abstract class _Initial extends IntroState {
 }
 
 /// @nodoc
-abstract class _$HasSeenIntroCopyWith<$Res> {
-  factory _$HasSeenIntroCopyWith(
-          _HasSeenIntro value, $Res Function(_HasSeenIntro) then) =
-      __$HasSeenIntroCopyWithImpl<$Res>;
+abstract class _$$_HasSeenIntroCopyWith<$Res> {
+  factory _$$_HasSeenIntroCopyWith(
+          _$_HasSeenIntro value, $Res Function(_$_HasSeenIntro) then) =
+      __$$_HasSeenIntroCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$HasSeenIntroCopyWithImpl<$Res> extends _$IntroStateCopyWithImpl<$Res>
-    implements _$HasSeenIntroCopyWith<$Res> {
-  __$HasSeenIntroCopyWithImpl(
-      _HasSeenIntro _value, $Res Function(_HasSeenIntro) _then)
-      : super(_value, (v) => _then(v as _HasSeenIntro));
-
-  @override
-  _HasSeenIntro get _value => super._value as _HasSeenIntro;
+class __$$_HasSeenIntroCopyWithImpl<$Res>
+    extends _$IntroStateCopyWithImpl<$Res, _$_HasSeenIntro>
+    implements _$$_HasSeenIntroCopyWith<$Res> {
+  __$$_HasSeenIntroCopyWithImpl(
+      _$_HasSeenIntro _value, $Res Function(_$_HasSeenIntro) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -230,7 +229,7 @@ class _$_HasSeenIntro extends _HasSeenIntro {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _HasSeenIntro);
+        (other.runtimeType == runtimeType && other is _$_HasSeenIntro);
   }
 
   @override
@@ -250,10 +249,10 @@ class _$_HasSeenIntro extends _HasSeenIntro {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? hasSeenIntro,
-    TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult? Function()? initial,
+    TResult? Function()? hasSeenIntro,
+    TResult? Function()? hasNotSeenIntro,
+    TResult? Function()? importFailed,
   }) {
     return hasSeenIntro?.call();
   }
@@ -287,10 +286,10 @@ class _$_HasSeenIntro extends _HasSeenIntro {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_HasSeenIntro value)? hasSeenIntro,
-    TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_HasSeenIntro value)? hasSeenIntro,
+    TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
+    TResult? Function(_ImportFailed value)? importFailed,
   }) {
     return hasSeenIntro?.call(this);
   }
@@ -317,22 +316,19 @@ abstract class _HasSeenIntro extends IntroState {
 }
 
 /// @nodoc
-abstract class _$HasNotSeenIntroCopyWith<$Res> {
-  factory _$HasNotSeenIntroCopyWith(
-          _HasNotSeenIntro value, $Res Function(_HasNotSeenIntro) then) =
-      __$HasNotSeenIntroCopyWithImpl<$Res>;
+abstract class _$$_HasNotSeenIntroCopyWith<$Res> {
+  factory _$$_HasNotSeenIntroCopyWith(
+          _$_HasNotSeenIntro value, $Res Function(_$_HasNotSeenIntro) then) =
+      __$$_HasNotSeenIntroCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$HasNotSeenIntroCopyWithImpl<$Res>
-    extends _$IntroStateCopyWithImpl<$Res>
-    implements _$HasNotSeenIntroCopyWith<$Res> {
-  __$HasNotSeenIntroCopyWithImpl(
-      _HasNotSeenIntro _value, $Res Function(_HasNotSeenIntro) _then)
-      : super(_value, (v) => _then(v as _HasNotSeenIntro));
-
-  @override
-  _HasNotSeenIntro get _value => super._value as _HasNotSeenIntro;
+class __$$_HasNotSeenIntroCopyWithImpl<$Res>
+    extends _$IntroStateCopyWithImpl<$Res, _$_HasNotSeenIntro>
+    implements _$$_HasNotSeenIntroCopyWith<$Res> {
+  __$$_HasNotSeenIntroCopyWithImpl(
+      _$_HasNotSeenIntro _value, $Res Function(_$_HasNotSeenIntro) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -348,7 +344,7 @@ class _$_HasNotSeenIntro extends _HasNotSeenIntro {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _HasNotSeenIntro);
+        (other.runtimeType == runtimeType && other is _$_HasNotSeenIntro);
   }
 
   @override
@@ -368,10 +364,10 @@ class _$_HasNotSeenIntro extends _HasNotSeenIntro {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? hasSeenIntro,
-    TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult? Function()? initial,
+    TResult? Function()? hasSeenIntro,
+    TResult? Function()? hasNotSeenIntro,
+    TResult? Function()? importFailed,
   }) {
     return hasNotSeenIntro?.call();
   }
@@ -405,10 +401,10 @@ class _$_HasNotSeenIntro extends _HasNotSeenIntro {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_HasSeenIntro value)? hasSeenIntro,
-    TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_HasSeenIntro value)? hasSeenIntro,
+    TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
+    TResult? Function(_ImportFailed value)? importFailed,
   }) {
     return hasNotSeenIntro?.call(this);
   }
@@ -435,21 +431,19 @@ abstract class _HasNotSeenIntro extends IntroState {
 }
 
 /// @nodoc
-abstract class _$ImportFailedCopyWith<$Res> {
-  factory _$ImportFailedCopyWith(
-          _ImportFailed value, $Res Function(_ImportFailed) then) =
-      __$ImportFailedCopyWithImpl<$Res>;
+abstract class _$$_ImportFailedCopyWith<$Res> {
+  factory _$$_ImportFailedCopyWith(
+          _$_ImportFailed value, $Res Function(_$_ImportFailed) then) =
+      __$$_ImportFailedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ImportFailedCopyWithImpl<$Res> extends _$IntroStateCopyWithImpl<$Res>
-    implements _$ImportFailedCopyWith<$Res> {
-  __$ImportFailedCopyWithImpl(
-      _ImportFailed _value, $Res Function(_ImportFailed) _then)
-      : super(_value, (v) => _then(v as _ImportFailed));
-
-  @override
-  _ImportFailed get _value => super._value as _ImportFailed;
+class __$$_ImportFailedCopyWithImpl<$Res>
+    extends _$IntroStateCopyWithImpl<$Res, _$_ImportFailed>
+    implements _$$_ImportFailedCopyWith<$Res> {
+  __$$_ImportFailedCopyWithImpl(
+      _$_ImportFailed _value, $Res Function(_$_ImportFailed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -465,7 +459,7 @@ class _$_ImportFailed extends _ImportFailed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ImportFailed);
+        (other.runtimeType == runtimeType && other is _$_ImportFailed);
   }
 
   @override
@@ -485,10 +479,10 @@ class _$_ImportFailed extends _ImportFailed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? hasSeenIntro,
-    TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult? Function()? initial,
+    TResult? Function()? hasSeenIntro,
+    TResult? Function()? hasNotSeenIntro,
+    TResult? Function()? importFailed,
   }) {
     return importFailed?.call();
   }
@@ -522,10 +516,10 @@ class _$_ImportFailed extends _ImportFailed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_HasSeenIntro value)? hasSeenIntro,
-    TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_HasSeenIntro value)? hasSeenIntro,
+    TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
+    TResult? Function(_ImportFailed value)? importFailed,
   }) {
     return importFailed?.call(this);
   }
