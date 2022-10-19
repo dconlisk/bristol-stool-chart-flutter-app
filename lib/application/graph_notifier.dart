@@ -49,6 +49,8 @@ class GraphNotifier extends StateNotifier<GraphState> {
 
   Future<void> share(BuildContext context, GlobalKey graphKey) async {
     try {
+      final String shareDialogSubject =
+          AppLocalizations.of(context)!.shareDialogSubject;
       final failureOrStools = await _stoolRepository.getAllStools();
 
       final stools = failureOrStools.fold((l) => null, (r) => r);
@@ -71,10 +73,10 @@ class GraphNotifier extends StateNotifier<GraphState> {
       }
 
       final failureOrGraphImagePath =
-          await _fileSystemRepository.writeBytesToFile(context, imageData);
+          await _fileSystemRepository.writeBytesToFile(imageData);
 
       final failureOrCsvFilePath =
-          await _fileSystemRepository.writeStringToFile(context, csvData);
+          await _fileSystemRepository.writeStringToFile(csvData);
 
       final graphImagePath =
           failureOrGraphImagePath.fold((l) => null, (r) => r);
@@ -87,7 +89,7 @@ class GraphNotifier extends StateNotifier<GraphState> {
 
       await Share.shareXFiles(
         [XFile(graphImagePath), XFile(csvFilePath)],
-        subject: AppLocalizations.of(context)!.shareDialogSubject,
+        subject: shareDialogSubject,
         sharePositionOrigin: Rect.fromCenter(
           center: const Offset(100, 100),
           width: 200,
@@ -130,6 +132,7 @@ class GraphNotifier extends StateNotifier<GraphState> {
     required List<Stool> stools,
   }) async {
     try {
+      final localizations = AppLocalizations.of(context)!;
       final prefs = await SharedPreferences.getInstance();
       final showBloodOption =
           prefs.getBool(sharedPreferencesBloodSettingKey) ?? false;
@@ -137,16 +140,16 @@ class GraphNotifier extends StateNotifier<GraphState> {
       var rows = stools
           .map(
             (stool) => showBloodOption
-                ? '${DateFormat(AppLocalizations.of(context)!.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? AppLocalizations.of(context)!.dataYesIndicator : AppLocalizations.of(context)!.dataNoIndicator}'
-                : '${DateFormat(AppLocalizations.of(context)!.dateTimeFormatFull).format(stool.dateTime)},${stool.type}',
+                ? '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? localizations.dataYesIndicator : localizations.dataNoIndicator}'
+                : '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}',
           )
           .toList();
 
       rows.insert(
         0,
         showBloodOption
-            ? '${AppLocalizations.of(context)!.dataDateTimeHeader},${AppLocalizations.of(context)!.dataTypeHeader},${AppLocalizations.of(context)!.dataBloodHeader}'
-            : '${AppLocalizations.of(context)!.dataDateTimeHeader},${AppLocalizations.of(context)!.dataTypeHeader}',
+            ? '${localizations.dataDateTimeHeader},${localizations.dataTypeHeader},${localizations.dataBloodHeader}'
+            : '${localizations.dataDateTimeHeader},${localizations.dataTypeHeader}',
       );
 
       final lineSeparator = Platform.isAndroid ? '\r\n' : '\n';

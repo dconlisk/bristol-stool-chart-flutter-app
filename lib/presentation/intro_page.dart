@@ -66,11 +66,11 @@ class IntroPage extends ConsumerWidget {
     );
   }
 
-  Future<void> _savePreferencesAndGoToGraph(BuildContext context) async {
+  Future<void> _savePreferencesAndGoToGraph(StackRouter router) async {
     // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool(sharedPreferencesHasSeenIntroKey, true);
-    AutoRouter.of(context).replaceAll([const GraphRoute()]);
+    router.replaceAll([const GraphRoute()]);
   }
 
   @override
@@ -108,6 +108,8 @@ class IntroPage extends ConsumerWidget {
       );
     });
 
+    final router = AutoRouter.of(context);
+
     return IntroSlider(
       listContentConfig: _getContentConfigs(context),
       renderNextBtn: _renderButton(
@@ -116,8 +118,8 @@ class IntroPage extends ConsumerWidget {
           buttonText: AppLocalizations.of(context)!.doneButtonText),
       renderSkipBtn: _renderTextButton(
           buttonText: AppLocalizations.of(context)!.skipButtonText),
-      onDonePress: () async => await _savePreferencesAndGoToGraph(context),
-      onSkipPress: () async => await _savePreferencesAndGoToGraph(context),
+      onDonePress: () async => await _savePreferencesAndGoToGraph(router),
+      onSkipPress: () async => await _savePreferencesAndGoToGraph(router),
       //colorActiveDot: Colors.blue,
     );
   }
