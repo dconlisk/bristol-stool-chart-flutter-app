@@ -2,7 +2,7 @@
 
 ## Features
 
-- Updated to latest flutter and package versions
+- Updated to latest version of Flutter and packages
 
 ## Bug Fixes
 
