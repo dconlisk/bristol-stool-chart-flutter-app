@@ -63,7 +63,7 @@ Run `fvm flutter build ipa` to generate the ipa
 open build/ios/archive/Runner.xcarchive in Xcode
 Click Validate app (accept defaults and then choose automatically manage signing option)
 Click Distribute app (choose App Store Connect and then upload option, and accept defaults)
-When done you can select the build in your new version in App Store Connect (Note: it may take a couple of minutes for the build to appear after upload)
+When done you can select the uploaded build in your new release in App Store Connect (Note: it may take a couple of minutes for the build to appear after upload)
 
 [See full instructions here](https://flutter.dev/docs/deployment/ios)
 
