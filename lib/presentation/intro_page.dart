@@ -49,18 +49,29 @@ class IntroPage extends ConsumerWidget {
   }
 
   Widget _renderButton({
+    required BuildContext context,
     required String buttonText,
   }) {
+    // Need to clamp the text size so that the text is visible when user is using very large text
+    final mediaQueryData = MediaQuery.of(context);
+    final num constrainedTextScaleFactor =
+        mediaQueryData.textScaleFactor.clamp(1.0, 1.5);
+
     return Container(
       decoration: const BoxDecoration(
         borderRadius: AppPadding.borderRadius,
         color: Colors.blue,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          buttonText,
-          style: const TextStyle(color: Colors.white),
+        padding: AppPadding.small,
+        child: MediaQuery(
+          data: mediaQueryData.copyWith(
+            textScaleFactor: constrainedTextScaleFactor as double?,
+          ),
+          child: Text(
+            buttonText,
+            style: const TextStyle(color: Colors.white),
+          ),
         ),
       ),
     );
@@ -113,8 +124,10 @@ class IntroPage extends ConsumerWidget {
     return IntroSlider(
       listContentConfig: _getContentConfigs(context),
       renderNextBtn: _renderButton(
+          context: context,
           buttonText: AppLocalizations.of(context)!.nextButtonText),
       renderDoneBtn: _renderButton(
+          context: context,
           buttonText: AppLocalizations.of(context)!.doneButtonText),
       renderSkipBtn: _renderTextButton(
           buttonText: AppLocalizations.of(context)!.skipButtonText),

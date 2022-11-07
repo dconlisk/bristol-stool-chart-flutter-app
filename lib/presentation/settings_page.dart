@@ -89,87 +89,86 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
             initial: (_) => const Center(
               child: CircularProgressIndicator(),
             ),
-            initialised: (initialisedState) => Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: AppSizes.small,
-              ),
-              child: SafeArea(
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Heading(
-                        text: AppLocalizations.of(context)!.bloodCheckHeading,
-                      ),
-                      Paragraph(
-                        text: AppLocalizations.of(context)!.bloodCheckParagraph,
-                      ),
-                      Row(
-                        children: [
-                          Text(
+            initialised: (initialisedState) => SafeArea(
+              child: SingleChildScrollView(
+                padding: AppPadding.smallHorizontal,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Heading(
+                      text: AppLocalizations.of(context)!.bloodCheckHeading,
+                    ),
+                    Paragraph(
+                      text: AppLocalizations.of(context)!.bloodCheckParagraph,
+                    ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: Text(
                             AppLocalizations.of(context)!.bloodCheckToggleLabel,
                             style: Theme.of(context).textTheme.subtitle1,
+                            softWrap: true,
                           ),
-                          Switch(
-                            value: initialisedState.showBloodOption,
-                            onChanged: (value) {
-                              ref
-                                  .read(settingsNotifierProvider.notifier)
-                                  .setBloodOption(value);
-                            },
-                          ),
-                        ],
-                      ),
-                      Heading(
-                        text: AppLocalizations.of(context)!.removeDataHeading,
-                      ),
-                      Paragraph(
-                        text: AppLocalizations.of(context)!.removeDataParagraph,
-                      ),
-                      AppPadding.sizedBoxVerticalSmall,
-                      ElevatedButton(
-                        child: Text(
-                            AppLocalizations.of(context)!.removeDataButtonText),
-                        onPressed: () async {
-                          await showDialog<AlertDialog>(
-                            context: context,
-                            builder: (_) => AlertDialog(
-                              title: Text(
-                                AppLocalizations.of(context)!.areYouSureTitle,
-                              ),
-                              content: Text(
-                                AppLocalizations.of(context)!
-                                    .areYouSureDeleteDataMessage,
-                              ),
-                              actions: [
-                                ElevatedButton(
-                                  onPressed: () async {
-                                    await context.router.pop();
-                                  },
-                                  child: Text(
-                                    AppLocalizations.of(context)!
-                                        .cancelButtonText,
-                                  ),
-                                ),
-                                ElevatedButton(
-                                  onPressed: () async {
-                                    await context.router.pop();
-                                    await ref
-                                        .read(settingsNotifierProvider.notifier)
-                                        .deleteAllData();
-                                  },
-                                  child: Text(
-                                    AppLocalizations.of(context)!
-                                        .deleteAllDataButtonText,
-                                  ),
-                                ),
-                              ],
+                        ),
+                        Switch(
+                          value: initialisedState.showBloodOption,
+                          onChanged: (value) {
+                            ref
+                                .read(settingsNotifierProvider.notifier)
+                                .setBloodOption(value);
+                          },
+                        ),
+                      ],
+                    ),
+                    Heading(
+                      text: AppLocalizations.of(context)!.removeDataHeading,
+                    ),
+                    Paragraph(
+                      text: AppLocalizations.of(context)!.removeDataParagraph,
+                    ),
+                    AppPadding.sizedBoxVerticalSmall,
+                    ElevatedButton(
+                      child: Text(
+                          AppLocalizations.of(context)!.removeDataButtonText),
+                      onPressed: () async {
+                        await showDialog<AlertDialog>(
+                          context: context,
+                          builder: (_) => AlertDialog(
+                            title: Text(
+                              AppLocalizations.of(context)!.areYouSureTitle,
                             ),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
+                            content: Text(
+                              AppLocalizations.of(context)!
+                                  .areYouSureDeleteDataMessage,
+                            ),
+                            actions: [
+                              ElevatedButton(
+                                onPressed: () async {
+                                  await context.router.pop();
+                                },
+                                child: Text(
+                                  AppLocalizations.of(context)!
+                                      .cancelButtonText,
+                                ),
+                              ),
+                              ElevatedButton(
+                                onPressed: () async {
+                                  await context.router.pop();
+                                  await ref
+                                      .read(settingsNotifierProvider.notifier)
+                                      .deleteAllData();
+                                },
+                                child: Text(
+                                  AppLocalizations.of(context)!
+                                      .deleteAllDataButtonText,
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      },
+                    ),
+                  ],
                 ),
               ),
             ),
