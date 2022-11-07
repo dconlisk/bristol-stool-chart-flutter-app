@@ -12,7 +12,7 @@ class Graph extends StatefulWidget {
   const Graph({Key? key, required this.stools}) : super(key: key);
 
   @override
-  _GraphState createState() => _GraphState();
+  State<Graph> createState() => _GraphState();
 }
 
 class _GraphState extends State<Graph> {

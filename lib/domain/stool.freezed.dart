@@ -27,74 +27,77 @@ mixin _$Stool {
 /// @nodoc
 abstract class $StoolCopyWith<$Res> {
   factory $StoolCopyWith(Stool value, $Res Function(Stool) then) =
-      _$StoolCopyWithImpl<$Res>;
+      _$StoolCopyWithImpl<$Res, Stool>;
+  @useResult
   $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
-class _$StoolCopyWithImpl<$Res> implements $StoolCopyWith<$Res> {
+class _$StoolCopyWithImpl<$Res, $Val extends Stool>
+    implements $StoolCopyWith<$Res> {
   _$StoolCopyWithImpl(this._value, this._then);
 
-  final Stool _value;
   // ignore: unused_field
-  final $Res Function(Stool) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? dateTime = freezed,
-    Object? hasBlood = freezed,
+    Object? type = null,
+    Object? dateTime = null,
+    Object? hasBlood = null,
   }) {
     return _then(_value.copyWith(
-      type: type == freezed
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as int,
-      dateTime: dateTime == freezed
+      dateTime: null == dateTime
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      hasBlood: hasBlood == freezed
+      hasBlood: null == hasBlood
           ? _value.hasBlood
           : hasBlood // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$StoolCopyWith<$Res> implements $StoolCopyWith<$Res> {
-  factory _$StoolCopyWith(_Stool value, $Res Function(_Stool) then) =
-      __$StoolCopyWithImpl<$Res>;
+abstract class _$$_StoolCopyWith<$Res> implements $StoolCopyWith<$Res> {
+  factory _$$_StoolCopyWith(_$_Stool value, $Res Function(_$_Stool) then) =
+      __$$_StoolCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
-class __$StoolCopyWithImpl<$Res> extends _$StoolCopyWithImpl<$Res>
-    implements _$StoolCopyWith<$Res> {
-  __$StoolCopyWithImpl(_Stool _value, $Res Function(_Stool) _then)
-      : super(_value, (v) => _then(v as _Stool));
+class __$$_StoolCopyWithImpl<$Res> extends _$StoolCopyWithImpl<$Res, _$_Stool>
+    implements _$$_StoolCopyWith<$Res> {
+  __$$_StoolCopyWithImpl(_$_Stool _value, $Res Function(_$_Stool) _then)
+      : super(_value, _then);
 
-  @override
-  _Stool get _value => super._value as _Stool;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? dateTime = freezed,
-    Object? hasBlood = freezed,
+    Object? type = null,
+    Object? dateTime = null,
+    Object? hasBlood = null,
   }) {
-    return _then(_Stool(
-      type: type == freezed
+    return _then(_$_Stool(
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
               as int,
-      dateTime: dateTime == freezed
+      dateTime: null == dateTime
           ? _value.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
-      hasBlood: hasBlood == freezed
+      hasBlood: null == hasBlood
           ? _value.hasBlood
           : hasBlood // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -125,23 +128,22 @@ class _$_Stool extends _Stool {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Stool &&
-            const DeepCollectionEquality().equals(other.type, type) &&
-            const DeepCollectionEquality().equals(other.dateTime, dateTime) &&
-            const DeepCollectionEquality().equals(other.hasBlood, hasBlood));
+            other is _$_Stool &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.dateTime, dateTime) ||
+                other.dateTime == dateTime) &&
+            (identical(other.hasBlood, hasBlood) ||
+                other.hasBlood == hasBlood));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(type),
-      const DeepCollectionEquality().hash(dateTime),
-      const DeepCollectionEquality().hash(hasBlood));
+  int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood);
 
   @JsonKey(ignore: true)
   @override
-  _$StoolCopyWith<_Stool> get copyWith =>
-      __$StoolCopyWithImpl<_Stool>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_StoolCopyWith<_$_Stool> get copyWith =>
+      __$$_StoolCopyWithImpl<_$_Stool>(this, _$identity);
 }
 
 abstract class _Stool extends Stool {
@@ -152,12 +154,13 @@ abstract class _Stool extends Stool {
   const _Stool._() : super._();
 
   @override
-  int get type => throw _privateConstructorUsedError;
+  int get type;
   @override
-  DateTime get dateTime => throw _privateConstructorUsedError;
+  DateTime get dateTime;
   @override
-  bool get hasBlood => throw _privateConstructorUsedError;
+  bool get hasBlood;
   @override
   @JsonKey(ignore: true)
-  _$StoolCopyWith<_Stool> get copyWith => throw _privateConstructorUsedError;
+  _$$_StoolCopyWith<_$_Stool> get copyWith =>
+      throw _privateConstructorUsedError;
 }

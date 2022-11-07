@@ -7,13 +7,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intro_slider/intro_slider.dart';
-import 'package:intro_slider/slide_object.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class IntroPage extends ConsumerWidget {
-  List<Slide> _getSlides(BuildContext context) {
+  List<ContentConfig> _getContentConfigs(BuildContext context) {
     return [
-      Slide(
+      ContentConfig(
         backgroundColor: Colors.white,
         pathImage: 'assets/images/intro_healthy_patient.png',
         title: AppLocalizations.of(context)!.introPageTitle1,
@@ -21,7 +20,7 @@ class IntroPage extends ConsumerWidget {
         description: AppLocalizations.of(context)!.introPageDescription1,
         styleDescription: Theme.of(context).textTheme.bodyText1,
       ),
-      Slide(
+      ContentConfig(
         backgroundColor: Colors.white,
         pathImage: 'assets/images/intro_use_app.png',
         title: AppLocalizations.of(context)!.introPageTitle2,
@@ -29,7 +28,7 @@ class IntroPage extends ConsumerWidget {
         description: AppLocalizations.of(context)!.introPageDescription2,
         styleDescription: Theme.of(context).textTheme.bodyText1,
       ),
-      Slide(
+      ContentConfig(
         backgroundColor: Colors.white,
         pathImage: 'assets/images/intro_share_data.png',
         title: AppLocalizations.of(context)!.introPageTitle3,
@@ -67,11 +66,11 @@ class IntroPage extends ConsumerWidget {
     );
   }
 
-  Future<void> _savePreferencesAndGoToGraph(BuildContext context) async {
+  Future<void> _savePreferencesAndGoToGraph(StackRouter router) async {
     // Record the fact that the intro slider has been seen or skipped and navigate to the graph screen
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setBool(sharedPreferencesHasSeenIntroKey, true);
-    AutoRouter.of(context).replaceAll([const GraphRoute()]);
+    router.replaceAll([const GraphRoute()]);
   }
 
   @override
@@ -109,17 +108,19 @@ class IntroPage extends ConsumerWidget {
       );
     });
 
+    final router = AutoRouter.of(context);
+
     return IntroSlider(
-      slides: _getSlides(context),
+      listContentConfig: _getContentConfigs(context),
       renderNextBtn: _renderButton(
           buttonText: AppLocalizations.of(context)!.nextButtonText),
       renderDoneBtn: _renderButton(
           buttonText: AppLocalizations.of(context)!.doneButtonText),
       renderSkipBtn: _renderTextButton(
           buttonText: AppLocalizations.of(context)!.skipButtonText),
-      onDonePress: () async => await _savePreferencesAndGoToGraph(context),
-      onSkipPress: () async => await _savePreferencesAndGoToGraph(context),
-      colorActiveDot: Colors.blue,
+      onDonePress: () async => await _savePreferencesAndGoToGraph(router),
+      onSkipPress: () async => await _savePreferencesAndGoToGraph(router),
+      //colorActiveDot: Colors.blue,
     );
   }
 }

@@ -15,7 +15,7 @@ class GraphPage extends ConsumerStatefulWidget {
   const GraphPage({Key? key}) : super(key: key);
 
   @override
-  _GraphPageState createState() => _GraphPageState();
+  ConsumerState<GraphPage> createState() => _GraphPageState();
 }
 
 class _GraphPageState extends ConsumerState<GraphPage> {
@@ -92,10 +92,10 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                       children: [
                         AppPadding.sizedBoxVerticalLarge,
                         Expanded(
+                          flex: 3,
                           child: RepaintBoundary(
                               key: _graphKey,
                               child: Graph(stools: state.stools)),
-                          flex: 3,
                         ),
                         Padding(
                           padding: AppPadding.regularHorizontal,
@@ -110,10 +110,10 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                           ),
                         ),
                         Expanded(
+                          flex: 1,
                           child: Container(
                             height: AppSizes.large,
                           ),
-                          flex: 1,
                         ),
                       ],
                     );

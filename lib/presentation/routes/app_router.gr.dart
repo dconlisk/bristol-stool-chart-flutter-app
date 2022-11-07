@@ -10,6 +10,7 @@
 //
 // ignore_for_file: type=lint
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:auto_route/auto_route.dart' as _i8;
 import 'package:flutter/material.dart' as _i9;
 
@@ -29,58 +30,95 @@ class AppRouter extends _i8.RootStackRouter {
   final Map<String, _i8.PageFactory> pagesMap = {
     AboutRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.AboutPage());
+        routeData: routeData,
+        child: const _i1.AboutPage(),
+      );
     },
     AddRoute.name: (routeData) {
       return _i8.CustomPage<dynamic>(
-          routeData: routeData,
-          child: const _i2.AddPage(),
-          transitionsBuilder: _i8.TransitionsBuilders.slideBottom,
-          opaque: true,
-          barrierDismissible: false);
+        routeData: routeData,
+        child: const _i2.AddPage(),
+        transitionsBuilder: _i8.TransitionsBuilders.slideBottom,
+        opaque: true,
+        barrierDismissible: false,
+      );
     },
     GraphRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.GraphPage());
+        routeData: routeData,
+        child: const _i3.GraphPage(),
+      );
     },
     GraphInfoRoute.name: (routeData) {
       return _i8.CustomPage<dynamic>(
-          routeData: routeData,
-          child: const _i4.GraphInfoPage(),
-          transitionsBuilder: _i8.TransitionsBuilders.slideBottom,
-          opaque: true,
-          barrierDismissible: false);
+        routeData: routeData,
+        child: const _i4.GraphInfoPage(),
+        transitionsBuilder: _i8.TransitionsBuilders.slideBottom,
+        opaque: true,
+        barrierDismissible: false,
+      );
     },
     IntroRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i5.IntroPage());
+        routeData: routeData,
+        child: const _i5.IntroPage(),
+      );
     },
     SettingsRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i6.SettingsPage());
+        routeData: routeData,
+        child: const _i6.SettingsPage(),
+      );
     },
     SplashRoute.name: (routeData) {
       return _i8.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.SplashPage());
-    }
+        routeData: routeData,
+        child: const _i7.SplashPage(),
+      );
+    },
   };
 
   @override
   List<_i8.RouteConfig> get routes => [
-        _i8.RouteConfig(AboutRoute.name, path: '/about-page'),
-        _i8.RouteConfig(AddRoute.name, path: '/add-page'),
-        _i8.RouteConfig(GraphRoute.name, path: '/graph-page'),
-        _i8.RouteConfig(GraphInfoRoute.name, path: '/graph-info-page'),
-        _i8.RouteConfig(IntroRoute.name, path: '/intro-page'),
-        _i8.RouteConfig(SettingsRoute.name, path: '/settings-page'),
-        _i8.RouteConfig(SplashRoute.name, path: '/')
+        _i8.RouteConfig(
+          AboutRoute.name,
+          path: '/about-page',
+        ),
+        _i8.RouteConfig(
+          AddRoute.name,
+          path: '/add-page',
+        ),
+        _i8.RouteConfig(
+          GraphRoute.name,
+          path: '/graph-page',
+        ),
+        _i8.RouteConfig(
+          GraphInfoRoute.name,
+          path: '/graph-info-page',
+        ),
+        _i8.RouteConfig(
+          IntroRoute.name,
+          path: '/intro-page',
+        ),
+        _i8.RouteConfig(
+          SettingsRoute.name,
+          path: '/settings-page',
+        ),
+        _i8.RouteConfig(
+          SplashRoute.name,
+          path: '/',
+        ),
       ];
 }
 
 /// generated route for
 /// [_i1.AboutPage]
 class AboutRoute extends _i8.PageRouteInfo<void> {
-  const AboutRoute() : super(AboutRoute.name, path: '/about-page');
+  const AboutRoute()
+      : super(
+          AboutRoute.name,
+          path: '/about-page',
+        );
 
   static const String name = 'AboutRoute';
 }
@@ -88,7 +126,11 @@ class AboutRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i2.AddPage]
 class AddRoute extends _i8.PageRouteInfo<void> {
-  const AddRoute() : super(AddRoute.name, path: '/add-page');
+  const AddRoute()
+      : super(
+          AddRoute.name,
+          path: '/add-page',
+        );
 
   static const String name = 'AddRoute';
 }
@@ -96,7 +138,11 @@ class AddRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i3.GraphPage]
 class GraphRoute extends _i8.PageRouteInfo<void> {
-  const GraphRoute() : super(GraphRoute.name, path: '/graph-page');
+  const GraphRoute()
+      : super(
+          GraphRoute.name,
+          path: '/graph-page',
+        );
 
   static const String name = 'GraphRoute';
 }
@@ -104,7 +150,11 @@ class GraphRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i4.GraphInfoPage]
 class GraphInfoRoute extends _i8.PageRouteInfo<void> {
-  const GraphInfoRoute() : super(GraphInfoRoute.name, path: '/graph-info-page');
+  const GraphInfoRoute()
+      : super(
+          GraphInfoRoute.name,
+          path: '/graph-info-page',
+        );
 
   static const String name = 'GraphInfoRoute';
 }
@@ -112,7 +162,11 @@ class GraphInfoRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i5.IntroPage]
 class IntroRoute extends _i8.PageRouteInfo<void> {
-  const IntroRoute() : super(IntroRoute.name, path: '/intro-page');
+  const IntroRoute()
+      : super(
+          IntroRoute.name,
+          path: '/intro-page',
+        );
 
   static const String name = 'IntroRoute';
 }
@@ -120,7 +174,11 @@ class IntroRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i6.SettingsPage]
 class SettingsRoute extends _i8.PageRouteInfo<void> {
-  const SettingsRoute() : super(SettingsRoute.name, path: '/settings-page');
+  const SettingsRoute()
+      : super(
+          SettingsRoute.name,
+          path: '/settings-page',
+        );
 
   static const String name = 'SettingsRoute';
 }
@@ -128,7 +186,11 @@ class SettingsRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i7.SplashPage]
 class SplashRoute extends _i8.PageRouteInfo<void> {
-  const SplashRoute() : super(SplashRoute.name, path: '/');
+  const SplashRoute()
+      : super(
+          SplashRoute.name,
+          path: '/',
+        );
 
   static const String name = 'SplashRoute';
 }

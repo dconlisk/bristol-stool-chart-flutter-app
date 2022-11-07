@@ -26,10 +26,10 @@ mixin _$SettingsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool showBloodOption)? initialised,
-    TResult Function()? error,
-    TResult Function()? success,
+    TResult? Function()? initial,
+    TResult? Function(bool showBloodOption)? initialised,
+    TResult? Function()? error,
+    TResult? Function()? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$SettingsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_Error value)? error,
-    TResult Function(_Success value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Success value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,33 +72,33 @@ mixin _$SettingsState {
 abstract class $SettingsStateCopyWith<$Res> {
   factory $SettingsStateCopyWith(
           SettingsState value, $Res Function(SettingsState) then) =
-      _$SettingsStateCopyWithImpl<$Res>;
+      _$SettingsStateCopyWithImpl<$Res, SettingsState>;
 }
 
 /// @nodoc
-class _$SettingsStateCopyWithImpl<$Res>
+class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
     implements $SettingsStateCopyWith<$Res> {
   _$SettingsStateCopyWithImpl(this._value, this._then);
 
-  final SettingsState _value;
   // ignore: unused_field
-  final $Res Function(SettingsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$SettingsStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -114,7 +114,7 @@ class _$_Initial extends _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -134,10 +134,10 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool showBloodOption)? initialised,
-    TResult Function()? error,
-    TResult Function()? success,
+    TResult? Function()? initial,
+    TResult? Function(bool showBloodOption)? initialised,
+    TResult? Function()? error,
+    TResult? Function()? success,
   }) {
     return initial?.call();
   }
@@ -171,10 +171,10 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_Error value)? error,
-    TResult Function(_Success value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Success value)? success,
   }) {
     return initial?.call(this);
   }
@@ -201,29 +201,29 @@ abstract class _Initial extends SettingsState {
 }
 
 /// @nodoc
-abstract class _$InitialisedCopyWith<$Res> {
-  factory _$InitialisedCopyWith(
-          _Initialised value, $Res Function(_Initialised) then) =
-      __$InitialisedCopyWithImpl<$Res>;
+abstract class _$$_InitialisedCopyWith<$Res> {
+  factory _$$_InitialisedCopyWith(
+          _$_Initialised value, $Res Function(_$_Initialised) then) =
+      __$$_InitialisedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool showBloodOption});
 }
 
 /// @nodoc
-class __$InitialisedCopyWithImpl<$Res> extends _$SettingsStateCopyWithImpl<$Res>
-    implements _$InitialisedCopyWith<$Res> {
-  __$InitialisedCopyWithImpl(
-      _Initialised _value, $Res Function(_Initialised) _then)
-      : super(_value, (v) => _then(v as _Initialised));
+class __$$_InitialisedCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_Initialised>
+    implements _$$_InitialisedCopyWith<$Res> {
+  __$$_InitialisedCopyWithImpl(
+      _$_Initialised _value, $Res Function(_$_Initialised) _then)
+      : super(_value, _then);
 
-  @override
-  _Initialised get _value => super._value as _Initialised;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? showBloodOption = freezed,
+    Object? showBloodOption = null,
   }) {
-    return _then(_Initialised(
-      showBloodOption == freezed
+    return _then(_$_Initialised(
+      null == showBloodOption
           ? _value.showBloodOption
           : showBloodOption // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -248,19 +248,19 @@ class _$_Initialised extends _Initialised {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initialised &&
-            const DeepCollectionEquality()
-                .equals(other.showBloodOption, showBloodOption));
+            other is _$_Initialised &&
+            (identical(other.showBloodOption, showBloodOption) ||
+                other.showBloodOption == showBloodOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(showBloodOption));
+  int get hashCode => Object.hash(runtimeType, showBloodOption);
 
   @JsonKey(ignore: true)
   @override
-  _$InitialisedCopyWith<_Initialised> get copyWith =>
-      __$InitialisedCopyWithImpl<_Initialised>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
+      __$$_InitialisedCopyWithImpl<_$_Initialised>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -276,10 +276,10 @@ class _$_Initialised extends _Initialised {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool showBloodOption)? initialised,
-    TResult Function()? error,
-    TResult Function()? success,
+    TResult? Function()? initial,
+    TResult? Function(bool showBloodOption)? initialised,
+    TResult? Function()? error,
+    TResult? Function()? success,
   }) {
     return initialised?.call(showBloodOption);
   }
@@ -313,10 +313,10 @@ class _$_Initialised extends _Initialised {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_Error value)? error,
-    TResult Function(_Success value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Success value)? success,
   }) {
     return initialised?.call(this);
   }
@@ -341,26 +341,24 @@ abstract class _Initialised extends SettingsState {
   const factory _Initialised(final bool showBloodOption) = _$_Initialised;
   const _Initialised._() : super._();
 
-  bool get showBloodOption => throw _privateConstructorUsedError;
+  bool get showBloodOption;
   @JsonKey(ignore: true)
-  _$InitialisedCopyWith<_Initialised> get copyWith =>
+  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorCopyWith<$Res> {
-  factory _$ErrorCopyWith(_Error value, $Res Function(_Error) then) =
-      __$ErrorCopyWithImpl<$Res>;
+abstract class _$$_ErrorCopyWith<$Res> {
+  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
+      __$$_ErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ErrorCopyWithImpl<$Res> extends _$SettingsStateCopyWithImpl<$Res>
-    implements _$ErrorCopyWith<$Res> {
-  __$ErrorCopyWithImpl(_Error _value, $Res Function(_Error) _then)
-      : super(_value, (v) => _then(v as _Error));
-
-  @override
-  _Error get _value => super._value as _Error;
+class __$$_ErrorCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_Error>
+    implements _$$_ErrorCopyWith<$Res> {
+  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -376,7 +374,7 @@ class _$_Error extends _Error {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Error);
+        (other.runtimeType == runtimeType && other is _$_Error);
   }
 
   @override
@@ -396,10 +394,10 @@ class _$_Error extends _Error {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool showBloodOption)? initialised,
-    TResult Function()? error,
-    TResult Function()? success,
+    TResult? Function()? initial,
+    TResult? Function(bool showBloodOption)? initialised,
+    TResult? Function()? error,
+    TResult? Function()? success,
   }) {
     return error?.call();
   }
@@ -433,10 +431,10 @@ class _$_Error extends _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_Error value)? error,
-    TResult Function(_Success value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Success value)? success,
   }) {
     return error?.call(this);
   }
@@ -463,19 +461,18 @@ abstract class _Error extends SettingsState {
 }
 
 /// @nodoc
-abstract class _$SuccessCopyWith<$Res> {
-  factory _$SuccessCopyWith(_Success value, $Res Function(_Success) then) =
-      __$SuccessCopyWithImpl<$Res>;
+abstract class _$$_SuccessCopyWith<$Res> {
+  factory _$$_SuccessCopyWith(
+          _$_Success value, $Res Function(_$_Success) then) =
+      __$$_SuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SuccessCopyWithImpl<$Res> extends _$SettingsStateCopyWithImpl<$Res>
-    implements _$SuccessCopyWith<$Res> {
-  __$SuccessCopyWithImpl(_Success _value, $Res Function(_Success) _then)
-      : super(_value, (v) => _then(v as _Success));
-
-  @override
-  _Success get _value => super._value as _Success;
+class __$$_SuccessCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_Success>
+    implements _$$_SuccessCopyWith<$Res> {
+  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -491,7 +488,7 @@ class _$_Success extends _Success {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Success);
+        (other.runtimeType == runtimeType && other is _$_Success);
   }
 
   @override
@@ -511,10 +508,10 @@ class _$_Success extends _Success {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(bool showBloodOption)? initialised,
-    TResult Function()? error,
-    TResult Function()? success,
+    TResult? Function()? initial,
+    TResult? Function(bool showBloodOption)? initialised,
+    TResult? Function()? error,
+    TResult? Function()? success,
   }) {
     return success?.call();
   }
@@ -548,10 +545,10 @@ class _$_Success extends _Success {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_Error value)? error,
-    TResult Function(_Success value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_Error value)? error,
+    TResult? Function(_Success value)? success,
   }) {
     return success?.call(this);
   }

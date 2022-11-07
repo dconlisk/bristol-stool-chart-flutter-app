@@ -27,11 +27,11 @@ mixin _$GraphState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
+    TResult? Function()? initial,
+    TResult? Function(List<Stool> stools)? initialised,
+    TResult? Function()? loadFailure,
+    TResult? Function()? shareFailure,
+    TResult? Function()? shareSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,11 +55,11 @@ mixin _$GraphState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_ShareFailure value)? shareFailure,
+    TResult? Function(_ShareSuccess value)? shareSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,32 +78,33 @@ mixin _$GraphState {
 abstract class $GraphStateCopyWith<$Res> {
   factory $GraphStateCopyWith(
           GraphState value, $Res Function(GraphState) then) =
-      _$GraphStateCopyWithImpl<$Res>;
+      _$GraphStateCopyWithImpl<$Res, GraphState>;
 }
 
 /// @nodoc
-class _$GraphStateCopyWithImpl<$Res> implements $GraphStateCopyWith<$Res> {
+class _$GraphStateCopyWithImpl<$Res, $Val extends GraphState>
+    implements $GraphStateCopyWith<$Res> {
   _$GraphStateCopyWithImpl(this._value, this._then);
 
-  final GraphState _value;
   // ignore: unused_field
-  final $Res Function(GraphState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -119,7 +120,7 @@ class _$_Initial extends _Initial {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initial);
+        (other.runtimeType == runtimeType && other is _$_Initial);
   }
 
   @override
@@ -140,11 +141,11 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
+    TResult? Function()? initial,
+    TResult? Function(List<Stool> stools)? initialised,
+    TResult? Function()? loadFailure,
+    TResult? Function()? shareFailure,
+    TResult? Function()? shareSuccess,
   }) {
     return initial?.call();
   }
@@ -180,11 +181,11 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_ShareFailure value)? shareFailure,
+    TResult? Function(_ShareSuccess value)? shareSuccess,
   }) {
     return initial?.call(this);
   }
@@ -212,30 +213,30 @@ abstract class _Initial extends GraphState {
 }
 
 /// @nodoc
-abstract class _$InitialisedCopyWith<$Res> {
-  factory _$InitialisedCopyWith(
-          _Initialised value, $Res Function(_Initialised) then) =
-      __$InitialisedCopyWithImpl<$Res>;
+abstract class _$$_InitialisedCopyWith<$Res> {
+  factory _$$_InitialisedCopyWith(
+          _$_Initialised value, $Res Function(_$_Initialised) then) =
+      __$$_InitialisedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Stool> stools});
 }
 
 /// @nodoc
-class __$InitialisedCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
-    implements _$InitialisedCopyWith<$Res> {
-  __$InitialisedCopyWithImpl(
-      _Initialised _value, $Res Function(_Initialised) _then)
-      : super(_value, (v) => _then(v as _Initialised));
+class __$$_InitialisedCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$_Initialised>
+    implements _$$_InitialisedCopyWith<$Res> {
+  __$$_InitialisedCopyWithImpl(
+      _$_Initialised _value, $Res Function(_$_Initialised) _then)
+      : super(_value, _then);
 
-  @override
-  _Initialised get _value => super._value as _Initialised;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? stools = freezed,
+    Object? stools = null,
   }) {
-    return _then(_Initialised(
-      stools == freezed
-          ? _value.stools
+    return _then(_$_Initialised(
+      null == stools
+          ? _value._stools
           : stools // ignore: cast_nullable_to_non_nullable
               as List<Stool>,
     ));
@@ -265,18 +266,19 @@ class _$_Initialised extends _Initialised {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initialised &&
-            const DeepCollectionEquality().equals(other.stools, stools));
+            other is _$_Initialised &&
+            const DeepCollectionEquality().equals(other._stools, _stools));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(stools));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_stools));
 
   @JsonKey(ignore: true)
   @override
-  _$InitialisedCopyWith<_Initialised> get copyWith =>
-      __$InitialisedCopyWithImpl<_Initialised>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
+      __$$_InitialisedCopyWithImpl<_$_Initialised>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -293,11 +295,11 @@ class _$_Initialised extends _Initialised {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
+    TResult? Function()? initial,
+    TResult? Function(List<Stool> stools)? initialised,
+    TResult? Function()? loadFailure,
+    TResult? Function()? shareFailure,
+    TResult? Function()? shareSuccess,
   }) {
     return initialised?.call(stools);
   }
@@ -333,11 +335,11 @@ class _$_Initialised extends _Initialised {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_ShareFailure value)? shareFailure,
+    TResult? Function(_ShareSuccess value)? shareSuccess,
   }) {
     return initialised?.call(this);
   }
@@ -363,28 +365,26 @@ abstract class _Initialised extends GraphState {
   const factory _Initialised(final List<Stool> stools) = _$_Initialised;
   const _Initialised._() : super._();
 
-  List<Stool> get stools => throw _privateConstructorUsedError;
+  List<Stool> get stools;
   @JsonKey(ignore: true)
-  _$InitialisedCopyWith<_Initialised> get copyWith =>
+  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$LoadFailureCopyWith<$Res> {
-  factory _$LoadFailureCopyWith(
-          _LoadFailure value, $Res Function(_LoadFailure) then) =
-      __$LoadFailureCopyWithImpl<$Res>;
+abstract class _$$_LoadFailureCopyWith<$Res> {
+  factory _$$_LoadFailureCopyWith(
+          _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
+      __$$_LoadFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LoadFailureCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
-    implements _$LoadFailureCopyWith<$Res> {
-  __$LoadFailureCopyWithImpl(
-      _LoadFailure _value, $Res Function(_LoadFailure) _then)
-      : super(_value, (v) => _then(v as _LoadFailure));
-
-  @override
-  _LoadFailure get _value => super._value as _LoadFailure;
+class __$$_LoadFailureCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$_LoadFailure>
+    implements _$$_LoadFailureCopyWith<$Res> {
+  __$$_LoadFailureCopyWithImpl(
+      _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -400,7 +400,7 @@ class _$_LoadFailure extends _LoadFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LoadFailure);
+        (other.runtimeType == runtimeType && other is _$_LoadFailure);
   }
 
   @override
@@ -421,11 +421,11 @@ class _$_LoadFailure extends _LoadFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
+    TResult? Function()? initial,
+    TResult? Function(List<Stool> stools)? initialised,
+    TResult? Function()? loadFailure,
+    TResult? Function()? shareFailure,
+    TResult? Function()? shareSuccess,
   }) {
     return loadFailure?.call();
   }
@@ -461,11 +461,11 @@ class _$_LoadFailure extends _LoadFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_ShareFailure value)? shareFailure,
+    TResult? Function(_ShareSuccess value)? shareSuccess,
   }) {
     return loadFailure?.call(this);
   }
@@ -493,21 +493,19 @@ abstract class _LoadFailure extends GraphState {
 }
 
 /// @nodoc
-abstract class _$ShareFailureCopyWith<$Res> {
-  factory _$ShareFailureCopyWith(
-          _ShareFailure value, $Res Function(_ShareFailure) then) =
-      __$ShareFailureCopyWithImpl<$Res>;
+abstract class _$$_ShareFailureCopyWith<$Res> {
+  factory _$$_ShareFailureCopyWith(
+          _$_ShareFailure value, $Res Function(_$_ShareFailure) then) =
+      __$$_ShareFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShareFailureCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
-    implements _$ShareFailureCopyWith<$Res> {
-  __$ShareFailureCopyWithImpl(
-      _ShareFailure _value, $Res Function(_ShareFailure) _then)
-      : super(_value, (v) => _then(v as _ShareFailure));
-
-  @override
-  _ShareFailure get _value => super._value as _ShareFailure;
+class __$$_ShareFailureCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$_ShareFailure>
+    implements _$$_ShareFailureCopyWith<$Res> {
+  __$$_ShareFailureCopyWithImpl(
+      _$_ShareFailure _value, $Res Function(_$_ShareFailure) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -523,7 +521,7 @@ class _$_ShareFailure extends _ShareFailure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ShareFailure);
+        (other.runtimeType == runtimeType && other is _$_ShareFailure);
   }
 
   @override
@@ -544,11 +542,11 @@ class _$_ShareFailure extends _ShareFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
+    TResult? Function()? initial,
+    TResult? Function(List<Stool> stools)? initialised,
+    TResult? Function()? loadFailure,
+    TResult? Function()? shareFailure,
+    TResult? Function()? shareSuccess,
   }) {
     return shareFailure?.call();
   }
@@ -584,11 +582,11 @@ class _$_ShareFailure extends _ShareFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_ShareFailure value)? shareFailure,
+    TResult? Function(_ShareSuccess value)? shareSuccess,
   }) {
     return shareFailure?.call(this);
   }
@@ -616,21 +614,19 @@ abstract class _ShareFailure extends GraphState {
 }
 
 /// @nodoc
-abstract class _$ShareSuccessCopyWith<$Res> {
-  factory _$ShareSuccessCopyWith(
-          _ShareSuccess value, $Res Function(_ShareSuccess) then) =
-      __$ShareSuccessCopyWithImpl<$Res>;
+abstract class _$$_ShareSuccessCopyWith<$Res> {
+  factory _$$_ShareSuccessCopyWith(
+          _$_ShareSuccess value, $Res Function(_$_ShareSuccess) then) =
+      __$$_ShareSuccessCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ShareSuccessCopyWithImpl<$Res> extends _$GraphStateCopyWithImpl<$Res>
-    implements _$ShareSuccessCopyWith<$Res> {
-  __$ShareSuccessCopyWithImpl(
-      _ShareSuccess _value, $Res Function(_ShareSuccess) _then)
-      : super(_value, (v) => _then(v as _ShareSuccess));
-
-  @override
-  _ShareSuccess get _value => super._value as _ShareSuccess;
+class __$$_ShareSuccessCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$_ShareSuccess>
+    implements _$$_ShareSuccessCopyWith<$Res> {
+  __$$_ShareSuccessCopyWithImpl(
+      _$_ShareSuccess _value, $Res Function(_$_ShareSuccess) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -646,7 +642,7 @@ class _$_ShareSuccess extends _ShareSuccess {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ShareSuccess);
+        (other.runtimeType == runtimeType && other is _$_ShareSuccess);
   }
 
   @override
@@ -667,11 +663,11 @@ class _$_ShareSuccess extends _ShareSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
+    TResult? Function()? initial,
+    TResult? Function(List<Stool> stools)? initialised,
+    TResult? Function()? loadFailure,
+    TResult? Function()? shareFailure,
+    TResult? Function()? shareSuccess,
   }) {
     return shareSuccess?.call();
   }
@@ -707,11 +703,11 @@ class _$_ShareSuccess extends _ShareSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_ShareFailure value)? shareFailure,
+    TResult? Function(_ShareSuccess value)? shareSuccess,
   }) {
     return shareSuccess?.call(this);
   }

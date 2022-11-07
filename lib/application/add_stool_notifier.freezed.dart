@@ -28,10 +28,10 @@ mixin _$AddStoolState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Stool stool, bool showBloodOption)? initial,
-    TResult Function(Stool stool, bool showBloodOption)? initialised,
-    TResult Function(Stool stool, bool showBloodOption)? error,
-    TResult Function(Stool stool, bool showBloodOption)? success,
+    TResult? Function(Stool stool, bool showBloodOption)? initial,
+    TResult? Function(Stool stool, bool showBloodOption)? initialised,
+    TResult? Function(Stool stool, bool showBloodOption)? error,
+    TResult? Function(Stool stool, bool showBloodOption)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -53,10 +53,10 @@ mixin _$AddStoolState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_SuccessState value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_SuccessState value)? success,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,51 +78,58 @@ mixin _$AddStoolState {
 abstract class $AddStoolStateCopyWith<$Res> {
   factory $AddStoolStateCopyWith(
           AddStoolState value, $Res Function(AddStoolState) then) =
-      _$AddStoolStateCopyWithImpl<$Res>;
+      _$AddStoolStateCopyWithImpl<$Res, AddStoolState>;
+  @useResult
   $Res call({Stool stool, bool showBloodOption});
 
   $StoolCopyWith<$Res> get stool;
 }
 
 /// @nodoc
-class _$AddStoolStateCopyWithImpl<$Res>
+class _$AddStoolStateCopyWithImpl<$Res, $Val extends AddStoolState>
     implements $AddStoolStateCopyWith<$Res> {
   _$AddStoolStateCopyWithImpl(this._value, this._then);
 
-  final AddStoolState _value;
   // ignore: unused_field
-  final $Res Function(AddStoolState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? stool = freezed,
-    Object? showBloodOption = freezed,
+    Object? stool = null,
+    Object? showBloodOption = null,
   }) {
     return _then(_value.copyWith(
-      stool: stool == freezed
+      stool: null == stool
           ? _value.stool
           : stool // ignore: cast_nullable_to_non_nullable
               as Stool,
-      showBloodOption: showBloodOption == freezed
+      showBloodOption: null == showBloodOption
           ? _value.showBloodOption
           : showBloodOption // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 
   @override
+  @pragma('vm:prefer-inline')
   $StoolCopyWith<$Res> get stool {
     return $StoolCopyWith<$Res>(_value.stool, (value) {
-      return _then(_value.copyWith(stool: value));
+      return _then(_value.copyWith(stool: value) as $Val);
     });
   }
 }
 
 /// @nodoc
-abstract class _$InitialCopyWith<$Res> implements $AddStoolStateCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
+abstract class _$$_InitialCopyWith<$Res>
+    implements $AddStoolStateCopyWith<$Res> {
+  factory _$$_InitialCopyWith(
+          _$_Initial value, $Res Function(_$_Initial) then) =
+      __$$_InitialCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Stool stool, bool showBloodOption});
 
   @override
@@ -130,25 +137,24 @@ abstract class _$InitialCopyWith<$Res> implements $AddStoolStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$InitialCopyWithImpl<$Res> extends _$AddStoolStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$AddStoolStateCopyWithImpl<$Res, _$_Initial>
+    implements _$$_InitialCopyWith<$Res> {
+  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+      : super(_value, _then);
 
-  @override
-  _Initial get _value => super._value as _Initial;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? stool = freezed,
-    Object? showBloodOption = freezed,
+    Object? stool = null,
+    Object? showBloodOption = null,
   }) {
-    return _then(_Initial(
-      stool == freezed
+    return _then(_$_Initial(
+      null == stool
           ? _value.stool
           : stool // ignore: cast_nullable_to_non_nullable
               as Stool,
-      showBloodOption == freezed
+      null == showBloodOption
           ? _value.showBloodOption
           : showBloodOption // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -175,22 +181,20 @@ class _$_Initial extends _Initial {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initial &&
-            const DeepCollectionEquality().equals(other.stool, stool) &&
-            const DeepCollectionEquality()
-                .equals(other.showBloodOption, showBloodOption));
+            other is _$_Initial &&
+            (identical(other.stool, stool) || other.stool == stool) &&
+            (identical(other.showBloodOption, showBloodOption) ||
+                other.showBloodOption == showBloodOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(stool),
-      const DeepCollectionEquality().hash(showBloodOption));
+  int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
   @JsonKey(ignore: true)
   @override
-  _$InitialCopyWith<_Initial> get copyWith =>
-      __$InitialCopyWithImpl<_Initial>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -206,10 +210,10 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Stool stool, bool showBloodOption)? initial,
-    TResult Function(Stool stool, bool showBloodOption)? initialised,
-    TResult Function(Stool stool, bool showBloodOption)? error,
-    TResult Function(Stool stool, bool showBloodOption)? success,
+    TResult? Function(Stool stool, bool showBloodOption)? initial,
+    TResult? Function(Stool stool, bool showBloodOption)? initialised,
+    TResult? Function(Stool stool, bool showBloodOption)? error,
+    TResult? Function(Stool stool, bool showBloodOption)? success,
   }) {
     return initial?.call(stool, showBloodOption);
   }
@@ -243,10 +247,10 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_SuccessState value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_SuccessState value)? success,
   }) {
     return initial?.call(this);
   }
@@ -273,22 +277,23 @@ abstract class _Initial extends AddStoolState {
   const _Initial._() : super._();
 
   @override
-  Stool get stool => throw _privateConstructorUsedError;
+  Stool get stool;
   @override
-  bool get showBloodOption => throw _privateConstructorUsedError;
+  bool get showBloodOption;
   @override
   @JsonKey(ignore: true)
-  _$InitialCopyWith<_Initial> get copyWith =>
+  _$$_InitialCopyWith<_$_Initial> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$InitialisedCopyWith<$Res>
+abstract class _$$_InitialisedCopyWith<$Res>
     implements $AddStoolStateCopyWith<$Res> {
-  factory _$InitialisedCopyWith(
-          _Initialised value, $Res Function(_Initialised) then) =
-      __$InitialisedCopyWithImpl<$Res>;
+  factory _$$_InitialisedCopyWith(
+          _$_Initialised value, $Res Function(_$_Initialised) then) =
+      __$$_InitialisedCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Stool stool, bool showBloodOption});
 
   @override
@@ -296,26 +301,25 @@ abstract class _$InitialisedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$InitialisedCopyWithImpl<$Res> extends _$AddStoolStateCopyWithImpl<$Res>
-    implements _$InitialisedCopyWith<$Res> {
-  __$InitialisedCopyWithImpl(
-      _Initialised _value, $Res Function(_Initialised) _then)
-      : super(_value, (v) => _then(v as _Initialised));
+class __$$_InitialisedCopyWithImpl<$Res>
+    extends _$AddStoolStateCopyWithImpl<$Res, _$_Initialised>
+    implements _$$_InitialisedCopyWith<$Res> {
+  __$$_InitialisedCopyWithImpl(
+      _$_Initialised _value, $Res Function(_$_Initialised) _then)
+      : super(_value, _then);
 
-  @override
-  _Initialised get _value => super._value as _Initialised;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? stool = freezed,
-    Object? showBloodOption = freezed,
+    Object? stool = null,
+    Object? showBloodOption = null,
   }) {
-    return _then(_Initialised(
-      stool == freezed
+    return _then(_$_Initialised(
+      null == stool
           ? _value.stool
           : stool // ignore: cast_nullable_to_non_nullable
               as Stool,
-      showBloodOption == freezed
+      null == showBloodOption
           ? _value.showBloodOption
           : showBloodOption // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -342,22 +346,20 @@ class _$_Initialised extends _Initialised {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Initialised &&
-            const DeepCollectionEquality().equals(other.stool, stool) &&
-            const DeepCollectionEquality()
-                .equals(other.showBloodOption, showBloodOption));
+            other is _$_Initialised &&
+            (identical(other.stool, stool) || other.stool == stool) &&
+            (identical(other.showBloodOption, showBloodOption) ||
+                other.showBloodOption == showBloodOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(stool),
-      const DeepCollectionEquality().hash(showBloodOption));
+  int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
   @JsonKey(ignore: true)
   @override
-  _$InitialisedCopyWith<_Initialised> get copyWith =>
-      __$InitialisedCopyWithImpl<_Initialised>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
+      __$$_InitialisedCopyWithImpl<_$_Initialised>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -373,10 +375,10 @@ class _$_Initialised extends _Initialised {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Stool stool, bool showBloodOption)? initial,
-    TResult Function(Stool stool, bool showBloodOption)? initialised,
-    TResult Function(Stool stool, bool showBloodOption)? error,
-    TResult Function(Stool stool, bool showBloodOption)? success,
+    TResult? Function(Stool stool, bool showBloodOption)? initial,
+    TResult? Function(Stool stool, bool showBloodOption)? initialised,
+    TResult? Function(Stool stool, bool showBloodOption)? error,
+    TResult? Function(Stool stool, bool showBloodOption)? success,
   }) {
     return initialised?.call(stool, showBloodOption);
   }
@@ -410,10 +412,10 @@ class _$_Initialised extends _Initialised {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_SuccessState value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_SuccessState value)? success,
   }) {
     return initialised?.call(this);
   }
@@ -440,22 +442,23 @@ abstract class _Initialised extends AddStoolState {
   const _Initialised._() : super._();
 
   @override
-  Stool get stool => throw _privateConstructorUsedError;
+  Stool get stool;
   @override
-  bool get showBloodOption => throw _privateConstructorUsedError;
+  bool get showBloodOption;
   @override
   @JsonKey(ignore: true)
-  _$InitialisedCopyWith<_Initialised> get copyWith =>
+  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ErrorStateCopyWith<$Res>
+abstract class _$$_ErrorStateCopyWith<$Res>
     implements $AddStoolStateCopyWith<$Res> {
-  factory _$ErrorStateCopyWith(
-          _ErrorState value, $Res Function(_ErrorState) then) =
-      __$ErrorStateCopyWithImpl<$Res>;
+  factory _$$_ErrorStateCopyWith(
+          _$_ErrorState value, $Res Function(_$_ErrorState) then) =
+      __$$_ErrorStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Stool stool, bool showBloodOption});
 
   @override
@@ -463,26 +466,25 @@ abstract class _$ErrorStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ErrorStateCopyWithImpl<$Res> extends _$AddStoolStateCopyWithImpl<$Res>
-    implements _$ErrorStateCopyWith<$Res> {
-  __$ErrorStateCopyWithImpl(
-      _ErrorState _value, $Res Function(_ErrorState) _then)
-      : super(_value, (v) => _then(v as _ErrorState));
+class __$$_ErrorStateCopyWithImpl<$Res>
+    extends _$AddStoolStateCopyWithImpl<$Res, _$_ErrorState>
+    implements _$$_ErrorStateCopyWith<$Res> {
+  __$$_ErrorStateCopyWithImpl(
+      _$_ErrorState _value, $Res Function(_$_ErrorState) _then)
+      : super(_value, _then);
 
-  @override
-  _ErrorState get _value => super._value as _ErrorState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? stool = freezed,
-    Object? showBloodOption = freezed,
+    Object? stool = null,
+    Object? showBloodOption = null,
   }) {
-    return _then(_ErrorState(
-      stool == freezed
+    return _then(_$_ErrorState(
+      null == stool
           ? _value.stool
           : stool // ignore: cast_nullable_to_non_nullable
               as Stool,
-      showBloodOption == freezed
+      null == showBloodOption
           ? _value.showBloodOption
           : showBloodOption // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -509,22 +511,20 @@ class _$_ErrorState extends _ErrorState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ErrorState &&
-            const DeepCollectionEquality().equals(other.stool, stool) &&
-            const DeepCollectionEquality()
-                .equals(other.showBloodOption, showBloodOption));
+            other is _$_ErrorState &&
+            (identical(other.stool, stool) || other.stool == stool) &&
+            (identical(other.showBloodOption, showBloodOption) ||
+                other.showBloodOption == showBloodOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(stool),
-      const DeepCollectionEquality().hash(showBloodOption));
+  int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
   @JsonKey(ignore: true)
   @override
-  _$ErrorStateCopyWith<_ErrorState> get copyWith =>
-      __$ErrorStateCopyWithImpl<_ErrorState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ErrorStateCopyWith<_$_ErrorState> get copyWith =>
+      __$$_ErrorStateCopyWithImpl<_$_ErrorState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -540,10 +540,10 @@ class _$_ErrorState extends _ErrorState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Stool stool, bool showBloodOption)? initial,
-    TResult Function(Stool stool, bool showBloodOption)? initialised,
-    TResult Function(Stool stool, bool showBloodOption)? error,
-    TResult Function(Stool stool, bool showBloodOption)? success,
+    TResult? Function(Stool stool, bool showBloodOption)? initial,
+    TResult? Function(Stool stool, bool showBloodOption)? initialised,
+    TResult? Function(Stool stool, bool showBloodOption)? error,
+    TResult? Function(Stool stool, bool showBloodOption)? success,
   }) {
     return error?.call(stool, showBloodOption);
   }
@@ -577,10 +577,10 @@ class _$_ErrorState extends _ErrorState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_SuccessState value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_SuccessState value)? success,
   }) {
     return error?.call(this);
   }
@@ -607,22 +607,23 @@ abstract class _ErrorState extends AddStoolState {
   const _ErrorState._() : super._();
 
   @override
-  Stool get stool => throw _privateConstructorUsedError;
+  Stool get stool;
   @override
-  bool get showBloodOption => throw _privateConstructorUsedError;
+  bool get showBloodOption;
   @override
   @JsonKey(ignore: true)
-  _$ErrorStateCopyWith<_ErrorState> get copyWith =>
+  _$$_ErrorStateCopyWith<_$_ErrorState> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SuccessStateCopyWith<$Res>
+abstract class _$$_SuccessStateCopyWith<$Res>
     implements $AddStoolStateCopyWith<$Res> {
-  factory _$SuccessStateCopyWith(
-          _SuccessState value, $Res Function(_SuccessState) then) =
-      __$SuccessStateCopyWithImpl<$Res>;
+  factory _$$_SuccessStateCopyWith(
+          _$_SuccessState value, $Res Function(_$_SuccessState) then) =
+      __$$_SuccessStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Stool stool, bool showBloodOption});
 
   @override
@@ -630,27 +631,25 @@ abstract class _$SuccessStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SuccessStateCopyWithImpl<$Res>
-    extends _$AddStoolStateCopyWithImpl<$Res>
-    implements _$SuccessStateCopyWith<$Res> {
-  __$SuccessStateCopyWithImpl(
-      _SuccessState _value, $Res Function(_SuccessState) _then)
-      : super(_value, (v) => _then(v as _SuccessState));
+class __$$_SuccessStateCopyWithImpl<$Res>
+    extends _$AddStoolStateCopyWithImpl<$Res, _$_SuccessState>
+    implements _$$_SuccessStateCopyWith<$Res> {
+  __$$_SuccessStateCopyWithImpl(
+      _$_SuccessState _value, $Res Function(_$_SuccessState) _then)
+      : super(_value, _then);
 
-  @override
-  _SuccessState get _value => super._value as _SuccessState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? stool = freezed,
-    Object? showBloodOption = freezed,
+    Object? stool = null,
+    Object? showBloodOption = null,
   }) {
-    return _then(_SuccessState(
-      stool == freezed
+    return _then(_$_SuccessState(
+      null == stool
           ? _value.stool
           : stool // ignore: cast_nullable_to_non_nullable
               as Stool,
-      showBloodOption == freezed
+      null == showBloodOption
           ? _value.showBloodOption
           : showBloodOption // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -677,22 +676,20 @@ class _$_SuccessState extends _SuccessState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SuccessState &&
-            const DeepCollectionEquality().equals(other.stool, stool) &&
-            const DeepCollectionEquality()
-                .equals(other.showBloodOption, showBloodOption));
+            other is _$_SuccessState &&
+            (identical(other.stool, stool) || other.stool == stool) &&
+            (identical(other.showBloodOption, showBloodOption) ||
+                other.showBloodOption == showBloodOption));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(stool),
-      const DeepCollectionEquality().hash(showBloodOption));
+  int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
   @JsonKey(ignore: true)
   @override
-  _$SuccessStateCopyWith<_SuccessState> get copyWith =>
-      __$SuccessStateCopyWithImpl<_SuccessState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SuccessStateCopyWith<_$_SuccessState> get copyWith =>
+      __$$_SuccessStateCopyWithImpl<_$_SuccessState>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -708,10 +705,10 @@ class _$_SuccessState extends _SuccessState {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(Stool stool, bool showBloodOption)? initial,
-    TResult Function(Stool stool, bool showBloodOption)? initialised,
-    TResult Function(Stool stool, bool showBloodOption)? error,
-    TResult Function(Stool stool, bool showBloodOption)? success,
+    TResult? Function(Stool stool, bool showBloodOption)? initial,
+    TResult? Function(Stool stool, bool showBloodOption)? initialised,
+    TResult? Function(Stool stool, bool showBloodOption)? error,
+    TResult? Function(Stool stool, bool showBloodOption)? success,
   }) {
     return success?.call(stool, showBloodOption);
   }
@@ -745,10 +742,10 @@ class _$_SuccessState extends _SuccessState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_ErrorState value)? error,
-    TResult Function(_SuccessState value)? success,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_ErrorState value)? error,
+    TResult? Function(_SuccessState value)? success,
   }) {
     return success?.call(this);
   }
@@ -775,11 +772,11 @@ abstract class _SuccessState extends AddStoolState {
   const _SuccessState._() : super._();
 
   @override
-  Stool get stool => throw _privateConstructorUsedError;
+  Stool get stool;
   @override
-  bool get showBloodOption => throw _privateConstructorUsedError;
+  bool get showBloodOption;
   @override
   @JsonKey(ignore: true)
-  _$SuccessStateCopyWith<_SuccessState> get copyWith =>
+  _$$_SuccessStateCopyWith<_$_SuccessState> get copyWith =>
       throw _privateConstructorUsedError;
 }

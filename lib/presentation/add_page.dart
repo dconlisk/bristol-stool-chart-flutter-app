@@ -12,7 +12,7 @@ class AddPage extends ConsumerStatefulWidget {
   const AddPage({Key? key}) : super(key: key);
 
   @override
-  _AddPageState createState() => _AddPageState();
+  ConsumerState<AddPage> createState() => _AddPageState();
 }
 
 class _AddPageState extends ConsumerState<AddPage> {
@@ -187,8 +187,8 @@ class SliderImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Image.asset('assets/images/stooltype$index.jpg'),
       padding: AppPadding.regular,
+      child: Image.asset('assets/images/stooltype$index.jpg'),
     );
   }
 }
