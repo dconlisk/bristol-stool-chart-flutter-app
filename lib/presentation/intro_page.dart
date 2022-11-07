@@ -98,9 +98,6 @@ class IntroPage extends ConsumerWidget {
             builder: (_) => AlertDialog(
               title: Text(
                 AppLocalizations.of(context)!.errorOccurredTitle,
-                maxLines: 2,
-                overflow: TextOverflow.visible,
-                softWrap: true,
               ),
               content: Text(
                 AppLocalizations.of(context)!.dataImportErrorOccurredMessage,
