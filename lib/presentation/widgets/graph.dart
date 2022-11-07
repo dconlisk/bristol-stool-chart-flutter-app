@@ -164,7 +164,9 @@ class _GraphState extends State<Graph> {
             xValueMapper: (Stool event, int index) => event.dateTime,
             yValueMapper: (Stool event, int index) => event.type,
             markerSettings: const MarkerSettings(
-              isVisible: false,
+              isVisible: true,
+              height: 0,
+              width: 0,
             ),
           ),
           FastLineSeries<Stool, DateTime>(

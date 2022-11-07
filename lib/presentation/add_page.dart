@@ -83,6 +83,7 @@ class _AddPageState extends ConsumerState<AddPage> {
             ),
             initialised: (state) {
               return SingleChildScrollView(
+                padding: AppPadding.smallHorizontal,
                 child: Column(
                   children: [
                     CarouselSlider(
@@ -111,26 +112,32 @@ class _AddPageState extends ConsumerState<AddPage> {
                       ),
                     ),
                     if (state.showBloodOption)
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            AppLocalizations.of(context)!.bloodCheckLabelText,
-                            style: Theme.of(context).textTheme.subtitle1,
-                          ),
-                          Switch(
-                            value: state.stool.hasBlood,
-                            onChanged: (hasBlood) async {
-                              await ref
-                                  .read(addStoolNotifierProvider.notifier)
-                                  .updateStool(
-                                      state.stool.copyWith(hasBlood: hasBlood));
-                            },
-                          ),
-                        ],
+                      Padding(
+                        padding: AppPadding.regularHorizontal,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Expanded(
+                              child: Text(
+                                AppLocalizations.of(context)!
+                                    .bloodCheckLabelText,
+                                style: Theme.of(context).textTheme.subtitle1,
+                              ),
+                            ),
+                            Switch(
+                              value: state.stool.hasBlood,
+                              onChanged: (hasBlood) async {
+                                await ref
+                                    .read(addStoolNotifierProvider.notifier)
+                                    .updateStool(state.stool
+                                        .copyWith(hasBlood: hasBlood));
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                     Padding(
-                      padding: const EdgeInsets.all(60),
+                      padding: AppPadding.regular,
                       child: DateTimePicker(
                         firstDate: DateTime.now().toLocal().subtract(
                               const Duration(days: 30),

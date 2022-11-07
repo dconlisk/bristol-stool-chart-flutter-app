@@ -57,7 +57,7 @@ class IntroPage extends ConsumerWidget {
         color: Colors.blue,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: AppPadding.small,
         child: Text(
           buttonText,
           style: const TextStyle(color: Colors.white),
@@ -87,6 +87,9 @@ class IntroPage extends ConsumerWidget {
             builder: (_) => AlertDialog(
               title: Text(
                 AppLocalizations.of(context)!.errorOccurredTitle,
+                maxLines: 2,
+                overflow: TextOverflow.visible,
+                softWrap: true,
               ),
               content: Text(
                 AppLocalizations.of(context)!.dataImportErrorOccurredMessage,
