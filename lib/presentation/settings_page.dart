@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/settings_notifier.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
-import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:bristol_stool_chart/presentation/widgets/heading.dart';
 import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
 import 'package:bristol_stool_chart/presentation/widgets/paragraph.dart';
