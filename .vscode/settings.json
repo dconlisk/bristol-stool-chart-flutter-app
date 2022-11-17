@@ -10,5 +10,9 @@
     "**/*.g.dart": false,
     "**/.gitkeep": false
   },
-  "explorerExclude.backup": null
+  "explorerExclude.backup": null,
+  "dart.flutterSdkPath": ".fvm/flutter_sdk",
+  "search.exclude": {
+    "**/.fvm": true
+  },
 }
