@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/settings_notifier.dart';
-import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
+import 'package:bristol_stool_chart/presentation/routes/app_router.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/widgets/heading.dart';
 import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
@@ -10,8 +10,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+@RoutePage()
 class SettingsPage extends ConsumerStatefulWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   ConsumerState<SettingsPage> createState() => _SettingsPageState();
@@ -105,7 +106,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                         Expanded(
                           child: Text(
                             AppLocalizations.of(context)!.bloodCheckToggleLabel,
-                            style: Theme.of(context).textTheme.subtitle1,
+                            style: Theme.of(context).textTheme.titleMedium,
                             softWrap: true,
                           ),
                         ),

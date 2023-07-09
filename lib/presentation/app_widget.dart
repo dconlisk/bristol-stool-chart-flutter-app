@@ -1,3 +1,4 @@
+import 'package:bristol_stool_chart/presentation/routes/app_router.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:dartz/dartz.dart';
@@ -7,7 +8,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final initializationProvider = FutureProvider((ref) async {
@@ -19,7 +19,7 @@ final initializationProvider = FutureProvider((ref) async {
 class AppWidget extends ConsumerWidget {
   final _appRouter = AppRouter();
 
-  AppWidget({Key? key}) : super(key: key);
+  AppWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -51,8 +51,7 @@ class AppWidget extends ConsumerWidget {
     });
 
     return MaterialApp.router(
-      routerDelegate: _appRouter.delegate(),
-      routeInformationParser: _appRouter.defaultRouteParser(),
+      routerConfig: _appRouter.config(),
       localizationsDelegates: const [
         AppLocalizations.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -67,37 +66,37 @@ class AppWidget extends ConsumerWidget {
         primarySwatch: AppColors.blue,
         scaffoldBackgroundColor: AppColors.white,
         textTheme: TextTheme(
-          headline1: GoogleFonts.roboto(
+          displayLarge: GoogleFonts.roboto(
             fontSize: AppSizes.titleFontSize,
             fontWeight: FontWeight.bold,
           ),
-          headline2: GoogleFonts.playfairDisplay(
+          displayMedium: GoogleFonts.playfairDisplay(
             fontSize: AppSizes.titleFontSize,
             fontWeight: FontWeight.bold,
           ),
-          headline3: const TextStyle(
+          displaySmall: const TextStyle(
             fontSize: AppSizes.titleFontSize,
             color: AppColors.white,
           ),
-          headline4: const TextStyle(
+          headlineMedium: const TextStyle(
             color: AppColors.blue,
             fontSize: AppSizes.paragraphFontSize,
             decoration: TextDecoration.underline,
           ),
-          bodyText1: GoogleFonts.roboto(
-            color: AppColors.lightGrey,
+          bodyLarge: GoogleFonts.roboto(
+            color: AppColors.grey,
             fontSize: AppSizes.paragraphFontSize,
           ),
-          bodyText2: const TextStyle(
+          bodyMedium: const TextStyle(
             fontSize: AppSizes.paragraphFontSize,
             color: AppColors.white,
           ),
-          caption: const TextStyle(
+          bodySmall: const TextStyle(
             fontFamily: 'FontAwesome5Free',
             color: Colors.black,
             fontSize: 16,
           ),
-          subtitle1: GoogleFonts.roboto(
+          titleMedium: GoogleFonts.roboto(
             color: AppColors.lightGrey,
             fontSize: AppSizes.paragraphFontSize,
             fontWeight: FontWeight.bold,

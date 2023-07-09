@@ -6,7 +6,6 @@ import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
 import 'package:bristol_stool_chart/domain/stool.dart';
 import 'package:bristol_stool_chart/infrastructure/i_file_system_repository.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
-import 'package:cross_file/cross_file.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -62,43 +61,45 @@ class GraphNotifier extends StateNotifier<GraphState> {
 
       final imageData = await _getGraphAsBytes(graphKey: graphKey);
 
-      final csvData = await _getCsvFrom(
-        context: context,
-        stools: stools,
-      );
+      if (context.mounted) {
+        final csvData = await _getCsvFrom(
+          context: context,
+          stools: stools,
+        );
 
-      if (imageData == null || csvData == null) {
-        state = const GraphState.shareFailure();
-        return;
+        if (imageData == null || csvData == null) {
+          state = const GraphState.shareFailure();
+          return;
+        }
+
+        final failureOrGraphImagePath =
+            await _fileSystemRepository.writeBytesToFile(imageData);
+
+        final failureOrCsvFilePath =
+            await _fileSystemRepository.writeStringToFile(csvData);
+
+        final graphImagePath =
+            failureOrGraphImagePath.fold((l) => null, (r) => r);
+        final csvFilePath = failureOrCsvFilePath.fold((l) => null, (r) => r);
+
+        if (graphImagePath == null || csvFilePath == null) {
+          state = const GraphState.shareFailure();
+          return;
+        }
+
+        await Share.shareXFiles(
+          [XFile(graphImagePath), XFile(csvFilePath)],
+          subject: shareDialogSubject,
+          sharePositionOrigin: Rect.fromCenter(
+            center: const Offset(100, 100),
+            width: 200,
+            height: 100,
+          ),
+        );
+
+        state = const GraphState.shareSuccess();
+        state = GraphState.initialised(stools);
       }
-
-      final failureOrGraphImagePath =
-          await _fileSystemRepository.writeBytesToFile(imageData);
-
-      final failureOrCsvFilePath =
-          await _fileSystemRepository.writeStringToFile(csvData);
-
-      final graphImagePath =
-          failureOrGraphImagePath.fold((l) => null, (r) => r);
-      final csvFilePath = failureOrCsvFilePath.fold((l) => null, (r) => r);
-
-      if (graphImagePath == null || csvFilePath == null) {
-        state = const GraphState.shareFailure();
-        return;
-      }
-
-      await Share.shareXFiles(
-        [XFile(graphImagePath), XFile(csvFilePath)],
-        subject: shareDialogSubject,
-        sharePositionOrigin: Rect.fromCenter(
-          center: const Offset(100, 100),
-          width: 200,
-          height: 100,
-        ),
-      );
-
-      state = const GraphState.shareSuccess();
-      state = GraphState.initialised(stools);
     } catch (e) {
       state = const GraphState.shareFailure();
     }

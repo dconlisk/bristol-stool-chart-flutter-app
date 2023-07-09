@@ -34,7 +34,7 @@ class DrawerLink extends StatelessWidget {
           ),
           Text(
             text,
-            style: Theme.of(context).textTheme.headline3,
+            style: Theme.of(context).textTheme.displaySmall,
           )
         ],
       ),
