@@ -2,12 +2,10 @@
 
 ## Features
 
-- Updated layouts to work when the user's device is using large text sizes
-- Reinstated the green line on the graph
+- Updated flutter and packages to the latest versions
+- Replaced the date and time picker with a newer package
 
 ## Bug Fixes
-
-- #25 Radio buttons are hidden when user increases font size
 
 ## Known Issues
 
