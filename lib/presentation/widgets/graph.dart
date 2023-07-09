@@ -112,7 +112,7 @@ class _GraphState extends State<Graph> {
               shouldRenderAboveSeries: true,
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.end,
-              textStyle: Theme.of(context).textTheme.caption,
+              textStyle: Theme.of(context).textTheme.bodySmall,
             ),
             PlotBand(
               start: 2,
@@ -123,7 +123,7 @@ class _GraphState extends State<Graph> {
               shouldRenderAboveSeries: true,
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.end,
-              textStyle: Theme.of(context).textTheme.caption,
+              textStyle: Theme.of(context).textTheme.bodySmall,
             ),
             PlotBand(
               start: 3,
@@ -133,7 +133,7 @@ class _GraphState extends State<Graph> {
               text: '\u{f118}',
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.middle,
-              textStyle: Theme.of(context).textTheme.caption,
+              textStyle: Theme.of(context).textTheme.bodySmall,
             ),
             PlotBand(
               start: 5,
@@ -143,7 +143,7 @@ class _GraphState extends State<Graph> {
               text: '\u{f11a}',
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.middle,
-              textStyle: Theme.of(context).textTheme.caption,
+              textStyle: Theme.of(context).textTheme.bodySmall,
             ),
             PlotBand(
               start: 6,
@@ -153,7 +153,7 @@ class _GraphState extends State<Graph> {
               text: '\u{f119}',
               horizontalTextAlignment: TextAnchor.end,
               verticalTextAlignment: TextAnchor.start,
-              textStyle: Theme.of(context).textTheme.caption,
+              textStyle: Theme.of(context).textTheme.bodySmall,
             ),
           ],
         ),

@@ -3,13 +3,15 @@ import 'package:bristol_stool_chart/application/add_stool_notifier.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:date_time_picker/date_time_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:intl/intl.dart';
 
+@RoutePage()
 class AddPage extends ConsumerStatefulWidget {
-  const AddPage({Key? key}) : super(key: key);
+  const AddPage({super.key});
 
   @override
   ConsumerState<AddPage> createState() => _AddPageState();
@@ -75,6 +77,9 @@ class _AddPageState extends ConsumerState<AddPage> {
             );
           });
 
+          final formatter =
+              DateFormat(AppLocalizations.of(context)!.dateTimeFormatVerbose);
+
           final addStoolState = ref.watch(addStoolNotifierProvider);
           return addStoolState.maybeMap(
             orElse: () => const SizedBox.shrink(),
@@ -121,7 +126,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                               child: Text(
                                 AppLocalizations.of(context)!
                                     .bloodCheckLabelText,
-                                style: Theme.of(context).textTheme.subtitle1,
+                                style: Theme.of(context).textTheme.titleMedium,
                               ),
                             ),
                             Switch(
@@ -138,31 +143,32 @@ class _AddPageState extends ConsumerState<AddPage> {
                       ),
                     Padding(
                       padding: AppPadding.regular,
-                      child: DateTimePicker(
-                        firstDate: DateTime.now().toLocal().subtract(
-                              const Duration(days: 30),
-                            ),
-                        lastDate: DateTime.now().toLocal(),
-                        initialDate: DateTime.now().toLocal(),
-                        initialValue: AppLocalizations.of(context)!
-                            .stoolPickerInitialDateValue,
-                        dateMask:
-                            AppLocalizations.of(context)!.dateTimePickerMask,
-                        type: DateTimePickerType.dateTime,
-                        onChanged: (date) async {
-                          await ref
-                              .read(addStoolNotifierProvider.notifier)
-                              .updateStool(
-                                state.stool.copyWith(
-                                  dateTime:
-                                      DateTime.tryParse(date) ?? DateTime.now(),
+                      child: ElevatedButton(
+                        onPressed: () {
+                          DatePicker.showDateTimePicker(
+                            context,
+                            showTitleActions: true,
+                            minTime: DateTime.now().toLocal().subtract(
+                                  const Duration(days: 30),
                                 ),
-                              );
+                            maxTime: DateTime.now().toLocal().add(
+                                  const Duration(minutes: 1),
+                                ),
+                            onConfirm: (date) async {
+                              await ref
+                                  .read(addStoolNotifierProvider.notifier)
+                                  .updateStool(
+                                    state.stool.copyWith(
+                                      dateTime: date,
+                                    ),
+                                  );
+                            },
+                            currentTime: DateTime.now().toLocal(),
+                            locale: LocaleType.en,
+                          );
                         },
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: AppPadding.borderRadius,
-                          ),
+                        child: Text(
+                          formatter.format(state.stool.dateTime.toLocal()),
                         ),
                       ),
                     ),

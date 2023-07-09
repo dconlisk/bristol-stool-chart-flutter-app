@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
-import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
+import 'package:bristol_stool_chart/presentation/routes/app_router.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +9,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+@RoutePage()
 class IntroPage extends ConsumerWidget {
   List<ContentConfig> _getContentConfigs(BuildContext context) {
     return [
@@ -16,30 +17,30 @@ class IntroPage extends ConsumerWidget {
         backgroundColor: Colors.white,
         pathImage: 'assets/images/intro_healthy_patient.png',
         title: AppLocalizations.of(context)!.introPageTitle1,
-        styleTitle: Theme.of(context).textTheme.headline2,
+        styleTitle: Theme.of(context).textTheme.displayMedium,
         description: AppLocalizations.of(context)!.introPageDescription1,
-        styleDescription: Theme.of(context).textTheme.bodyText1,
+        styleDescription: Theme.of(context).textTheme.bodyLarge,
       ),
       ContentConfig(
         backgroundColor: Colors.white,
         pathImage: 'assets/images/intro_use_app.png',
         title: AppLocalizations.of(context)!.introPageTitle2,
-        styleTitle: Theme.of(context).textTheme.headline2,
+        styleTitle: Theme.of(context).textTheme.displayMedium,
         description: AppLocalizations.of(context)!.introPageDescription2,
-        styleDescription: Theme.of(context).textTheme.bodyText1,
+        styleDescription: Theme.of(context).textTheme.bodyLarge,
       ),
       ContentConfig(
         backgroundColor: Colors.white,
         pathImage: 'assets/images/intro_share_data.png',
         title: AppLocalizations.of(context)!.introPageTitle3,
-        styleTitle: Theme.of(context).textTheme.headline2,
+        styleTitle: Theme.of(context).textTheme.displayMedium,
         description: AppLocalizations.of(context)!.introPageDescription3,
-        styleDescription: Theme.of(context).textTheme.bodyText1,
+        styleDescription: Theme.of(context).textTheme.bodyLarge,
       ),
     ];
   }
 
-  const IntroPage({Key? key}) : super(key: key);
+  const IntroPage({super.key});
 
   Widget _renderTextButton({required String buttonText}) {
     return Text(

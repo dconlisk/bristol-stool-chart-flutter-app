@@ -1,8 +1,8 @@
+import 'package:bristol_stool_chart/presentation/routes/app_router.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/widgets/drawer_link.dart';
 import 'package:flutter/material.dart';
-import 'package:bristol_stool_chart/presentation/routes/app_router.gr.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:sprintf/sprintf.dart';
@@ -78,7 +78,7 @@ class _MainDrawerState extends State<MainDrawer> {
                               .appVersionLabelFormatString,
                           [versionNumber],
                         ),
-                        style: Theme.of(context).textTheme.bodyText2,
+                        style: Theme.of(context).textTheme.bodyMedium,
                       ),
                     ),
                   ),

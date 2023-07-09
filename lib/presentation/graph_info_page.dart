@@ -1,3 +1,4 @@
+import 'package:auto_route/annotations.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/widgets/heading.dart';
 import 'package:bristol_stool_chart/presentation/widgets/link_to_website.dart';
@@ -5,8 +6,9 @@ import 'package:bristol_stool_chart/presentation/widgets/paragraph.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
+@RoutePage()
 class GraphInfoPage extends StatelessWidget {
-  const GraphInfoPage({Key? key}) : super(key: key);
+  const GraphInfoPage({super.key});
 
   @override
   Widget build(BuildContext context) {

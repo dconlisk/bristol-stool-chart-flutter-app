@@ -131,7 +131,7 @@
     "@bloodCheckLabelText": {
       "description": "The text displayed next to the blood check toggle control"
     },
-    "stoolPickerInitialDateValue": "Now (or click to select a date)",
+    "stoolPickerInitialDateValue": "Now (or click to select a date and time)",
     "@stoolPickerInitialDateValue": {
       "description": "The initial text displayed in the date picker"
     },
@@ -282,6 +282,10 @@
     "dateTimeFormatFull": "dd/MM/yyyy H:mm:ss",
     "@dateTimeFormatFull": {
       "description": "The datetime format string accurate to the second"
+    },
+    "dateTimeFormatVerbose": "d MMMM yyyy @ HH:mm",
+    "@dateTimeFormatFull": {
+      "description": "The datetime format to display to the user when adding a stool"
     },
     "dateTimeFormatGraphMonthsDays": "MMM\ndd",
     "@dateTimeFormatGraphMonthsDays": {

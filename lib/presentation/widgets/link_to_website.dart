@@ -43,7 +43,7 @@ class LinkToWebsite extends StatelessWidget {
       child: GestureDetector(
         child: Text(
           sprintf(AppLocalizations.of(context)!.typeFormatString, [type]),
-          style: Theme.of(context).textTheme.headline4,
+          style: Theme.of(context).textTheme.headlineMedium,
         ),
         onTap: () => _openUrl(context: context, type: type),
       ),

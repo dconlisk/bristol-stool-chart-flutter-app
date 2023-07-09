@@ -7,8 +7,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+@RoutePage()
 class AboutPage extends StatelessWidget {
-  const AboutPage({Key? key}) : super(key: key);
+  const AboutPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -62,28 +63,30 @@ class AboutPage extends StatelessWidget {
                       if (await canLaunchUrl(uri)) {
                         await launchUrl(uri);
                       } else {
-                        await showDialog<AlertDialog>(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title: Text(AppLocalizations.of(context)!
-                                .errorOccurredTitle),
-                            content: Text(
-                              AppLocalizations.of(context)!
-                                  .emailErrorOccurredMessage,
+                        if (context.mounted) {
+                          await showDialog<AlertDialog>(
+                            context: context,
+                            builder: (_) => AlertDialog(
+                              title: Text(AppLocalizations.of(context)!
+                                  .errorOccurredTitle),
+                              content: Text(
+                                AppLocalizations.of(context)!
+                                    .emailErrorOccurredMessage,
+                              ),
+                              actions: <Widget>[
+                                ElevatedButton(
+                                  child: Text(
+                                    AppLocalizations.of(context)!
+                                        .continueButtonText,
+                                  ),
+                                  onPressed: () {
+                                    context.router.pop();
+                                  },
+                                )
+                              ],
                             ),
-                            actions: <Widget>[
-                              ElevatedButton(
-                                child: Text(
-                                  AppLocalizations.of(context)!
-                                      .continueButtonText,
-                                ),
-                                onPressed: () {
-                                  context.router.pop();
-                                },
-                              )
-                            ],
-                          ),
-                        );
+                          );
+                        }
                       }
                     },
                     child:

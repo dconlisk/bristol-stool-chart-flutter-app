@@ -7,22 +7,24 @@ import 'package:bristol_stool_chart/presentation/intro_page.dart';
 import 'package:bristol_stool_chart/presentation/settings_page.dart';
 import 'package:bristol_stool_chart/presentation/splash_page.dart';
 
-@MaterialAutoRouter(
-  replaceInRouteName: 'Page,Route',
-  routes: [
-    AutoRoute<dynamic>(page: AboutPage),
-    CustomRoute<dynamic>(
-      page: AddPage,
-      transitionsBuilder: TransitionsBuilders.slideBottom,
-    ),
-    AutoRoute<dynamic>(page: GraphPage),
-    CustomRoute<dynamic>(
-      page: GraphInfoPage,
-      transitionsBuilder: TransitionsBuilders.slideBottom,
-    ),
-    AutoRoute<dynamic>(page: IntroPage),
-    AutoRoute<dynamic>(page: SettingsPage),
-    AutoRoute<dynamic>(page: SplashPage, initial: true),
-  ],
-)
-class $AppRouter {}
+part 'app_router.gr.dart';
+
+@AutoRouterConfig(replaceInRouteName: 'Page,Route')
+class AppRouter extends _$AppRouter {
+  @override
+  List<AutoRoute> get routes => [
+        AutoRoute(page: AboutRoute.page),
+        CustomRoute(
+          page: AddRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        AutoRoute(page: GraphRoute.page),
+        CustomRoute(
+          page: GraphInfoRoute.page,
+          transitionsBuilder: TransitionsBuilders.slideBottom,
+        ),
+        AutoRoute(page: IntroRoute.page),
+        AutoRoute(page: SettingsRoute.page),
+        AutoRoute(page: SplashRoute.page, initial: true),
+      ];
+}
