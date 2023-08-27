@@ -62,10 +62,8 @@ To install and test the app on a device before publishing, go to the App Bundle 
 
 Create a release in App Store Connect and give it the same version numbers is is in the pubspec.yaml file (e.g. 2.0.3)
 Run `fvm flutter build ipa` to generate the ipa
-open build/ios/archive/Runner.xcarchive in Xcode
-Click Validate app (accept defaults and then choose automatically manage signing option)
-Click Distribute app (choose App Store Connect and then upload option, and accept defaults)
-When done you can select the uploaded build in your new release in App Store Connect (Note: it may take a couple of minutes for the build to appear after upload)
+Upload build/ios/ipa/\*.ipa using the Transporter app.
+https://docs.flutter.dev/deployment/ios
 
 [See full instructions here](https://flutter.dev/docs/deployment/ios)
 
