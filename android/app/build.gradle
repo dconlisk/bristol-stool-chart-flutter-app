@@ -44,7 +44,7 @@ android {
     defaultConfig {
         applicationId "uk.co.webgarden.BristolStoolChart"
         minSdkVersion 19
-        targetSdkVersion flutter.targetSdkVersion
+        targetSdkVersion 33
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }

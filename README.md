@@ -51,7 +51,9 @@ I have also created a Makefile which allows me to use shortcuts like `make gener
 
 Ensure that the app uses a unique build number, e.g. 2.0.3+23 (23 must be unique in the Google Play store, if not then just bump it up one)
 Run `fvm flutter build appbundle` to generate an Android App Bundle (build/app/outputs/bundle/release/app-release.aab).
-This can then be uploaded to the Google Play Store.
+Open the project in Android Studio.
+Follow these instructions: https://developer.android.com/studio/publish/app-signing#generate-key using the existing key, passwords, etc. (see 1Password for more details)
+Drag and drop the generated aab file into your new release in the Google Play store.
 
 To install and test the app on a device before publishing, go to the App Bundle explorer in the Google Play console, and click on the Downloads tab. Download the signed, universal APK and then run
 `adb install /Users/david/Downloads/23.apk` (or whatever the apk file is called) to deploy the APK to the device. This should be signed and match the installed version of the app from the Google Play store.
@@ -60,10 +62,8 @@ To install and test the app on a device before publishing, go to the App Bundle 
 
 Create a release in App Store Connect and give it the same version numbers is is in the pubspec.yaml file (e.g. 2.0.3)
 Run `fvm flutter build ipa` to generate the ipa
-open build/ios/archive/Runner.xcarchive in Xcode
-Click Validate app (accept defaults and then choose automatically manage signing option)
-Click Distribute app (choose App Store Connect and then upload option, and accept defaults)
-When done you can select the uploaded build in your new release in App Store Connect (Note: it may take a couple of minutes for the build to appear after upload)
+Upload build/ios/ipa/\*.ipa using the Transporter app.
+https://docs.flutter.dev/deployment/ios
 
 [See full instructions here](https://flutter.dev/docs/deployment/ios)
 
