@@ -51,7 +51,9 @@ I have also created a Makefile which allows me to use shortcuts like `make gener
 
 Ensure that the app uses a unique build number, e.g. 2.0.3+23 (23 must be unique in the Google Play store, if not then just bump it up one)
 Run `fvm flutter build appbundle` to generate an Android App Bundle (build/app/outputs/bundle/release/app-release.aab).
-This can then be uploaded to the Google Play Store.
+Open the project in Android Studio.
+Follow these instructions: https://developer.android.com/studio/publish/app-signing#generate-key using the existing key, passwords, etc. (see 1Password for more details)
+Drag and drop the generated aab file into your new release in the Google Play store.
 
 To install and test the app on a device before publishing, go to the App Bundle explorer in the Google Play console, and click on the Downloads tab. Download the signed, universal APK and then run
 `adb install /Users/david/Downloads/23.apk` (or whatever the apk file is called) to deploy the APK to the device. This should be signed and match the installed version of the app from the Google Play store.
