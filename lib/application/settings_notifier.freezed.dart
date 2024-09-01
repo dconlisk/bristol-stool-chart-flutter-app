@@ -84,9 +84,6 @@ class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -103,9 +100,6 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -224,8 +218,6 @@ class __$$InitialisedImplCopyWithImpl<$Res>
       _$InitialisedImpl _value, $Res Function(_$InitialisedImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -265,9 +257,7 @@ class _$InitialisedImpl extends _Initialised {
   @override
   int get hashCode => Object.hash(runtimeType, showBloodOption);
 
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
@@ -353,10 +343,7 @@ abstract class _Initialised extends SettingsState {
   const _Initialised._() : super._();
 
   bool get showBloodOption;
-
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -375,9 +362,6 @@ class __$$ErrorImplCopyWithImpl<$Res>
   __$$ErrorImplCopyWithImpl(
       _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -493,9 +477,6 @@ class __$$SuccessImplCopyWithImpl<$Res>
   __$$SuccessImplCopyWithImpl(
       _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

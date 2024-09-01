@@ -9,6 +9,57 @@
 
 part of 'app_router.dart';
 
+abstract class _$AppRouter extends RootStackRouter {
+  // ignore: unused_element
+  _$AppRouter({super.navigatorKey});
+
+  @override
+  final Map<String, PageFactory> pagesMap = {
+    AboutRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AboutPage(),
+      );
+    },
+    AddRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AddPage(),
+      );
+    },
+    GraphInfoRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const GraphInfoPage(),
+      );
+    },
+    GraphRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const GraphPage(),
+      );
+    },
+    IntroRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const IntroPage(),
+      );
+    },
+    SettingsRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SettingsPage(),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const SplashPage(),
+      );
+    },
+  };
+}
+
 /// generated route for
 /// [AboutPage]
 class AboutRoute extends PageRouteInfo<void> {
@@ -20,12 +71,7 @@ class AboutRoute extends PageRouteInfo<void> {
 
   static const String name = 'AboutRoute';
 
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const AboutPage();
-    },
-  );
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -39,12 +85,7 @@ class AddRoute extends PageRouteInfo<void> {
 
   static const String name = 'AddRoute';
 
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const AddPage();
-    },
-  );
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -58,12 +99,7 @@ class GraphInfoRoute extends PageRouteInfo<void> {
 
   static const String name = 'GraphInfoRoute';
 
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const GraphInfoPage();
-    },
-  );
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -77,12 +113,7 @@ class GraphRoute extends PageRouteInfo<void> {
 
   static const String name = 'GraphRoute';
 
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const GraphPage();
-    },
-  );
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -96,12 +127,7 @@ class IntroRoute extends PageRouteInfo<void> {
 
   static const String name = 'IntroRoute';
 
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const IntroPage();
-    },
-  );
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -115,12 +141,7 @@ class SettingsRoute extends PageRouteInfo<void> {
 
   static const String name = 'SettingsRoute';
 
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const SettingsPage();
-    },
-  );
+  static const PageInfo<void> page = PageInfo<void>(name);
 }
 
 /// generated route for
@@ -134,10 +155,5 @@ class SplashRoute extends PageRouteInfo<void> {
 
   static const String name = 'SplashRoute';
 
-  static PageInfo page = PageInfo(
-    name,
-    builder: (data) {
-      return const SplashPage();
-    },
-  );
+  static const PageInfo<void> page = PageInfo<void>(name);
 }

@@ -20,9 +20,7 @@ mixin _$Stool {
   DateTime get dateTime => throw _privateConstructorUsedError;
   bool get hasBlood => throw _privateConstructorUsedError;
 
-  /// Create a copy of Stool
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   $StoolCopyWith<Stool> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -44,8 +42,6 @@ class _$StoolCopyWithImpl<$Res, $Val extends Stool>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of Stool
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,8 +84,6 @@ class __$$StoolImplCopyWithImpl<$Res>
       _$StoolImpl _value, $Res Function(_$StoolImpl) _then)
       : super(_value, _then);
 
-  /// Create a copy of Stool
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -148,9 +142,7 @@ class _$StoolImpl extends _Stool {
   @override
   int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood);
 
-  /// Create a copy of Stool
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$StoolImplCopyWith<_$StoolImpl> get copyWith =>
@@ -170,11 +162,8 @@ abstract class _Stool extends Stool {
   DateTime get dateTime;
   @override
   bool get hasBlood;
-
-  /// Create a copy of Stool
-  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
+  @JsonKey(ignore: true)
   _$$StoolImplCopyWith<_$StoolImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

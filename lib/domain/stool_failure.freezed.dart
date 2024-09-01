@@ -78,9 +78,6 @@ class _$StoolFailureCopyWithImpl<$Res, $Val extends StoolFailure>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
-
-  /// Create a copy of StoolFailure
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -97,9 +94,6 @@ class __$$DatabaseFailureImplCopyWithImpl<$Res>
   __$$DatabaseFailureImplCopyWithImpl(
       _$DatabaseFailureImpl _value, $Res Function(_$DatabaseFailureImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of StoolFailure
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -209,9 +203,6 @@ class __$$FileSystemFailureImplCopyWithImpl<$Res>
   __$$FileSystemFailureImplCopyWithImpl(_$FileSystemFailureImpl _value,
       $Res Function(_$FileSystemFailureImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of StoolFailure
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -321,9 +312,6 @@ class __$$ImportFailureImplCopyWithImpl<$Res>
   __$$ImportFailureImplCopyWithImpl(
       _$ImportFailureImpl _value, $Res Function(_$ImportFailureImpl) _then)
       : super(_value, _then);
-
-  /// Create a copy of StoolFailure
-  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
