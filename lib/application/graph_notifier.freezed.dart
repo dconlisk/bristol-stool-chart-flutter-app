@@ -90,6 +90,9 @@ class _$GraphStateCopyWithImpl<$Res, $Val extends GraphState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -106,6 +109,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -230,6 +236,8 @@ class __$$InitialisedImplCopyWithImpl<$Res>
       _$InitialisedImpl _value, $Res Function(_$InitialisedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -276,7 +284,9 @@ class _$InitialisedImpl extends _Initialised {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_stools));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
@@ -368,7 +378,10 @@ abstract class _Initialised extends GraphState {
   const _Initialised._() : super._();
 
   List<Stool> get stools;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -387,6 +400,9 @@ class __$$LoadFailureImplCopyWithImpl<$Res>
   __$$LoadFailureImplCopyWithImpl(
       _$LoadFailureImpl _value, $Res Function(_$LoadFailureImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -508,6 +524,9 @@ class __$$ShareFailureImplCopyWithImpl<$Res>
   __$$ShareFailureImplCopyWithImpl(
       _$ShareFailureImpl _value, $Res Function(_$ShareFailureImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -629,6 +648,9 @@ class __$$ShareSuccessImplCopyWithImpl<$Res>
   __$$ShareSuccessImplCopyWithImpl(
       _$ShareSuccessImpl _value, $Res Function(_$ShareSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

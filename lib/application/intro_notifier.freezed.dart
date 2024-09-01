@@ -84,6 +84,9 @@ class _$IntroStateCopyWithImpl<$Res, $Val extends IntroState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -100,6 +103,9 @@ class __$$InitialImplCopyWithImpl<$Res>
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -215,6 +221,9 @@ class __$$HasSeenIntroImplCopyWithImpl<$Res>
   __$$HasSeenIntroImplCopyWithImpl(
       _$HasSeenIntroImpl _value, $Res Function(_$HasSeenIntroImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -330,6 +339,9 @@ class __$$HasNotSeenIntroImplCopyWithImpl<$Res>
   __$$HasNotSeenIntroImplCopyWithImpl(
       _$HasNotSeenIntroImpl _value, $Res Function(_$HasNotSeenIntroImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -445,6 +457,9 @@ class __$$ImportFailedImplCopyWithImpl<$Res>
   __$$ImportFailedImplCopyWithImpl(
       _$ImportFailedImpl _value, $Res Function(_$ImportFailedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc

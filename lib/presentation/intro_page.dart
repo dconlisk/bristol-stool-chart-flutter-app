@@ -112,7 +112,7 @@ class IntroPage extends ConsumerWidget {
                     AppLocalizations.of(context)!.continueButtonText,
                   ),
                   onPressed: () {
-                    context.router.pop();
+                    context.router.popForced();
                   },
                 )
               ],

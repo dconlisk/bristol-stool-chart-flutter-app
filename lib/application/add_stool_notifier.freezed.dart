@@ -69,7 +69,9 @@ mixin _$AddStoolState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AddStoolStateCopyWith<AddStoolState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -95,6 +97,8 @@ class _$AddStoolStateCopyWithImpl<$Res, $Val extends AddStoolState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -113,6 +117,8 @@ class _$AddStoolStateCopyWithImpl<$Res, $Val extends AddStoolState>
     ) as $Val);
   }
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StoolCopyWith<$Res> get stool {
@@ -144,6 +150,8 @@ class __$$InitialImplCopyWithImpl<$Res>
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -191,7 +199,9 @@ class _$InitialImpl extends _Initial {
   @override
   int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
@@ -281,8 +291,11 @@ abstract class _Initial extends AddStoolState {
   Stool get stool;
   @override
   bool get showBloodOption;
+
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -309,6 +322,8 @@ class __$$InitialisedImplCopyWithImpl<$Res>
       _$InitialisedImpl _value, $Res Function(_$InitialisedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -356,7 +371,9 @@ class _$InitialisedImpl extends _Initialised {
   @override
   int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
@@ -446,8 +463,11 @@ abstract class _Initialised extends AddStoolState {
   Stool get stool;
   @override
   bool get showBloodOption;
+
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -474,6 +494,8 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
       _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -521,7 +543,9 @@ class _$ErrorStateImpl extends _ErrorState {
   @override
   int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
@@ -611,8 +635,11 @@ abstract class _ErrorState extends AddStoolState {
   Stool get stool;
   @override
   bool get showBloodOption;
+
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -639,6 +666,8 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
       _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -686,7 +715,9 @@ class _$SuccessStateImpl extends _SuccessState {
   @override
   int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessStateImplCopyWith<_$SuccessStateImpl> get copyWith =>
@@ -776,8 +807,11 @@ abstract class _SuccessState extends AddStoolState {
   Stool get stool;
   @override
   bool get showBloodOption;
+
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessStateImplCopyWith<_$SuccessStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

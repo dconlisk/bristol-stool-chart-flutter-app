@@ -24,8 +24,12 @@ mixin _$StoolDto {
   DateTime get dateTime => throw _privateConstructorUsedError;
   bool get hasBlood => throw _privateConstructorUsedError;
 
+  /// Serializes this StoolDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StoolDtoCopyWith<StoolDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$StoolDtoCopyWithImpl<$Res, $Val extends StoolDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -91,6 +97,8 @@ class __$$StoolDtoImplCopyWithImpl<$Res>
       _$StoolDtoImpl _value, $Res Function(_$StoolDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -149,11 +157,13 @@ class _$StoolDtoImpl extends _StoolDto {
                 other.hasBlood == hasBlood));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$StoolDtoImplCopyWith<_$StoolDtoImpl> get copyWith =>
@@ -183,8 +193,11 @@ abstract class _StoolDto extends StoolDto {
   DateTime get dateTime;
   @override
   bool get hasBlood;
+
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$StoolDtoImplCopyWith<_$StoolDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

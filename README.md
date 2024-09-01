@@ -49,8 +49,8 @@ I have also created a Makefile which allows me to use shortcuts like `make gener
 
 ### Upgrading flutter and package versions
 
-1. Update to the latest flutter version using `fvm releases` and then `fvm install x.x.x` where x.x.x is the latest version. Then use `fvm use x.x.x` to set the version for this project. This will also determine which version of dart you are using, as dart is installed as part of the flutter sdk. You can check the versions of dart and flutter using `flutter --version`.
-2. Update environment -> sdk in the pubspec.yaml file so that the lower number equals the version of dart you are using. For example, if you are using dart 3.1.0 then the sdk version should be >=3.1.0 <4.0.0.
+1. Update to the latest flutter version using `fvm releases` and then `fvm install x.x.x` where x.x.x is the latest version. Then use `fvm use x.x.x` to set the version for this project. This will also determine which version of dart you are using, as dart is installed as part of the flutter sdk. You can check the versions of dart and flutter using `flutter --version`. _NOTE_ Restart vscode after changing the version of flutter! Then run `flutter --version` to see what the correct latest version is.
+2. (Optional) Update environment -> sdk in the pubspec.yaml file so that the lower number equals the version of dart you are using. For example, if you are using dart 3.1.0 then the sdk version should be >=3.1.0 <4.0.0.
 3. Run `fvm flutter pub outdated` to see which packages are out of date. Run `fvm flutter pub upgrade` to upgrade all packages to the latest version. If you want to upgrade a specific package then run `fvm flutter pub upgrade package_name`.
 4. You can also use the `V` icon on top right so that when you view the pupspec.yaml file you can see which packages are out of date and upgrade them from there using the bump link.
 5. Make any code fixes required, and run `make resolve` and `make generated` to ensure that the code is working as expected.
