@@ -12,7 +12,7 @@ part of 'add_stool_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$AddStoolState {
@@ -69,7 +69,9 @@ mixin _$AddStoolState {
   }) =>
       throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $AddStoolStateCopyWith<AddStoolState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -95,6 +97,8 @@ class _$AddStoolStateCopyWithImpl<$Res, $Val extends AddStoolState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -113,6 +117,8 @@ class _$AddStoolStateCopyWithImpl<$Res, $Val extends AddStoolState>
     ) as $Val);
   }
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
   $StoolCopyWith<$Res> get stool {
@@ -123,11 +129,11 @@ class _$AddStoolStateCopyWithImpl<$Res, $Val extends AddStoolState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res>
+abstract class _$$InitialImplCopyWith<$Res>
     implements $AddStoolStateCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Stool stool, bool showBloodOption});
@@ -137,19 +143,22 @@ abstract class _$$_InitialCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$AddStoolStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$AddStoolStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? stool = null,
     Object? showBloodOption = null,
   }) {
-    return _then(_$_Initial(
+    return _then(_$InitialImpl(
       null == stool
           ? _value.stool
           : stool // ignore: cast_nullable_to_non_nullable
@@ -164,8 +173,8 @@ class __$$_InitialCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial extends _Initial {
-  const _$_Initial(this.stool, this.showBloodOption) : super._();
+class _$InitialImpl extends _Initial {
+  const _$InitialImpl(this.stool, this.showBloodOption) : super._();
 
   @override
   final Stool stool;
@@ -178,10 +187,10 @@ class _$_Initial extends _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Initial &&
+            other is _$InitialImpl &&
             (identical(other.stool, stool) || other.stool == stool) &&
             (identical(other.showBloodOption, showBloodOption) ||
                 other.showBloodOption == showBloodOption));
@@ -190,11 +199,13 @@ class _$_Initial extends _Initial {
   @override
   int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitialCopyWith<_$_Initial> get copyWith =>
-      __$$_InitialCopyWithImpl<_$_Initial>(this, _$identity);
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -273,25 +284,28 @@ class _$_Initial extends _Initial {
 
 abstract class _Initial extends AddStoolState {
   const factory _Initial(final Stool stool, final bool showBloodOption) =
-      _$_Initial;
+      _$InitialImpl;
   const _Initial._() : super._();
 
   @override
   Stool get stool;
   @override
   bool get showBloodOption;
+
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_InitialCopyWith<_$_Initial> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_InitialisedCopyWith<$Res>
+abstract class _$$InitialisedImplCopyWith<$Res>
     implements $AddStoolStateCopyWith<$Res> {
-  factory _$$_InitialisedCopyWith(
-          _$_Initialised value, $Res Function(_$_Initialised) then) =
-      __$$_InitialisedCopyWithImpl<$Res>;
+  factory _$$InitialisedImplCopyWith(
+          _$InitialisedImpl value, $Res Function(_$InitialisedImpl) then) =
+      __$$InitialisedImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Stool stool, bool showBloodOption});
@@ -301,20 +315,22 @@ abstract class _$$_InitialisedCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_InitialisedCopyWithImpl<$Res>
-    extends _$AddStoolStateCopyWithImpl<$Res, _$_Initialised>
-    implements _$$_InitialisedCopyWith<$Res> {
-  __$$_InitialisedCopyWithImpl(
-      _$_Initialised _value, $Res Function(_$_Initialised) _then)
+class __$$InitialisedImplCopyWithImpl<$Res>
+    extends _$AddStoolStateCopyWithImpl<$Res, _$InitialisedImpl>
+    implements _$$InitialisedImplCopyWith<$Res> {
+  __$$InitialisedImplCopyWithImpl(
+      _$InitialisedImpl _value, $Res Function(_$InitialisedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? stool = null,
     Object? showBloodOption = null,
   }) {
-    return _then(_$_Initialised(
+    return _then(_$InitialisedImpl(
       null == stool
           ? _value.stool
           : stool // ignore: cast_nullable_to_non_nullable
@@ -329,8 +345,8 @@ class __$$_InitialisedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initialised extends _Initialised {
-  const _$_Initialised(this.stool, this.showBloodOption) : super._();
+class _$InitialisedImpl extends _Initialised {
+  const _$InitialisedImpl(this.stool, this.showBloodOption) : super._();
 
   @override
   final Stool stool;
@@ -343,10 +359,10 @@ class _$_Initialised extends _Initialised {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Initialised &&
+            other is _$InitialisedImpl &&
             (identical(other.stool, stool) || other.stool == stool) &&
             (identical(other.showBloodOption, showBloodOption) ||
                 other.showBloodOption == showBloodOption));
@@ -355,11 +371,13 @@ class _$_Initialised extends _Initialised {
   @override
   int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
-      __$$_InitialisedCopyWithImpl<_$_Initialised>(this, _$identity);
+  _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
+      __$$InitialisedImplCopyWithImpl<_$InitialisedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -438,25 +456,28 @@ class _$_Initialised extends _Initialised {
 
 abstract class _Initialised extends AddStoolState {
   const factory _Initialised(final Stool stool, final bool showBloodOption) =
-      _$_Initialised;
+      _$InitialisedImpl;
   const _Initialised._() : super._();
 
   @override
   Stool get stool;
   @override
   bool get showBloodOption;
+
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ErrorStateCopyWith<$Res>
+abstract class _$$ErrorStateImplCopyWith<$Res>
     implements $AddStoolStateCopyWith<$Res> {
-  factory _$$_ErrorStateCopyWith(
-          _$_ErrorState value, $Res Function(_$_ErrorState) then) =
-      __$$_ErrorStateCopyWithImpl<$Res>;
+  factory _$$ErrorStateImplCopyWith(
+          _$ErrorStateImpl value, $Res Function(_$ErrorStateImpl) then) =
+      __$$ErrorStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Stool stool, bool showBloodOption});
@@ -466,20 +487,22 @@ abstract class _$$_ErrorStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_ErrorStateCopyWithImpl<$Res>
-    extends _$AddStoolStateCopyWithImpl<$Res, _$_ErrorState>
-    implements _$$_ErrorStateCopyWith<$Res> {
-  __$$_ErrorStateCopyWithImpl(
-      _$_ErrorState _value, $Res Function(_$_ErrorState) _then)
+class __$$ErrorStateImplCopyWithImpl<$Res>
+    extends _$AddStoolStateCopyWithImpl<$Res, _$ErrorStateImpl>
+    implements _$$ErrorStateImplCopyWith<$Res> {
+  __$$ErrorStateImplCopyWithImpl(
+      _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? stool = null,
     Object? showBloodOption = null,
   }) {
-    return _then(_$_ErrorState(
+    return _then(_$ErrorStateImpl(
       null == stool
           ? _value.stool
           : stool // ignore: cast_nullable_to_non_nullable
@@ -494,8 +517,8 @@ class __$$_ErrorStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ErrorState extends _ErrorState {
-  const _$_ErrorState(this.stool, this.showBloodOption) : super._();
+class _$ErrorStateImpl extends _ErrorState {
+  const _$ErrorStateImpl(this.stool, this.showBloodOption) : super._();
 
   @override
   final Stool stool;
@@ -508,10 +531,10 @@ class _$_ErrorState extends _ErrorState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ErrorState &&
+            other is _$ErrorStateImpl &&
             (identical(other.stool, stool) || other.stool == stool) &&
             (identical(other.showBloodOption, showBloodOption) ||
                 other.showBloodOption == showBloodOption));
@@ -520,11 +543,13 @@ class _$_ErrorState extends _ErrorState {
   @override
   int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorStateCopyWith<_$_ErrorState> get copyWith =>
-      __$$_ErrorStateCopyWithImpl<_$_ErrorState>(this, _$identity);
+  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
+      __$$ErrorStateImplCopyWithImpl<_$ErrorStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -603,25 +628,28 @@ class _$_ErrorState extends _ErrorState {
 
 abstract class _ErrorState extends AddStoolState {
   const factory _ErrorState(final Stool stool, final bool showBloodOption) =
-      _$_ErrorState;
+      _$ErrorStateImpl;
   const _ErrorState._() : super._();
 
   @override
   Stool get stool;
   @override
   bool get showBloodOption;
+
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_ErrorStateCopyWith<_$_ErrorState> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SuccessStateCopyWith<$Res>
+abstract class _$$SuccessStateImplCopyWith<$Res>
     implements $AddStoolStateCopyWith<$Res> {
-  factory _$$_SuccessStateCopyWith(
-          _$_SuccessState value, $Res Function(_$_SuccessState) then) =
-      __$$_SuccessStateCopyWithImpl<$Res>;
+  factory _$$SuccessStateImplCopyWith(
+          _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
+      __$$SuccessStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({Stool stool, bool showBloodOption});
@@ -631,20 +659,22 @@ abstract class _$$_SuccessStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_SuccessStateCopyWithImpl<$Res>
-    extends _$AddStoolStateCopyWithImpl<$Res, _$_SuccessState>
-    implements _$$_SuccessStateCopyWith<$Res> {
-  __$$_SuccessStateCopyWithImpl(
-      _$_SuccessState _value, $Res Function(_$_SuccessState) _then)
+class __$$SuccessStateImplCopyWithImpl<$Res>
+    extends _$AddStoolStateCopyWithImpl<$Res, _$SuccessStateImpl>
+    implements _$$SuccessStateImplCopyWith<$Res> {
+  __$$SuccessStateImplCopyWithImpl(
+      _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? stool = null,
     Object? showBloodOption = null,
   }) {
-    return _then(_$_SuccessState(
+    return _then(_$SuccessStateImpl(
       null == stool
           ? _value.stool
           : stool // ignore: cast_nullable_to_non_nullable
@@ -659,8 +689,8 @@ class __$$_SuccessStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_SuccessState extends _SuccessState {
-  const _$_SuccessState(this.stool, this.showBloodOption) : super._();
+class _$SuccessStateImpl extends _SuccessState {
+  const _$SuccessStateImpl(this.stool, this.showBloodOption) : super._();
 
   @override
   final Stool stool;
@@ -673,10 +703,10 @@ class _$_SuccessState extends _SuccessState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SuccessState &&
+            other is _$SuccessStateImpl &&
             (identical(other.stool, stool) || other.stool == stool) &&
             (identical(other.showBloodOption, showBloodOption) ||
                 other.showBloodOption == showBloodOption));
@@ -685,11 +715,13 @@ class _$_SuccessState extends _SuccessState {
   @override
   int get hashCode => Object.hash(runtimeType, stool, showBloodOption);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SuccessStateCopyWith<_$_SuccessState> get copyWith =>
-      __$$_SuccessStateCopyWithImpl<_$_SuccessState>(this, _$identity);
+  _$$SuccessStateImplCopyWith<_$SuccessStateImpl> get copyWith =>
+      __$$SuccessStateImplCopyWithImpl<_$SuccessStateImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -768,15 +800,18 @@ class _$_SuccessState extends _SuccessState {
 
 abstract class _SuccessState extends AddStoolState {
   const factory _SuccessState(final Stool stool, final bool showBloodOption) =
-      _$_SuccessState;
+      _$SuccessStateImpl;
   const _SuccessState._() : super._();
 
   @override
   Stool get stool;
   @override
   bool get showBloodOption;
+
+  /// Create a copy of AddStoolState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_SuccessStateCopyWith<_$_SuccessState> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SuccessStateImplCopyWith<_$SuccessStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

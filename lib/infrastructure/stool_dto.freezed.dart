@@ -12,7 +12,7 @@ part of 'stool_dto.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 StoolDto _$StoolDtoFromJson(Map<String, dynamic> json) {
   return _StoolDto.fromJson(json);
@@ -24,8 +24,12 @@ mixin _$StoolDto {
   DateTime get dateTime => throw _privateConstructorUsedError;
   bool get hasBlood => throw _privateConstructorUsedError;
 
+  /// Serializes this StoolDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StoolDtoCopyWith<StoolDto> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -48,6 +52,8 @@ class _$StoolDtoCopyWithImpl<$Res, $Val extends StoolDto>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -73,23 +79,26 @@ class _$StoolDtoCopyWithImpl<$Res, $Val extends StoolDto>
 }
 
 /// @nodoc
-abstract class _$$_StoolDtoCopyWith<$Res> implements $StoolDtoCopyWith<$Res> {
-  factory _$$_StoolDtoCopyWith(
-          _$_StoolDto value, $Res Function(_$_StoolDto) then) =
-      __$$_StoolDtoCopyWithImpl<$Res>;
+abstract class _$$StoolDtoImplCopyWith<$Res>
+    implements $StoolDtoCopyWith<$Res> {
+  factory _$$StoolDtoImplCopyWith(
+          _$StoolDtoImpl value, $Res Function(_$StoolDtoImpl) then) =
+      __$$StoolDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
-class __$$_StoolDtoCopyWithImpl<$Res>
-    extends _$StoolDtoCopyWithImpl<$Res, _$_StoolDto>
-    implements _$$_StoolDtoCopyWith<$Res> {
-  __$$_StoolDtoCopyWithImpl(
-      _$_StoolDto _value, $Res Function(_$_StoolDto) _then)
+class __$$StoolDtoImplCopyWithImpl<$Res>
+    extends _$StoolDtoCopyWithImpl<$Res, _$StoolDtoImpl>
+    implements _$$StoolDtoImplCopyWith<$Res> {
+  __$$StoolDtoImplCopyWithImpl(
+      _$StoolDtoImpl _value, $Res Function(_$StoolDtoImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -97,7 +106,7 @@ class __$$_StoolDtoCopyWithImpl<$Res>
     Object? dateTime = null,
     Object? hasBlood = null,
   }) {
-    return _then(_$_StoolDto(
+    return _then(_$StoolDtoImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -116,13 +125,13 @@ class __$$_StoolDtoCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_StoolDto extends _StoolDto {
-  const _$_StoolDto(
+class _$StoolDtoImpl extends _StoolDto {
+  const _$StoolDtoImpl(
       {required this.type, required this.dateTime, required this.hasBlood})
       : super._();
 
-  factory _$_StoolDto.fromJson(Map<String, dynamic> json) =>
-      _$$_StoolDtoFromJson(json);
+  factory _$StoolDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StoolDtoImplFromJson(json);
 
   @override
   final int type;
@@ -137,10 +146,10 @@ class _$_StoolDto extends _StoolDto {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_StoolDto &&
+            other is _$StoolDtoImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
@@ -148,19 +157,21 @@ class _$_StoolDto extends _StoolDto {
                 other.hasBlood == hasBlood));
   }
 
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StoolDtoCopyWith<_$_StoolDto> get copyWith =>
-      __$$_StoolDtoCopyWithImpl<_$_StoolDto>(this, _$identity);
+  _$$StoolDtoImplCopyWith<_$StoolDtoImpl> get copyWith =>
+      __$$StoolDtoImplCopyWithImpl<_$StoolDtoImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_StoolDtoToJson(
+    return _$$StoolDtoImplToJson(
       this,
     );
   }
@@ -170,10 +181,11 @@ abstract class _StoolDto extends StoolDto {
   const factory _StoolDto(
       {required final int type,
       required final DateTime dateTime,
-      required final bool hasBlood}) = _$_StoolDto;
+      required final bool hasBlood}) = _$StoolDtoImpl;
   const _StoolDto._() : super._();
 
-  factory _StoolDto.fromJson(Map<String, dynamic> json) = _$_StoolDto.fromJson;
+  factory _StoolDto.fromJson(Map<String, dynamic> json) =
+      _$StoolDtoImpl.fromJson;
 
   @override
   int get type;
@@ -181,8 +193,11 @@ abstract class _StoolDto extends StoolDto {
   DateTime get dateTime;
   @override
   bool get hasBlood;
+
+  /// Create a copy of StoolDto
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_StoolDtoCopyWith<_$_StoolDto> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StoolDtoImplCopyWith<_$StoolDtoImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

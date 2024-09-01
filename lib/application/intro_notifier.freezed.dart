@@ -12,7 +12,7 @@ part of 'intro_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$IntroState {
@@ -84,27 +84,34 @@ class _$IntroStateCopyWithImpl<$Res, $Val extends IntroState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$IntroStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$IntroStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Initial extends _Initial {
-  const _$_Initial() : super._();
+class _$InitialImpl extends _Initial {
+  const _$InitialImpl() : super._();
 
   @override
   String toString() {
@@ -112,9 +119,9 @@ class _$_Initial extends _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -196,30 +203,33 @@ class _$_Initial extends _Initial {
 }
 
 abstract class _Initial extends IntroState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
   const _Initial._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_HasSeenIntroCopyWith<$Res> {
-  factory _$$_HasSeenIntroCopyWith(
-          _$_HasSeenIntro value, $Res Function(_$_HasSeenIntro) then) =
-      __$$_HasSeenIntroCopyWithImpl<$Res>;
+abstract class _$$HasSeenIntroImplCopyWith<$Res> {
+  factory _$$HasSeenIntroImplCopyWith(
+          _$HasSeenIntroImpl value, $Res Function(_$HasSeenIntroImpl) then) =
+      __$$HasSeenIntroImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_HasSeenIntroCopyWithImpl<$Res>
-    extends _$IntroStateCopyWithImpl<$Res, _$_HasSeenIntro>
-    implements _$$_HasSeenIntroCopyWith<$Res> {
-  __$$_HasSeenIntroCopyWithImpl(
-      _$_HasSeenIntro _value, $Res Function(_$_HasSeenIntro) _then)
+class __$$HasSeenIntroImplCopyWithImpl<$Res>
+    extends _$IntroStateCopyWithImpl<$Res, _$HasSeenIntroImpl>
+    implements _$$HasSeenIntroImplCopyWith<$Res> {
+  __$$HasSeenIntroImplCopyWithImpl(
+      _$HasSeenIntroImpl _value, $Res Function(_$HasSeenIntroImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_HasSeenIntro extends _HasSeenIntro {
-  const _$_HasSeenIntro() : super._();
+class _$HasSeenIntroImpl extends _HasSeenIntro {
+  const _$HasSeenIntroImpl() : super._();
 
   @override
   String toString() {
@@ -227,9 +237,9 @@ class _$_HasSeenIntro extends _HasSeenIntro {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_HasSeenIntro);
+        (other.runtimeType == runtimeType && other is _$HasSeenIntroImpl);
   }
 
   @override
@@ -311,30 +321,33 @@ class _$_HasSeenIntro extends _HasSeenIntro {
 }
 
 abstract class _HasSeenIntro extends IntroState {
-  const factory _HasSeenIntro() = _$_HasSeenIntro;
+  const factory _HasSeenIntro() = _$HasSeenIntroImpl;
   const _HasSeenIntro._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_HasNotSeenIntroCopyWith<$Res> {
-  factory _$$_HasNotSeenIntroCopyWith(
-          _$_HasNotSeenIntro value, $Res Function(_$_HasNotSeenIntro) then) =
-      __$$_HasNotSeenIntroCopyWithImpl<$Res>;
+abstract class _$$HasNotSeenIntroImplCopyWith<$Res> {
+  factory _$$HasNotSeenIntroImplCopyWith(_$HasNotSeenIntroImpl value,
+          $Res Function(_$HasNotSeenIntroImpl) then) =
+      __$$HasNotSeenIntroImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_HasNotSeenIntroCopyWithImpl<$Res>
-    extends _$IntroStateCopyWithImpl<$Res, _$_HasNotSeenIntro>
-    implements _$$_HasNotSeenIntroCopyWith<$Res> {
-  __$$_HasNotSeenIntroCopyWithImpl(
-      _$_HasNotSeenIntro _value, $Res Function(_$_HasNotSeenIntro) _then)
+class __$$HasNotSeenIntroImplCopyWithImpl<$Res>
+    extends _$IntroStateCopyWithImpl<$Res, _$HasNotSeenIntroImpl>
+    implements _$$HasNotSeenIntroImplCopyWith<$Res> {
+  __$$HasNotSeenIntroImplCopyWithImpl(
+      _$HasNotSeenIntroImpl _value, $Res Function(_$HasNotSeenIntroImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_HasNotSeenIntro extends _HasNotSeenIntro {
-  const _$_HasNotSeenIntro() : super._();
+class _$HasNotSeenIntroImpl extends _HasNotSeenIntro {
+  const _$HasNotSeenIntroImpl() : super._();
 
   @override
   String toString() {
@@ -342,9 +355,9 @@ class _$_HasNotSeenIntro extends _HasNotSeenIntro {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_HasNotSeenIntro);
+        (other.runtimeType == runtimeType && other is _$HasNotSeenIntroImpl);
   }
 
   @override
@@ -426,30 +439,33 @@ class _$_HasNotSeenIntro extends _HasNotSeenIntro {
 }
 
 abstract class _HasNotSeenIntro extends IntroState {
-  const factory _HasNotSeenIntro() = _$_HasNotSeenIntro;
+  const factory _HasNotSeenIntro() = _$HasNotSeenIntroImpl;
   const _HasNotSeenIntro._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_ImportFailedCopyWith<$Res> {
-  factory _$$_ImportFailedCopyWith(
-          _$_ImportFailed value, $Res Function(_$_ImportFailed) then) =
-      __$$_ImportFailedCopyWithImpl<$Res>;
+abstract class _$$ImportFailedImplCopyWith<$Res> {
+  factory _$$ImportFailedImplCopyWith(
+          _$ImportFailedImpl value, $Res Function(_$ImportFailedImpl) then) =
+      __$$ImportFailedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ImportFailedCopyWithImpl<$Res>
-    extends _$IntroStateCopyWithImpl<$Res, _$_ImportFailed>
-    implements _$$_ImportFailedCopyWith<$Res> {
-  __$$_ImportFailedCopyWithImpl(
-      _$_ImportFailed _value, $Res Function(_$_ImportFailed) _then)
+class __$$ImportFailedImplCopyWithImpl<$Res>
+    extends _$IntroStateCopyWithImpl<$Res, _$ImportFailedImpl>
+    implements _$$ImportFailedImplCopyWith<$Res> {
+  __$$ImportFailedImplCopyWithImpl(
+      _$ImportFailedImpl _value, $Res Function(_$ImportFailedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of IntroState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_ImportFailed extends _ImportFailed {
-  const _$_ImportFailed() : super._();
+class _$ImportFailedImpl extends _ImportFailed {
+  const _$ImportFailedImpl() : super._();
 
   @override
   String toString() {
@@ -457,9 +473,9 @@ class _$_ImportFailed extends _ImportFailed {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ImportFailed);
+        (other.runtimeType == runtimeType && other is _$ImportFailedImpl);
   }
 
   @override
@@ -541,6 +557,6 @@ class _$_ImportFailed extends _ImportFailed {
 }
 
 abstract class _ImportFailed extends IntroState {
-  const factory _ImportFailed() = _$_ImportFailed;
+  const factory _ImportFailed() = _$ImportFailedImpl;
   const _ImportFailed._() : super._();
 }

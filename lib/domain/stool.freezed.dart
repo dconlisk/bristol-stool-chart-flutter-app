@@ -12,7 +12,7 @@ part of 'stool.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Stool {
@@ -20,7 +20,9 @@ mixin _$Stool {
   DateTime get dateTime => throw _privateConstructorUsedError;
   bool get hasBlood => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Stool
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $StoolCopyWith<Stool> get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -42,6 +44,8 @@ class _$StoolCopyWithImpl<$Res, $Val extends Stool>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of Stool
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -67,20 +71,25 @@ class _$StoolCopyWithImpl<$Res, $Val extends Stool>
 }
 
 /// @nodoc
-abstract class _$$_StoolCopyWith<$Res> implements $StoolCopyWith<$Res> {
-  factory _$$_StoolCopyWith(_$_Stool value, $Res Function(_$_Stool) then) =
-      __$$_StoolCopyWithImpl<$Res>;
+abstract class _$$StoolImplCopyWith<$Res> implements $StoolCopyWith<$Res> {
+  factory _$$StoolImplCopyWith(
+          _$StoolImpl value, $Res Function(_$StoolImpl) then) =
+      __$$StoolImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int type, DateTime dateTime, bool hasBlood});
 }
 
 /// @nodoc
-class __$$_StoolCopyWithImpl<$Res> extends _$StoolCopyWithImpl<$Res, _$_Stool>
-    implements _$$_StoolCopyWith<$Res> {
-  __$$_StoolCopyWithImpl(_$_Stool _value, $Res Function(_$_Stool) _then)
+class __$$StoolImplCopyWithImpl<$Res>
+    extends _$StoolCopyWithImpl<$Res, _$StoolImpl>
+    implements _$$StoolImplCopyWith<$Res> {
+  __$$StoolImplCopyWithImpl(
+      _$StoolImpl _value, $Res Function(_$StoolImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of Stool
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -88,7 +97,7 @@ class __$$_StoolCopyWithImpl<$Res> extends _$StoolCopyWithImpl<$Res, _$_Stool>
     Object? dateTime = null,
     Object? hasBlood = null,
   }) {
-    return _then(_$_Stool(
+    return _then(_$StoolImpl(
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -107,8 +116,8 @@ class __$$_StoolCopyWithImpl<$Res> extends _$StoolCopyWithImpl<$Res, _$_Stool>
 
 /// @nodoc
 
-class _$_Stool extends _Stool {
-  const _$_Stool(
+class _$StoolImpl extends _Stool {
+  const _$StoolImpl(
       {required this.type, required this.dateTime, required this.hasBlood})
       : super._();
 
@@ -125,10 +134,10 @@ class _$_Stool extends _Stool {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Stool &&
+            other is _$StoolImpl &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
@@ -139,18 +148,20 @@ class _$_Stool extends _Stool {
   @override
   int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of Stool
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_StoolCopyWith<_$_Stool> get copyWith =>
-      __$$_StoolCopyWithImpl<_$_Stool>(this, _$identity);
+  _$$StoolImplCopyWith<_$StoolImpl> get copyWith =>
+      __$$StoolImplCopyWithImpl<_$StoolImpl>(this, _$identity);
 }
 
 abstract class _Stool extends Stool {
   const factory _Stool(
       {required final int type,
       required final DateTime dateTime,
-      required final bool hasBlood}) = _$_Stool;
+      required final bool hasBlood}) = _$StoolImpl;
   const _Stool._() : super._();
 
   @override
@@ -159,8 +170,11 @@ abstract class _Stool extends Stool {
   DateTime get dateTime;
   @override
   bool get hasBlood;
+
+  /// Create a copy of Stool
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
-  _$$_StoolCopyWith<_$_Stool> get copyWith =>
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$StoolImplCopyWith<_$StoolImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

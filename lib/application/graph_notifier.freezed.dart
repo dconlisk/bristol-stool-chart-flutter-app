@@ -12,7 +12,7 @@ part of 'graph_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GraphState {
@@ -90,27 +90,34 @@ class _$GraphStateCopyWithImpl<$Res, $Val extends GraphState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Initial extends _Initial {
-  const _$_Initial() : super._();
+class _$InitialImpl extends _Initial {
+  const _$InitialImpl() : super._();
 
   @override
   String toString() {
@@ -118,9 +125,9 @@ class _$_Initial extends _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -208,33 +215,35 @@ class _$_Initial extends _Initial {
 }
 
 abstract class _Initial extends GraphState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
   const _Initial._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_InitialisedCopyWith<$Res> {
-  factory _$$_InitialisedCopyWith(
-          _$_Initialised value, $Res Function(_$_Initialised) then) =
-      __$$_InitialisedCopyWithImpl<$Res>;
+abstract class _$$InitialisedImplCopyWith<$Res> {
+  factory _$$InitialisedImplCopyWith(
+          _$InitialisedImpl value, $Res Function(_$InitialisedImpl) then) =
+      __$$InitialisedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<Stool> stools});
 }
 
 /// @nodoc
-class __$$_InitialisedCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$_Initialised>
-    implements _$$_InitialisedCopyWith<$Res> {
-  __$$_InitialisedCopyWithImpl(
-      _$_Initialised _value, $Res Function(_$_Initialised) _then)
+class __$$InitialisedImplCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$InitialisedImpl>
+    implements _$$InitialisedImplCopyWith<$Res> {
+  __$$InitialisedImplCopyWithImpl(
+      _$InitialisedImpl _value, $Res Function(_$InitialisedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? stools = null,
   }) {
-    return _then(_$_Initialised(
+    return _then(_$InitialisedImpl(
       null == stools
           ? _value._stools
           : stools // ignore: cast_nullable_to_non_nullable
@@ -245,8 +254,8 @@ class __$$_InitialisedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initialised extends _Initialised {
-  const _$_Initialised(final List<Stool> stools)
+class _$InitialisedImpl extends _Initialised {
+  const _$InitialisedImpl(final List<Stool> stools)
       : _stools = stools,
         super._();
 
@@ -264,10 +273,10 @@ class _$_Initialised extends _Initialised {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Initialised &&
+            other is _$InitialisedImpl &&
             const DeepCollectionEquality().equals(other._stools, _stools));
   }
 
@@ -275,11 +284,13 @@ class _$_Initialised extends _Initialised {
   int get hashCode =>
       Object.hash(runtimeType, const DeepCollectionEquality().hash(_stools));
 
-  @JsonKey(ignore: true)
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
-      __$$_InitialisedCopyWithImpl<_$_Initialised>(this, _$identity);
+  _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
+      __$$InitialisedImplCopyWithImpl<_$InitialisedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -363,35 +374,41 @@ class _$_Initialised extends _Initialised {
 }
 
 abstract class _Initialised extends GraphState {
-  const factory _Initialised(final List<Stool> stools) = _$_Initialised;
+  const factory _Initialised(final List<Stool> stools) = _$InitialisedImpl;
   const _Initialised._() : super._();
 
   List<Stool> get stools;
-  @JsonKey(ignore: true)
-  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_LoadFailureCopyWith<$Res> {
-  factory _$$_LoadFailureCopyWith(
-          _$_LoadFailure value, $Res Function(_$_LoadFailure) then) =
-      __$$_LoadFailureCopyWithImpl<$Res>;
+abstract class _$$LoadFailureImplCopyWith<$Res> {
+  factory _$$LoadFailureImplCopyWith(
+          _$LoadFailureImpl value, $Res Function(_$LoadFailureImpl) then) =
+      __$$LoadFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadFailureCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$_LoadFailure>
-    implements _$$_LoadFailureCopyWith<$Res> {
-  __$$_LoadFailureCopyWithImpl(
-      _$_LoadFailure _value, $Res Function(_$_LoadFailure) _then)
+class __$$LoadFailureImplCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$LoadFailureImpl>
+    implements _$$LoadFailureImplCopyWith<$Res> {
+  __$$LoadFailureImplCopyWithImpl(
+      _$LoadFailureImpl _value, $Res Function(_$LoadFailureImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_LoadFailure extends _LoadFailure {
-  const _$_LoadFailure() : super._();
+class _$LoadFailureImpl extends _LoadFailure {
+  const _$LoadFailureImpl() : super._();
 
   @override
   String toString() {
@@ -399,9 +416,9 @@ class _$_LoadFailure extends _LoadFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_LoadFailure);
+        (other.runtimeType == runtimeType && other is _$LoadFailureImpl);
   }
 
   @override
@@ -489,30 +506,33 @@ class _$_LoadFailure extends _LoadFailure {
 }
 
 abstract class _LoadFailure extends GraphState {
-  const factory _LoadFailure() = _$_LoadFailure;
+  const factory _LoadFailure() = _$LoadFailureImpl;
   const _LoadFailure._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_ShareFailureCopyWith<$Res> {
-  factory _$$_ShareFailureCopyWith(
-          _$_ShareFailure value, $Res Function(_$_ShareFailure) then) =
-      __$$_ShareFailureCopyWithImpl<$Res>;
+abstract class _$$ShareFailureImplCopyWith<$Res> {
+  factory _$$ShareFailureImplCopyWith(
+          _$ShareFailureImpl value, $Res Function(_$ShareFailureImpl) then) =
+      __$$ShareFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ShareFailureCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$_ShareFailure>
-    implements _$$_ShareFailureCopyWith<$Res> {
-  __$$_ShareFailureCopyWithImpl(
-      _$_ShareFailure _value, $Res Function(_$_ShareFailure) _then)
+class __$$ShareFailureImplCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$ShareFailureImpl>
+    implements _$$ShareFailureImplCopyWith<$Res> {
+  __$$ShareFailureImplCopyWithImpl(
+      _$ShareFailureImpl _value, $Res Function(_$ShareFailureImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_ShareFailure extends _ShareFailure {
-  const _$_ShareFailure() : super._();
+class _$ShareFailureImpl extends _ShareFailure {
+  const _$ShareFailureImpl() : super._();
 
   @override
   String toString() {
@@ -520,9 +540,9 @@ class _$_ShareFailure extends _ShareFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ShareFailure);
+        (other.runtimeType == runtimeType && other is _$ShareFailureImpl);
   }
 
   @override
@@ -610,30 +630,33 @@ class _$_ShareFailure extends _ShareFailure {
 }
 
 abstract class _ShareFailure extends GraphState {
-  const factory _ShareFailure() = _$_ShareFailure;
+  const factory _ShareFailure() = _$ShareFailureImpl;
   const _ShareFailure._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_ShareSuccessCopyWith<$Res> {
-  factory _$$_ShareSuccessCopyWith(
-          _$_ShareSuccess value, $Res Function(_$_ShareSuccess) then) =
-      __$$_ShareSuccessCopyWithImpl<$Res>;
+abstract class _$$ShareSuccessImplCopyWith<$Res> {
+  factory _$$ShareSuccessImplCopyWith(
+          _$ShareSuccessImpl value, $Res Function(_$ShareSuccessImpl) then) =
+      __$$ShareSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ShareSuccessCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$_ShareSuccess>
-    implements _$$_ShareSuccessCopyWith<$Res> {
-  __$$_ShareSuccessCopyWithImpl(
-      _$_ShareSuccess _value, $Res Function(_$_ShareSuccess) _then)
+class __$$ShareSuccessImplCopyWithImpl<$Res>
+    extends _$GraphStateCopyWithImpl<$Res, _$ShareSuccessImpl>
+    implements _$$ShareSuccessImplCopyWith<$Res> {
+  __$$ShareSuccessImplCopyWithImpl(
+      _$ShareSuccessImpl _value, $Res Function(_$ShareSuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_ShareSuccess extends _ShareSuccess {
-  const _$_ShareSuccess() : super._();
+class _$ShareSuccessImpl extends _ShareSuccess {
+  const _$ShareSuccessImpl() : super._();
 
   @override
   String toString() {
@@ -641,9 +664,9 @@ class _$_ShareSuccess extends _ShareSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ShareSuccess);
+        (other.runtimeType == runtimeType && other is _$ShareSuccessImpl);
   }
 
   @override
@@ -731,6 +754,6 @@ class _$_ShareSuccess extends _ShareSuccess {
 }
 
 abstract class _ShareSuccess extends GraphState {
-  const factory _ShareSuccess() = _$_ShareSuccess;
+  const factory _ShareSuccess() = _$ShareSuccessImpl;
   const _ShareSuccess._() : super._();
 }

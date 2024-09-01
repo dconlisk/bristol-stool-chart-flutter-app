@@ -12,7 +12,7 @@ part of 'stool_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$StoolFailure {
@@ -78,28 +78,34 @@ class _$StoolFailureCopyWithImpl<$Res, $Val extends StoolFailure>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of StoolFailure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_DatabaseFailureCopyWith<$Res> {
-  factory _$$_DatabaseFailureCopyWith(
-          _$_DatabaseFailure value, $Res Function(_$_DatabaseFailure) then) =
-      __$$_DatabaseFailureCopyWithImpl<$Res>;
+abstract class _$$DatabaseFailureImplCopyWith<$Res> {
+  factory _$$DatabaseFailureImplCopyWith(_$DatabaseFailureImpl value,
+          $Res Function(_$DatabaseFailureImpl) then) =
+      __$$DatabaseFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DatabaseFailureCopyWithImpl<$Res>
-    extends _$StoolFailureCopyWithImpl<$Res, _$_DatabaseFailure>
-    implements _$$_DatabaseFailureCopyWith<$Res> {
-  __$$_DatabaseFailureCopyWithImpl(
-      _$_DatabaseFailure _value, $Res Function(_$_DatabaseFailure) _then)
+class __$$DatabaseFailureImplCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res, _$DatabaseFailureImpl>
+    implements _$$DatabaseFailureImplCopyWith<$Res> {
+  __$$DatabaseFailureImplCopyWithImpl(
+      _$DatabaseFailureImpl _value, $Res Function(_$DatabaseFailureImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StoolFailure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_DatabaseFailure extends _DatabaseFailure {
-  const _$_DatabaseFailure() : super._();
+class _$DatabaseFailureImpl extends _DatabaseFailure {
+  const _$DatabaseFailureImpl() : super._();
 
   @override
   String toString() {
@@ -107,9 +113,9 @@ class _$_DatabaseFailure extends _DatabaseFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DatabaseFailure);
+        (other.runtimeType == runtimeType && other is _$DatabaseFailureImpl);
   }
 
   @override
@@ -185,30 +191,33 @@ class _$_DatabaseFailure extends _DatabaseFailure {
 }
 
 abstract class _DatabaseFailure extends StoolFailure {
-  const factory _DatabaseFailure() = _$_DatabaseFailure;
+  const factory _DatabaseFailure() = _$DatabaseFailureImpl;
   const _DatabaseFailure._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_FileSystemFailureCopyWith<$Res> {
-  factory _$$_FileSystemFailureCopyWith(_$_FileSystemFailure value,
-          $Res Function(_$_FileSystemFailure) then) =
-      __$$_FileSystemFailureCopyWithImpl<$Res>;
+abstract class _$$FileSystemFailureImplCopyWith<$Res> {
+  factory _$$FileSystemFailureImplCopyWith(_$FileSystemFailureImpl value,
+          $Res Function(_$FileSystemFailureImpl) then) =
+      __$$FileSystemFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_FileSystemFailureCopyWithImpl<$Res>
-    extends _$StoolFailureCopyWithImpl<$Res, _$_FileSystemFailure>
-    implements _$$_FileSystemFailureCopyWith<$Res> {
-  __$$_FileSystemFailureCopyWithImpl(
-      _$_FileSystemFailure _value, $Res Function(_$_FileSystemFailure) _then)
+class __$$FileSystemFailureImplCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res, _$FileSystemFailureImpl>
+    implements _$$FileSystemFailureImplCopyWith<$Res> {
+  __$$FileSystemFailureImplCopyWithImpl(_$FileSystemFailureImpl _value,
+      $Res Function(_$FileSystemFailureImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StoolFailure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_FileSystemFailure extends _FileSystemFailure {
-  const _$_FileSystemFailure() : super._();
+class _$FileSystemFailureImpl extends _FileSystemFailure {
+  const _$FileSystemFailureImpl() : super._();
 
   @override
   String toString() {
@@ -216,9 +225,9 @@ class _$_FileSystemFailure extends _FileSystemFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_FileSystemFailure);
+        (other.runtimeType == runtimeType && other is _$FileSystemFailureImpl);
   }
 
   @override
@@ -294,30 +303,33 @@ class _$_FileSystemFailure extends _FileSystemFailure {
 }
 
 abstract class _FileSystemFailure extends StoolFailure {
-  const factory _FileSystemFailure() = _$_FileSystemFailure;
+  const factory _FileSystemFailure() = _$FileSystemFailureImpl;
   const _FileSystemFailure._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_ImportFailureCopyWith<$Res> {
-  factory _$$_ImportFailureCopyWith(
-          _$_ImportFailure value, $Res Function(_$_ImportFailure) then) =
-      __$$_ImportFailureCopyWithImpl<$Res>;
+abstract class _$$ImportFailureImplCopyWith<$Res> {
+  factory _$$ImportFailureImplCopyWith(
+          _$ImportFailureImpl value, $Res Function(_$ImportFailureImpl) then) =
+      __$$ImportFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ImportFailureCopyWithImpl<$Res>
-    extends _$StoolFailureCopyWithImpl<$Res, _$_ImportFailure>
-    implements _$$_ImportFailureCopyWith<$Res> {
-  __$$_ImportFailureCopyWithImpl(
-      _$_ImportFailure _value, $Res Function(_$_ImportFailure) _then)
+class __$$ImportFailureImplCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res, _$ImportFailureImpl>
+    implements _$$ImportFailureImplCopyWith<$Res> {
+  __$$ImportFailureImplCopyWithImpl(
+      _$ImportFailureImpl _value, $Res Function(_$ImportFailureImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of StoolFailure
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_ImportFailure extends _ImportFailure {
-  const _$_ImportFailure() : super._();
+class _$ImportFailureImpl extends _ImportFailure {
+  const _$ImportFailureImpl() : super._();
 
   @override
   String toString() {
@@ -325,9 +337,9 @@ class _$_ImportFailure extends _ImportFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ImportFailure);
+        (other.runtimeType == runtimeType && other is _$ImportFailureImpl);
   }
 
   @override
@@ -403,6 +415,6 @@ class _$_ImportFailure extends _ImportFailure {
 }
 
 abstract class _ImportFailure extends StoolFailure {
-  const factory _ImportFailure() = _$_ImportFailure;
+  const factory _ImportFailure() = _$ImportFailureImpl;
   const _ImportFailure._() : super._();
 }

@@ -55,8 +55,8 @@ class IntroPage extends ConsumerWidget {
   }) {
     // Need to clamp the text size so that the text is visible when user is using very large text
     final mediaQueryData = MediaQuery.of(context);
-    final num constrainedTextScaleFactor =
-        mediaQueryData.textScaleFactor.clamp(1.0, 1.5);
+    final constrainedTextScaleFactor = mediaQueryData.textScaler
+        .clamp(minScaleFactor: 1.0, maxScaleFactor: 1.5);
 
     return Container(
       decoration: const BoxDecoration(
@@ -67,7 +67,7 @@ class IntroPage extends ConsumerWidget {
         padding: AppPadding.small,
         child: MediaQuery(
           data: mediaQueryData.copyWith(
-            textScaleFactor: constrainedTextScaleFactor as double?,
+            textScaler: constrainedTextScaleFactor,
           ),
           child: Text(
             buttonText,
@@ -109,7 +109,7 @@ class IntroPage extends ConsumerWidget {
                     AppLocalizations.of(context)!.continueButtonText,
                   ),
                   onPressed: () {
-                    context.router.pop();
+                    context.router.popForced();
                   },
                 )
               ],

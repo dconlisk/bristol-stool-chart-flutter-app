@@ -9,11 +9,11 @@ class DrawerLink extends StatelessWidget {
   final PageRouteInfo route;
 
   const DrawerLink({
-    Key? key,
+    super.key,
     required this.text,
     required this.icon,
     required this.route,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +39,7 @@ class DrawerLink extends StatelessWidget {
         ],
       ),
       onTap: () {
-        AutoRouter.of(context).pop();
+        AutoRouter.of(context).popForced();
         AutoRouter.of(context).replace(route);
       },
     );

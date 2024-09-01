@@ -42,7 +42,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             actions: [
               TextButton(
                 onPressed: () {
-                  context.router.pop();
+                  context.router.popForced();
                 },
                 child: Text(
                   AppLocalizations.of(context)!.continueButtonText,

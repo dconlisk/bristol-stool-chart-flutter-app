@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class Paragraph extends StatelessWidget {
   final String text;
   const Paragraph({
-    Key? key,
+    super.key,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
