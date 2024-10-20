@@ -1,4 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/domain/stool.dart';
+import 'package:bristol_stool_chart/presentation/routes/app_router.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:flutter/material.dart';
@@ -177,6 +179,13 @@ class _GraphState extends State<Graph> {
           FastLineSeries<Stool, DateTime>(
             color: Colors.black,
             dataSource: widget.stools,
+            onPointTap: (pointInteractionDetails) {
+              context.router.push(
+                AddRoute(
+                  stoolIndex: pointInteractionDetails.pointIndex!,
+                ),
+              );
+            },
             xValueMapper: (Stool event, int index) => event.dateTime,
             yValueMapper: (Stool event, int index) => event.type,
             markerSettings: const MarkerSettings(

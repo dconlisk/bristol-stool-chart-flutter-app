@@ -67,6 +67,10 @@
     "@addStoolPageTitle": {
       "description": "The title for the add stool page"
     },
+    "editStoolPageTitle": "Edit Stool",
+    "@editStoolPageTitle": {
+      "description": "The title for the edit stool page"
+    },
     "aboutPageHeading1": "What is the Bristol Stool Chart?",
     "@aboutPageHeading1": {
       "description": "Headline 1 for the about page content"

@@ -95,8 +95,11 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                         Expanded(
                           flex: 3,
                           child: RepaintBoundary(
-                              key: _graphKey,
-                              child: Graph(stools: state.stools)),
+                            key: _graphKey,
+                            child: Graph(
+                              stools: state.stools,
+                            ),
+                          ),
                         ),
                         Padding(
                           padding: AppPadding.regularHorizontal,
@@ -140,7 +143,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             size: AppSizes.large,
           ),
           onPressed: () {
-            context.router.push(const AddRoute());
+            context.router.push(AddRoute());
           },
         ),
       ),

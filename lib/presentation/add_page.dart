@@ -11,7 +11,8 @@ import 'package:intl/intl.dart';
 
 @RoutePage()
 class AddPage extends ConsumerStatefulWidget {
-  const AddPage({super.key});
+  final int? stoolIndex;
+  const AddPage({super.key, this.stoolIndex});
 
   @override
   ConsumerState<AddPage> createState() => _AddPageState();
@@ -26,10 +27,16 @@ class _AddPageState extends ConsumerState<AddPage> {
 
   @override
   Widget build(context) {
+    final isEdit = widget.stoolIndex != null;
+    // if (isEdit) {
+    //   ref.read(addStoolNotifierProvider.notifier).ini(widget.stool!);
+    // }
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          AppLocalizations.of(context)!.addStoolPageTitle,
+          isEdit
+              ? AppLocalizations.of(context)!.editStoolPageTitle
+              : AppLocalizations.of(context)!.addStoolPageTitle,
         ),
         automaticallyImplyLeading: false,
         actions: const [

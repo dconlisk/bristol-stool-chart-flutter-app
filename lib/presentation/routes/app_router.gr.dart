@@ -30,10 +30,17 @@ class AboutRoute extends PageRouteInfo<void> {
 
 /// generated route for
 /// [AddPage]
-class AddRoute extends PageRouteInfo<void> {
-  const AddRoute({List<PageRouteInfo>? children})
-      : super(
+class AddRoute extends PageRouteInfo<AddRouteArgs> {
+  AddRoute({
+    Key? key,
+    int? stoolIndex,
+    List<PageRouteInfo>? children,
+  }) : super(
           AddRoute.name,
+          args: AddRouteArgs(
+            key: key,
+            stoolIndex: stoolIndex,
+          ),
           initialChildren: children,
         );
 
@@ -42,9 +49,30 @@ class AddRoute extends PageRouteInfo<void> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      return const AddPage();
+      final args =
+          data.argsAs<AddRouteArgs>(orElse: () => const AddRouteArgs());
+      return AddPage(
+        key: args.key,
+        stoolIndex: args.stoolIndex,
+      );
     },
   );
+}
+
+class AddRouteArgs {
+  const AddRouteArgs({
+    this.key,
+    this.stoolIndex,
+  });
+
+  final Key? key;
+
+  final int? stoolIndex;
+
+  @override
+  String toString() {
+    return 'AddRouteArgs{key: $key, stoolIndex: $stoolIndex}';
+  }
 }
 
 /// generated route for
