@@ -20,6 +20,7 @@ StoolDto _$StoolDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$StoolDto {
+  String? get uuid => throw _privateConstructorUsedError;
   int get type => throw _privateConstructorUsedError;
   DateTime get dateTime => throw _privateConstructorUsedError;
   bool get hasBlood => throw _privateConstructorUsedError;
@@ -40,7 +41,12 @@ abstract class $StoolDtoCopyWith<$Res> {
   factory $StoolDtoCopyWith(StoolDto value, $Res Function(StoolDto) then) =
       _$StoolDtoCopyWithImpl<$Res, StoolDto>;
   @useResult
-  $Res call({int type, DateTime dateTime, bool hasBlood, String? notes});
+  $Res call(
+      {String? uuid,
+      int type,
+      DateTime dateTime,
+      bool hasBlood,
+      String? notes});
 }
 
 /// @nodoc
@@ -58,12 +64,17 @@ class _$StoolDtoCopyWithImpl<$Res, $Val extends StoolDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uuid = freezed,
     Object? type = null,
     Object? dateTime = null,
     Object? hasBlood = null,
     Object? notes = freezed,
   }) {
     return _then(_value.copyWith(
+      uuid: freezed == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -92,7 +103,12 @@ abstract class _$$StoolDtoImplCopyWith<$Res>
       __$$StoolDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int type, DateTime dateTime, bool hasBlood, String? notes});
+  $Res call(
+      {String? uuid,
+      int type,
+      DateTime dateTime,
+      bool hasBlood,
+      String? notes});
 }
 
 /// @nodoc
@@ -108,12 +124,17 @@ class __$$StoolDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? uuid = freezed,
     Object? type = null,
     Object? dateTime = null,
     Object? hasBlood = null,
     Object? notes = freezed,
   }) {
     return _then(_$StoolDtoImpl(
+      uuid: freezed == uuid
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -138,7 +159,8 @@ class __$$StoolDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$StoolDtoImpl extends _StoolDto {
   const _$StoolDtoImpl(
-      {required this.type,
+      {this.uuid,
+      required this.type,
       required this.dateTime,
       required this.hasBlood,
       this.notes})
@@ -147,6 +169,8 @@ class _$StoolDtoImpl extends _StoolDto {
   factory _$StoolDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$StoolDtoImplFromJson(json);
 
+  @override
+  final String? uuid;
   @override
   final int type;
   @override
@@ -158,7 +182,7 @@ class _$StoolDtoImpl extends _StoolDto {
 
   @override
   String toString() {
-    return 'StoolDto(type: $type, dateTime: $dateTime, hasBlood: $hasBlood, notes: $notes)';
+    return 'StoolDto(uuid: $uuid, type: $type, dateTime: $dateTime, hasBlood: $hasBlood, notes: $notes)';
   }
 
   @override
@@ -166,6 +190,7 @@ class _$StoolDtoImpl extends _StoolDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StoolDtoImpl &&
+            (identical(other.uuid, uuid) || other.uuid == uuid) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
@@ -176,7 +201,8 @@ class _$StoolDtoImpl extends _StoolDto {
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood, notes);
+  int get hashCode =>
+      Object.hash(runtimeType, uuid, type, dateTime, hasBlood, notes);
 
   /// Create a copy of StoolDto
   /// with the given fields replaced by the non-null parameter values.
@@ -196,7 +222,8 @@ class _$StoolDtoImpl extends _StoolDto {
 
 abstract class _StoolDto extends StoolDto {
   const factory _StoolDto(
-      {required final int type,
+      {final String? uuid,
+      required final int type,
       required final DateTime dateTime,
       required final bool hasBlood,
       final String? notes}) = _$StoolDtoImpl;
@@ -205,6 +232,8 @@ abstract class _StoolDto extends StoolDto {
   factory _StoolDto.fromJson(Map<String, dynamic> json) =
       _$StoolDtoImpl.fromJson;
 
+  @override
+  String? get uuid;
   @override
   int get type;
   @override

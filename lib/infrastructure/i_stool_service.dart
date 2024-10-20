@@ -4,6 +4,9 @@ abstract class IStoolService {
   // Add a stool to the database
   Future<void> addStool(StoolDto stool);
 
+  // Edit a stool in the database using the datetime as a key. Only used to add a uuid to existing data that doesn't have one.
+  Future<void> editStoolByDateTime(StoolDto stool);
+
   // Edit a stool in the database
   Future<void> editStool(StoolDto stool);
 

@@ -47,5 +47,8 @@ class IntroNotifier extends StateNotifier<IntroState> {
             : const IntroState.hasNotSeenIntro();
       }
     });
+
+    // Ensure all stools have a UUID
+    await _stoolRepository.initialiseUuids();
   }
 }

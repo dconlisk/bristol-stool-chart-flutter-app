@@ -3,6 +3,7 @@ import 'package:bristol_stool_chart/infrastructure/stool_dto.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_service.dart';
 import 'package:sembast/sembast.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:uuid/uuid.dart';
 
 class StoolLocalService implements IStoolService {
   final SembastDatabase _sembastDatabase;
@@ -21,8 +22,9 @@ class StoolLocalService implements IStoolService {
   }
 
   @override
-  Future<void> editStool(StoolDto stool) async {
-    await _store.update(
+  Future<void> editStoolByDateTime(StoolDto stool) async {
+    print(stool);
+    final count = await _store.update(
       _sembastDatabase.instance,
       stool.toJson(),
       finder: Finder(
@@ -33,11 +35,25 @@ class StoolLocalService implements IStoolService {
         }),
       ),
     );
+    print(count);
+  }
+
+  @override
+  Future<void> editStool(StoolDto stool) async {
+    print(stool);
+    final count = await _store.update(
+      _sembastDatabase.instance,
+      stool.toJson(),
+      finder: Finder(
+        filter: Filter.equals('uuid', stool.uuid),
+      ),
+    );
+    print(count);
   }
 
   @override
   Future<void> deleteStool(StoolDto stool) async {
-    await _store.delete(
+    final count = await _store.delete(
       _sembastDatabase.instance,
       finder: Finder(
         filter: Filter.custom((record) {
@@ -47,6 +63,7 @@ class StoolLocalService implements IStoolService {
         }),
       ),
     );
+    print(count);
   }
 
   @override
@@ -95,9 +112,11 @@ class StoolLocalService implements IStoolService {
   Future<void> _importStool(Map<String, dynamic> stoolData) async {
     try {
       final stool = StoolDto(
+        uuid: Uuid().v4().toString(),
         type: int.parse(stoolData['stoolType'].toString()),
         dateTime: DateTime.parse(stoolData['dateTime'].toString()),
         hasBlood: stoolData['bloodInStool'].toString() == '1',
+        notes: '',
       );
       await addStool(stool);
     } catch (e) {

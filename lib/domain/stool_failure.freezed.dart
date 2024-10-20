@@ -21,6 +21,7 @@ mixin _$StoolFailure {
     required TResult Function() database,
     required TResult Function() fileSystem,
     required TResult Function() import,
+    required TResult Function() uuid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$StoolFailure {
     TResult? Function()? database,
     TResult? Function()? fileSystem,
     TResult? Function()? import,
+    TResult? Function()? uuid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$StoolFailure {
     TResult Function()? database,
     TResult Function()? fileSystem,
     TResult Function()? import,
+    TResult Function()? uuid,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$StoolFailure {
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
     required TResult Function(_ImportFailure value) import,
+    required TResult Function(_UuidFailure value) uuid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$StoolFailure {
     TResult? Function(_DatabaseFailure value)? database,
     TResult? Function(_FileSystemFailure value)? fileSystem,
     TResult? Function(_ImportFailure value)? import,
+    TResult? Function(_UuidFailure value)? uuid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$StoolFailure {
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
     TResult Function(_ImportFailure value)? import,
+    TResult Function(_UuidFailure value)? uuid,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,6 +133,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
     required TResult Function() database,
     required TResult Function() fileSystem,
     required TResult Function() import,
+    required TResult Function() uuid,
   }) {
     return database();
   }
@@ -137,6 +144,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
     TResult? Function()? database,
     TResult? Function()? fileSystem,
     TResult? Function()? import,
+    TResult? Function()? uuid,
   }) {
     return database?.call();
   }
@@ -147,6 +155,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
     TResult Function()? database,
     TResult Function()? fileSystem,
     TResult Function()? import,
+    TResult Function()? uuid,
     required TResult orElse(),
   }) {
     if (database != null) {
@@ -161,6 +170,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
     required TResult Function(_ImportFailure value) import,
+    required TResult Function(_UuidFailure value) uuid,
   }) {
     return database(this);
   }
@@ -171,6 +181,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
     TResult? Function(_DatabaseFailure value)? database,
     TResult? Function(_FileSystemFailure value)? fileSystem,
     TResult? Function(_ImportFailure value)? import,
+    TResult? Function(_UuidFailure value)? uuid,
   }) {
     return database?.call(this);
   }
@@ -181,6 +192,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
     TResult Function(_ImportFailure value)? import,
+    TResult Function(_UuidFailure value)? uuid,
     required TResult orElse(),
   }) {
     if (database != null) {
@@ -239,6 +251,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
     required TResult Function() database,
     required TResult Function() fileSystem,
     required TResult Function() import,
+    required TResult Function() uuid,
   }) {
     return fileSystem();
   }
@@ -249,6 +262,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
     TResult? Function()? database,
     TResult? Function()? fileSystem,
     TResult? Function()? import,
+    TResult? Function()? uuid,
   }) {
     return fileSystem?.call();
   }
@@ -259,6 +273,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
     TResult Function()? database,
     TResult Function()? fileSystem,
     TResult Function()? import,
+    TResult Function()? uuid,
     required TResult orElse(),
   }) {
     if (fileSystem != null) {
@@ -273,6 +288,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
     required TResult Function(_ImportFailure value) import,
+    required TResult Function(_UuidFailure value) uuid,
   }) {
     return fileSystem(this);
   }
@@ -283,6 +299,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
     TResult? Function(_DatabaseFailure value)? database,
     TResult? Function(_FileSystemFailure value)? fileSystem,
     TResult? Function(_ImportFailure value)? import,
+    TResult? Function(_UuidFailure value)? uuid,
   }) {
     return fileSystem?.call(this);
   }
@@ -293,6 +310,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
     TResult Function(_ImportFailure value)? import,
+    TResult Function(_UuidFailure value)? uuid,
     required TResult orElse(),
   }) {
     if (fileSystem != null) {
@@ -351,6 +369,7 @@ class _$ImportFailureImpl extends _ImportFailure {
     required TResult Function() database,
     required TResult Function() fileSystem,
     required TResult Function() import,
+    required TResult Function() uuid,
   }) {
     return import();
   }
@@ -361,6 +380,7 @@ class _$ImportFailureImpl extends _ImportFailure {
     TResult? Function()? database,
     TResult? Function()? fileSystem,
     TResult? Function()? import,
+    TResult? Function()? uuid,
   }) {
     return import?.call();
   }
@@ -371,6 +391,7 @@ class _$ImportFailureImpl extends _ImportFailure {
     TResult Function()? database,
     TResult Function()? fileSystem,
     TResult Function()? import,
+    TResult Function()? uuid,
     required TResult orElse(),
   }) {
     if (import != null) {
@@ -385,6 +406,7 @@ class _$ImportFailureImpl extends _ImportFailure {
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
     required TResult Function(_ImportFailure value) import,
+    required TResult Function(_UuidFailure value) uuid,
   }) {
     return import(this);
   }
@@ -395,6 +417,7 @@ class _$ImportFailureImpl extends _ImportFailure {
     TResult? Function(_DatabaseFailure value)? database,
     TResult? Function(_FileSystemFailure value)? fileSystem,
     TResult? Function(_ImportFailure value)? import,
+    TResult? Function(_UuidFailure value)? uuid,
   }) {
     return import?.call(this);
   }
@@ -405,6 +428,7 @@ class _$ImportFailureImpl extends _ImportFailure {
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
     TResult Function(_ImportFailure value)? import,
+    TResult Function(_UuidFailure value)? uuid,
     required TResult orElse(),
   }) {
     if (import != null) {
@@ -417,4 +441,122 @@ class _$ImportFailureImpl extends _ImportFailure {
 abstract class _ImportFailure extends StoolFailure {
   const factory _ImportFailure() = _$ImportFailureImpl;
   const _ImportFailure._() : super._();
+}
+
+/// @nodoc
+abstract class _$$UuidFailureImplCopyWith<$Res> {
+  factory _$$UuidFailureImplCopyWith(
+          _$UuidFailureImpl value, $Res Function(_$UuidFailureImpl) then) =
+      __$$UuidFailureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$UuidFailureImplCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res, _$UuidFailureImpl>
+    implements _$$UuidFailureImplCopyWith<$Res> {
+  __$$UuidFailureImplCopyWithImpl(
+      _$UuidFailureImpl _value, $Res Function(_$UuidFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StoolFailure
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$UuidFailureImpl extends _UuidFailure {
+  const _$UuidFailureImpl() : super._();
+
+  @override
+  String toString() {
+    return 'StoolFailure.uuid()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$UuidFailureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() database,
+    required TResult Function() fileSystem,
+    required TResult Function() import,
+    required TResult Function() uuid,
+  }) {
+    return uuid();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? database,
+    TResult? Function()? fileSystem,
+    TResult? Function()? import,
+    TResult? Function()? uuid,
+  }) {
+    return uuid?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? database,
+    TResult Function()? fileSystem,
+    TResult Function()? import,
+    TResult Function()? uuid,
+    required TResult orElse(),
+  }) {
+    if (uuid != null) {
+      return uuid();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_DatabaseFailure value) database,
+    required TResult Function(_FileSystemFailure value) fileSystem,
+    required TResult Function(_ImportFailure value) import,
+    required TResult Function(_UuidFailure value) uuid,
+  }) {
+    return uuid(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_DatabaseFailure value)? database,
+    TResult? Function(_FileSystemFailure value)? fileSystem,
+    TResult? Function(_ImportFailure value)? import,
+    TResult? Function(_UuidFailure value)? uuid,
+  }) {
+    return uuid?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
+    TResult Function(_UuidFailure value)? uuid,
+    required TResult orElse(),
+  }) {
+    if (uuid != null) {
+      return uuid(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UuidFailure extends StoolFailure {
+  const factory _UuidFailure() = _$UuidFailureImpl;
+  const _UuidFailure._() : super._();
 }

@@ -202,7 +202,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                                     ),
                                   );
                             },
-                            currentTime: DateTime.now().toLocal(),
+                            currentTime: state.stool.dateTime.toLocal(),
                             locale: LocaleType.en,
                           );
                         },
@@ -211,36 +211,81 @@ class _AddPageState extends ConsumerState<AddPage> {
                         ),
                       ),
                     ),
-                    ElevatedButton(
-                      child: Text(
-                        AppLocalizations.of(context)!.saveButtonText,
-                      ),
-                      onPressed: () async {
-                        if (isEdit) {
-                          await ref
-                              .read(addStoolNotifierProvider.notifier)
-                              .editStool();
-                        } else {
-                          await ref
-                              .read(addStoolNotifierProvider.notifier)
-                              .addStool();
-                        }
-                      },
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Padding(
+                          padding: AppPadding.regular,
+                          child: ElevatedButton(
+                            child: Text(
+                              AppLocalizations.of(context)!.saveButtonText,
+                            ),
+                            onPressed: () async {
+                              if (isEdit) {
+                                await ref
+                                    .read(addStoolNotifierProvider.notifier)
+                                    .editStool();
+                              } else {
+                                await ref
+                                    .read(addStoolNotifierProvider.notifier)
+                                    .addStool();
+                              }
+                            },
+                          ),
+                        ),
+                        if (isEdit)
+                          Padding(
+                            padding: AppPadding.regular,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor: Colors.red,
+                              ),
+                              onPressed: () async {
+                                await showDialog<AlertDialog>(
+                                  context: context,
+                                  builder: (_) => AlertDialog(
+                                    title: Text(
+                                      AppLocalizations.of(context)!
+                                          .areYouSureTitle,
+                                    ),
+                                    content: Text(
+                                      AppLocalizations.of(context)!
+                                          .areYouSureDeleteStoolMessage,
+                                    ),
+                                    actions: [
+                                      ElevatedButton(
+                                        onPressed: () {
+                                          context.router.popForced();
+                                        },
+                                        child: Text(
+                                          AppLocalizations.of(context)!
+                                              .cancelButtonText,
+                                        ),
+                                      ),
+                                      ElevatedButton(
+                                        onPressed: () async {
+                                          context.router.popForced();
+                                          await ref
+                                              .read(addStoolNotifierProvider
+                                                  .notifier)
+                                              .deleteStool();
+                                        },
+                                        child: Text(
+                                          AppLocalizations.of(context)!
+                                              .deleteStoolButtonText,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              },
+                              child: Text(
+                                AppLocalizations.of(context)!.deleteButtonText,
+                              ),
+                            ),
+                          ),
+                      ],
                     ),
-                    if (isEdit)
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
-                        ),
-                        onPressed: () async {
-                          await ref
-                              .read(addStoolNotifierProvider.notifier)
-                              .deleteStool();
-                        },
-                        child: Text(
-                          AppLocalizations.of(context)!.deleteButtonText,
-                        ),
-                      ),
                   ],
                 ),
               );

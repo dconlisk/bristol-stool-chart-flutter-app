@@ -195,6 +195,10 @@
     "@areYouSureDeleteDataMessage": {
       "description": "The text displayed in the are you sure popup when deleting all user data"
     },
+    "areYouSureDeleteStoolMessage": "This stool will be permanently removed. Do you wish to continue?",
+    "@areYouSureDeleteStoolMessage": {
+      "description": "The text displayed in the are you sure popup when deleting a stool"
+    },
     "cancelButtonText": "CANCEL",
     "@cancelButtonText": {
       "description": "The text displayed on the cancel button"
@@ -214,6 +218,10 @@
     "deleteAllDataButtonText": "DELETE ALL DATA",
     "@deleteAllDataButtonText": {
       "description": "The text displayed on the confirm button in the are you sure popup when deleting all data in the app"
+    },
+    "deleteStoolButtonText": "DELETE STOOL",
+    "@deleteStoolButtonText": {
+      "description": "The text displayed on the confirm button in the are you sure popup when deleting a stool"
     },
     "introPageTitle1": "Welcome",
     "@introPageTitle1": {

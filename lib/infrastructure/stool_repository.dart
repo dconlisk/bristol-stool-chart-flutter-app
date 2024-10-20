@@ -4,6 +4,7 @@ import 'package:bristol_stool_chart/infrastructure/i_stool_repository.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_service.dart';
 import 'package:bristol_stool_chart/infrastructure/stool_dto.dart';
 import 'package:dartz/dartz.dart';
+import 'package:uuid/uuid.dart';
 
 class StoolRepository implements IStoolRepository {
   final IStoolService _stoolService;
@@ -85,6 +86,26 @@ class StoolRepository implements IStoolRepository {
       return Right(result);
     } catch (e) {
       return const Left(StoolFailure.import());
+    }
+  }
+
+  @override
+  Future<Either<StoolFailure, bool>> initialiseUuids() async {
+    try {
+      final result = await _stoolService.getAllStools();
+      // get a list of results that have no uuids
+      final resultsWithNoUuids =
+          result.where((element) => element.uuid == null).toList();
+
+      // assign a uuid to each result and update in db
+      for (var stool in resultsWithNoUuids) {
+        final updatedStool = stool.copyWith(uuid: Uuid().v4().toString());
+        _stoolService.editStoolByDateTime(updatedStool);
+      }
+
+      return Right(true);
+    } catch (e) {
+      return const Left(StoolFailure.uuid());
     }
   }
 }

@@ -26,4 +26,7 @@ abstract class IStoolRepository {
 
   // Import data from previous version of the app if it exists
   Future<Either<StoolFailure, bool>> importOldDatabase();
+
+  // Ensure all stools have a UUID
+  Future<Either<StoolFailure, bool>> initialiseUuids();
 }
