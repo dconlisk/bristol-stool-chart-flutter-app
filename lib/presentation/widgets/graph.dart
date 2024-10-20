@@ -20,11 +20,7 @@ class _GraphState extends State<Graph> {
   Widget build(BuildContext context) {
     // fours is a fake list of events that I'm using to get a green line across the ideal value in the graph.
     var fours = <Stool>[];
-    fours.add(Stool(
-      dateTime: widget.stools[0].dateTime,
-      type: 4,
-      hasBlood: false,
-    ));
+    fours.add(Stool.empty().copyWith(dateTime: widget.stools[0].dateTime));
 
     // need to work out a sensible value for the last event so that the smileys have space next to the real line graph.
     var totalTimeInData = widget
@@ -41,11 +37,9 @@ class _GraphState extends State<Graph> {
             AppLocalizations.of(context)!.dateTimeFormatGraphHoursMinutes);
 
     fours.add(
-      Stool(
+      Stool.empty().copyWith(
         dateTime: widget.stools[widget.stools.length - 1].dateTime
             .add(Duration(milliseconds: durationToAdd)),
-        type: 4,
-        hasBlood: false,
       ),
     );
 
@@ -70,6 +64,7 @@ class _GraphState extends State<Graph> {
         tooltipBehavior: TooltipBehavior(enable: false),
         onMarkerRender: (markerArgs) {
           if (markerArgs.pointIndex != null &&
+              widget.stools.length > markerArgs.pointIndex! &&
               widget.stools[markerArgs.pointIndex!].hasBlood) {
             markerArgs.color = Colors.red;
           }

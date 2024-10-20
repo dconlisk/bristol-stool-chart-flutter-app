@@ -63,43 +63,67 @@ class AppWidget extends ConsumerWidget {
       ],
       onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
       theme: ThemeData(
-        primarySwatch: AppColors.blue,
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: AppColors.blue,
+          primary: AppColors.blue,
+          surface: AppColors.white,
+        ).copyWith(
+          secondary: AppColors.blue,
+        ),
         scaffoldBackgroundColor: AppColors.white,
+        appBarTheme: AppBarTheme(
+          backgroundColor: AppColors.blue,
+          foregroundColor: AppColors.white,
+        ),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: AppColors.blue,
+            foregroundColor: AppColors.white,
+          ),
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            foregroundColor: AppColors.blue,
+          ),
+        ),
         textTheme: TextTheme(
           displayLarge: GoogleFonts.roboto(
             fontSize: AppSizes.titleFontSize,
             fontWeight: FontWeight.bold,
+            // Removed color specification to use default
           ),
           displayMedium: GoogleFonts.playfairDisplay(
             fontSize: AppSizes.titleFontSize,
             fontWeight: FontWeight.bold,
+            // Removed color specification to use default
           ),
-          displaySmall: const TextStyle(
+          displaySmall: TextStyle(
             fontSize: AppSizes.titleFontSize,
             color: AppColors.white,
           ),
-          headlineMedium: const TextStyle(
-            color: AppColors.blue,
+          headlineMedium: TextStyle(
             fontSize: AppSizes.paragraphFontSize,
             decoration: TextDecoration.underline,
+            // Removed color specification to use default
           ),
           bodyLarge: GoogleFonts.roboto(
             color: AppColors.grey,
             fontSize: AppSizes.paragraphFontSize,
           ),
-          bodyMedium: const TextStyle(
+          bodyMedium: TextStyle(
             fontSize: AppSizes.paragraphFontSize,
             color: AppColors.white,
           ),
-          bodySmall: const TextStyle(
+          bodySmall: TextStyle(
             fontFamily: 'FontAwesome5Free',
             color: Colors.black,
             fontSize: 16,
           ),
           titleMedium: GoogleFonts.roboto(
-            color: AppColors.lightGrey,
+            //color: AppColors.lightGrey,
             fontSize: AppSizes.paragraphFontSize,
-            fontWeight: FontWeight.bold,
+            //fontWeight: FontWeight.bold,
           ),
         ),
       ),

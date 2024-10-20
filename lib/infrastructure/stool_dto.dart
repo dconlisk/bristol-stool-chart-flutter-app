@@ -11,6 +11,8 @@ class StoolDto with _$StoolDto {
     required int type,
     required DateTime dateTime,
     required bool hasBlood,
+    String?
+        notes, // notes is nullable as users may have older data without notes
   }) = _StoolDto;
 
   factory StoolDto.fromDomain(Stool stool) {
@@ -18,6 +20,7 @@ class StoolDto with _$StoolDto {
       type: stool.type,
       dateTime: stool.dateTime,
       hasBlood: stool.hasBlood,
+      notes: stool.notes,
     );
   }
 
@@ -29,6 +32,7 @@ class StoolDto with _$StoolDto {
       type: type,
       dateTime: dateTime,
       hasBlood: hasBlood,
+      notes: notes ?? '',
     );
   }
 }

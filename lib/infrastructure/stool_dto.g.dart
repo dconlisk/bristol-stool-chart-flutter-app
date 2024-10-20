@@ -11,6 +11,7 @@ _$StoolDtoImpl _$$StoolDtoImplFromJson(Map<String, dynamic> json) =>
       type: (json['type'] as num).toInt(),
       dateTime: DateTime.parse(json['dateTime'] as String),
       hasBlood: json['hasBlood'] as bool,
+      notes: json['notes'] as String?,
     );
 
 Map<String, dynamic> _$$StoolDtoImplToJson(_$StoolDtoImpl instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$StoolDtoImplToJson(_$StoolDtoImpl instance) =>
       'type': instance.type,
       'dateTime': instance.dateTime.toIso8601String(),
       'hasBlood': instance.hasBlood,
+      'notes': instance.notes,
     };

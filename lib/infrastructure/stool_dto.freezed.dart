@@ -23,6 +23,7 @@ mixin _$StoolDto {
   int get type => throw _privateConstructorUsedError;
   DateTime get dateTime => throw _privateConstructorUsedError;
   bool get hasBlood => throw _privateConstructorUsedError;
+  String? get notes => throw _privateConstructorUsedError;
 
   /// Serializes this StoolDto to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -39,7 +40,7 @@ abstract class $StoolDtoCopyWith<$Res> {
   factory $StoolDtoCopyWith(StoolDto value, $Res Function(StoolDto) then) =
       _$StoolDtoCopyWithImpl<$Res, StoolDto>;
   @useResult
-  $Res call({int type, DateTime dateTime, bool hasBlood});
+  $Res call({int type, DateTime dateTime, bool hasBlood, String? notes});
 }
 
 /// @nodoc
@@ -60,6 +61,7 @@ class _$StoolDtoCopyWithImpl<$Res, $Val extends StoolDto>
     Object? type = null,
     Object? dateTime = null,
     Object? hasBlood = null,
+    Object? notes = freezed,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -74,6 +76,10 @@ class _$StoolDtoCopyWithImpl<$Res, $Val extends StoolDto>
           ? _value.hasBlood
           : hasBlood // ignore: cast_nullable_to_non_nullable
               as bool,
+      notes: freezed == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -86,7 +92,7 @@ abstract class _$$StoolDtoImplCopyWith<$Res>
       __$$StoolDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int type, DateTime dateTime, bool hasBlood});
+  $Res call({int type, DateTime dateTime, bool hasBlood, String? notes});
 }
 
 /// @nodoc
@@ -105,6 +111,7 @@ class __$$StoolDtoImplCopyWithImpl<$Res>
     Object? type = null,
     Object? dateTime = null,
     Object? hasBlood = null,
+    Object? notes = freezed,
   }) {
     return _then(_$StoolDtoImpl(
       type: null == type
@@ -119,6 +126,10 @@ class __$$StoolDtoImplCopyWithImpl<$Res>
           ? _value.hasBlood
           : hasBlood // ignore: cast_nullable_to_non_nullable
               as bool,
+      notes: freezed == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -127,7 +138,10 @@ class __$$StoolDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$StoolDtoImpl extends _StoolDto {
   const _$StoolDtoImpl(
-      {required this.type, required this.dateTime, required this.hasBlood})
+      {required this.type,
+      required this.dateTime,
+      required this.hasBlood,
+      this.notes})
       : super._();
 
   factory _$StoolDtoImpl.fromJson(Map<String, dynamic> json) =>
@@ -139,10 +153,12 @@ class _$StoolDtoImpl extends _StoolDto {
   final DateTime dateTime;
   @override
   final bool hasBlood;
+  @override
+  final String? notes;
 
   @override
   String toString() {
-    return 'StoolDto(type: $type, dateTime: $dateTime, hasBlood: $hasBlood)';
+    return 'StoolDto(type: $type, dateTime: $dateTime, hasBlood: $hasBlood, notes: $notes)';
   }
 
   @override
@@ -154,12 +170,13 @@ class _$StoolDtoImpl extends _StoolDto {
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
             (identical(other.hasBlood, hasBlood) ||
-                other.hasBlood == hasBlood));
+                other.hasBlood == hasBlood) &&
+            (identical(other.notes, notes) || other.notes == notes));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood);
+  int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood, notes);
 
   /// Create a copy of StoolDto
   /// with the given fields replaced by the non-null parameter values.
@@ -181,7 +198,8 @@ abstract class _StoolDto extends StoolDto {
   const factory _StoolDto(
       {required final int type,
       required final DateTime dateTime,
-      required final bool hasBlood}) = _$StoolDtoImpl;
+      required final bool hasBlood,
+      final String? notes}) = _$StoolDtoImpl;
   const _StoolDto._() : super._();
 
   factory _StoolDto.fromJson(Map<String, dynamic> json) =
@@ -193,6 +211,8 @@ abstract class _StoolDto extends StoolDto {
   DateTime get dateTime;
   @override
   bool get hasBlood;
+  @override
+  String? get notes;
 
   /// Create a copy of StoolDto
   /// with the given fields replaced by the non-null parameter values.

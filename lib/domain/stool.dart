@@ -10,11 +10,13 @@ class Stool with _$Stool {
     required int type,
     required DateTime dateTime,
     required bool hasBlood,
+    required String notes,
   }) = _Stool;
 
   factory Stool.empty() => Stool(
         type: 4,
         dateTime: DateTime.now(),
         hasBlood: false,
+        notes: '',
       );
 }

@@ -142,6 +142,34 @@ class _AddPageState extends ConsumerState<AddPage> {
                         ),
                       ),
                     Padding(
+                      padding: AppPadding.regularHorizontal,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Expanded(
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                labelText: AppLocalizations.of(context)!
+                                    .notesLabelText,
+                                hintText: AppLocalizations.of(context)!
+                                    .notesPlaceholderText,
+                                border: OutlineInputBorder(),
+                              ),
+                              onChanged: (value) async {
+                                await ref
+                                    .read(addStoolNotifierProvider.notifier)
+                                    .updateStool(
+                                      state.stool.copyWith(
+                                        notes: value,
+                                      ),
+                                    );
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
                       padding: AppPadding.regular,
                       child: ElevatedButton(
                         onPressed: () {

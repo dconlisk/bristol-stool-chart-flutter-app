@@ -131,6 +131,14 @@
     "@bloodCheckLabelText": {
       "description": "The text displayed next to the blood check toggle control"
     },
+    "notesLabelText": "Notes",
+    "@notesLabelText": {
+      "description": "The text displayed above the notes textfield"
+    },
+    "notesPlaceholderText": "Add any notes here (optional)",
+    "@notesPlaceholderText": {
+      "description": "The placeholder text for the notes textfield"
+    },
     "stoolPickerInitialDateValue": "Now (or click to select a date and time)",
     "@stoolPickerInitialDateValue": {
       "description": "The initial text displayed in the date picker"

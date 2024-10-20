@@ -44,11 +44,7 @@ class AddStoolNotifier extends StateNotifier<AddStoolState> {
   Future<void> initialise() async {
     final prefs = await SharedPreferences.getInstance();
     _showBloodOption = prefs.getBool(sharedPreferencesBloodSettingKey) ?? false;
-    final newStool = Stool(
-      dateTime: DateTime.now(),
-      hasBlood: false,
-      type: 4,
-    );
+    final newStool = Stool.empty();
     state = AddStoolState.initialised(
       newStool,
       _showBloodOption,
