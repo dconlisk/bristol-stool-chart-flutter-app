@@ -21,6 +21,35 @@ class StoolLocalService implements IStoolService {
   }
 
   @override
+  Future<void> editStool(StoolDto stool) async {
+    await _store.update(
+      _sembastDatabase.instance,
+      stool.toJson(),
+      finder: Finder(
+        filter: Filter.custom((record) {
+          // Use the datetime of the stool as the unique key, but convert to a string first and then compare.
+          final recordDateTime = DateTime.parse(record['dateTime'] as String);
+          return recordDateTime.isAtSameMomentAs(stool.dateTime);
+        }),
+      ),
+    );
+  }
+
+  @override
+  Future<void> deleteStool(StoolDto stool) async {
+    await _store.delete(
+      _sembastDatabase.instance,
+      finder: Finder(
+        filter: Filter.custom((record) {
+          // Use the datetime of the stool as the unique key, but convert to a string first and then compare.
+          final recordDateTime = DateTime.parse(record['dateTime'] as String);
+          return recordDateTime.isAtSameMomentAs(stool.dateTime);
+        }),
+      ),
+    );
+  }
+
+  @override
   Future<void> deleteAllStools() async {
     await _store.delete(_sembastDatabase.instance);
   }

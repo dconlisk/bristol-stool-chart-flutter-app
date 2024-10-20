@@ -31,6 +31,10 @@
     "@dataImportErrorOccurredMessage": {
       "description": "Displayed when an error occurs importing data from old versions of the app"
     },
+    "stoolEditedSuccessMessage": "Stool edited successfully!",
+    "@stoolEditedSuccessMessage": {
+      "description": "Displayed when an stool is edited"
+    },
     "stoolSavedSuccessMessage": "Stool added successfully!",
     "@stoolSavedSuccessMessage": {
       "description": "Displayed when an stool is saved"
@@ -42,6 +46,10 @@
     "saveButtonText": "SAVE",
     "@saveButtonText": {
       "description": "The text for the save button"
+    },
+    "deleteButtonText": "DELETE",
+    "@deleteButtonText": {
+      "description": "The text for the delete button"
     },
     "graphPageTitle": "Your Graph",
     "@graphPageTitle": {

@@ -4,6 +4,12 @@ abstract class IStoolService {
   // Add a stool to the database
   Future<void> addStool(StoolDto stool);
 
+  // Edit a stool in the database
+  Future<void> editStool(StoolDto stool);
+
+  // Remove a stool from the database
+  Future<void> deleteStool(StoolDto stool);
+
   // Remove all stools from the database
   Future<void> deleteAllStools();
 

@@ -22,15 +22,13 @@ class _AddPageState extends ConsumerState<AddPage> {
   @override
   void initState() {
     super.initState();
-    ref.read(addStoolNotifierProvider.notifier).initialise();
+    ref.read(addStoolNotifierProvider.notifier).initialise(widget.stoolIndex);
   }
 
   @override
   Widget build(context) {
     final isEdit = widget.stoolIndex != null;
-    // if (isEdit) {
-    //   ref.read(addStoolNotifierProvider.notifier).ini(widget.stool!);
-    // }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -75,7 +73,11 @@ class _AddPageState extends ConsumerState<AddPage> {
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
                     content: Text(
-                      AppLocalizations.of(context)!.stoolSavedSuccessMessage,
+                      isEdit
+                          ? AppLocalizations.of(context)!
+                              .stoolEditedSuccessMessage
+                          : AppLocalizations.of(context)!
+                              .stoolSavedSuccessMessage,
                     ),
                   ),
                 );
@@ -110,7 +112,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                       ],
                       options: CarouselOptions(
                         height: MediaQuery.of(context).size.height / 2,
-                        initialPage: 3,
+                        initialPage: state.stool.type - 1,
                         enableInfiniteScroll: false,
                         onPageChanged: (index, reason) async {
                           await ref
@@ -163,6 +165,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                                 border: OutlineInputBorder(),
                               ),
                               maxLines: 3,
+                              initialValue: state.stool.notes,
                               onChanged: (value) async {
                                 await ref
                                     .read(addStoolNotifierProvider.notifier)
@@ -213,11 +216,31 @@ class _AddPageState extends ConsumerState<AddPage> {
                         AppLocalizations.of(context)!.saveButtonText,
                       ),
                       onPressed: () async {
-                        await ref
-                            .read(addStoolNotifierProvider.notifier)
-                            .saveStool();
+                        if (isEdit) {
+                          await ref
+                              .read(addStoolNotifierProvider.notifier)
+                              .editStool();
+                        } else {
+                          await ref
+                              .read(addStoolNotifierProvider.notifier)
+                              .addStool();
+                        }
                       },
                     ),
+                    if (isEdit)
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                        ),
+                        onPressed: () async {
+                          await ref
+                              .read(addStoolNotifierProvider.notifier)
+                              .deleteStool();
+                        },
+                        child: Text(
+                          AppLocalizations.of(context)!.deleteButtonText,
+                        ),
+                      ),
                   ],
                 ),
               );

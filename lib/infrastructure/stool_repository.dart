@@ -21,6 +21,26 @@ class StoolRepository implements IStoolRepository {
   }
 
   @override
+  Future<Either<StoolFailure, Unit>> editStool(Stool stool) async {
+    try {
+      await _stoolService.editStool(StoolDto.fromDomain(stool));
+      return right(unit);
+    } catch (e) {
+      return left(const StoolFailure.database());
+    }
+  }
+
+  @override
+  Future<Either<StoolFailure, Unit>> deleteStool(Stool stool) async {
+    try {
+      await _stoolService.deleteStool(StoolDto.fromDomain(stool));
+      return right(unit);
+    } catch (e) {
+      return left(const StoolFailure.database());
+    }
+  }
+
+  @override
   Future<Either<StoolFailure, Unit>> deleteAllStools() async {
     try {
       await _stoolService.deleteAllStools();
@@ -36,6 +56,17 @@ class StoolRepository implements IStoolRepository {
       final results = await _stoolService.getAllStools();
       results.sort((a, b) => a.dateTime.compareTo(b.dateTime));
       return right(results.map((e) => e.toDomain()).toList());
+    } catch (e) {
+      return left(const StoolFailure.database());
+    }
+  }
+
+  @override
+  Future<Either<StoolFailure, Stool>> getStool(int index) async {
+    try {
+      final results = await _stoolService.getAllStools();
+      results.sort((a, b) => a.dateTime.compareTo(b.dateTime));
+      return right(results.map((e) => e.toDomain()).toList()[index]);
     } catch (e) {
       return left(const StoolFailure.database());
     }
