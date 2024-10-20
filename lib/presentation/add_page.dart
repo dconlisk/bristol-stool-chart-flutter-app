@@ -155,6 +155,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                                     .notesPlaceholderText,
                                 border: OutlineInputBorder(),
                               ),
+                              maxLines: 3,
                               onChanged: (value) async {
                                 await ref
                                     .read(addStoolNotifierProvider.notifier)
