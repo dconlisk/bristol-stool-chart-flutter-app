@@ -47,7 +47,6 @@ class _GraphState extends State<Graph> {
 
     return SafeArea(
       child: SfCartesianChart(
-        onTooltipRender: (args) => {args.header = "BSC"},
         backgroundColor: Colors.white,
         margin: AppPadding.regular,
         zoomPanBehavior: ZoomPanBehavior(
@@ -193,8 +192,9 @@ class _GraphState extends State<Graph> {
               borderColor: Colors.black,
               borderWidth: 2,
               color: Colors.white,
-              height: 10,
-              width: 10,
+              height: AppSizes.graphMarkerSize,
+              width: AppSizes.graphMarkerSize,
+              shape: DataMarkerType.circle,
             ),
           ),
         ],

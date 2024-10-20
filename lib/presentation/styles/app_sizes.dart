@@ -7,4 +7,6 @@ class AppSizes {
   static const paragraphFontSize = 18.0;
 
   static const drawerIconSize = 32.0;
+
+  static const graphMarkerSize = 15.0;
 }

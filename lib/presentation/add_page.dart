@@ -251,6 +251,9 @@ class _AddPageState extends ConsumerState<AddPage> {
                                     content: Text(
                                       AppLocalizations.of(context)!
                                           .areYouSureDeleteStoolMessage,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleMedium,
                                     ),
                                     actions: [
                                       ElevatedButton(
@@ -263,6 +266,9 @@ class _AddPageState extends ConsumerState<AddPage> {
                                         ),
                                       ),
                                       ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          backgroundColor: Colors.red,
+                                        ),
                                         onPressed: () async {
                                           context.router.popForced();
                                           await ref

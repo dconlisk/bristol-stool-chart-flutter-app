@@ -83,9 +83,17 @@
     "@aboutPageHeading1": {
       "description": "Headline 1 for the about page content"
     },
-    "aboutPageHeading2": "How does the app work?",
-    "@aboutPageHeading2": {
+    "howDoesItWorkHeading": "How does the app work?",
+    "@howDoesItWorkHeading": {
       "description": "Headline 2 for the about page content"
+    },
+    "newFeaturesHeading": "New features!",
+    "@newFeaturesHeading": {
+      "description": "New features heading for the about page content"
+    },
+    "newFeaturesParagraph1": "You can now tap on an entry on the graph to edit or remove it. You can also add optional notes. These have been the most requested features for the app. I hope you find them useful!",
+    "@newFeaturesParagraph1": {
+      "description": "New features paragraph 1 for the about page content"
     },
     "aboutPageHeading3": "Thank you",
     "@aboutPageHeading3": {
@@ -99,8 +107,8 @@
     "@aboutPageParagraph1": {
       "description": "Paragraph 1 for the about page content"
     },
-    "aboutPageParagraph2": "Each time your bowels move you can record the time and stool quality using the app.\nThis information is saved to your device, and the app builds up a graph of your intestinal health over time.\nThis graph can be shared with your health professional if you are concerned about any aspect of your health. Simply tap the Share button below the graph.",
-    "@aboutPageParagraph2": {
+    "howDoesItWorkParagraph": "Each time your bowels move you can record the time and stool quality by swiping left or right on the stool images. You can also add notes.\nYou can enable the blood check by going to the Settings page in the app.\nThis information is then saved to your device, and the app builds up a graph of your intestinal health over time.\nThis graph can be shared with your health professional if you are concerned about any aspect of your health. Simply tap the Share button below the graph.",
+    "@howDoesItWorkParagraph": {
       "description": "Paragraph 2 for the about page content"
     },
     "aboutPageParagraph3": "Thank you for downloading this app. Hopefully you will find it useful in monitoring your intestinal health.",
