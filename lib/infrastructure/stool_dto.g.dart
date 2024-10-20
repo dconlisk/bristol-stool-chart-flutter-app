@@ -6,13 +6,14 @@ part of 'stool_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_StoolDto _$$_StoolDtoFromJson(Map<String, dynamic> json) => _$_StoolDto(
-      type: json['type'] as int,
+_$StoolDtoImpl _$$StoolDtoImplFromJson(Map<String, dynamic> json) =>
+    _$StoolDtoImpl(
+      type: (json['type'] as num).toInt(),
       dateTime: DateTime.parse(json['dateTime'] as String),
       hasBlood: json['hasBlood'] as bool,
     );
 
-Map<String, dynamic> _$$_StoolDtoToJson(_$_StoolDto instance) =>
+Map<String, dynamic> _$$StoolDtoImplToJson(_$StoolDtoImpl instance) =>
     <String, dynamic>{
       'type': instance.type,
       'dateTime': instance.dateTime.toIso8601String(),

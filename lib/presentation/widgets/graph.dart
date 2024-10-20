@@ -9,7 +9,7 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class Graph extends StatefulWidget {
   final List<Stool> stools;
 
-  const Graph({Key? key, required this.stools}) : super(key: key);
+  const Graph({super.key, required this.stools});
 
   @override
   State<Graph> createState() => _GraphState();
@@ -157,7 +157,7 @@ class _GraphState extends State<Graph> {
             ),
           ],
         ),
-        series: <ChartSeries>[
+        series: <CartesianSeries>[
           FastLineSeries<Stool, DateTime>(
             color: Colors.green,
             dataSource: fours,

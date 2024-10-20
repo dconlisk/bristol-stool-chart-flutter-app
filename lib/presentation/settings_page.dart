@@ -52,7 +52,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                           AppLocalizations.of(context)!.continueButtonText,
                         ),
                         onPressed: () {
-                          context.router.pop();
+                          context.router.popForced();
                         },
                       )
                     ],
@@ -143,8 +143,8 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                             ),
                             actions: [
                               ElevatedButton(
-                                onPressed: () async {
-                                  await context.router.pop();
+                                onPressed: () {
+                                  context.router.popForced();
                                 },
                                 child: Text(
                                   AppLocalizations.of(context)!
@@ -153,7 +153,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                               ),
                               ElevatedButton(
                                 onPressed: () async {
-                                  await context.router.pop();
+                                  context.router.popForced();
                                   await ref
                                       .read(settingsNotifierProvider.notifier)
                                       .deleteAllData();

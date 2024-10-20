@@ -2,13 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 class CloseButton extends StatelessWidget {
-  const CloseButton({Key? key}) : super(key: key);
+  const CloseButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        AutoRouter.of(context).pop();
+        AutoRouter.of(context).popForced();
       },
       child: const Padding(
         padding: EdgeInsets.all(16.0),

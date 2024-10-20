@@ -80,7 +80,7 @@ class AboutPage extends StatelessWidget {
                                         .continueButtonText,
                                   ),
                                   onPressed: () {
-                                    context.router.pop();
+                                    context.router.popForced();
                                   },
                                 )
                               ],

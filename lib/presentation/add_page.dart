@@ -72,7 +72,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                     ),
                   ),
                 );
-                context.router.pop();
+                context.router.popForced();
               },
             );
           });
@@ -195,7 +195,7 @@ class _AddPageState extends ConsumerState<AddPage> {
 
 class SliderImage extends StatelessWidget {
   final int index;
-  const SliderImage({Key? key, required this.index}) : super(key: key);
+  const SliderImage({super.key, required this.index});
 
   @override
   Widget build(BuildContext context) {

@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class Heading extends StatelessWidget {
   final String text;
   const Heading({
-    Key? key,
+    super.key,
     required this.text,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

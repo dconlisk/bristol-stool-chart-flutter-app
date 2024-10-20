@@ -12,7 +12,7 @@ part of 'settings_notifier.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SettingsState {
@@ -84,27 +84,34 @@ class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of SettingsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SettingsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Initial extends _Initial {
-  const _$_Initial() : super._();
+class _$InitialImpl extends _Initial {
+  const _$InitialImpl() : super._();
 
   @override
   String toString() {
@@ -112,9 +119,9 @@ class _$_Initial extends _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -196,33 +203,35 @@ class _$_Initial extends _Initial {
 }
 
 abstract class _Initial extends SettingsState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
   const _Initial._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_InitialisedCopyWith<$Res> {
-  factory _$$_InitialisedCopyWith(
-          _$_Initialised value, $Res Function(_$_Initialised) then) =
-      __$$_InitialisedCopyWithImpl<$Res>;
+abstract class _$$InitialisedImplCopyWith<$Res> {
+  factory _$$InitialisedImplCopyWith(
+          _$InitialisedImpl value, $Res Function(_$InitialisedImpl) then) =
+      __$$InitialisedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool showBloodOption});
 }
 
 /// @nodoc
-class __$$_InitialisedCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res, _$_Initialised>
-    implements _$$_InitialisedCopyWith<$Res> {
-  __$$_InitialisedCopyWithImpl(
-      _$_Initialised _value, $Res Function(_$_Initialised) _then)
+class __$$InitialisedImplCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$InitialisedImpl>
+    implements _$$InitialisedImplCopyWith<$Res> {
+  __$$InitialisedImplCopyWithImpl(
+      _$InitialisedImpl _value, $Res Function(_$InitialisedImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of SettingsState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? showBloodOption = null,
   }) {
-    return _then(_$_Initialised(
+    return _then(_$InitialisedImpl(
       null == showBloodOption
           ? _value.showBloodOption
           : showBloodOption // ignore: cast_nullable_to_non_nullable
@@ -233,8 +242,8 @@ class __$$_InitialisedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initialised extends _Initialised {
-  const _$_Initialised(this.showBloodOption) : super._();
+class _$InitialisedImpl extends _Initialised {
+  const _$InitialisedImpl(this.showBloodOption) : super._();
 
   @override
   final bool showBloodOption;
@@ -245,10 +254,10 @@ class _$_Initialised extends _Initialised {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Initialised &&
+            other is _$InitialisedImpl &&
             (identical(other.showBloodOption, showBloodOption) ||
                 other.showBloodOption == showBloodOption));
   }
@@ -256,11 +265,13 @@ class _$_Initialised extends _Initialised {
   @override
   int get hashCode => Object.hash(runtimeType, showBloodOption);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of SettingsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
-      __$$_InitialisedCopyWithImpl<_$_Initialised>(this, _$identity);
+  _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
+      __$$InitialisedImplCopyWithImpl<_$InitialisedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -338,33 +349,41 @@ class _$_Initialised extends _Initialised {
 }
 
 abstract class _Initialised extends SettingsState {
-  const factory _Initialised(final bool showBloodOption) = _$_Initialised;
+  const factory _Initialised(final bool showBloodOption) = _$InitialisedImpl;
   const _Initialised._() : super._();
 
   bool get showBloodOption;
-  @JsonKey(ignore: true)
-  _$$_InitialisedCopyWith<_$_Initialised> get copyWith =>
+
+  /// Create a copy of SettingsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res, _$_Error>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SettingsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Error extends _Error {
-  const _$_Error() : super._();
+class _$ErrorImpl extends _Error {
+  const _$ErrorImpl() : super._();
 
   @override
   String toString() {
@@ -372,9 +391,9 @@ class _$_Error extends _Error {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Error);
+        (other.runtimeType == runtimeType && other is _$ErrorImpl);
   }
 
   @override
@@ -456,29 +475,33 @@ class _$_Error extends _Error {
 }
 
 abstract class _Error extends SettingsState {
-  const factory _Error() = _$_Error;
+  const factory _Error() = _$ErrorImpl;
   const _Error._() : super._();
 }
 
 /// @nodoc
-abstract class _$$_SuccessCopyWith<$Res> {
-  factory _$$_SuccessCopyWith(
-          _$_Success value, $Res Function(_$_Success) then) =
-      __$$_SuccessCopyWithImpl<$Res>;
+abstract class _$$SuccessImplCopyWith<$Res> {
+  factory _$$SuccessImplCopyWith(
+          _$SuccessImpl value, $Res Function(_$SuccessImpl) then) =
+      __$$SuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_SuccessCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res, _$_Success>
-    implements _$$_SuccessCopyWith<$Res> {
-  __$$_SuccessCopyWithImpl(_$_Success _value, $Res Function(_$_Success) _then)
+class __$$SuccessImplCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$SuccessImpl>
+    implements _$$SuccessImplCopyWith<$Res> {
+  __$$SuccessImplCopyWithImpl(
+      _$SuccessImpl _value, $Res Function(_$SuccessImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of SettingsState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$_Success extends _Success {
-  const _$_Success() : super._();
+class _$SuccessImpl extends _Success {
+  const _$SuccessImpl() : super._();
 
   @override
   String toString() {
@@ -486,9 +509,9 @@ class _$_Success extends _Success {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Success);
+        (other.runtimeType == runtimeType && other is _$SuccessImpl);
   }
 
   @override
@@ -570,6 +593,6 @@ class _$_Success extends _Success {
 }
 
 abstract class _Success extends SettingsState {
-  const factory _Success() = _$_Success;
+  const factory _Success() = _$SuccessImpl;
   const _Success._() : super._();
 }

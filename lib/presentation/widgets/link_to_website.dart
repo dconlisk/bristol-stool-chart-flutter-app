@@ -7,9 +7,9 @@ class LinkToWebsite extends StatelessWidget {
   final int type;
 
   const LinkToWebsite({
-    Key? key,
+    super.key,
     required this.type,
-  }) : super(key: key);
+  });
 
   Future<void> _openUrl({
     required BuildContext context,
