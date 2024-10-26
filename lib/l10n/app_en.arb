@@ -315,6 +315,10 @@
     "@dataBloodHeader": {
       "description": "The header text for the blood indicator column in the data"
     },
+    "dataNotesHeader": "Notes",
+    "@dataNotesHeader": {
+      "description": "The header text for the notes column in the data"
+    },
     "dateTimeFormatFull": "dd/MM/yyyy H:mm:ss",
     "@dateTimeFormatFull": {
       "description": "The datetime format string accurate to the second"

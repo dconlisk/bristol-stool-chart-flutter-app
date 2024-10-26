@@ -141,16 +141,16 @@ class GraphNotifier extends StateNotifier<GraphState> {
       var rows = stools
           .map(
             (stool) => showBloodOption
-                ? '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? localizations.dataYesIndicator : localizations.dataNoIndicator}'
-                : '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}',
+                ? '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? localizations.dataYesIndicator : localizations.dataNoIndicator}, ${stool.notes}'
+                : '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${stool.notes.replaceAll(',', ' ')}',
           )
           .toList();
 
       rows.insert(
         0,
         showBloodOption
-            ? '${localizations.dataDateTimeHeader},${localizations.dataTypeHeader},${localizations.dataBloodHeader}'
-            : '${localizations.dataDateTimeHeader},${localizations.dataTypeHeader}',
+            ? '${localizations.dataDateTimeHeader},${localizations.dataTypeHeader},${localizations.dataBloodHeader},${localizations.dataNotesHeader}'
+            : '${localizations.dataDateTimeHeader},${localizations.dataTypeHeader},${localizations.dataNotesHeader}',
       );
 
       final lineSeparator = Platform.isAndroid ? '\r\n' : '\n';
