@@ -180,8 +180,8 @@ class _GraphState extends State<Graph> {
             color: Colors.black,
             dataSource: widget.stools,
             onPointTap: (pointInteractionDetails) {
-              final chosenStool =
-                  widget.stools[pointInteractionDetails.pointIndex!];
+              final chosenStool = widget
+                  .stools[pointInteractionDetails.viewportPointIndex!.toInt()];
               context.router.push(
                 AddRoute(
                   stoolId: chosenStool.id,

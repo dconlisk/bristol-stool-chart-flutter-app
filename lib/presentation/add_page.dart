@@ -99,7 +99,6 @@ class _AddPageState extends ConsumerState<AddPage> {
               child: CircularProgressIndicator(),
             ),
             initialised: (state) {
-              print("Chosen stool type: ${state.stool.type}");
               return SingleChildScrollView(
                 padding: AppPadding.smallHorizontal,
                 child: Column(
