@@ -105,6 +105,7 @@ class IntroPage extends ConsumerWidget {
               ),
               content: Text(
                 AppLocalizations.of(context)!.dataImportErrorOccurredMessage,
+                style: Theme.of(context).textTheme.titleMedium,
               ),
               actions: <Widget>[
                 ElevatedButton(

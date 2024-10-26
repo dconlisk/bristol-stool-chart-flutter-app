@@ -38,6 +38,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             title: Text(AppLocalizations.of(context)!.errorOccurredTitle),
             content: Text(
               AppLocalizations.of(context)!.shareErrorOccurredMessage,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             actions: [
               TextButton(

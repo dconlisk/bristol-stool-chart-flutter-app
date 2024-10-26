@@ -78,6 +78,7 @@ class AboutPage extends StatelessWidget {
                               content: Text(
                                 AppLocalizations.of(context)!
                                     .emailErrorOccurredMessage,
+                                style: Theme.of(context).textTheme.titleMedium,
                               ),
                               actions: <Widget>[
                                 ElevatedButton(

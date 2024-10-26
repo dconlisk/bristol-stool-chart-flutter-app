@@ -45,6 +45,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                     content: Text(
                       AppLocalizations.of(context)!
                           .dataNotRemovedErrorOccurredMessage,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     actions: <Widget>[
                       ElevatedButton(

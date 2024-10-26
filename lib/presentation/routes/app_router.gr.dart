@@ -33,13 +33,13 @@ class AboutRoute extends PageRouteInfo<void> {
 class AddRoute extends PageRouteInfo<AddRouteArgs> {
   AddRoute({
     Key? key,
-    int? stoolIndex,
+    String? stoolId,
     List<PageRouteInfo>? children,
   }) : super(
           AddRoute.name,
           args: AddRouteArgs(
             key: key,
-            stoolIndex: stoolIndex,
+            stoolId: stoolId,
           ),
           initialChildren: children,
         );
@@ -53,7 +53,7 @@ class AddRoute extends PageRouteInfo<AddRouteArgs> {
           data.argsAs<AddRouteArgs>(orElse: () => const AddRouteArgs());
       return AddPage(
         key: args.key,
-        stoolIndex: args.stoolIndex,
+        stoolId: args.stoolId,
       );
     },
   );
@@ -62,16 +62,16 @@ class AddRoute extends PageRouteInfo<AddRouteArgs> {
 class AddRouteArgs {
   const AddRouteArgs({
     this.key,
-    this.stoolIndex,
+    this.stoolId,
   });
 
   final Key? key;
 
-  final int? stoolIndex;
+  final String? stoolId;
 
   @override
   String toString() {
-    return 'AddRouteArgs{key: $key, stoolIndex: $stoolIndex}';
+    return 'AddRouteArgs{key: $key, stoolId: $stoolId}';
   }
 }
 

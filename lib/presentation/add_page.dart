@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/add_stool_notifier.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
+import 'package:bristol_stool_chart/presentation/widgets/carousel_swipe_indicator.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +12,8 @@ import 'package:intl/intl.dart';
 
 @RoutePage()
 class AddPage extends ConsumerStatefulWidget {
-  final int? stoolIndex;
-  const AddPage({super.key, this.stoolIndex});
+  final String? stoolId;
+  const AddPage({super.key, this.stoolId});
 
   @override
   ConsumerState<AddPage> createState() => _AddPageState();
@@ -22,12 +23,12 @@ class _AddPageState extends ConsumerState<AddPage> {
   @override
   void initState() {
     super.initState();
-    ref.read(addStoolNotifierProvider.notifier).initialise(widget.stoolIndex);
+    ref.read(addStoolNotifierProvider.notifier).initialise(widget.stoolId);
   }
 
   @override
   Widget build(context) {
-    final isEdit = widget.stoolIndex != null;
+    final isEdit = widget.stoolId != null;
 
     return Scaffold(
       appBar: AppBar(
@@ -55,6 +56,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                     content: Text(
                       AppLocalizations.of(context)!
                           .stoolNotSavedErrorOccurredMessage,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     actions: <Widget>[
                       ElevatedButton(
@@ -81,6 +83,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                     ),
                   ),
                 );
+
                 context.router.popForced();
               },
             );
@@ -96,35 +99,47 @@ class _AddPageState extends ConsumerState<AddPage> {
               child: CircularProgressIndicator(),
             ),
             initialised: (state) {
+              print("Chosen stool type: ${state.stool.type}");
               return SingleChildScrollView(
                 padding: AppPadding.smallHorizontal,
                 child: Column(
                   children: [
-                    CarouselSlider(
-                      items: const [
-                        SliderImage(index: 1),
-                        SliderImage(index: 2),
-                        SliderImage(index: 3),
-                        SliderImage(index: 4),
-                        SliderImage(index: 5),
-                        SliderImage(index: 6),
-                        SliderImage(index: 7),
-                      ],
-                      options: CarouselOptions(
-                        height: MediaQuery.of(context).size.height / 2,
-                        initialPage: state.stool.type - 1,
-                        enableInfiniteScroll: false,
-                        onPageChanged: (index, reason) async {
-                          await ref
-                              .read(addStoolNotifierProvider.notifier)
-                              .updateStool(
-                                state.stool.copyWith(
-                                  type: index + 1,
-                                ),
-                              );
-                        },
+                    Stack(children: [
+                      CarouselSlider(
+                        items: const [
+                          SliderImage(index: 1),
+                          SliderImage(index: 2),
+                          SliderImage(index: 3),
+                          SliderImage(index: 4),
+                          SliderImage(index: 5),
+                          SliderImage(index: 6),
+                          SliderImage(index: 7),
+                        ],
+                        options: CarouselOptions(
+                          height: MediaQuery.of(context).size.height / 2,
+                          initialPage: state.stool.type - 1,
+                          enableInfiniteScroll: false,
+                          onPageChanged: (index, reason) async {
+                            await ref
+                                .read(addStoolNotifierProvider.notifier)
+                                .updateStool(
+                                  state.stool.copyWith(
+                                    type: index + 1,
+                                  ),
+                                );
+                          },
+                        ),
                       ),
-                    ),
+                      if (state.stool.type == 4)
+                        Positioned.fill(
+                          child: Center(
+                            child: CarouselSwipeIndicator(
+                              color: Colors.black,
+                              showDuration: Duration(seconds: 3),
+                            ),
+                          ),
+                        ),
+                    ]),
                     if (state.showBloodOption)
                       Padding(
                         padding: AppPadding.regularHorizontal,

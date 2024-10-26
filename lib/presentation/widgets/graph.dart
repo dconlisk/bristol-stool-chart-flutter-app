@@ -30,7 +30,7 @@ class _GraphState extends State<Graph> {
     var fours = <Stool>[];
     fours.add(Stool.empty().copyWith(
         dateTime: widget.stools[0].dateTime
-            .subtract(Duration(milliseconds: graphPaddingInMs))));
+            .subtract(Duration(milliseconds: (graphPaddingInMs / 3).round()))));
     fours.add(
       Stool.empty().copyWith(
         dateTime: widget.stools[widget.stools.length - 1].dateTime
@@ -85,7 +85,7 @@ class _GraphState extends State<Graph> {
           axisLine: const AxisLine(
             width: 0,
           ),
-          //dateFormat: graphDateFormat,
+          dateFormat: graphDateFormat,
           intervalType: DateTimeIntervalType.auto,
         ),
         primaryYAxis: NumericAxis(
@@ -180,9 +180,11 @@ class _GraphState extends State<Graph> {
             color: Colors.black,
             dataSource: widget.stools,
             onPointTap: (pointInteractionDetails) {
+              final chosenStool =
+                  widget.stools[pointInteractionDetails.pointIndex!];
               context.router.push(
                 AddRoute(
-                  stoolIndex: pointInteractionDetails.pointIndex!,
+                  stoolId: chosenStool.id,
                 ),
               );
             },
