@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$StoolFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() notFound,
     required TResult Function() database,
     required TResult Function() fileSystem,
     required TResult Function() import,
@@ -26,6 +27,7 @@ mixin _$StoolFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? notFound,
     TResult? Function()? database,
     TResult? Function()? fileSystem,
     TResult? Function()? import,
@@ -34,6 +36,7 @@ mixin _$StoolFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notFound,
     TResult Function()? database,
     TResult Function()? fileSystem,
     TResult Function()? import,
@@ -43,6 +46,7 @@ mixin _$StoolFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_NotFoundFailure value) notFound,
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
     required TResult Function(_ImportFailure value) import,
@@ -51,6 +55,7 @@ mixin _$StoolFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NotFoundFailure value)? notFound,
     TResult? Function(_DatabaseFailure value)? database,
     TResult? Function(_FileSystemFailure value)? fileSystem,
     TResult? Function(_ImportFailure value)? import,
@@ -59,6 +64,7 @@ mixin _$StoolFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotFoundFailure value)? notFound,
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
     TResult Function(_ImportFailure value)? import,
@@ -87,6 +93,130 @@ class _$StoolFailureCopyWithImpl<$Res, $Val extends StoolFailure>
 
   /// Create a copy of StoolFailure
   /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+abstract class _$$NotFoundFailureImplCopyWith<$Res> {
+  factory _$$NotFoundFailureImplCopyWith(_$NotFoundFailureImpl value,
+          $Res Function(_$NotFoundFailureImpl) then) =
+      __$$NotFoundFailureImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$NotFoundFailureImplCopyWithImpl<$Res>
+    extends _$StoolFailureCopyWithImpl<$Res, _$NotFoundFailureImpl>
+    implements _$$NotFoundFailureImplCopyWith<$Res> {
+  __$$NotFoundFailureImplCopyWithImpl(
+      _$NotFoundFailureImpl _value, $Res Function(_$NotFoundFailureImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of StoolFailure
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$NotFoundFailureImpl extends _NotFoundFailure {
+  const _$NotFoundFailureImpl() : super._();
+
+  @override
+  String toString() {
+    return 'StoolFailure.notFound()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$NotFoundFailureImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() notFound,
+    required TResult Function() database,
+    required TResult Function() fileSystem,
+    required TResult Function() import,
+    required TResult Function() uuid,
+  }) {
+    return notFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? notFound,
+    TResult? Function()? database,
+    TResult? Function()? fileSystem,
+    TResult? Function()? import,
+    TResult? Function()? uuid,
+  }) {
+    return notFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notFound,
+    TResult Function()? database,
+    TResult Function()? fileSystem,
+    TResult Function()? import,
+    TResult Function()? uuid,
+    required TResult orElse(),
+  }) {
+    if (notFound != null) {
+      return notFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_NotFoundFailure value) notFound,
+    required TResult Function(_DatabaseFailure value) database,
+    required TResult Function(_FileSystemFailure value) fileSystem,
+    required TResult Function(_ImportFailure value) import,
+    required TResult Function(_UuidFailure value) uuid,
+  }) {
+    return notFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NotFoundFailure value)? notFound,
+    TResult? Function(_DatabaseFailure value)? database,
+    TResult? Function(_FileSystemFailure value)? fileSystem,
+    TResult? Function(_ImportFailure value)? import,
+    TResult? Function(_UuidFailure value)? uuid,
+  }) {
+    return notFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotFoundFailure value)? notFound,
+    TResult Function(_DatabaseFailure value)? database,
+    TResult Function(_FileSystemFailure value)? fileSystem,
+    TResult Function(_ImportFailure value)? import,
+    TResult Function(_UuidFailure value)? uuid,
+    required TResult orElse(),
+  }) {
+    if (notFound != null) {
+      return notFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NotFoundFailure extends StoolFailure {
+  const factory _NotFoundFailure() = _$NotFoundFailureImpl;
+  const _NotFoundFailure._() : super._();
 }
 
 /// @nodoc
@@ -130,6 +260,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() notFound,
     required TResult Function() database,
     required TResult Function() fileSystem,
     required TResult Function() import,
@@ -141,6 +272,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? notFound,
     TResult? Function()? database,
     TResult? Function()? fileSystem,
     TResult? Function()? import,
@@ -152,6 +284,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notFound,
     TResult Function()? database,
     TResult Function()? fileSystem,
     TResult Function()? import,
@@ -167,6 +300,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_NotFoundFailure value) notFound,
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
     required TResult Function(_ImportFailure value) import,
@@ -178,6 +312,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NotFoundFailure value)? notFound,
     TResult? Function(_DatabaseFailure value)? database,
     TResult? Function(_FileSystemFailure value)? fileSystem,
     TResult? Function(_ImportFailure value)? import,
@@ -189,6 +324,7 @@ class _$DatabaseFailureImpl extends _DatabaseFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotFoundFailure value)? notFound,
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
     TResult Function(_ImportFailure value)? import,
@@ -248,6 +384,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() notFound,
     required TResult Function() database,
     required TResult Function() fileSystem,
     required TResult Function() import,
@@ -259,6 +396,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? notFound,
     TResult? Function()? database,
     TResult? Function()? fileSystem,
     TResult? Function()? import,
@@ -270,6 +408,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notFound,
     TResult Function()? database,
     TResult Function()? fileSystem,
     TResult Function()? import,
@@ -285,6 +424,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_NotFoundFailure value) notFound,
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
     required TResult Function(_ImportFailure value) import,
@@ -296,6 +436,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NotFoundFailure value)? notFound,
     TResult? Function(_DatabaseFailure value)? database,
     TResult? Function(_FileSystemFailure value)? fileSystem,
     TResult? Function(_ImportFailure value)? import,
@@ -307,6 +448,7 @@ class _$FileSystemFailureImpl extends _FileSystemFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotFoundFailure value)? notFound,
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
     TResult Function(_ImportFailure value)? import,
@@ -366,6 +508,7 @@ class _$ImportFailureImpl extends _ImportFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() notFound,
     required TResult Function() database,
     required TResult Function() fileSystem,
     required TResult Function() import,
@@ -377,6 +520,7 @@ class _$ImportFailureImpl extends _ImportFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? notFound,
     TResult? Function()? database,
     TResult? Function()? fileSystem,
     TResult? Function()? import,
@@ -388,6 +532,7 @@ class _$ImportFailureImpl extends _ImportFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notFound,
     TResult Function()? database,
     TResult Function()? fileSystem,
     TResult Function()? import,
@@ -403,6 +548,7 @@ class _$ImportFailureImpl extends _ImportFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_NotFoundFailure value) notFound,
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
     required TResult Function(_ImportFailure value) import,
@@ -414,6 +560,7 @@ class _$ImportFailureImpl extends _ImportFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NotFoundFailure value)? notFound,
     TResult? Function(_DatabaseFailure value)? database,
     TResult? Function(_FileSystemFailure value)? fileSystem,
     TResult? Function(_ImportFailure value)? import,
@@ -425,6 +572,7 @@ class _$ImportFailureImpl extends _ImportFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotFoundFailure value)? notFound,
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
     TResult Function(_ImportFailure value)? import,
@@ -484,6 +632,7 @@ class _$UuidFailureImpl extends _UuidFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() notFound,
     required TResult Function() database,
     required TResult Function() fileSystem,
     required TResult Function() import,
@@ -495,6 +644,7 @@ class _$UuidFailureImpl extends _UuidFailure {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? notFound,
     TResult? Function()? database,
     TResult? Function()? fileSystem,
     TResult? Function()? import,
@@ -506,6 +656,7 @@ class _$UuidFailureImpl extends _UuidFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? notFound,
     TResult Function()? database,
     TResult Function()? fileSystem,
     TResult Function()? import,
@@ -521,6 +672,7 @@ class _$UuidFailureImpl extends _UuidFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_NotFoundFailure value) notFound,
     required TResult Function(_DatabaseFailure value) database,
     required TResult Function(_FileSystemFailure value) fileSystem,
     required TResult Function(_ImportFailure value) import,
@@ -532,6 +684,7 @@ class _$UuidFailureImpl extends _UuidFailure {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_NotFoundFailure value)? notFound,
     TResult? Function(_DatabaseFailure value)? database,
     TResult? Function(_FileSystemFailure value)? fileSystem,
     TResult? Function(_ImportFailure value)? import,
@@ -543,6 +696,7 @@ class _$UuidFailureImpl extends _UuidFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_NotFoundFailure value)? notFound,
     TResult Function(_DatabaseFailure value)? database,
     TResult Function(_FileSystemFailure value)? fileSystem,
     TResult Function(_ImportFailure value)? import,

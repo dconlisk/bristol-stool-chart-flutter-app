@@ -19,6 +19,9 @@ abstract class IStoolService {
   // Get a list of all stools in the database
   Future<List<StoolDto>> getAllStools();
 
+  // Get a particular stool from the database
+  Future<StoolDto?> getStool(String id);
+
   // Get a stream of data from the database that contains all stools
   Stream<List<StoolDto>> watchStools();
 

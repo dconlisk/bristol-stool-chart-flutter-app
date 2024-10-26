@@ -30,7 +30,7 @@ final graphNotifierProvider = StateNotifierProvider<GraphNotifier, GraphState>(
 );
 
 final addStoolNotifierProvider =
-    StateNotifierProvider<AddStoolNotifier, AddStoolState>(
+    StateNotifierProvider.autoDispose<AddStoolNotifier, AddStoolState>(
   (ref) => AddStoolNotifier(
     ref.watch(stoolRepositoryProvider),
   ),

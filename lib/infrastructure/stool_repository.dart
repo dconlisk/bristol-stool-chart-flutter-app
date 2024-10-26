@@ -63,11 +63,13 @@ class StoolRepository implements IStoolRepository {
   }
 
   @override
-  Future<Either<StoolFailure, Stool>> getStool(int index) async {
+  Future<Either<StoolFailure, Stool>> getStool(String id) async {
     try {
-      final results = await _stoolService.getAllStools();
-      results.sort((a, b) => a.dateTime.compareTo(b.dateTime));
-      return right(results.map((e) => e.toDomain()).toList()[index]);
+      final result = await _stoolService.getStool(id);
+      if (result == null) {
+        return left(const StoolFailure.notFound());
+      }
+      return right(result.toDomain());
     } catch (e) {
       return left(const StoolFailure.database());
     }

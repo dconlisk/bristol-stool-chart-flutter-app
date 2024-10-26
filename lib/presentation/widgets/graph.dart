@@ -20,15 +20,23 @@ class Graph extends StatefulWidget {
 class _GraphState extends State<Graph> {
   @override
   Widget build(BuildContext context) {
-    // fours is a fake list of events that I'm using to get a green line across the ideal value in the graph.
-    var fours = <Stool>[];
-    fours.add(Stool.empty().copyWith(dateTime: widget.stools[0].dateTime));
-
-    // need to work out a sensible value for the last event so that the smileys have space next to the real line graph.
+    // Work out a sensible margin for the last event so that the smileys have space next to the real line graph.
     var totalTimeInData = widget
             .stools[widget.stools.length - 1].dateTime.millisecondsSinceEpoch -
         widget.stools[0].dateTime.millisecondsSinceEpoch;
-    var durationToAdd = totalTimeInData == 0 ? 1000 : totalTimeInData ~/ 12;
+    var graphPaddingInMs = totalTimeInData == 0 ? 1000 : totalTimeInData ~/ 12;
+
+    // fours is a fake list of events that I'm using to get a green line across the ideal value in the graph.
+    var fours = <Stool>[];
+    fours.add(Stool.empty().copyWith(
+        dateTime: widget.stools[0].dateTime
+            .subtract(Duration(milliseconds: graphPaddingInMs))));
+    fours.add(
+      Stool.empty().copyWith(
+        dateTime: widget.stools[widget.stools.length - 1].dateTime
+            .add(Duration(milliseconds: graphPaddingInMs)),
+      ),
+    );
 
     // use a different label style for the graph depending on the data in it
     const twoDays = 2 * 24 * 60 * 60 * 1000;
@@ -37,13 +45,6 @@ class _GraphState extends State<Graph> {
             AppLocalizations.of(context)!.dateTimeFormatGraphMonthsDays)
         : DateFormat(
             AppLocalizations.of(context)!.dateTimeFormatGraphHoursMinutes);
-
-    fours.add(
-      Stool.empty().copyWith(
-        dateTime: widget.stools[widget.stools.length - 1].dateTime
-            .add(Duration(milliseconds: durationToAdd)),
-      ),
-    );
 
     return SafeArea(
       child: SfCartesianChart(
@@ -84,7 +85,7 @@ class _GraphState extends State<Graph> {
           axisLine: const AxisLine(
             width: 0,
           ),
-          dateFormat: graphDateFormat,
+          //dateFormat: graphDateFormat,
           intervalType: DateTimeIntervalType.auto,
         ),
         primaryYAxis: NumericAxis(

@@ -5,6 +5,7 @@ part 'stool_failure.freezed.dart';
 @freezed
 class StoolFailure with _$StoolFailure {
   const StoolFailure._();
+  const factory StoolFailure.notFound() = _NotFoundFailure;
   const factory StoolFailure.database() = _DatabaseFailure;
   const factory StoolFailure.fileSystem() = _FileSystemFailure;
   const factory StoolFailure.import() = _ImportFailure;

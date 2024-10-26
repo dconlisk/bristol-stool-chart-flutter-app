@@ -41,18 +41,18 @@ class AddStoolNotifier extends StateNotifier<AddStoolState> {
           ),
         );
 
-  Future<void> initialise(int? index) async {
+  Future<void> initialise(String? id) async {
     final prefs = await SharedPreferences.getInstance();
     _showBloodOption = prefs.getBool(sharedPreferencesBloodSettingKey) ?? false;
 
-    if (index == null) {
+    if (id == null) {
       final newStool = Stool.empty();
       state = AddStoolState.initialised(
         newStool,
         _showBloodOption,
       );
     } else {
-      final failureOrStool = await _stoolRepository.getStool(index);
+      final failureOrStool = await _stoolRepository.getStool(id);
 
       failureOrStool.fold(
         (l) => state = AddStoolState.error(

@@ -19,7 +19,7 @@ abstract class IStoolRepository {
   Future<Either<StoolFailure, List<Stool>>> getAllStools();
 
   // Get a particular stool
-  Future<Either<StoolFailure, Stool>> getStool(int index);
+  Future<Either<StoolFailure, Stool>> getStool(String id);
 
   // Get a stream of data from the service that contains all stools
   Stream<List<Stool>> watchStools();

@@ -23,8 +23,7 @@ class StoolLocalService implements IStoolService {
 
   @override
   Future<void> editStoolByDateTime(StoolDto stool) async {
-    print(stool);
-    final count = await _store.update(
+    await _store.update(
       _sembastDatabase.instance,
       stool.toJson(),
       finder: Finder(
@@ -35,25 +34,22 @@ class StoolLocalService implements IStoolService {
         }),
       ),
     );
-    print(count);
   }
 
   @override
   Future<void> editStool(StoolDto stool) async {
-    print(stool);
-    final count = await _store.update(
+    await _store.update(
       _sembastDatabase.instance,
       stool.toJson(),
       finder: Finder(
         filter: Filter.equals('uuid', stool.uuid),
       ),
     );
-    print(count);
   }
 
   @override
   Future<void> deleteStool(StoolDto stool) async {
-    final count = await _store.delete(
+    await _store.delete(
       _sembastDatabase.instance,
       finder: Finder(
         filter: Filter.custom((record) {
@@ -63,7 +59,6 @@ class StoolLocalService implements IStoolService {
         }),
       ),
     );
-    print(count);
   }
 
   @override
@@ -75,6 +70,17 @@ class StoolLocalService implements IStoolService {
   Future<List<StoolDto>> getAllStools() async {
     final snapshots = await _store.find(_sembastDatabase.instance);
     return snapshots.map((e) => StoolDto.fromJson(e.value)).toList();
+  }
+
+  @override
+  Future<StoolDto?> getStool(String id) async {
+    final finder = Finder(
+      filter: Filter.equals('uuid', id),
+    );
+
+    final snapshot =
+        await _store.findFirst(_sembastDatabase.instance, finder: finder);
+    return snapshot != null ? StoolDto.fromJson(snapshot.value) : null;
   }
 
   @override
