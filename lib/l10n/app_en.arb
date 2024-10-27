@@ -3,9 +3,17 @@
     "@appTitle": {
       "description": "The title of the app"
     },
-    "tapStoolsMessage": "You can tap on a stool in the graph to view or edit the details, or to remove it.",
-    "@tapStoolsMessage": {
-      "description": "Tooltip shown over the graph after a user adds their first stool"
+    "newFeaturesTitle": "New Features Available!",
+    "@newFeaturesTitle": {
+      "description": "The title of the dialog shown to a user on the first run of a new version of the app"
+    },
+    "newFeature1": "Tap on a stool in the graph to view or edit the details, or to remove it.",
+    "@newFeature1": {
+      "description": "The first new feature in the list"
+    },
+    "newFeature2": "Add optional notes when adding a stool. The notes are included when you share your data.",
+    "@newFeature2": {
+      "description": "The second new feature in the list"
     },
     "errorOccurredTitle": "An error occurred",
     "@errorOccurredTitle": {
@@ -95,7 +103,7 @@
     "@newFeaturesHeading": {
       "description": "New features heading for the about page content"
     },
-    "newFeaturesParagraph1": "You can now tap on an entry on the graph to edit or remove it. You can also add optional notes. These have been the most requested features for the app. I hope you find them useful!",
+    "newFeaturesParagraph1": "You can now tap on an entry on the graph to view, edit or remove it. You can also add optional notes. These have been the most requested features for the app. I hope you find them useful!",
     "@newFeaturesParagraph1": {
       "description": "New features paragraph 1 for the about page content"
     },
