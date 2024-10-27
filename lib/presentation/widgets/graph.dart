@@ -30,7 +30,7 @@ class _GraphState extends State<Graph> {
     var fours = <Stool>[];
     fours.add(Stool.empty().copyWith(
         dateTime: widget.stools[0].dateTime
-            .subtract(Duration(milliseconds: (graphPaddingInMs / 3).round()))));
+            .subtract(Duration(milliseconds: (graphPaddingInMs / 2).round()))));
     fours.add(
       Stool.empty().copyWith(
         dateTime: widget.stools[widget.stools.length - 1].dateTime
@@ -49,6 +49,7 @@ class _GraphState extends State<Graph> {
     return SafeArea(
       child: SfCartesianChart(
         backgroundColor: Colors.white,
+        plotAreaBorderColor: Colors.white,
         margin: AppPadding.regular,
         zoomPanBehavior: ZoomPanBehavior(
           enablePanning: true,
@@ -92,6 +93,7 @@ class _GraphState extends State<Graph> {
           minimum: 1,
           maximum: 7,
           interval: 1,
+          plotOffset: 20,
           majorTickLines: const MajorTickLines(
             color: Colors.white,
           ),
@@ -180,13 +182,20 @@ class _GraphState extends State<Graph> {
             color: Colors.black,
             dataSource: widget.stools,
             onPointTap: (pointInteractionDetails) {
-              final chosenStool = widget
-                  .stools[pointInteractionDetails.viewportPointIndex!.toInt()];
-              context.router.push(
-                AddRoute(
-                  stoolId: chosenStool.id,
-                ),
-              );
+              var index = pointInteractionDetails.viewportPointIndex!.toInt();
+              // Sometimes the graph gives a viewportPointIndex of -1, so we'll use the pointIndex instead.
+              if (index == -1) {
+                index = pointInteractionDetails.pointIndex!;
+              }
+
+              if (index >= 0 && index < widget.stools.length) {
+                final chosenStool = widget.stools[index];
+                context.router.push(
+                  AddRoute(
+                    stoolId: chosenStool.id,
+                  ),
+                );
+              }
             },
             xValueMapper: (Stool event, int index) => event.dateTime,
             yValueMapper: (Stool event, int index) => event.type,
