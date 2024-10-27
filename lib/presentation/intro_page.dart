@@ -96,7 +96,7 @@ class IntroPage extends ConsumerWidget {
       final state = ref.watch(introNotifierProvider);
 
       state.maybeMap(
-        importFailed: (e) {
+        updateFailed: (e) {
           showDialog<AlertDialog>(
             context: context,
             builder: (_) => AlertDialog(

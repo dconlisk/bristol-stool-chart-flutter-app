@@ -24,9 +24,6 @@ abstract class IStoolRepository {
   // Get a stream of data from the service that contains all stools
   Stream<List<Stool>> watchStools();
 
-  // Import data from previous version of the app if it exists
-  Future<Either<StoolFailure, bool>> importOldDatabase();
-
-  // Ensure all stools have a UUID
+  // Ensure all stools have a UUID (check existing data and add UUIDs if they are missing)
   Future<Either<StoolFailure, bool>> initialiseUuids();
 }

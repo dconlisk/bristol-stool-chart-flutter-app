@@ -168,7 +168,6 @@ class GraphNotifier extends StateNotifier<GraphState> {
   String _escapeCsvField(String? field) {
     if (field == null) return '';
 
-    print(field);
     // Check if the field needs escaping
     bool needsEscaping = field.contains('"') ||
         field.contains(',') ||

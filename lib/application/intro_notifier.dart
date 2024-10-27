@@ -12,7 +12,7 @@ class IntroState with _$IntroState {
   const factory IntroState.initial() = _Initial;
   const factory IntroState.hasSeenIntro() = _HasSeenIntro;
   const factory IntroState.hasNotSeenIntro() = _HasNotSeenIntro;
-  const factory IntroState.importFailed() = _ImportFailed;
+  const factory IntroState.updateFailed() = _UpdateFailed;
 }
 
 class IntroNotifier extends StateNotifier<IntroState> {
@@ -28,15 +28,15 @@ class IntroNotifier extends StateNotifier<IntroState> {
     final hasSeenIntro =
         prefs.getBool(sharedPreferencesHasSeenIntroKey) ?? false;
 
-    // Import data from older version of the app, if it exists
-    final result = await _stoolRepository.importOldDatabase();
+    // Ensure all stools have a UUID (check existing data and add UUIDs if they are missing)
+    final result = await _stoolRepository.initialiseUuids();
 
     result.fold((failure) {
       // Alert the user if there was a problem importing their old data, and show the intro (i.e. full app reset)
-      state = const IntroState.importFailed();
+      state = const IntroState.updateFailed();
       //state = const IntroState.hasNotSeenIntro();
-    }, (dataWasImported) {
-      if (dataWasImported) {
+    }, (dataWasUpdated) {
+      if (dataWasUpdated) {
         // If the user had data, then don't show the intro to them again
         prefs.setBool(sharedPreferencesHasSeenIntroKey, true);
         state = const IntroState.hasSeenIntro();
@@ -47,8 +47,5 @@ class IntroNotifier extends StateNotifier<IntroState> {
             : const IntroState.hasNotSeenIntro();
       }
     });
-
-    // Ensure all stools have a UUID
-    await _stoolRepository.initialiseUuids();
   }
 }

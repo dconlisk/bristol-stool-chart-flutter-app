@@ -21,7 +21,7 @@ mixin _$IntroState {
     required TResult Function() initial,
     required TResult Function() hasSeenIntro,
     required TResult Function() hasNotSeenIntro,
-    required TResult Function() importFailed,
+    required TResult Function() updateFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$IntroState {
     TResult? Function()? initial,
     TResult? Function()? hasSeenIntro,
     TResult? Function()? hasNotSeenIntro,
-    TResult? Function()? importFailed,
+    TResult? Function()? updateFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$IntroState {
     TResult Function()? initial,
     TResult Function()? hasSeenIntro,
     TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult Function()? updateFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -46,7 +46,7 @@ mixin _$IntroState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_HasSeenIntro value) hasSeenIntro,
     required TResult Function(_HasNotSeenIntro value) hasNotSeenIntro,
-    required TResult Function(_ImportFailed value) importFailed,
+    required TResult Function(_UpdateFailed value) updateFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,7 +54,7 @@ mixin _$IntroState {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_HasSeenIntro value)? hasSeenIntro,
     TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult? Function(_ImportFailed value)? importFailed,
+    TResult? Function(_UpdateFailed value)? updateFailed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,7 +62,7 @@ mixin _$IntroState {
     TResult Function(_Initial value)? initial,
     TResult Function(_HasSeenIntro value)? hasSeenIntro,
     TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult Function(_UpdateFailed value)? updateFailed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,7 +133,7 @@ class _$InitialImpl extends _Initial {
     required TResult Function() initial,
     required TResult Function() hasSeenIntro,
     required TResult Function() hasNotSeenIntro,
-    required TResult Function() importFailed,
+    required TResult Function() updateFailed,
   }) {
     return initial();
   }
@@ -144,7 +144,7 @@ class _$InitialImpl extends _Initial {
     TResult? Function()? initial,
     TResult? Function()? hasSeenIntro,
     TResult? Function()? hasNotSeenIntro,
-    TResult? Function()? importFailed,
+    TResult? Function()? updateFailed,
   }) {
     return initial?.call();
   }
@@ -155,7 +155,7 @@ class _$InitialImpl extends _Initial {
     TResult Function()? initial,
     TResult Function()? hasSeenIntro,
     TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult Function()? updateFailed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -170,7 +170,7 @@ class _$InitialImpl extends _Initial {
     required TResult Function(_Initial value) initial,
     required TResult Function(_HasSeenIntro value) hasSeenIntro,
     required TResult Function(_HasNotSeenIntro value) hasNotSeenIntro,
-    required TResult Function(_ImportFailed value) importFailed,
+    required TResult Function(_UpdateFailed value) updateFailed,
   }) {
     return initial(this);
   }
@@ -181,7 +181,7 @@ class _$InitialImpl extends _Initial {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_HasSeenIntro value)? hasSeenIntro,
     TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult? Function(_ImportFailed value)? importFailed,
+    TResult? Function(_UpdateFailed value)? updateFailed,
   }) {
     return initial?.call(this);
   }
@@ -192,7 +192,7 @@ class _$InitialImpl extends _Initial {
     TResult Function(_Initial value)? initial,
     TResult Function(_HasSeenIntro value)? hasSeenIntro,
     TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult Function(_UpdateFailed value)? updateFailed,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -251,7 +251,7 @@ class _$HasSeenIntroImpl extends _HasSeenIntro {
     required TResult Function() initial,
     required TResult Function() hasSeenIntro,
     required TResult Function() hasNotSeenIntro,
-    required TResult Function() importFailed,
+    required TResult Function() updateFailed,
   }) {
     return hasSeenIntro();
   }
@@ -262,7 +262,7 @@ class _$HasSeenIntroImpl extends _HasSeenIntro {
     TResult? Function()? initial,
     TResult? Function()? hasSeenIntro,
     TResult? Function()? hasNotSeenIntro,
-    TResult? Function()? importFailed,
+    TResult? Function()? updateFailed,
   }) {
     return hasSeenIntro?.call();
   }
@@ -273,7 +273,7 @@ class _$HasSeenIntroImpl extends _HasSeenIntro {
     TResult Function()? initial,
     TResult Function()? hasSeenIntro,
     TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult Function()? updateFailed,
     required TResult orElse(),
   }) {
     if (hasSeenIntro != null) {
@@ -288,7 +288,7 @@ class _$HasSeenIntroImpl extends _HasSeenIntro {
     required TResult Function(_Initial value) initial,
     required TResult Function(_HasSeenIntro value) hasSeenIntro,
     required TResult Function(_HasNotSeenIntro value) hasNotSeenIntro,
-    required TResult Function(_ImportFailed value) importFailed,
+    required TResult Function(_UpdateFailed value) updateFailed,
   }) {
     return hasSeenIntro(this);
   }
@@ -299,7 +299,7 @@ class _$HasSeenIntroImpl extends _HasSeenIntro {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_HasSeenIntro value)? hasSeenIntro,
     TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult? Function(_ImportFailed value)? importFailed,
+    TResult? Function(_UpdateFailed value)? updateFailed,
   }) {
     return hasSeenIntro?.call(this);
   }
@@ -310,7 +310,7 @@ class _$HasSeenIntroImpl extends _HasSeenIntro {
     TResult Function(_Initial value)? initial,
     TResult Function(_HasSeenIntro value)? hasSeenIntro,
     TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult Function(_UpdateFailed value)? updateFailed,
     required TResult orElse(),
   }) {
     if (hasSeenIntro != null) {
@@ -369,7 +369,7 @@ class _$HasNotSeenIntroImpl extends _HasNotSeenIntro {
     required TResult Function() initial,
     required TResult Function() hasSeenIntro,
     required TResult Function() hasNotSeenIntro,
-    required TResult Function() importFailed,
+    required TResult Function() updateFailed,
   }) {
     return hasNotSeenIntro();
   }
@@ -380,7 +380,7 @@ class _$HasNotSeenIntroImpl extends _HasNotSeenIntro {
     TResult? Function()? initial,
     TResult? Function()? hasSeenIntro,
     TResult? Function()? hasNotSeenIntro,
-    TResult? Function()? importFailed,
+    TResult? Function()? updateFailed,
   }) {
     return hasNotSeenIntro?.call();
   }
@@ -391,7 +391,7 @@ class _$HasNotSeenIntroImpl extends _HasNotSeenIntro {
     TResult Function()? initial,
     TResult Function()? hasSeenIntro,
     TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult Function()? updateFailed,
     required TResult orElse(),
   }) {
     if (hasNotSeenIntro != null) {
@@ -406,7 +406,7 @@ class _$HasNotSeenIntroImpl extends _HasNotSeenIntro {
     required TResult Function(_Initial value) initial,
     required TResult Function(_HasSeenIntro value) hasSeenIntro,
     required TResult Function(_HasNotSeenIntro value) hasNotSeenIntro,
-    required TResult Function(_ImportFailed value) importFailed,
+    required TResult Function(_UpdateFailed value) updateFailed,
   }) {
     return hasNotSeenIntro(this);
   }
@@ -417,7 +417,7 @@ class _$HasNotSeenIntroImpl extends _HasNotSeenIntro {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_HasSeenIntro value)? hasSeenIntro,
     TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult? Function(_ImportFailed value)? importFailed,
+    TResult? Function(_UpdateFailed value)? updateFailed,
   }) {
     return hasNotSeenIntro?.call(this);
   }
@@ -428,7 +428,7 @@ class _$HasNotSeenIntroImpl extends _HasNotSeenIntro {
     TResult Function(_Initial value)? initial,
     TResult Function(_HasSeenIntro value)? hasSeenIntro,
     TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult Function(_UpdateFailed value)? updateFailed,
     required TResult orElse(),
   }) {
     if (hasNotSeenIntro != null) {
@@ -444,18 +444,18 @@ abstract class _HasNotSeenIntro extends IntroState {
 }
 
 /// @nodoc
-abstract class _$$ImportFailedImplCopyWith<$Res> {
-  factory _$$ImportFailedImplCopyWith(
-          _$ImportFailedImpl value, $Res Function(_$ImportFailedImpl) then) =
-      __$$ImportFailedImplCopyWithImpl<$Res>;
+abstract class _$$UpdateFailedImplCopyWith<$Res> {
+  factory _$$UpdateFailedImplCopyWith(
+          _$UpdateFailedImpl value, $Res Function(_$UpdateFailedImpl) then) =
+      __$$UpdateFailedImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$ImportFailedImplCopyWithImpl<$Res>
-    extends _$IntroStateCopyWithImpl<$Res, _$ImportFailedImpl>
-    implements _$$ImportFailedImplCopyWith<$Res> {
-  __$$ImportFailedImplCopyWithImpl(
-      _$ImportFailedImpl _value, $Res Function(_$ImportFailedImpl) _then)
+class __$$UpdateFailedImplCopyWithImpl<$Res>
+    extends _$IntroStateCopyWithImpl<$Res, _$UpdateFailedImpl>
+    implements _$$UpdateFailedImplCopyWith<$Res> {
+  __$$UpdateFailedImplCopyWithImpl(
+      _$UpdateFailedImpl _value, $Res Function(_$UpdateFailedImpl) _then)
       : super(_value, _then);
 
   /// Create a copy of IntroState
@@ -464,18 +464,18 @@ class __$$ImportFailedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$ImportFailedImpl extends _ImportFailed {
-  const _$ImportFailedImpl() : super._();
+class _$UpdateFailedImpl extends _UpdateFailed {
+  const _$UpdateFailedImpl() : super._();
 
   @override
   String toString() {
-    return 'IntroState.importFailed()';
+    return 'IntroState.updateFailed()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ImportFailedImpl);
+        (other.runtimeType == runtimeType && other is _$UpdateFailedImpl);
   }
 
   @override
@@ -487,9 +487,9 @@ class _$ImportFailedImpl extends _ImportFailed {
     required TResult Function() initial,
     required TResult Function() hasSeenIntro,
     required TResult Function() hasNotSeenIntro,
-    required TResult Function() importFailed,
+    required TResult Function() updateFailed,
   }) {
-    return importFailed();
+    return updateFailed();
   }
 
   @override
@@ -498,9 +498,9 @@ class _$ImportFailedImpl extends _ImportFailed {
     TResult? Function()? initial,
     TResult? Function()? hasSeenIntro,
     TResult? Function()? hasNotSeenIntro,
-    TResult? Function()? importFailed,
+    TResult? Function()? updateFailed,
   }) {
-    return importFailed?.call();
+    return updateFailed?.call();
   }
 
   @override
@@ -509,11 +509,11 @@ class _$ImportFailedImpl extends _ImportFailed {
     TResult Function()? initial,
     TResult Function()? hasSeenIntro,
     TResult Function()? hasNotSeenIntro,
-    TResult Function()? importFailed,
+    TResult Function()? updateFailed,
     required TResult orElse(),
   }) {
-    if (importFailed != null) {
-      return importFailed();
+    if (updateFailed != null) {
+      return updateFailed();
     }
     return orElse();
   }
@@ -524,9 +524,9 @@ class _$ImportFailedImpl extends _ImportFailed {
     required TResult Function(_Initial value) initial,
     required TResult Function(_HasSeenIntro value) hasSeenIntro,
     required TResult Function(_HasNotSeenIntro value) hasNotSeenIntro,
-    required TResult Function(_ImportFailed value) importFailed,
+    required TResult Function(_UpdateFailed value) updateFailed,
   }) {
-    return importFailed(this);
+    return updateFailed(this);
   }
 
   @override
@@ -535,9 +535,9 @@ class _$ImportFailedImpl extends _ImportFailed {
     TResult? Function(_Initial value)? initial,
     TResult? Function(_HasSeenIntro value)? hasSeenIntro,
     TResult? Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult? Function(_ImportFailed value)? importFailed,
+    TResult? Function(_UpdateFailed value)? updateFailed,
   }) {
-    return importFailed?.call(this);
+    return updateFailed?.call(this);
   }
 
   @override
@@ -546,17 +546,17 @@ class _$ImportFailedImpl extends _ImportFailed {
     TResult Function(_Initial value)? initial,
     TResult Function(_HasSeenIntro value)? hasSeenIntro,
     TResult Function(_HasNotSeenIntro value)? hasNotSeenIntro,
-    TResult Function(_ImportFailed value)? importFailed,
+    TResult Function(_UpdateFailed value)? updateFailed,
     required TResult orElse(),
   }) {
-    if (importFailed != null) {
-      return importFailed(this);
+    if (updateFailed != null) {
+      return updateFailed(this);
     }
     return orElse();
   }
 }
 
-abstract class _ImportFailed extends IntroState {
-  const factory _ImportFailed() = _$ImportFailedImpl;
-  const _ImportFailed._() : super._();
+abstract class _UpdateFailed extends IntroState {
+  const factory _UpdateFailed() = _$UpdateFailedImpl;
+  const _UpdateFailed._() : super._();
 }

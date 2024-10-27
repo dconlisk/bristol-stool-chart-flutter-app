@@ -82,16 +82,6 @@ class StoolRepository implements IStoolRepository {
   }
 
   @override
-  Future<Either<StoolFailure, bool>> importOldDatabase() async {
-    try {
-      final result = await _stoolService.importOldDatabase();
-      return Right(result);
-    } catch (e) {
-      return const Left(StoolFailure.import());
-    }
-  }
-
-  @override
   Future<Either<StoolFailure, bool>> initialiseUuids() async {
     try {
       final result = await _stoolService.getAllStools();

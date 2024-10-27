@@ -2,8 +2,6 @@ import 'package:bristol_stool_chart/infrastructure/sembast_database.dart';
 import 'package:bristol_stool_chart/infrastructure/stool_dto.dart';
 import 'package:bristol_stool_chart/infrastructure/i_stool_service.dart';
 import 'package:sembast/sembast.dart';
-import 'package:sqflite/sqflite.dart';
-import 'package:uuid/uuid.dart';
 
 class StoolLocalService implements IStoolService {
   final SembastDatabase _sembastDatabase;
@@ -90,43 +88,5 @@ class StoolLocalService implements IStoolService {
       results.sort((a, b) => a.dateTime.compareTo(b.dateTime));
       return results;
     });
-  }
-
-  @override
-  Future<bool> importOldDatabase() async {
-    final oldDatabaseDirectory = await getDatabasesPath();
-    final oldDatabaseFilePath = '$oldDatabaseDirectory/events.db';
-
-    final dbExists = await databaseExists(oldDatabaseFilePath);
-
-    if (dbExists) {
-      final oldDatabase = await openDatabase(oldDatabaseFilePath);
-
-      if (oldDatabase.isOpen) {
-        final data = await oldDatabase.query('events');
-        await Future.wait(data.map((stool) => _importStool(stool)));
-      }
-
-      // Finally delete the old database file
-      await deleteDatabase(oldDatabaseFilePath);
-    }
-
-    return dbExists;
-  }
-
-  // Import a data item from the old database as a stool into our new database
-  Future<void> _importStool(Map<String, dynamic> stoolData) async {
-    try {
-      final stool = StoolDto(
-        uuid: Uuid().v4().toString(),
-        type: int.parse(stoolData['stoolType'].toString()),
-        dateTime: DateTime.parse(stoolData['dateTime'].toString()),
-        hasBlood: stoolData['bloodInStool'].toString() == '1',
-        notes: '',
-      );
-      await addStool(stool);
-    } catch (e) {
-      // silently fail to import any item that causes an exception
-    }
   }
 }

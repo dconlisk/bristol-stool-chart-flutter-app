@@ -29,7 +29,7 @@ class AppWidget extends ConsumerWidget {
         (previousState, currentState) {
       currentState.map(
         initial: (_) {},
-        importFailed: (_) async {
+        updateFailed: (_) async {
           await _appRouter.pushAndPopUntil(
             const IntroRoute(),
             predicate: (route) => false,
