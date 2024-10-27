@@ -195,7 +195,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                       ),
                     ),
                     Padding(
-                      padding: AppPadding.regular,
+                      padding: AppPadding.small,
                       child: ElevatedButton(
                         onPressed: () {
                           DatePicker.showDateTimePicker(
@@ -229,7 +229,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Padding(
-                          padding: AppPadding.regular,
+                          padding: AppPadding.small,
                           child: ElevatedButton(
                             child: Text(
                               AppLocalizations.of(context)!.saveButtonText,

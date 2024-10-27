@@ -141,8 +141,8 @@ class GraphNotifier extends StateNotifier<GraphState> {
       var rows = stools
           .map(
             (stool) => showBloodOption
-                ? '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? localizations.dataYesIndicator : localizations.dataNoIndicator}, ${stool.notes}'
-                : '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${stool.notes.replaceAll(',', ' ')}',
+                ? '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${stool.hasBlood ? localizations.dataYesIndicator : localizations.dataNoIndicator}, ${_escapeCsvField(stool.notes)}'
+                : '${DateFormat(localizations.dateTimeFormatFull).format(stool.dateTime)},${stool.type}, ${_escapeCsvField(stool.notes)}',
           )
           .toList();
 
@@ -163,5 +163,22 @@ class GraphNotifier extends StateNotifier<GraphState> {
     } catch (e) {
       return null;
     }
+  }
+
+  String _escapeCsvField(String? field) {
+    if (field == null) return '';
+
+    print(field);
+    // Check if the field needs escaping
+    bool needsEscaping = field.contains('"') ||
+        field.contains(',') ||
+        field.contains('\n') ||
+        field.contains('\r');
+
+    if (!needsEscaping) return field;
+
+    // Double up any quotes and wrap the whole field in quotes
+    String escaped = field.replaceAll('"', '""');
+    return '"$escaped"';
   }
 }
