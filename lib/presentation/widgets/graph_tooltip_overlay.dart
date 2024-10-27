@@ -2,7 +2,6 @@ import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class GraphTooltipOverlay extends StatefulWidget {
   final Widget child;
