@@ -180,6 +180,9 @@ class _AddPageState extends ConsumerState<AddPage> {
                               ),
                               maxLines: 3,
                               initialValue: state.stool.notes,
+                              onTapOutside: (event) {
+                                FocusManager.instance.primaryFocus?.unfocus();
+                              },
                               onChanged: (value) async {
                                 await ref
                                     .read(addStoolNotifierProvider.notifier)

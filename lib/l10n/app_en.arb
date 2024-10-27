@@ -3,6 +3,10 @@
     "@appTitle": {
       "description": "The title of the app"
     },
+    "tapStoolsMessage": "You can tap on a stool in the graph to view or edit the details, or to remove it.",
+    "@tapStoolsMessage": {
+      "description": "Tooltip shown over the graph after a user adds their first stool"
+    },
     "errorOccurredTitle": "An error occurred",
     "@errorOccurredTitle": {
       "description": "Title displayed when an error occurs in the app"
@@ -243,7 +247,7 @@
     "@introPageTitle2": {
       "description": "Title for slide 2 for the app intro slider"
     },
-    "introPageDescription2": "Use the add button on the graph to add a stool. Swipe left or right until you find the right image. Set the time if you need to change it. You can also use the Settings section to enable the blood in stool tracking feature if that is of use to you. Tap the save button to save and return to the graph.",
+    "introPageDescription2": "Use the add button on the graph to add a stool. Swipe left or right until you find the right image. Set the time if you need to change it and add optional notes. You can also use the Settings section to enable the blood check feature if that is of use to you. Tap the save button to save and return to the graph.",
     "@introPageDescription2": {
       "description": "Description for slide 2 for the app intro slider"
     },

@@ -5,6 +5,7 @@ import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:bristol_stool_chart/presentation/widgets/graph.dart';
+import 'package:bristol_stool_chart/presentation/widgets/graph_tooltip_overlay.dart';
 import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
@@ -97,8 +98,13 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                           flex: 3,
                           child: RepaintBoundary(
                             key: _graphKey,
-                            child: Graph(
-                              stools: state.stools,
+                            child: GraphTooltipOverlay(
+                              showOverlay: state.stools.length == 1,
+                              message: AppLocalizations.of(context)!
+                                  .tapStoolsMessage,
+                              child: Graph(
+                                stools: state.stools,
+                              ),
                             ),
                           ),
                         ),
