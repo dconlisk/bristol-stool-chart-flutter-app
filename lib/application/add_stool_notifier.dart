@@ -41,18 +41,30 @@ class AddStoolNotifier extends StateNotifier<AddStoolState> {
           ),
         );
 
-  Future<void> initialise() async {
+  Future<void> initialise(String? id) async {
     final prefs = await SharedPreferences.getInstance();
     _showBloodOption = prefs.getBool(sharedPreferencesBloodSettingKey) ?? false;
-    final newStool = Stool(
-      dateTime: DateTime.now(),
-      hasBlood: false,
-      type: 4,
-    );
-    state = AddStoolState.initialised(
-      newStool,
-      _showBloodOption,
-    );
+
+    if (id == null) {
+      final newStool = Stool.empty();
+      state = AddStoolState.initialised(
+        newStool,
+        _showBloodOption,
+      );
+    } else {
+      final failureOrStool = await _stoolRepository.getStool(id);
+
+      failureOrStool.fold(
+        (l) => state = AddStoolState.error(
+          state.stool,
+          _showBloodOption,
+        ),
+        (r) => state = AddStoolState.initialised(
+          r,
+          _showBloodOption,
+        ),
+      );
+    }
   }
 
   Future<void> updateStool(Stool stool) async {
@@ -62,8 +74,38 @@ class AddStoolNotifier extends StateNotifier<AddStoolState> {
     );
   }
 
-  Future<void> saveStool() async {
+  Future<void> addStool() async {
     final result = await _stoolRepository.addStool(state.stool);
+
+    result.fold(
+      (l) => state = AddStoolState.error(
+        state.stool,
+        _showBloodOption,
+      ),
+      (r) => state = AddStoolState.success(
+        state.stool,
+        _showBloodOption,
+      ),
+    );
+  }
+
+  Future<void> editStool() async {
+    final result = await _stoolRepository.editStool(state.stool);
+
+    result.fold(
+      (l) => state = AddStoolState.error(
+        state.stool,
+        _showBloodOption,
+      ),
+      (r) => state = AddStoolState.success(
+        state.stool,
+        _showBloodOption,
+      ),
+    );
+  }
+
+  Future<void> deleteStool() async {
+    final result = await _stoolRepository.deleteStool(state.stool);
 
     result.fold(
       (l) => state = AddStoolState.error(

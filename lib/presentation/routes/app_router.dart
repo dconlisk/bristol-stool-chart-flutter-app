@@ -6,6 +6,7 @@ import 'package:bristol_stool_chart/presentation/graph_page.dart';
 import 'package:bristol_stool_chart/presentation/intro_page.dart';
 import 'package:bristol_stool_chart/presentation/settings_page.dart';
 import 'package:bristol_stool_chart/presentation/splash_page.dart';
+import 'package:flutter/material.dart';
 
 part 'app_router.gr.dart';
 

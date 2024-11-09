@@ -3,6 +3,18 @@
     "@appTitle": {
       "description": "The title of the app"
     },
+    "newFeaturesTitle": "New Features Available!",
+    "@newFeaturesTitle": {
+      "description": "The title of the dialog shown to a user on the first run of a new version of the app"
+    },
+    "newFeature1": "Tap on a stool in the graph to view or edit the details, or to remove it.",
+    "@newFeature1": {
+      "description": "The first new feature in the list"
+    },
+    "newFeature2": "Add optional notes when adding a stool. The notes are included when you share your data.",
+    "@newFeature2": {
+      "description": "The second new feature in the list"
+    },
     "errorOccurredTitle": "An error occurred",
     "@errorOccurredTitle": {
       "description": "Title displayed when an error occurs in the app"
@@ -31,6 +43,10 @@
     "@dataImportErrorOccurredMessage": {
       "description": "Displayed when an error occurs importing data from old versions of the app"
     },
+    "stoolEditedSuccessMessage": "Stool edited successfully!",
+    "@stoolEditedSuccessMessage": {
+      "description": "Displayed when an stool is edited"
+    },
     "stoolSavedSuccessMessage": "Stool added successfully!",
     "@stoolSavedSuccessMessage": {
       "description": "Displayed when an stool is saved"
@@ -42,6 +58,10 @@
     "saveButtonText": "SAVE",
     "@saveButtonText": {
       "description": "The text for the save button"
+    },
+    "deleteButtonText": "DELETE",
+    "@deleteButtonText": {
+      "description": "The text for the delete button"
     },
     "graphPageTitle": "Your Graph",
     "@graphPageTitle": {
@@ -67,13 +87,25 @@
     "@addStoolPageTitle": {
       "description": "The title for the add stool page"
     },
+    "editStoolPageTitle": "Edit Stool",
+    "@editStoolPageTitle": {
+      "description": "The title for the edit stool page"
+    },
     "aboutPageHeading1": "What is the Bristol Stool Chart?",
     "@aboutPageHeading1": {
       "description": "Headline 1 for the about page content"
     },
-    "aboutPageHeading2": "How does the app work?",
-    "@aboutPageHeading2": {
+    "howDoesItWorkHeading": "How does the app work?",
+    "@howDoesItWorkHeading": {
       "description": "Headline 2 for the about page content"
+    },
+    "newFeaturesHeading": "New features!",
+    "@newFeaturesHeading": {
+      "description": "New features heading for the about page content"
+    },
+    "newFeaturesParagraph1": "You can now tap on an entry on the graph to view, edit or remove it. You can also add optional notes. These have been the most requested features for the app. I hope you find them useful!",
+    "@newFeaturesParagraph1": {
+      "description": "New features paragraph 1 for the about page content"
     },
     "aboutPageHeading3": "Thank you",
     "@aboutPageHeading3": {
@@ -87,8 +119,8 @@
     "@aboutPageParagraph1": {
       "description": "Paragraph 1 for the about page content"
     },
-    "aboutPageParagraph2": "Each time your bowels move you can record the time and stool quality using the app.\nThis information is saved to your device, and the app builds up a graph of your intestinal health over time.\nThis graph can be shared with your health professional if you are concerned about any aspect of your health. Simply tap the Share button below the graph.",
-    "@aboutPageParagraph2": {
+    "howDoesItWorkParagraph": "Each time your bowels move you can record the time and stool quality by swiping left or right on the stool images. You can also add notes.\nYou can enable the blood check by going to the Settings page in the app.\nThis information is then saved to your device, and the app builds up a graph of your intestinal health over time.\nThis graph can be shared with your health professional if you are concerned about any aspect of your health. Simply tap the Share button below the graph.",
+    "@howDoesItWorkParagraph": {
       "description": "Paragraph 2 for the about page content"
     },
     "aboutPageParagraph3": "Thank you for downloading this app. Hopefully you will find it useful in monitoring your intestinal health.",
@@ -130,6 +162,14 @@
     "bloodCheckLabelText": "Was there blood in the stool?",
     "@bloodCheckLabelText": {
       "description": "The text displayed next to the blood check toggle control"
+    },
+    "notesLabelText": "Notes",
+    "@notesLabelText": {
+      "description": "The text displayed above the notes textfield"
+    },
+    "notesPlaceholderText": "Add any notes here (optional)",
+    "@notesPlaceholderText": {
+      "description": "The placeholder text for the notes textfield"
     },
     "stoolPickerInitialDateValue": "Now (or click to select a date and time)",
     "@stoolPickerInitialDateValue": {
@@ -175,6 +215,10 @@
     "@areYouSureDeleteDataMessage": {
       "description": "The text displayed in the are you sure popup when deleting all user data"
     },
+    "areYouSureDeleteStoolMessage": "This stool will be permanently removed. Do you wish to continue?",
+    "@areYouSureDeleteStoolMessage": {
+      "description": "The text displayed in the are you sure popup when deleting a stool"
+    },
     "cancelButtonText": "CANCEL",
     "@cancelButtonText": {
       "description": "The text displayed on the cancel button"
@@ -195,6 +239,10 @@
     "@deleteAllDataButtonText": {
       "description": "The text displayed on the confirm button in the are you sure popup when deleting all data in the app"
     },
+    "deleteStoolButtonText": "DELETE STOOL",
+    "@deleteStoolButtonText": {
+      "description": "The text displayed on the confirm button in the are you sure popup when deleting a stool"
+    },
     "introPageTitle1": "Welcome",
     "@introPageTitle1": {
       "description": "Title for slide 1 for the app intro slider"
@@ -207,7 +255,7 @@
     "@introPageTitle2": {
       "description": "Title for slide 2 for the app intro slider"
     },
-    "introPageDescription2": "Use the add button on the graph to add a stool. Swipe left or right until you find the right image. Set the time if you need to change it. You can also use the Settings section to enable the blood in stool tracking feature if that is of use to you. Tap the save button to save and return to the graph.",
+    "introPageDescription2": "Use the add button on the graph to add a stool. Swipe left or right until you find the right image. Set the time if you need to change it and add optional notes. You can also use the Settings section to enable the blood check feature if that is of use to you. Tap the save button to save and return to the graph.",
     "@introPageDescription2": {
       "description": "Description for slide 2 for the app intro slider"
     },
@@ -278,6 +326,10 @@
     "dataBloodHeader": "Blood in stool?",
     "@dataBloodHeader": {
       "description": "The header text for the blood indicator column in the data"
+    },
+    "dataNotesHeader": "Notes",
+    "@dataNotesHeader": {
+      "description": "The header text for the notes column in the data"
     },
     "dateTimeFormatFull": "dd/MM/yyyy H:mm:ss",
     "@dateTimeFormatFull": {

@@ -45,6 +45,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                     content: Text(
                       AppLocalizations.of(context)!
                           .dataNotRemovedErrorOccurredMessage,
+                      style: Theme.of(context).textTheme.titleMedium,
                     ),
                     actions: <Widget>[
                       ElevatedButton(
@@ -64,8 +65,10 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                   context: context,
                   builder: (_) => AlertDialog(
                     title: Text(AppLocalizations.of(context)!.dataRemovedTitle),
-                    content:
-                        Text(AppLocalizations.of(context)!.dataRemovedMessage),
+                    content: Text(
+                      AppLocalizations.of(context)!.dataRemovedMessage,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                     actions: <Widget>[
                       ElevatedButton(
                         child: Text(
@@ -128,6 +131,9 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                     ),
                     AppPadding.sizedBoxVerticalSmall,
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                      ),
                       child: Text(
                           AppLocalizations.of(context)!.removeDataButtonText),
                       onPressed: () async {
@@ -140,6 +146,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                             content: Text(
                               AppLocalizations.of(context)!
                                   .areYouSureDeleteDataMessage,
+                              style: Theme.of(context).textTheme.titleMedium,
                             ),
                             actions: [
                               ElevatedButton(
@@ -152,6 +159,9 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                 ),
                               ),
                               ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Colors.red,
+                                ),
                                 onPressed: () async {
                                   context.router.popForced();
                                   await ref

@@ -6,6 +6,7 @@ import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:bristol_stool_chart/presentation/widgets/graph.dart';
 import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
+import 'package:bristol_stool_chart/presentation/widgets/version_features_dialog.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -26,6 +27,9 @@ class _GraphPageState extends ConsumerState<GraphPage> {
   void initState() {
     super.initState();
     ref.read(graphNotifierProvider.notifier).watchStools();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _checkForNewFeatures(context);
+    });
   }
 
   @override
@@ -38,6 +42,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             title: Text(AppLocalizations.of(context)!.errorOccurredTitle),
             content: Text(
               AppLocalizations.of(context)!.shareErrorOccurredMessage,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             actions: [
               TextButton(
@@ -95,8 +100,11 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                         Expanded(
                           flex: 3,
                           child: RepaintBoundary(
-                              key: _graphKey,
-                              child: Graph(stools: state.stools)),
+                            key: _graphKey,
+                            child: Graph(
+                              stools: state.stools,
+                            ),
+                          ),
                         ),
                         Padding(
                           padding: AppPadding.regularHorizontal,
@@ -140,10 +148,22 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             size: AppSizes.large,
           ),
           onPressed: () {
-            context.router.push(const AddRoute());
+            context.router.push(AddRoute());
           },
         ),
       ),
     );
   }
+}
+
+void _checkForNewFeatures(BuildContext context) async {
+  await VersionFeaturesDialog.showIfNeeded(
+    context,
+    title: AppLocalizations.of(context)!.newFeaturesTitle,
+    features: [
+      AppLocalizations.of(context)!.newFeature1,
+      AppLocalizations.of(context)!.newFeature2,
+    ],
+    buttonText: AppLocalizations.of(context)!.continueButtonText,
+  );
 }

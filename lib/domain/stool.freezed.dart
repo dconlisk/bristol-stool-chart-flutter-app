@@ -16,9 +16,11 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$Stool {
+  String get id => throw _privateConstructorUsedError;
   int get type => throw _privateConstructorUsedError;
   DateTime get dateTime => throw _privateConstructorUsedError;
   bool get hasBlood => throw _privateConstructorUsedError;
+  String get notes => throw _privateConstructorUsedError;
 
   /// Create a copy of Stool
   /// with the given fields replaced by the non-null parameter values.
@@ -31,7 +33,8 @@ abstract class $StoolCopyWith<$Res> {
   factory $StoolCopyWith(Stool value, $Res Function(Stool) then) =
       _$StoolCopyWithImpl<$Res, Stool>;
   @useResult
-  $Res call({int type, DateTime dateTime, bool hasBlood});
+  $Res call(
+      {String id, int type, DateTime dateTime, bool hasBlood, String notes});
 }
 
 /// @nodoc
@@ -49,11 +52,17 @@ class _$StoolCopyWithImpl<$Res, $Val extends Stool>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? type = null,
     Object? dateTime = null,
     Object? hasBlood = null,
+    Object? notes = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -66,6 +75,10 @@ class _$StoolCopyWithImpl<$Res, $Val extends Stool>
           ? _value.hasBlood
           : hasBlood // ignore: cast_nullable_to_non_nullable
               as bool,
+      notes: null == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -77,7 +90,8 @@ abstract class _$$StoolImplCopyWith<$Res> implements $StoolCopyWith<$Res> {
       __$$StoolImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int type, DateTime dateTime, bool hasBlood});
+  $Res call(
+      {String id, int type, DateTime dateTime, bool hasBlood, String notes});
 }
 
 /// @nodoc
@@ -93,11 +107,17 @@ class __$$StoolImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? type = null,
     Object? dateTime = null,
     Object? hasBlood = null,
+    Object? notes = null,
   }) {
     return _then(_$StoolImpl(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -110,6 +130,10 @@ class __$$StoolImplCopyWithImpl<$Res>
           ? _value.hasBlood
           : hasBlood // ignore: cast_nullable_to_non_nullable
               as bool,
+      notes: null == notes
+          ? _value.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -118,19 +142,27 @@ class __$$StoolImplCopyWithImpl<$Res>
 
 class _$StoolImpl extends _Stool {
   const _$StoolImpl(
-      {required this.type, required this.dateTime, required this.hasBlood})
+      {required this.id,
+      required this.type,
+      required this.dateTime,
+      required this.hasBlood,
+      required this.notes})
       : super._();
 
+  @override
+  final String id;
   @override
   final int type;
   @override
   final DateTime dateTime;
   @override
   final bool hasBlood;
+  @override
+  final String notes;
 
   @override
   String toString() {
-    return 'Stool(type: $type, dateTime: $dateTime, hasBlood: $hasBlood)';
+    return 'Stool(id: $id, type: $type, dateTime: $dateTime, hasBlood: $hasBlood, notes: $notes)';
   }
 
   @override
@@ -138,15 +170,18 @@ class _$StoolImpl extends _Stool {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$StoolImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
             (identical(other.hasBlood, hasBlood) ||
-                other.hasBlood == hasBlood));
+                other.hasBlood == hasBlood) &&
+            (identical(other.notes, notes) || other.notes == notes));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, dateTime, hasBlood);
+  int get hashCode =>
+      Object.hash(runtimeType, id, type, dateTime, hasBlood, notes);
 
   /// Create a copy of Stool
   /// with the given fields replaced by the non-null parameter values.
@@ -159,17 +194,23 @@ class _$StoolImpl extends _Stool {
 
 abstract class _Stool extends Stool {
   const factory _Stool(
-      {required final int type,
+      {required final String id,
+      required final int type,
       required final DateTime dateTime,
-      required final bool hasBlood}) = _$StoolImpl;
+      required final bool hasBlood,
+      required final String notes}) = _$StoolImpl;
   const _Stool._() : super._();
 
+  @override
+  String get id;
   @override
   int get type;
   @override
   DateTime get dateTime;
   @override
   bool get hasBlood;
+  @override
+  String get notes;
 
   /// Create a copy of Stool
   /// with the given fields replaced by the non-null parameter values.

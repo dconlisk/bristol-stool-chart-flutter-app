@@ -33,10 +33,16 @@ class AboutPage extends StatelessWidget {
                   text: AppLocalizations.of(context)!.aboutPageParagraph1,
                 ),
                 Heading(
-                  text: AppLocalizations.of(context)!.aboutPageHeading2,
+                  text: AppLocalizations.of(context)!.howDoesItWorkHeading,
                 ),
                 Paragraph(
-                  text: AppLocalizations.of(context)!.aboutPageParagraph2,
+                  text: AppLocalizations.of(context)!.howDoesItWorkParagraph,
+                ),
+                Heading(
+                  text: AppLocalizations.of(context)!.newFeaturesHeading,
+                ),
+                Paragraph(
+                  text: AppLocalizations.of(context)!.newFeaturesParagraph1,
                 ),
                 Heading(
                   text: AppLocalizations.of(context)!.aboutPageHeading3,
@@ -72,6 +78,7 @@ class AboutPage extends StatelessWidget {
                               content: Text(
                                 AppLocalizations.of(context)!
                                     .emailErrorOccurredMessage,
+                                style: Theme.of(context).textTheme.titleMedium,
                               ),
                               actions: <Widget>[
                                 ElevatedButton(
