@@ -1,3 +1,9 @@
 _site
 .sass-cache
 .jekyll-metadata
+.dart_tool
+android/
+build/
+ios/
+.flutter-plugins
+.flutter-plugins-dependencies
