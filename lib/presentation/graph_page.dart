@@ -125,38 +125,49 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             orElse: () => const SizedBox.shrink(),
           );
         }),
-        bottomSheet: Container(
-          height: isLandscape ? 80 : 120,
-          alignment: Alignment.center,
-          padding: isLandscape ? AppPadding.small : AppPadding.large,
-          color: AppColors.white,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
-                padding: AppPadding.regularHorizontal,
-                child: ElevatedButton(
-                  onPressed: () async {
-                    await ref
-                        .read(graphNotifierProvider.notifier)
-                        .share(context, _graphKey);
-                  },
-                  child: Text(AppLocalizations.of(context)!.shareButtonText),
+        bottomSheet: Consumer(builder: (context, ref, child) {
+          final graphState = ref.watch(graphNotifierProvider);
+          return graphState.maybeMap(
+            initialised: (state) {
+              return Container(
+                height: isLandscape ? 80 : 120,
+                alignment: Alignment.center,
+                padding: isLandscape ? AppPadding.small : AppPadding.large,
+                color: AppColors.white,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    state.stools.isEmpty
+                        ? SizedBox.shrink()
+                        : Padding(
+                            padding: AppPadding.regularHorizontal,
+                            child: ElevatedButton(
+                              onPressed: () async {
+                                await ref
+                                    .read(graphNotifierProvider.notifier)
+                                    .share(context, _graphKey);
+                              },
+                              child: Text(AppLocalizations.of(context)!
+                                  .shareButtonText),
+                            ),
+                          ),
+                    FloatingActionButton(
+                      materialTapTargetSize: MaterialTapTargetSize.padded,
+                      child: const Icon(
+                        Icons.add,
+                        size: AppSizes.large,
+                      ),
+                      onPressed: () {
+                        context.router.push(AddRoute());
+                      },
+                    ),
+                  ],
                 ),
-              ),
-              FloatingActionButton(
-                materialTapTargetSize: MaterialTapTargetSize.padded,
-                child: const Icon(
-                  Icons.add,
-                  size: AppSizes.large,
-                ),
-                onPressed: () {
-                  context.router.push(AddRoute());
-                },
-              ),
-            ],
-          ),
-        ),
+              );
+            },
+            orElse: () => const SizedBox.shrink(),
+          );
+        }),
       );
     });
   }
