@@ -62,14 +62,14 @@ Ensure that the app uses a unique build number, e.g. 2.0.3+23 (23 must be unique
 Run `fvm flutter build appbundle` to generate an Android App Bundle (build/app/outputs/bundle/release/app-release.aab).
 Open the project in Android Studio.
 Follow these instructions: https://developer.android.com/studio/publish/app-signing#generate-key using the existing key, passwords, etc. (see 1Password for more details)
-Drag and drop the generated aab file into your new release in the Google Play store.
+Drag and drop the generated aab file into your new release in the Google Play store (https://play.google.com/console/u/0/developers).
 
 To install and test the app on a device before publishing, go to the App Bundle explorer in the Google Play console, and click on the Downloads tab. Download the signed, universal APK and then run
 `adb install /Users/david/Downloads/23.apk` (or whatever the apk file is called) to deploy the APK to the device. This should be signed and match the installed version of the app from the Google Play store.
 
 ### Deploying the iOS app to the Apple App Store
 
-Create a release in App Store Connect and give it the same version numbers is is in the pubspec.yaml file (e.g. 2.0.3)
+Create a release in App Store Connect (https://appstoreconnect.apple.com/apps) and give it the same version numbers is is in the pubspec.yaml file (e.g. 2.0.3)
 Run `fvm flutter build ipa` to generate the ipa
 Upload build/ios/ipa/\*.ipa using the Transporter app.
 https://docs.flutter.dev/deployment/ios
