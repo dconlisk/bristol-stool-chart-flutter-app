@@ -60,24 +60,25 @@ class _GraphPageState extends ConsumerState<GraphPage> {
       );
     });
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.graphPageTitle),
-        actions: <Widget>[
-          IconButton(
-            icon: const Icon(Icons.info),
-            onPressed: () {
-              AutoRouter.of(context).push(
-                const GraphInfoRoute(),
-              );
-            },
-          ),
-        ],
-      ),
-      drawer: const MainDrawer(),
-      body: Consumer(
-        builder: (context, ref, child) {
+    return LayoutBuilder(builder: (context, constraints) {
+      final isLandscape = constraints.maxWidth > constraints.maxHeight;
+      return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: Text(AppLocalizations.of(context)!.graphPageTitle),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.info),
+              onPressed: () {
+                AutoRouter.of(context).push(
+                  const GraphInfoRoute(),
+                );
+              },
+            ),
+          ],
+        ),
+        drawer: const MainDrawer(),
+        body: Consumer(builder: (context, ref, child) {
           final graphState = ref.watch(graphNotifierProvider);
           return graphState.maybeMap(
             initial: (_) => const Center(
@@ -96,32 +97,21 @@ class _GraphPageState extends ConsumerState<GraphPage> {
                   : Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        AppPadding.sizedBoxVerticalLarge,
                         Expanded(
                           flex: 3,
                           child: RepaintBoundary(
                             key: _graphKey,
                             child: Graph(
                               stools: state.stools,
+                              isLandscape: isLandscape,
                             ),
-                          ),
-                        ),
-                        Padding(
-                          padding: AppPadding.regularHorizontal,
-                          child: ElevatedButton(
-                            onPressed: () async {
-                              await ref
-                                  .read(graphNotifierProvider.notifier)
-                                  .share(context, _graphKey);
-                            },
-                            child: Text(
-                                AppLocalizations.of(context)!.shareButtonText),
                           ),
                         ),
                         Expanded(
                           flex: 1,
                           child: Container(
-                            height: AppSizes.large,
+                            height:
+                                isLandscape ? AppSizes.small : AppSizes.large,
                           ),
                         ),
                       ],
@@ -134,25 +124,41 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             ),
             orElse: () => const SizedBox.shrink(),
           );
-        },
-      ),
-      bottomSheet: Container(
-        height: 120,
-        alignment: Alignment.centerRight,
-        padding: AppPadding.large,
-        color: AppColors.white,
-        child: FloatingActionButton(
-          materialTapTargetSize: MaterialTapTargetSize.padded,
-          child: const Icon(
-            Icons.add,
-            size: AppSizes.large,
+        }),
+        bottomSheet: Container(
+          height: isLandscape ? 80 : 120,
+          alignment: Alignment.center,
+          padding: isLandscape ? AppPadding.small : AppPadding.large,
+          color: AppColors.white,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: AppPadding.regularHorizontal,
+                child: ElevatedButton(
+                  onPressed: () async {
+                    await ref
+                        .read(graphNotifierProvider.notifier)
+                        .share(context, _graphKey);
+                  },
+                  child: Text(AppLocalizations.of(context)!.shareButtonText),
+                ),
+              ),
+              FloatingActionButton(
+                materialTapTargetSize: MaterialTapTargetSize.padded,
+                child: const Icon(
+                  Icons.add,
+                  size: AppSizes.large,
+                ),
+                onPressed: () {
+                  context.router.push(AddRoute());
+                },
+              ),
+            ],
           ),
-          onPressed: () {
-            context.router.push(AddRoute());
-          },
         ),
-      ),
-    );
+      );
+    });
   }
 }
 

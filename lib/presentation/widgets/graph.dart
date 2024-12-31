@@ -10,8 +10,9 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class Graph extends StatefulWidget {
   final List<Stool> stools;
+  final bool isLandscape;
 
-  const Graph({super.key, required this.stools});
+  const Graph({super.key, required this.stools, required this.isLandscape});
 
   @override
   State<Graph> createState() => _GraphState();
@@ -57,13 +58,15 @@ class _GraphState extends State<Graph> {
           enableDoubleTapZooming: true,
           zoomMode: ZoomMode.x,
         ),
-        title: ChartTitle(
-          text: AppLocalizations.of(context)!.graphLabel,
-          alignment: ChartAlignment.near,
-          textStyle: const TextStyle(
-            fontSize: AppSizes.regular,
-          ),
-        ),
+        title: widget.isLandscape
+            ? ChartTitle()
+            : ChartTitle(
+                text: AppLocalizations.of(context)!.graphLabel,
+                alignment: ChartAlignment.near,
+                textStyle: const TextStyle(
+                  fontSize: AppSizes.regular,
+                ),
+              ),
         tooltipBehavior: TooltipBehavior(enable: false),
         onMarkerRender: (markerArgs) {
           if (markerArgs.pointIndex != null &&
