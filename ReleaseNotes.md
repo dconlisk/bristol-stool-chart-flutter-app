@@ -2,10 +2,9 @@
 
 ## Features
 
-- Updated flutter and packages to the latest versions
-- Replaced the date and time picker with a newer package
-
 ## Bug Fixes
+
+- Fixed typo in type 3 description
 
 ## Known Issues
 
