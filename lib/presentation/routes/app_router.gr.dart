@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -13,10 +14,7 @@ part of 'app_router.dart';
 /// [AboutPage]
 class AboutRoute extends PageRouteInfo<void> {
   const AboutRoute({List<PageRouteInfo>? children})
-      : super(
-          AboutRoute.name,
-          initialChildren: children,
-        );
+      : super(AboutRoute.name, initialChildren: children);
 
   static const String name = 'AboutRoute';
 
@@ -31,16 +29,10 @@ class AboutRoute extends PageRouteInfo<void> {
 /// generated route for
 /// [AddPage]
 class AddRoute extends PageRouteInfo<AddRouteArgs> {
-  AddRoute({
-    Key? key,
-    String? stoolId,
-    List<PageRouteInfo>? children,
-  }) : super(
+  AddRoute({Key? key, String? stoolId, List<PageRouteInfo>? children})
+      : super(
           AddRoute.name,
-          args: AddRouteArgs(
-            key: key,
-            stoolId: stoolId,
-          ),
+          args: AddRouteArgs(key: key, stoolId: stoolId),
           initialChildren: children,
         );
 
@@ -49,21 +41,16 @@ class AddRoute extends PageRouteInfo<AddRouteArgs> {
   static PageInfo page = PageInfo(
     name,
     builder: (data) {
-      final args =
-          data.argsAs<AddRouteArgs>(orElse: () => const AddRouteArgs());
-      return AddPage(
-        key: args.key,
-        stoolId: args.stoolId,
+      final args = data.argsAs<AddRouteArgs>(
+        orElse: () => const AddRouteArgs(),
       );
+      return AddPage(key: args.key, stoolId: args.stoolId);
     },
   );
 }
 
 class AddRouteArgs {
-  const AddRouteArgs({
-    this.key,
-    this.stoolId,
-  });
+  const AddRouteArgs({this.key, this.stoolId});
 
   final Key? key;
 
@@ -73,16 +60,23 @@ class AddRouteArgs {
   String toString() {
     return 'AddRouteArgs{key: $key, stoolId: $stoolId}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! AddRouteArgs) return false;
+    return key == other.key && stoolId == other.stoolId;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ stoolId.hashCode;
 }
 
 /// generated route for
 /// [GraphInfoPage]
 class GraphInfoRoute extends PageRouteInfo<void> {
   const GraphInfoRoute({List<PageRouteInfo>? children})
-      : super(
-          GraphInfoRoute.name,
-          initialChildren: children,
-        );
+      : super(GraphInfoRoute.name, initialChildren: children);
 
   static const String name = 'GraphInfoRoute';
 
@@ -98,10 +92,7 @@ class GraphInfoRoute extends PageRouteInfo<void> {
 /// [GraphPage]
 class GraphRoute extends PageRouteInfo<void> {
   const GraphRoute({List<PageRouteInfo>? children})
-      : super(
-          GraphRoute.name,
-          initialChildren: children,
-        );
+      : super(GraphRoute.name, initialChildren: children);
 
   static const String name = 'GraphRoute';
 
@@ -117,10 +108,7 @@ class GraphRoute extends PageRouteInfo<void> {
 /// [IntroPage]
 class IntroRoute extends PageRouteInfo<void> {
   const IntroRoute({List<PageRouteInfo>? children})
-      : super(
-          IntroRoute.name,
-          initialChildren: children,
-        );
+      : super(IntroRoute.name, initialChildren: children);
 
   static const String name = 'IntroRoute';
 
@@ -136,10 +124,7 @@ class IntroRoute extends PageRouteInfo<void> {
 /// [SettingsPage]
 class SettingsRoute extends PageRouteInfo<void> {
   const SettingsRoute({List<PageRouteInfo>? children})
-      : super(
-          SettingsRoute.name,
-          initialChildren: children,
-        );
+      : super(SettingsRoute.name, initialChildren: children);
 
   static const String name = 'SettingsRoute';
 
@@ -155,10 +140,7 @@ class SettingsRoute extends PageRouteInfo<void> {
 /// [SplashPage]
 class SplashRoute extends PageRouteInfo<void> {
   const SplashRoute({List<PageRouteInfo>? children})
-      : super(
-          SplashRoute.name,
-          initialChildren: children,
-        );
+      : super(SplashRoute.name, initialChildren: children);
 
   static const String name = 'SplashRoute';
 

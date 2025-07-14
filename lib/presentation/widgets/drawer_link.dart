@@ -39,7 +39,7 @@ class DrawerLink extends StatelessWidget {
         ],
       ),
       onTap: () {
-        AutoRouter.of(context).popForced();
+        AutoRouter.of(context).pop();
         AutoRouter.of(context).replace(route);
       },
     );

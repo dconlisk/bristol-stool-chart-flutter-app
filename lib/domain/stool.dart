@@ -4,7 +4,7 @@ import 'package:uuid/uuid.dart';
 part 'stool.freezed.dart';
 
 @freezed
-class Stool with _$Stool {
+abstract class Stool with _$Stool {
   const Stool._();
 
   const factory Stool({

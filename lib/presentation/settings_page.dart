@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/settings_notifier.dart';
+import 'package:bristol_stool_chart/l10n/app_localizations.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/widgets/heading.dart';
@@ -7,7 +8,6 @@ import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
 import 'package:bristol_stool_chart/presentation/widgets/paragraph.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 @RoutePage()
@@ -53,7 +53,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                           AppLocalizations.of(context)!.continueButtonText,
                         ),
                         onPressed: () {
-                          context.router.popForced();
+                          context.router.pop();
                         },
                       )
                     ],
@@ -151,7 +151,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                             actions: [
                               ElevatedButton(
                                 onPressed: () {
-                                  context.router.popForced();
+                                  context.router.pop();
                                 },
                                 child: Text(
                                   AppLocalizations.of(context)!
@@ -163,7 +163,7 @@ class _SettingsPageState extends ConsumerState<SettingsPage> {
                                   backgroundColor: Colors.red,
                                 ),
                                 onPressed: () async {
-                                  context.router.popForced();
+                                  context.router.pop();
                                   await ref
                                       .read(settingsNotifierProvider.notifier)
                                       .deleteAllData();

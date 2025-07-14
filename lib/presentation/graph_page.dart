@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/graph_notifier.dart';
+import 'package:bristol_stool_chart/l10n/app_localizations.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
@@ -10,7 +11,6 @@ import 'package:bristol_stool_chart/presentation/widgets/version_features_dialog
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 @RoutePage()
 class GraphPage extends ConsumerStatefulWidget {
@@ -47,7 +47,7 @@ class _GraphPageState extends ConsumerState<GraphPage> {
             actions: [
               TextButton(
                 onPressed: () {
-                  context.router.popForced();
+                  context.router.pop();
                 },
                 child: Text(
                   AppLocalizations.of(context)!.continueButtonText,

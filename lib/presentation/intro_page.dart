@@ -1,10 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bristol_stool_chart/application/intro_notifier.dart';
 import 'package:bristol_stool_chart/application/shared_preferences_keys.dart';
+import 'package:bristol_stool_chart/l10n/app_localizations.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intro_slider/intro_slider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -113,7 +114,7 @@ class IntroPage extends ConsumerWidget {
                     AppLocalizations.of(context)!.continueButtonText,
                   ),
                   onPressed: () {
-                    context.router.popForced();
+                    context.router.pop();
                   },
                 )
               ],

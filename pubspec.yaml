@@ -6,10 +6,10 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 2.1.2+31
 
 environment:
-  sdk: ">=3.1.0 <4.0.0"
+  sdk: ">=3.5.1 <4.0.0"
 
 dependencies:
-  auto_route: ^9.2.2
+  auto_route: ^10.1.0+1
   carousel_slider: ^5.0.0
   cross_file: ^0.3.4+2
   dartz: ^0.10.1
@@ -18,11 +18,11 @@ dependencies:
   flutter_datetime_picker_plus: ^2.2.0
   flutter_localizations:
     sdk: flutter
-  freezed: ^2.5.7
-  freezed_annotation: ^2.4.4
+  freezed: ^3.1.0
+  freezed_annotation: ^3.1.0
   google_fonts: ^6.2.1
   hooks_riverpod: ^2.5.2
-  intl: ^0.19.0
+  intl: any
   intro_slider: ^4.2.1
   json_annotation: 4.9.0
   package_info_plus: ^8.1.0
@@ -30,25 +30,26 @@ dependencies:
   path_provider: ^2.1.4
   sembast: ^3.7.3
   shared_preferences: ^2.3.2
-  share_plus: ^10.0.2
+  share_plus: ^11.0.0
   sprintf: ^7.0.0
   sqflite: ^2.3.0
-  syncfusion_flutter_charts: ^27.1.53
+  syncfusion_flutter_charts: ^30.1.39
   url_launcher: ^6.3.0
   uuid: ^4.5.1
 
 dev_dependencies:
-  auto_route_generator: ^9.0.0
+  auto_route_generator: ^10.2.3
   build_runner: ^2.4.12
   flutter_launcher_icons: ^0.14.1
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^6.0.0
   json_serializable: ^6.8.0
 
 flutter:
   generate: true
   uses-material-design: true
+  
   assets:
     - assets/fonts/
     - assets/images/

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,195 +9,45 @@ part of 'graph_notifier.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$GraphState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() loadFailure,
-    required TResult Function() shareFailure,
-    required TResult Function() shareSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<Stool> stools)? initialised,
-    TResult? Function()? loadFailure,
-    TResult? Function()? shareFailure,
-    TResult? Function()? shareSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Initialised value) initialised,
-    required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_ShareFailure value) shareFailure,
-    required TResult Function(_ShareSuccess value) shareSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Initialised value)? initialised,
-    TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_ShareFailure value)? shareFailure,
-    TResult? Function(_ShareSuccess value)? shareSuccess,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $GraphStateCopyWith<$Res> {
-  factory $GraphStateCopyWith(
-          GraphState value, $Res Function(GraphState) then) =
-      _$GraphStateCopyWithImpl<$Res, GraphState>;
-}
-
-/// @nodoc
-class _$GraphStateCopyWithImpl<$Res, $Val extends GraphState>
-    implements $GraphStateCopyWith<$Res> {
-  _$GraphStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of GraphState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GraphState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$InitialImpl extends _Initial {
-  const _$InitialImpl() : super._();
-
-  @override
-  String toString() {
-    return 'GraphState.initial()';
-  }
-
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$InitialImpl);
+        (other.runtimeType == runtimeType && other is GraphState);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 
   @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() loadFailure,
-    required TResult Function() shareFailure,
-    required TResult Function() shareSuccess,
-  }) {
-    return initial();
+  String toString() {
+    return 'GraphState()';
   }
+}
 
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<Stool> stools)? initialised,
-    TResult? Function()? loadFailure,
-    TResult? Function()? shareFailure,
-    TResult? Function()? shareSuccess,
-  }) {
-    return initial?.call();
-  }
+/// @nodoc
+class $GraphStateCopyWith<$Res> {
+  $GraphStateCopyWith(GraphState _, $Res Function(GraphState) __);
+}
 
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
+/// Adds pattern-matching-related methods to [GraphState].
+extension GraphStatePatterns on GraphState {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
 
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Initialised value) initialised,
-    required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_ShareFailure value) shareFailure,
-    required TResult Function(_ShareSuccess value) shareSuccess,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Initialised value)? initialised,
-    TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_ShareFailure value)? shareFailure,
-    TResult? Function(_ShareSuccess value)? shareSuccess,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
@@ -207,45 +57,297 @@ class _$InitialImpl extends _Initial {
     TResult Function(_ShareSuccess value)? shareSuccess,
     required TResult orElse(),
   }) {
-    if (initial != null) {
-      return initial(this);
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that);
+      case _Initialised() when initialised != null:
+        return initialised(_that);
+      case _LoadFailure() when loadFailure != null:
+        return loadFailure(_that);
+      case _ShareFailure() when shareFailure != null:
+        return shareFailure(_that);
+      case _ShareSuccess() when shareSuccess != null:
+        return shareSuccess(_that);
+      case _:
+        return orElse();
     }
-    return orElse();
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Initialised value) initialised,
+    required TResult Function(_LoadFailure value) loadFailure,
+    required TResult Function(_ShareFailure value) shareFailure,
+    required TResult Function(_ShareSuccess value) shareSuccess,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial():
+        return initial(_that);
+      case _Initialised():
+        return initialised(_that);
+      case _LoadFailure():
+        return loadFailure(_that);
+      case _ShareFailure():
+        return shareFailure(_that);
+      case _ShareSuccess():
+        return shareSuccess(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Initialised value)? initialised,
+    TResult? Function(_LoadFailure value)? loadFailure,
+    TResult? Function(_ShareFailure value)? shareFailure,
+    TResult? Function(_ShareSuccess value)? shareSuccess,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial(_that);
+      case _Initialised() when initialised != null:
+        return initialised(_that);
+      case _LoadFailure() when loadFailure != null:
+        return loadFailure(_that);
+      case _ShareFailure() when shareFailure != null:
+        return shareFailure(_that);
+      case _ShareSuccess() when shareSuccess != null:
+        return shareSuccess(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<Stool> stools)? initialised,
+    TResult Function()? loadFailure,
+    TResult Function()? shareFailure,
+    TResult Function()? shareSuccess,
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial();
+      case _Initialised() when initialised != null:
+        return initialised(_that.stools);
+      case _LoadFailure() when loadFailure != null:
+        return loadFailure();
+      case _ShareFailure() when shareFailure != null:
+        return shareFailure();
+      case _ShareSuccess() when shareSuccess != null:
+        return shareSuccess();
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<Stool> stools) initialised,
+    required TResult Function() loadFailure,
+    required TResult Function() shareFailure,
+    required TResult Function() shareSuccess,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial():
+        return initial();
+      case _Initialised():
+        return initialised(_that.stools);
+      case _LoadFailure():
+        return loadFailure();
+      case _ShareFailure():
+        return shareFailure();
+      case _ShareSuccess():
+        return shareSuccess();
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(List<Stool> stools)? initialised,
+    TResult? Function()? loadFailure,
+    TResult? Function()? shareFailure,
+    TResult? Function()? shareSuccess,
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Initial() when initial != null:
+        return initial();
+      case _Initialised() when initialised != null:
+        return initialised(_that.stools);
+      case _LoadFailure() when loadFailure != null:
+        return loadFailure();
+      case _ShareFailure() when shareFailure != null:
+        return shareFailure();
+      case _ShareSuccess() when shareSuccess != null:
+        return shareSuccess();
+      case _:
+        return null;
+    }
   }
 }
 
-abstract class _Initial extends GraphState {
-  const factory _Initial() = _$InitialImpl;
-  const _Initial._() : super._();
+/// @nodoc
+
+class _Initial extends GraphState {
+  const _Initial() : super._();
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  String toString() {
+    return 'GraphState.initial()';
+  }
 }
 
 /// @nodoc
-abstract class _$$InitialisedImplCopyWith<$Res> {
-  factory _$$InitialisedImplCopyWith(
-          _$InitialisedImpl value, $Res Function(_$InitialisedImpl) then) =
-      __$$InitialisedImplCopyWithImpl<$Res>;
+
+class _Initialised extends GraphState {
+  const _Initialised(final List<Stool> stools)
+      : _stools = stools,
+        super._();
+
+  final List<Stool> _stools;
+  List<Stool> get stools {
+    if (_stools is EqualUnmodifiableListView) return _stools;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_stools);
+  }
+
+  /// Create a copy of GraphState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$InitialisedCopyWith<_Initialised> get copyWith =>
+      __$InitialisedCopyWithImpl<_Initialised>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Initialised &&
+            const DeepCollectionEquality().equals(other._stools, _stools));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_stools));
+
+  @override
+  String toString() {
+    return 'GraphState.initialised(stools: $stools)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$InitialisedCopyWith<$Res>
+    implements $GraphStateCopyWith<$Res> {
+  factory _$InitialisedCopyWith(
+          _Initialised value, $Res Function(_Initialised) _then) =
+      __$InitialisedCopyWithImpl;
   @useResult
   $Res call({List<Stool> stools});
 }
 
 /// @nodoc
-class __$$InitialisedImplCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$InitialisedImpl>
-    implements _$$InitialisedImplCopyWith<$Res> {
-  __$$InitialisedImplCopyWithImpl(
-      _$InitialisedImpl _value, $Res Function(_$InitialisedImpl) _then)
-      : super(_value, _then);
+class __$InitialisedCopyWithImpl<$Res> implements _$InitialisedCopyWith<$Res> {
+  __$InitialisedCopyWithImpl(this._self, this._then);
+
+  final _Initialised _self;
+  final $Res Function(_Initialised) _then;
 
   /// Create a copy of GraphState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
-  @override
   $Res call({
     Object? stools = null,
   }) {
-    return _then(_$InitialisedImpl(
+    return _then(_Initialised(
       null == stools
-          ? _value._stools
+          ? _self._stools
           : stools // ignore: cast_nullable_to_non_nullable
               as List<Stool>,
     ));
@@ -254,506 +356,62 @@ class __$$InitialisedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialisedImpl extends _Initialised {
-  const _$InitialisedImpl(final List<Stool> stools)
-      : _stools = stools,
-        super._();
-
-  final List<Stool> _stools;
-  @override
-  List<Stool> get stools {
-    if (_stools is EqualUnmodifiableListView) return _stools;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_stools);
-  }
-
-  @override
-  String toString() {
-    return 'GraphState.initialised(stools: $stools)';
-  }
+class _LoadFailure extends GraphState {
+  const _LoadFailure() : super._();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InitialisedImpl &&
-            const DeepCollectionEquality().equals(other._stools, _stools));
+        (other.runtimeType == runtimeType && other is _LoadFailure);
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_stools));
-
-  /// Create a copy of GraphState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
-      __$$InitialisedImplCopyWithImpl<_$InitialisedImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() loadFailure,
-    required TResult Function() shareFailure,
-    required TResult Function() shareSuccess,
-  }) {
-    return initialised(stools);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<Stool> stools)? initialised,
-    TResult? Function()? loadFailure,
-    TResult? Function()? shareFailure,
-    TResult? Function()? shareSuccess,
-  }) {
-    return initialised?.call(stools);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
-    required TResult orElse(),
-  }) {
-    if (initialised != null) {
-      return initialised(stools);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Initialised value) initialised,
-    required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_ShareFailure value) shareFailure,
-    required TResult Function(_ShareSuccess value) shareSuccess,
-  }) {
-    return initialised(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Initialised value)? initialised,
-    TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_ShareFailure value)? shareFailure,
-    TResult? Function(_ShareSuccess value)? shareSuccess,
-  }) {
-    return initialised?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
-    required TResult orElse(),
-  }) {
-    if (initialised != null) {
-      return initialised(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initialised extends GraphState {
-  const factory _Initialised(final List<Stool> stools) = _$InitialisedImpl;
-  const _Initialised._() : super._();
-
-  List<Stool> get stools;
-
-  /// Create a copy of GraphState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InitialisedImplCopyWith<_$InitialisedImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$LoadFailureImplCopyWith<$Res> {
-  factory _$$LoadFailureImplCopyWith(
-          _$LoadFailureImpl value, $Res Function(_$LoadFailureImpl) then) =
-      __$$LoadFailureImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoadFailureImplCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$LoadFailureImpl>
-    implements _$$LoadFailureImplCopyWith<$Res> {
-  __$$LoadFailureImplCopyWithImpl(
-      _$LoadFailureImpl _value, $Res Function(_$LoadFailureImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GraphState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LoadFailureImpl extends _LoadFailure {
-  const _$LoadFailureImpl() : super._();
+  int get hashCode => runtimeType.hashCode;
 
   @override
   String toString() {
     return 'GraphState.loadFailure()';
   }
+}
+
+/// @nodoc
+
+class _ShareFailure extends GraphState {
+  const _ShareFailure() : super._();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadFailureImpl);
+        (other.runtimeType == runtimeType && other is _ShareFailure);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() loadFailure,
-    required TResult Function() shareFailure,
-    required TResult Function() shareSuccess,
-  }) {
-    return loadFailure();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<Stool> stools)? initialised,
-    TResult? Function()? loadFailure,
-    TResult? Function()? shareFailure,
-    TResult? Function()? shareSuccess,
-  }) {
-    return loadFailure?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
-    required TResult orElse(),
-  }) {
-    if (loadFailure != null) {
-      return loadFailure();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Initialised value) initialised,
-    required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_ShareFailure value) shareFailure,
-    required TResult Function(_ShareSuccess value) shareSuccess,
-  }) {
-    return loadFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Initialised value)? initialised,
-    TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_ShareFailure value)? shareFailure,
-    TResult? Function(_ShareSuccess value)? shareSuccess,
-  }) {
-    return loadFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
-    required TResult orElse(),
-  }) {
-    if (loadFailure != null) {
-      return loadFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LoadFailure extends GraphState {
-  const factory _LoadFailure() = _$LoadFailureImpl;
-  const _LoadFailure._() : super._();
-}
-
-/// @nodoc
-abstract class _$$ShareFailureImplCopyWith<$Res> {
-  factory _$$ShareFailureImplCopyWith(
-          _$ShareFailureImpl value, $Res Function(_$ShareFailureImpl) then) =
-      __$$ShareFailureImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ShareFailureImplCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$ShareFailureImpl>
-    implements _$$ShareFailureImplCopyWith<$Res> {
-  __$$ShareFailureImplCopyWithImpl(
-      _$ShareFailureImpl _value, $Res Function(_$ShareFailureImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GraphState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$ShareFailureImpl extends _ShareFailure {
-  const _$ShareFailureImpl() : super._();
 
   @override
   String toString() {
     return 'GraphState.shareFailure()';
   }
+}
+
+/// @nodoc
+
+class _ShareSuccess extends GraphState {
+  const _ShareSuccess() : super._();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ShareFailureImpl);
+        (other.runtimeType == runtimeType && other is _ShareSuccess);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() loadFailure,
-    required TResult Function() shareFailure,
-    required TResult Function() shareSuccess,
-  }) {
-    return shareFailure();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<Stool> stools)? initialised,
-    TResult? Function()? loadFailure,
-    TResult? Function()? shareFailure,
-    TResult? Function()? shareSuccess,
-  }) {
-    return shareFailure?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
-    required TResult orElse(),
-  }) {
-    if (shareFailure != null) {
-      return shareFailure();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Initialised value) initialised,
-    required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_ShareFailure value) shareFailure,
-    required TResult Function(_ShareSuccess value) shareSuccess,
-  }) {
-    return shareFailure(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Initialised value)? initialised,
-    TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_ShareFailure value)? shareFailure,
-    TResult? Function(_ShareSuccess value)? shareSuccess,
-  }) {
-    return shareFailure?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
-    required TResult orElse(),
-  }) {
-    if (shareFailure != null) {
-      return shareFailure(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ShareFailure extends GraphState {
-  const factory _ShareFailure() = _$ShareFailureImpl;
-  const _ShareFailure._() : super._();
-}
-
-/// @nodoc
-abstract class _$$ShareSuccessImplCopyWith<$Res> {
-  factory _$$ShareSuccessImplCopyWith(
-          _$ShareSuccessImpl value, $Res Function(_$ShareSuccessImpl) then) =
-      __$$ShareSuccessImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$ShareSuccessImplCopyWithImpl<$Res>
-    extends _$GraphStateCopyWithImpl<$Res, _$ShareSuccessImpl>
-    implements _$$ShareSuccessImplCopyWith<$Res> {
-  __$$ShareSuccessImplCopyWithImpl(
-      _$ShareSuccessImpl _value, $Res Function(_$ShareSuccessImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of GraphState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$ShareSuccessImpl extends _ShareSuccess {
-  const _$ShareSuccessImpl() : super._();
 
   @override
   String toString() {
     return 'GraphState.shareSuccess()';
   }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$ShareSuccessImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function(List<Stool> stools) initialised,
-    required TResult Function() loadFailure,
-    required TResult Function() shareFailure,
-    required TResult Function() shareSuccess,
-  }) {
-    return shareSuccess();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function(List<Stool> stools)? initialised,
-    TResult? Function()? loadFailure,
-    TResult? Function()? shareFailure,
-    TResult? Function()? shareSuccess,
-  }) {
-    return shareSuccess?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Stool> stools)? initialised,
-    TResult Function()? loadFailure,
-    TResult Function()? shareFailure,
-    TResult Function()? shareSuccess,
-    required TResult orElse(),
-  }) {
-    if (shareSuccess != null) {
-      return shareSuccess();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Initialised value) initialised,
-    required TResult Function(_LoadFailure value) loadFailure,
-    required TResult Function(_ShareFailure value) shareFailure,
-    required TResult Function(_ShareSuccess value) shareSuccess,
-  }) {
-    return shareSuccess(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Initialised value)? initialised,
-    TResult? Function(_LoadFailure value)? loadFailure,
-    TResult? Function(_ShareFailure value)? shareFailure,
-    TResult? Function(_ShareSuccess value)? shareSuccess,
-  }) {
-    return shareSuccess?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Initialised value)? initialised,
-    TResult Function(_LoadFailure value)? loadFailure,
-    TResult Function(_ShareFailure value)? shareFailure,
-    TResult Function(_ShareSuccess value)? shareSuccess,
-    required TResult orElse(),
-  }) {
-    if (shareSuccess != null) {
-      return shareSuccess(this);
-    }
-    return orElse();
-  }
 }
 
-abstract class _ShareSuccess extends GraphState {
-  const factory _ShareSuccess() = _$ShareSuccessImpl;
-  const _ShareSuccess._() : super._();
-}
+// dart format on
