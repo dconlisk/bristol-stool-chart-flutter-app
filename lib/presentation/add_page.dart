@@ -72,18 +72,21 @@ class _AddPageState extends ConsumerState<AddPage> {
                 );
               },
               success: (stool, showBloodOption) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      isEdit
-                          ? AppLocalizations.of(context)!
-                              .stoolEditedSuccessMessage
-                          : AppLocalizations.of(context)!
-                              .stoolSavedSuccessMessage,
-                    ),
-                  ),
-                );
                 context.router.pop();
+
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        isEdit
+                            ? AppLocalizations.of(context)!
+                                .stoolEditedSuccessMessage
+                            : AppLocalizations.of(context)!
+                                .stoolSavedSuccessMessage,
+                      ),
+                    ),
+                  );
+                }
               },
             );
           });
