@@ -72,11 +72,17 @@ class GraphNotifier extends StateNotifier<GraphState> {
           return;
         }
 
-        final failureOrGraphImagePath =
-            await _fileSystemRepository.writeBytesToFile(imageData);
+        final imageFilename =
+            'BristolStoolChartGraph_${DateFormat('yyyyMMddHHmm').format(DateTime.now())}.png';
+
+        final csvFilename =
+            'BristolStoolChartData_${DateFormat('yyyyMMddHHmm').format(DateTime.now())}.csv';
+
+        final failureOrGraphImagePath = await _fileSystemRepository
+            .writeBytesToFile(imageFilename, imageData);
 
         final failureOrCsvFilePath =
-            await _fileSystemRepository.writeStringToFile(csvData);
+            await _fileSystemRepository.writeStringToFile(csvFilename, csvData);
 
         final graphImagePath =
             failureOrGraphImagePath.fold((l) => null, (r) => r);
@@ -87,8 +93,8 @@ class GraphNotifier extends StateNotifier<GraphState> {
           return;
         }
 
-        await Share.shareXFiles(
-          [XFile(graphImagePath), XFile(csvFilePath)],
+        final shareParams = ShareParams(
+          files: [XFile(graphImagePath), XFile(csvFilePath)],
           subject: shareDialogSubject,
           sharePositionOrigin: Rect.fromCenter(
             center: const Offset(100, 100),
@@ -97,8 +103,23 @@ class GraphNotifier extends StateNotifier<GraphState> {
           ),
         );
 
-        state = const GraphState.shareSuccess();
-        state = GraphState.initialised(stools);
+        final result = await SharePlus.instance.share(shareParams);
+
+        if (result.status == ShareResultStatus.success ||
+            result.status == ShareResultStatus.dismissed) {
+          state = const GraphState.shareSuccess();
+          state = GraphState.initialised(stools);
+        } else {
+          state = const GraphState.shareFailure();
+        }
+
+        // Clean up - remove temporary files
+        try {
+          await _fileSystemRepository.removeFile(csvFilename);
+          await _fileSystemRepository.removeFile(imageFilename);
+        } catch (e) {
+          // ignore any issues removing the temporary files
+        }
       }
     } catch (e) {
       state = const GraphState.shareFailure();
