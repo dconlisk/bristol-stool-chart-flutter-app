@@ -6,7 +6,7 @@ part 'stool_dto.freezed.dart';
 part 'stool_dto.g.dart';
 
 @freezed
-class StoolDto with _$StoolDto {
+abstract class StoolDto with _$StoolDto {
   const StoolDto._();
   const factory StoolDto({
     String? uuid,

@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,98 +9,63 @@ part of 'stool.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Stool {
-  String get id => throw _privateConstructorUsedError;
-  int get type => throw _privateConstructorUsedError;
-  DateTime get dateTime => throw _privateConstructorUsedError;
-  bool get hasBlood => throw _privateConstructorUsedError;
-  String get notes => throw _privateConstructorUsedError;
+  String get id;
+  int get type;
+  DateTime get dateTime;
+  bool get hasBlood;
+  String get notes;
 
   /// Create a copy of Stool
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
-  $StoolCopyWith<Stool> get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $StoolCopyWith<$Res> {
-  factory $StoolCopyWith(Stool value, $Res Function(Stool) then) =
-      _$StoolCopyWithImpl<$Res, Stool>;
-  @useResult
-  $Res call(
-      {String id, int type, DateTime dateTime, bool hasBlood, String notes});
-}
-
-/// @nodoc
-class _$StoolCopyWithImpl<$Res, $Val extends Stool>
-    implements $StoolCopyWith<$Res> {
-  _$StoolCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of Stool
-  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
+  $StoolCopyWith<Stool> get copyWith =>
+      _$StoolCopyWithImpl<Stool>(this as Stool, _$identity);
+
   @override
-  $Res call({
-    Object? id = null,
-    Object? type = null,
-    Object? dateTime = null,
-    Object? hasBlood = null,
-    Object? notes = null,
-  }) {
-    return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
-      type: null == type
-          ? _value.type
-          : type // ignore: cast_nullable_to_non_nullable
-              as int,
-      dateTime: null == dateTime
-          ? _value.dateTime
-          : dateTime // ignore: cast_nullable_to_non_nullable
-              as DateTime,
-      hasBlood: null == hasBlood
-          ? _value.hasBlood
-          : hasBlood // ignore: cast_nullable_to_non_nullable
-              as bool,
-      notes: null == notes
-          ? _value.notes
-          : notes // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is Stool &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.type, type) || other.type == type) &&
+            (identical(other.dateTime, dateTime) ||
+                other.dateTime == dateTime) &&
+            (identical(other.hasBlood, hasBlood) ||
+                other.hasBlood == hasBlood) &&
+            (identical(other.notes, notes) || other.notes == notes));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, id, type, dateTime, hasBlood, notes);
+
+  @override
+  String toString() {
+    return 'Stool(id: $id, type: $type, dateTime: $dateTime, hasBlood: $hasBlood, notes: $notes)';
   }
 }
 
 /// @nodoc
-abstract class _$$StoolImplCopyWith<$Res> implements $StoolCopyWith<$Res> {
-  factory _$$StoolImplCopyWith(
-          _$StoolImpl value, $Res Function(_$StoolImpl) then) =
-      __$$StoolImplCopyWithImpl<$Res>;
-  @override
+abstract mixin class $StoolCopyWith<$Res> {
+  factory $StoolCopyWith(Stool value, $Res Function(Stool) _then) =
+      _$StoolCopyWithImpl;
   @useResult
   $Res call(
       {String id, int type, DateTime dateTime, bool hasBlood, String notes});
 }
 
 /// @nodoc
-class __$$StoolImplCopyWithImpl<$Res>
-    extends _$StoolCopyWithImpl<$Res, _$StoolImpl>
-    implements _$$StoolImplCopyWith<$Res> {
-  __$$StoolImplCopyWithImpl(
-      _$StoolImpl _value, $Res Function(_$StoolImpl) _then)
-      : super(_value, _then);
+class _$StoolCopyWithImpl<$Res> implements $StoolCopyWith<$Res> {
+  _$StoolCopyWithImpl(this._self, this._then);
+
+  final Stool _self;
+  final $Res Function(Stool) _then;
 
   /// Create a copy of Stool
   /// with the given fields replaced by the non-null parameter values.
@@ -113,35 +78,201 @@ class __$$StoolImplCopyWithImpl<$Res>
     Object? hasBlood = null,
     Object? notes = null,
   }) {
-    return _then(_$StoolImpl(
+    return _then(_self.copyWith(
       id: null == id
-          ? _value.id
+          ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
-          ? _value.type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
               as int,
       dateTime: null == dateTime
-          ? _value.dateTime
+          ? _self.dateTime
           : dateTime // ignore: cast_nullable_to_non_nullable
               as DateTime,
       hasBlood: null == hasBlood
-          ? _value.hasBlood
+          ? _self.hasBlood
           : hasBlood // ignore: cast_nullable_to_non_nullable
               as bool,
       notes: null == notes
-          ? _value.notes
+          ? _self.notes
           : notes // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
 }
 
+/// Adds pattern-matching-related methods to [Stool].
+extension StoolPatterns on Stool {
+  /// A variant of `map` that fallback to returning `orElse`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Stool value)? $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Stool() when $default != null:
+        return $default(_that);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// Callbacks receives the raw object, upcasted.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case final Subclass2 value:
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(_Stool value) $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Stool():
+        return $default(_that);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `map` that fallback to returning `null`.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case final Subclass value:
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Stool value)? $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Stool() when $default != null:
+        return $default(_that);
+      case _:
+        return null;
+    }
+  }
+
+  /// A variant of `when` that fallback to an `orElse` callback.
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return orElse();
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, int type, DateTime dateTime, bool hasBlood,
+            String notes)?
+        $default, {
+    required TResult orElse(),
+  }) {
+    final _that = this;
+    switch (_that) {
+      case _Stool() when $default != null:
+        return $default(
+            _that.id, _that.type, _that.dateTime, _that.hasBlood, _that.notes);
+      case _:
+        return orElse();
+    }
+  }
+
+  /// A `switch`-like method, using callbacks.
+  ///
+  /// As opposed to `map`, this offers destructuring.
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case Subclass2(:final field2):
+  ///     return ...;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id, int type, DateTime dateTime, bool hasBlood, String notes)
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Stool():
+        return $default(
+            _that.id, _that.type, _that.dateTime, _that.hasBlood, _that.notes);
+      case _:
+        throw StateError('Unexpected subclass');
+    }
+  }
+
+  /// A variant of `when` that fallback to returning `null`
+  ///
+  /// It is equivalent to doing:
+  /// ```dart
+  /// switch (sealedClass) {
+  ///   case Subclass(:final field):
+  ///     return ...;
+  ///   case _:
+  ///     return null;
+  /// }
+  /// ```
+
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String id, int type, DateTime dateTime, bool hasBlood,
+            String notes)?
+        $default,
+  ) {
+    final _that = this;
+    switch (_that) {
+      case _Stool() when $default != null:
+        return $default(
+            _that.id, _that.type, _that.dateTime, _that.hasBlood, _that.notes);
+      case _:
+        return null;
+    }
+  }
+}
+
 /// @nodoc
 
-class _$StoolImpl extends _Stool {
-  const _$StoolImpl(
+class _Stool extends Stool {
+  const _Stool(
       {required this.id,
       required this.type,
       required this.dateTime,
@@ -160,16 +291,19 @@ class _$StoolImpl extends _Stool {
   @override
   final String notes;
 
+  /// Create a copy of Stool
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  String toString() {
-    return 'Stool(id: $id, type: $type, dateTime: $dateTime, hasBlood: $hasBlood, notes: $notes)';
-  }
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$StoolCopyWith<_Stool> get copyWith =>
+      __$StoolCopyWithImpl<_Stool>(this, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$StoolImpl &&
+            other is _Stool &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.type, type) || other.type == type) &&
             (identical(other.dateTime, dateTime) ||
@@ -183,39 +317,63 @@ class _$StoolImpl extends _Stool {
   int get hashCode =>
       Object.hash(runtimeType, id, type, dateTime, hasBlood, notes);
 
+  @override
+  String toString() {
+    return 'Stool(id: $id, type: $type, dateTime: $dateTime, hasBlood: $hasBlood, notes: $notes)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$StoolCopyWith<$Res> implements $StoolCopyWith<$Res> {
+  factory _$StoolCopyWith(_Stool value, $Res Function(_Stool) _then) =
+      __$StoolCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id, int type, DateTime dateTime, bool hasBlood, String notes});
+}
+
+/// @nodoc
+class __$StoolCopyWithImpl<$Res> implements _$StoolCopyWith<$Res> {
+  __$StoolCopyWithImpl(this._self, this._then);
+
+  final _Stool _self;
+  final $Res Function(_Stool) _then;
+
   /// Create a copy of Stool
   /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$StoolImplCopyWith<_$StoolImpl> get copyWith =>
-      __$$StoolImplCopyWithImpl<_$StoolImpl>(this, _$identity);
+  $Res call({
+    Object? id = null,
+    Object? type = null,
+    Object? dateTime = null,
+    Object? hasBlood = null,
+    Object? notes = null,
+  }) {
+    return _then(_Stool(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      type: null == type
+          ? _self.type
+          : type // ignore: cast_nullable_to_non_nullable
+              as int,
+      dateTime: null == dateTime
+          ? _self.dateTime
+          : dateTime // ignore: cast_nullable_to_non_nullable
+              as DateTime,
+      hasBlood: null == hasBlood
+          ? _self.hasBlood
+          : hasBlood // ignore: cast_nullable_to_non_nullable
+              as bool,
+      notes: null == notes
+          ? _self.notes
+          : notes // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
 }
 
-abstract class _Stool extends Stool {
-  const factory _Stool(
-      {required final String id,
-      required final int type,
-      required final DateTime dateTime,
-      required final bool hasBlood,
-      required final String notes}) = _$StoolImpl;
-  const _Stool._() : super._();
-
-  @override
-  String get id;
-  @override
-  int get type;
-  @override
-  DateTime get dateTime;
-  @override
-  bool get hasBlood;
-  @override
-  String get notes;
-
-  /// Create a copy of Stool
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$StoolImplCopyWith<_$StoolImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

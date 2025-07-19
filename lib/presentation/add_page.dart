@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:bristol_stool_chart/application/add_stool_notifier.dart';
+import 'package:bristol_stool_chart/l10n/app_localizations.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_padding.dart';
 import 'package:bristol_stool_chart/presentation/widgets/carousel_swipe_indicator.dart';
 import 'package:bristol_stool_chart/shared/providers.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:intl/intl.dart';
 
@@ -72,19 +72,21 @@ class _AddPageState extends ConsumerState<AddPage> {
                 );
               },
               success: (stool, showBloodOption) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(
-                    content: Text(
-                      isEdit
-                          ? AppLocalizations.of(context)!
-                              .stoolEditedSuccessMessage
-                          : AppLocalizations.of(context)!
-                              .stoolSavedSuccessMessage,
-                    ),
-                  ),
-                );
+                context.router.pop();
 
-                context.router.popForced();
+                if (mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      content: Text(
+                        isEdit
+                            ? AppLocalizations.of(context)!
+                                .stoolEditedSuccessMessage
+                            : AppLocalizations.of(context)!
+                                .stoolSavedSuccessMessage,
+                      ),
+                    ),
+                  );
+                }
               },
             );
           });
@@ -275,7 +277,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                                     actions: [
                                       ElevatedButton(
                                         onPressed: () {
-                                          context.router.popForced();
+                                          context.router.pop();
                                         },
                                         child: Text(
                                           AppLocalizations.of(context)!
@@ -287,7 +289,7 @@ class _AddPageState extends ConsumerState<AddPage> {
                                           backgroundColor: Colors.red,
                                         ),
                                         onPressed: () async {
-                                          context.router.popForced();
+                                          context.router.pop();
                                           await ref
                                               .read(addStoolNotifierProvider
                                                   .notifier)

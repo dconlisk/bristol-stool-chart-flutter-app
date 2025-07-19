@@ -69,7 +69,7 @@ To install and test the app on a device before publishing, go to the App Bundle 
 
 ### Deploying the iOS app to the Apple App Store
 
-Create a release in App Store Connect (https://appstoreconnect.apple.com/apps) and give it the same version numbers is is in the pubspec.yaml file (e.g. 2.0.3)
+Create a release in App Store Connect (https://appstoreconnect.apple.com/apps) and give it the same version numbers as per the pubspec.yaml file (e.g. 2.0.3)
 Run `fvm flutter build ipa` to generate the ipa
 Upload build/ios/ipa/\*.ipa using the Transporter app.
 https://docs.flutter.dev/deployment/ios

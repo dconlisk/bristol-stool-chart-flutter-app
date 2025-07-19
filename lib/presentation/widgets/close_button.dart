@@ -8,7 +8,7 @@ class CloseButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        AutoRouter.of(context).popForced();
+        AutoRouter.of(context).pop();
       },
       child: const Padding(
         padding: EdgeInsets.all(16.0),

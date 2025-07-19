@@ -5,8 +5,13 @@ import 'package:dartz/dartz.dart';
 
 abstract class IFileSystemRepository {
   // Write a list of data to a file and return the path to the file
-  Future<Either<StoolFailure, String>> writeBytesToFile(Uint8List data);
+  Future<Either<StoolFailure, String>> writeBytesToFile(
+      String filename, Uint8List data);
 
   // Write a string to a file and return the path to the file
-  Future<Either<StoolFailure, String>> writeStringToFile(String data);
+  Future<Either<StoolFailure, String>> writeStringToFile(
+      String filename, String data);
+
+  // Remove a file from the device
+  Future<Either<StoolFailure, bool>> removeFile(String filename);
 }

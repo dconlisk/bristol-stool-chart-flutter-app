@@ -1,3 +1,4 @@
+import 'package:bristol_stool_chart/l10n/app_localizations.dart';
 import 'package:bristol_stool_chart/presentation/routes/app_router.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_colors.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
@@ -8,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 final initializationProvider = FutureProvider((ref) async {
   await ref.read(sembastProvider).init();

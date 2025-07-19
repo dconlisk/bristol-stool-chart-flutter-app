@@ -8,7 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'add_stool_notifier.freezed.dart';
 
 @freezed
-class AddStoolState with _$AddStoolState {
+abstract class AddStoolState with _$AddStoolState {
   const AddStoolState._();
   const factory AddStoolState.initial(
     Stool stool,

@@ -1,10 +1,11 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:bristol_stool_chart/l10n/app_localizations.dart';
 import 'package:bristol_stool_chart/presentation/styles/app_sizes.dart';
 import 'package:bristol_stool_chart/presentation/widgets/heading.dart';
 import 'package:bristol_stool_chart/presentation/widgets/main_drawer.dart';
 import 'package:bristol_stool_chart/presentation/widgets/paragraph.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 import 'package:url_launcher/url_launcher.dart';
 
 @RoutePage()
@@ -87,7 +88,7 @@ class AboutPage extends StatelessWidget {
                                         .continueButtonText,
                                   ),
                                   onPressed: () {
-                                    context.router.popForced();
+                                    context.router.pop();
                                   },
                                 )
                               ],
